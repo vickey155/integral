@@ -1,0 +1,219 @@
+extends layout/layout
+
+block append headTitle
+  title 我的客户
+block append headCss
+  script(type="text/javascript" src="../global/js/iscroll.js")
+  script(type="text/javascript" src="../global/js/jsrender.min.js")
+block content
+  section.credit-myCustomer#scrollWrap
+    #scroller
+      .sec
+        .select-filter
+            select
+              option(value="") 贷款类型
+              option(value="工薪贷") 工薪贷
+              option(value="车辆抵押贷款") 车辆抵押贷款
+              option(value="房屋抵押贷款") 房屋抵押贷款
+              option(value="生意人贷") 生意人贷
+            select
+              option(value="") 客户来源
+              option(value="自己推广") 自己推广
+              option(value="微信推广") 微信推广
+              option(value="主动购买") 主动购买
+            select
+              option(value="") 贷款进度
+              option(value="待联系") 待联系
+              option(value="准备材料") 准备材料
+              option(value="进件客户") 进件客户
+              option(value="待签约") 申请通过-待签约
+              option(value="已签约放款") 已签约放款
+              option(value="贷款拒绝") 贷款拒绝
+
+        #scroller-content
+          .sec-content#temp-list
+            .per-page
+              p.concern-time  关注于 2016 / 09 / 20
+              table(cellspacing=0,cellpadding=0)
+                tr
+                  th 客户:
+                  td 张凌
+                  th 贷款需求:
+                  td 20万
+                tr
+                  th 工资发放形式:
+                  td 打卡工资
+                  th 社保公积金:
+                  td 有社保公积金
+                tr
+                  th 贷款类型:
+                  td 工薪贷
+                  th 贷款进度:
+                  td 准备材料
+
+
+              .view-detail
+                a(href="") 查看详情
+            //-.per-page
+              p.concern-time  关注于 2016 / 09 / 20
+              table(cellspacing=0,cellpadding=0)
+                tr
+                  th 客户：
+                  td 张凌
+                  th 贷款需求：
+                  td 20万
+                tr
+                  th 工资发放形式：
+                  td 打卡工资
+                  th 社保公积金：
+                  td 有社保公积金
+                tr
+                  th 贷款类型：
+                  td 工薪贷
+                  th 贷款进度：
+                  td 准备材料
+
+
+              .view-detail
+                a(href="") 查看详情
+
+            //- .per-page
+              p.concern-time  关注于 2016 / 09 / 20
+              table(cellspacing=0,cellpadding=0)
+                tr
+                  th 客户：
+                  td 张凌
+                  th 贷款需求：
+                  td 20万
+                tr
+                  th 工资发放形式：
+                  td 打卡工资
+                  th 社保公积金：
+                  td 有社保公积金
+                tr
+                  th 贷款类型：
+                  td 工薪贷
+                  th 贷款进度：
+                  td 准备材料
+              .view-detail
+                a(href="") 查看详情
+
+            //- .per-page
+              p.concern-time  关注于 2016 / 09 / 20
+              table(cellspacing=0,cellpadding=0)
+                tr
+                  th 客户：
+                  td 张凌
+                  th 贷款需求：
+                  td 20万
+                tr
+                  th 工资发放形式：
+                  td 打卡工资
+                  th 社保公积金：
+                  td 有社保公积金
+                tr
+                  th 贷款类型：
+                  td 工薪贷
+                  th 贷款进度：
+                  td 准备材料
+              .view-detail
+                a(href="") 查看详情
+
+        #scroller-pullUp
+          span#up-icon.icon-double-angle-up.pull-up-icon
+          span#pullUp-msg.pull-up-msg  上拉刷新
+
+  include temp/fixedFooter
+
+
+
+  script.
+    $(function(){
+      $(".fixed-footer a").eq(1).addClass('active');
+
+      var htmlList = function () {
+        var loading = true;
+        var showList = function(){
+          $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+              "org.id": "${org.id}"
+            },
+            success: function (result) {
+              var dataSrouce = [{
+                "name": "zhangling",
+                "money": "20玩",
+                "typeSalary": "打卡工资",
+                "societySafy": "有社保公积金",
+                "typeLoan": "工薪贷",
+                "proceed": "准备材料"
+              }];
+              var html = $.templates("#testTmpl").render(dataSrouce);
+              $("#temp-list").append(html);
+              loading = true;
+            }
+          });
+        }
+        var initList = function () {
+          $("#temp-list").html("");
+          showList();
+        }
+
+      //加载更多
+      var loadMore = function(){
+        $(window).scroll(function () {
+          var docHei = $(document).height();
+          var scrollT = $(window).scrollTop();
+          if(scrollT+$(window).height()>docHei -20){
+              if(loading){
+                loading = false;
+                showList();
+              }
+          }
+        });
+      };
+
+        return {
+          initalList:function () {
+            initList();
+          },
+          scrollList:function () {
+            loadMore();
+          }
+        }
+    }();
+
+      //htmlList.initalList();
+      htmlList.scrollList();
+    }) ;
+
+  script(id="testTmpl" type="text/x-jsrender").
+    <div class="per-page">
+      <p class="concern-time"> 关注于 2016 / 09 / 20</p>
+      <table cellspacing="0" cellpadding="0">
+        <tr>
+          <th>客户：</th>
+          <td>{{:name}}</td>
+          <th>贷款需求：</th>
+          <td>{{:money}}</td>
+        </tr>
+        <tr>
+          <th>工资发放形式：</th>
+          <td>{{:typeSalary}}</td>
+          <th>社保公积金：</th>
+          <td>{{:societySafy}}</td>
+        </tr>
+        <tr>
+          <th>贷款类型：</th>
+          <td>{{:typeLoan}}</td>
+          <th>贷款进度：</th>
+          <td>{{:proceed}}</td>
+        </tr>
+      </table>
+      <div class="view-detail"><a href="">查看详情</a></div>
+    </div>
+
+
+
+

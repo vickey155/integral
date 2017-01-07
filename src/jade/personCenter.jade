@@ -1,0 +1,50 @@
+
+extends layout/layout
+
+block append headTitle
+  title 个人中心
+
+block content
+  section.personCenter
+    .banner
+      .row-t
+        span.avater
+          img(src="")
+        p.name T-mac
+        p.inviteCode  我的邀请码：
+          span.code 1867895241
+      ul.row-b
+        li
+          p.money ￥100
+          p 可提现收益
+        li
+          p.money ￥100
+          p 已赚取收益
+
+    .sec
+      div.bg-white
+        ul
+          li
+            a.ele-row 已推荐客户查询
+              span 立即查询
+              em.arrow
+          li
+            a.ele-row 提现支付宝账号
+              span 立即绑定
+              em.arrow
+          li
+            a.ele-row 推广海报
+              span 立即推广
+              em.arrow
+
+
+
+
+
+
+
+
+
+
+
+

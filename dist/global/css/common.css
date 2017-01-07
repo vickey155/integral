@@ -1,0 +1,1114 @@
+@charset "UTF-8";
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #efeff4; }
+
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5; }
+
+body {
+  padding: 0;
+  color: #3d4145; }
+
+img, span, a {
+  display: inline-block;
+  vertical-align: top; }
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+/* VIPapply.html */
+.vipsection {
+  min-height: 100%; }
+  .vipsection .banner {
+    width: 100%;
+    height: 2.8rem; }
+  .vipsection .sec {
+    padding: 0.4rem 0.2rem; }
+    .vipsection .sec .wrapper {
+      background: #fff;
+      box-shadow: 0 0.02rem 0.03rem rgba(0, 0, 0, 0.3);
+      border-radius: 0.04rem;
+      margin-bottom: 0.2rem;
+      text-align: center;
+      padding: 0.28rem 0.2rem; }
+      .vipsection .sec .wrapper h2 {
+        color: #3d4145;
+        text-align: center;
+        font-weight: bold; }
+        @media screen and (max-width: 321px) {
+          .vipsection .sec .wrapper h2 {
+            font-size: 0.36rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .vipsection .sec .wrapper h2 {
+            font-size: 0.37rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .vipsection .sec .wrapper h2 {
+            font-size: 0.38rem; } }
+        @media screen and (min-width: 640px) {
+          .vipsection .sec .wrapper h2 {
+            font-size: 0.4rem; } }
+      .vipsection .sec .wrapper p {
+        color: #3d4145;
+        text-align: center;
+        font-weight: bold; }
+        @media screen and (max-width: 321px) {
+          .vipsection .sec .wrapper p {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .vipsection .sec .wrapper p {
+            font-size: 0.29rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .vipsection .sec .wrapper p {
+            font-size: 0.3rem; } }
+        @media screen and (min-width: 640px) {
+          .vipsection .sec .wrapper p {
+            font-size: 0.32rem; } }
+      .vipsection .sec .wrapper p.price {
+        color: #09F;
+        text-align: center;
+        font-weight: bold; }
+        @media screen and (max-width: 321px) {
+          .vipsection .sec .wrapper p.price {
+            font-size: 0.48rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .vipsection .sec .wrapper p.price {
+            font-size: 0.49rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .vipsection .sec .wrapper p.price {
+            font-size: 0.5rem; } }
+        @media screen and (min-width: 640px) {
+          .vipsection .sec .wrapper p.price {
+            font-size: 0.52rem; } }
+      .vipsection .sec .wrapper p.font-blue {
+        color: #09F; }
+      .vipsection .sec .wrapper p.font-s {
+        font-size: 0.26rem;
+        margin-top: 0.05rem; }
+    .vipsection .sec .btn {
+      overflow: hidden;
+      margin-left: -4%;
+      margin-top: 0.4rem; }
+      .vipsection .sec .btn a {
+        width: 46%;
+        margin-left: 4%;
+        border-radius: 0.1rem;
+        color: #fff;
+        text-align: center;
+        font-weight: normal; }
+        @media screen and (max-width: 321px) {
+          .vipsection .sec .btn a {
+            font-size: 0.26rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .vipsection .sec .btn a {
+            font-size: 0.27rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .vipsection .sec .btn a {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 640px) {
+          .vipsection .sec .btn a {
+            font-size: 0.3rem; } }
+      .vipsection .sec .btn a.blue-btn {
+        background-color: #0894ec; }
+      .vipsection .sec .btn a.yellow-btn {
+        background-color: #F90; }
+
+/*表单格式*/
+/* form */
+.form-row {
+  overflow: hidden;
+  font-size: 0.30rem;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0.16rem 0 0.16rem 0.05rem; }
+  .form-row label {
+    float: left;
+    color: #3d4145;
+    font-weight: bold;
+    width: 2.2rem;
+    padding: 0.08rem 0; }
+  .form-row .txt-wrap {
+    float: right;
+    color: #6d6d72;
+    padding: 0.08rem 0; }
+  .form-row input[type=text], .form-row input[type=number], .form-row input[type=date], .form-row input[type=file] {
+    font-size: 0.28rem;
+    padding: 0.08rem 0;
+    border: 0.01rem solid transparent;
+    border-radius: 0.07rem;
+    padding-left: 0.1rem;
+    width: 3.5rem;
+    height: 0.56rem;
+    color: #3d4145;
+    overflow: hidden; }
+  .form-row input[type=date] {
+    color: #999; }
+  .form-row input[type=date].full {
+    color: #3d4145; }
+  .form-row input[type=date]::-webkit-outer-spin-button {
+    color: #3d4145; }
+  .form-row .inputFile {
+    display: inline-block;
+    position: relative;
+    width: 3.65rem;
+    height: 0.4rem;
+    background: none;
+    padding: 0.08rem 0 0.08rem 0.1rem;
+    line-height: 0.28rem; }
+    .form-row .inputFile span {
+      position: absolute;
+      top: 0.2rem;
+      left: 0.1rem;
+      z-index: 2;
+      color: #0894ec;
+      font-size: 0.28rem;
+      line-height: 0.28rem;
+      vertical-align: middle; }
+    .form-row .inputFile span.error-input {
+      color: red; }
+    .form-row .inputFile .font-color {
+      color: #3d4145; }
+    .form-row .inputFile input[type=file] {
+      position: absolute;
+      top: 0.12rem;
+      left: 0;
+      z-index: 3; }
+    .form-row .inputFile img {
+      max-width: 0.8rem; }
+    .form-row .inputFile .opacity {
+      opacity: 0; }
+  .form-row input.varityCode {
+    border: 1px solid #b4b4b4;
+    background-color: #fff;
+    width: 3.2rem; }
+  .form-row .select-wrapper {
+    padding: 0.08rem 0; }
+  .form-row select {
+    padding-left: 0.1rem;
+    margin-top: 0.04rem;
+    height: 0.56rem;
+    background: none;
+    border: 0.01rem solid transparent;
+    border-radius: 0.07rem;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    color: #3d4145;
+    text-align: center;
+    font-weight: normal;
+    color: #999; }
+    @media screen and (max-width: 321px) {
+      .form-row select {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .form-row select {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .form-row select {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 640px) {
+      .form-row select {
+        font-size: 0.32rem; } }
+  .form-row select.selected {
+    color: #3d4145; }
+  .form-row .selectM {
+    width: 3.6rem; }
+  .form-row .select-wrapper {
+    display: inline-block; }
+    .form-row .select-wrapper .selectS {
+      width: 1.1rem; }
+  .form-row input[type=text].error-input, .form-row input[type=number].error-input, .form-row input[type=date].error-input, .form-row input[type=file].error-input {
+    border-color: red; }
+  .form-row .error-input {
+    border-color: red; }
+
+.form-row:last-child {
+  border-bottom: 0; }
+
+form .bg-white {
+  margin-bottom: 0.2rem;
+  padding: 0 0.25rem; }
+  form .bg-white .title {
+    color: #3d4145;
+    font-weight: bold;
+    font-size: 0.28rem;
+    margin-bottom: 0.2rem;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 0.8rem; }
+    form .bg-white .title span {
+      font-weight: normal;
+      color: #999;
+      line-height: 0.8rem; }
+  form .bg-white .btn-a {
+    padding-top: 0.1rem; }
+    form .bg-white .btn-a a {
+      min-width: 2.2rem;
+      padding: 0 0.2rem; }
+    form .bg-white .btn-a a.active {
+      border-color: #0894ec;
+      color: #0894ec; }
+    form .bg-white .btn-a a:last-child {
+      margin-right: 0; }
+
+form .bg-white:first-child {
+  padding-top: 0;
+  padding-bottom: 0.2rem; }
+
+form .wrap-s {
+  padding: 0 0.25rem 0.3rem; }
+
+/*提交按钮*/
+.btn-radius {
+  border-radius: 0.08rem; }
+
+.btn-a a {
+  padding: 0 0.6rem;
+  border-radius: 0.1rem;
+  border: 1px solid #6e727b;
+  color: #5f646e;
+  text-align: center;
+  font-weight: normal;
+  padding: 0.16rem 0;
+  margin-right: 0.3rem; }
+  @media screen and (max-width: 321px) {
+    .btn-a a {
+      font-size: 0.28rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .btn-a a {
+      font-size: 0.29rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .btn-a a {
+      font-size: 0.3rem; } }
+  @media screen and (min-width: 640px) {
+    .btn-a a {
+      font-size: 0.32rem; } }
+
+.a-btn, .submit-a, .recharge-btn a, .recharge .recharge-btn a, .codeBtn {
+  padding: 0.08rem 0.06rem;
+  border-radius: 0.1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: normal; }
+  @media screen and (max-width: 321px) {
+    .a-btn, .submit-a, .recharge-btn a, .recharge .recharge-btn a, .codeBtn {
+      font-size: 0.28rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .a-btn, .submit-a, .recharge-btn a, .recharge .recharge-btn a, .codeBtn {
+      font-size: 0.29rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .a-btn, .submit-a, .recharge-btn a, .recharge .recharge-btn a, .codeBtn {
+      font-size: 0.3rem; } }
+  @media screen and (min-width: 640px) {
+    .a-btn, .submit-a, .recharge-btn a, .recharge .recharge-btn a, .codeBtn {
+      font-size: 0.32rem; } }
+
+.submit-a, .recharge-btn a, .recharge .recharge-btn a {
+  width: 92%;
+  margin-left: 4%;
+  margin-top: 0.7rem; }
+
+.codeBtn {
+  background-color: #0894ec;
+  margin-left: 0.25rem;
+  padding: 0.06rem 0.1rem; }
+
+/*蓝色按钮*/
+.a-btn-blue {
+  background-color: #0894ec; }
+
+.a-btn-red {
+  background-color: #F00; }
+
+.a-btn-green {
+  background-color: #0C0; }
+
+.a-btn-orange {
+  background-color: #F60; }
+
+/*右侧箭头*/
+.arrow, .loan-index .sec .div-wrapper .contont .a-arrow, .personCenter .bg-white ul li a em.arrow {
+  width: 0.16rem;
+  height: 0.28rem;
+  background: url("/global/images/sel.png") no-repeat 0 0/cover; }
+
+.sec {
+  padding-bottom: 0.8rem; }
+  .sec p {
+    color: #6d6d72;
+    text-align: left;
+    font-weight: normal;
+    padding: 0.1rem 0 0.1rem 0.2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 0.3rem; }
+    @media screen and (max-width: 321px) {
+      .sec p {
+        font-size: 0.26rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .sec p {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .sec p {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 640px) {
+      .sec p {
+        font-size: 0.3rem; } }
+
+.bg-white {
+  background-color: #fff;
+  padding: 0 0.2rem; }
+
+/*客户详情*/
+/*抵押贷款*/
+/*banner*/
+.banner {
+  width: 100%;
+  height: 2.8rem; }
+  .banner img {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    overflow: hidden;
+    outline: none; }
+  .banner .avater img {
+    border-radius: 50%; }
+
+/*贷款申请首页*/
+.loan-index .sec p {
+  color: #6d6d72;
+  text-align: left;
+  font-weight: normal;
+  line-height: 0.6rem;
+  margin-top: 0.2rem; }
+  @media screen and (max-width: 321px) {
+    .loan-index .sec p {
+      font-size: 0.24rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .loan-index .sec p {
+      font-size: 0.25rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .loan-index .sec p {
+      font-size: 0.26rem; } }
+  @media screen and (min-width: 640px) {
+    .loan-index .sec p {
+      font-size: 0.28rem; } }
+
+.loan-index .sec .div-wrapper {
+  display: block;
+  padding: 0.1rem 0;
+  border-bottom: 1px solid #d0d0d0; }
+  .loan-index .sec .div-wrapper h2 {
+    color: #333;
+    text-align: left;
+    font-weight: bolder;
+    font-family: '微软雅黑';
+    line-height: 0.6rem; }
+    @media screen and (max-width: 321px) {
+      .loan-index .sec .div-wrapper h2 {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .loan-index .sec .div-wrapper h2 {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .loan-index .sec .div-wrapper h2 {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 640px) {
+      .loan-index .sec .div-wrapper h2 {
+        font-size: 0.35rem; } }
+    .loan-index .sec .div-wrapper h2 span {
+      float: right;
+      font-weight: normal; }
+  .loan-index .sec .div-wrapper .contont {
+    position: relative;
+    padding-bottom: 0.1rem; }
+    .loan-index .sec .div-wrapper .contont p {
+      color: #333;
+      text-align: left;
+      font-weight: normal;
+      line-height: 0.46rem;
+      padding: 0;
+      margin-top: 0.1rem; }
+      @media screen and (max-width: 321px) {
+        .loan-index .sec .div-wrapper .contont p {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .loan-index .sec .div-wrapper .contont p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .loan-index .sec .div-wrapper .contont p {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 640px) {
+        .loan-index .sec .div-wrapper .contont p {
+          font-size: 0.32rem; } }
+    .loan-index .sec .div-wrapper .contont p.font-bold {
+      font-weight: bold; }
+    .loan-index .sec .div-wrapper .contont p.font-color {
+      font-weight: bold;
+      color: #ea8010;
+      line-height: 0.36rem; }
+    .loan-index .sec .div-wrapper .contont .a-arrow {
+      position: absolute;
+      top: 0.25rem;
+      right: 0.1rem; }
+
+.loan-index .sec .div-wrapper:last-child {
+  border-bottom: 0; }
+
+/*固定底部*/
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  z-index: 99;
+  background: #f7f7f8; }
+  .fixed-footer ul {
+    overflow: hidden; }
+    .fixed-footer ul li {
+      float: left;
+      width: 33%;
+      padding: 0.15rem 0; }
+      .fixed-footer ul li a {
+        width: 100%;
+        text-align: center; }
+      .fixed-footer ul li .trangle {
+        border: 1px solid #929292;
+        font-size: 0.20rem;
+        line-height: 0.3rem;
+        text-align: center;
+        width: 0.24rem;
+        height: 0.3rem;
+        position: relative;
+        top: 0.08rem; }
+        .fixed-footer ul li .trangle em {
+          display: inline-block;
+          width: 0.26rem;
+          border-radius: 50%;
+          background-color: red;
+          color: #fff;
+          text-align: center;
+          font-weight: normal;
+          line-height: 0.27rem;
+          font-style: normal;
+          position: absolute;
+          top: -0.15rem;
+          right: -0.16rem;
+          z-index: 2; }
+          @media screen and (max-width: 321px) {
+            .fixed-footer ul li .trangle em {
+              font-size: 0.18rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .fixed-footer ul li .trangle em {
+              font-size: 0.19rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .fixed-footer ul li .trangle em {
+              font-size: 0.2rem; } }
+          @media screen and (min-width: 640px) {
+            .fixed-footer ul li .trangle em {
+              font-size: 0.22rem; } }
+      .fixed-footer ul li p {
+        color: #929292;
+        padding: 0.02rem 0;
+        text-align: center;
+        font-size: 0.28rem; }
+      .fixed-footer ul li a.active .trangle {
+        border-color: #0894ec; }
+      .fixed-footer ul li a.active p {
+        color: #0894ec; }
+
+/*二次贷款贷款申请*/
+.loan-applay-second p.page-state {
+  margin: 0.4rem 0 0.1rem; }
+
+.loan-applay-second form .a-long-txt a {
+  padding: 0 0.14rem;
+  margin-right: 0.2rem;
+  min-width: 1.8rem; }
+
+.loan-applay-second form .a-long-txt a:last-child {
+  margin-right: 0; }
+
+.loan-applay-second .sec-hide {
+  display: none; }
+
+/*myCustomer*/
+.tap-wrapper .tab-btn a {
+  width: 33%;
+  border-bottom: 0.05rem solid #fff;
+  background-color: #fff;
+  color: #5f646e;
+  text-align: center;
+  font-weight: normal;
+  padding: 0.1rem 0; }
+  @media screen and (max-width: 321px) {
+    .tap-wrapper .tab-btn a {
+      font-size: 0.3rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .tap-wrapper .tab-btn a {
+      font-size: 0.31rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .tap-wrapper .tab-btn a {
+      font-size: 0.32rem; } }
+  @media screen and (min-width: 640px) {
+    .tap-wrapper .tab-btn a {
+      font-size: 0.34rem; } }
+
+.tap-wrapper .tab-btn a:last-child {
+  width: 34%; }
+
+.tap-wrapper .tab-btn a.active {
+  border-color: #0894ec;
+  color: #0894ec; }
+
+.myCustomer .tab-content {
+  padding: 0.6rem 0.4rem 0; }
+
+.myCustomer .per-page {
+  background-color: #fff;
+  border-radius: 0.05rem;
+  box-shadow: 0 0.02rem 0.04rem rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.2rem; }
+  .myCustomer .per-page h1 {
+    color: #6d6d72;
+    text-align: left;
+    font-weight: bold;
+    padding: 0.15rem 0 0.15rem 0.22rem;
+    border-bottom: 0.05rem solid #efeff4;
+    line-height: 0.5rem; }
+    @media screen and (max-width: 321px) {
+      .myCustomer .per-page h1 {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .myCustomer .per-page h1 {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .myCustomer .per-page h1 {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 640px) {
+      .myCustomer .per-page h1 {
+        font-size: 0.34rem; } }
+    .myCustomer .per-page h1 span.font-red {
+      color: #eb1919;
+      text-align: left;
+      font-weight: normal;
+      line-height: 0.5rem;
+      float: right;
+      padding-right: 0.22rem; }
+      @media screen and (max-width: 321px) {
+        .myCustomer .per-page h1 span.font-red {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .myCustomer .per-page h1 span.font-red {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .myCustomer .per-page h1 span.font-red {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 640px) {
+        .myCustomer .per-page h1 span.font-red {
+          font-size: 0.32rem; } }
+  .myCustomer .per-page p {
+    margin: 0;
+    color: #6d6d72;
+    text-align: left;
+    font-weight: normal;
+    padding: 0.15rem 0 0.15rem 0.22rem; }
+    @media screen and (max-width: 321px) {
+      .myCustomer .per-page p {
+        font-size: 0.26rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .myCustomer .per-page p {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .myCustomer .per-page p {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 640px) {
+      .myCustomer .per-page p {
+        font-size: 0.3rem; } }
+
+/*个人中心*/
+.personCenter .banner {
+  width: 100%;
+  height: 5.12rem;
+  background: url("/global/images/user-money-bg.jpg") no-repeat 0 0; }
+  .personCenter .banner .row-t {
+    padding-top: 0.4rem;
+    text-align: center; }
+    .personCenter .banner .row-t .avater {
+      border-radius: 50%;
+      background-color: #666;
+      height: 1.7rem;
+      width: 1.7rem;
+      border: 0;
+      text-align: center; }
+    .personCenter .banner .row-t p {
+      color: #3d4145;
+      text-align: center;
+      font-weight: bold;
+      line-height: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .personCenter .banner .row-t p {
+          font-size: 0.34rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .personCenter .banner .row-t p {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .personCenter .banner .row-t p {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 640px) {
+        .personCenter .banner .row-t p {
+          font-size: 0.38rem; } }
+    .personCenter .banner .row-t p.name {
+      margin-top: 0.18rem; }
+    .personCenter .banner .row-t p.inviteCode {
+      font-size: 0.26rem; }
+      .personCenter .banner .row-t p.inviteCode span {
+        font-size: 0.26rem; }
+  .personCenter .banner .row-b {
+    overflow: hidden;
+    margin-top: 0.3rem; }
+    .personCenter .banner .row-b li {
+      float: left;
+      width: 50%; }
+    .personCenter .banner .row-b p {
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      line-height: 0.5rem; }
+      @media screen and (max-width: 321px) {
+        .personCenter .banner .row-b p {
+          font-size: 0.34rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .personCenter .banner .row-b p {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .personCenter .banner .row-b p {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 640px) {
+        .personCenter .banner .row-b p {
+          font-size: 0.38rem; } }
+    .personCenter .banner .row-b p.money {
+      font-size: 0.38rem;
+      margin-bottom: 0.05rem;
+      font-weight: bolder; }
+
+.personCenter .bg-white {
+  margin-top: 0.3rem; }
+  .personCenter .bg-white ul {
+    overflow: hidden; }
+    .personCenter .bg-white ul li {
+      padding: 0.05rem 0;
+      position: relative;
+      border-bottom: 1px solid #eee; }
+      .personCenter .bg-white ul li a {
+        width: 100%;
+        padding-right: 0.3rem;
+        color: #0894ec;
+        text-align: left;
+        font-weight: bold;
+        line-height: 0.6rem; }
+        @media screen and (max-width: 321px) {
+          .personCenter .bg-white ul li a {
+            font-size: 0.3rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .personCenter .bg-white ul li a {
+            font-size: 0.31rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .personCenter .bg-white ul li a {
+            font-size: 0.32rem; } }
+        @media screen and (min-width: 640px) {
+          .personCenter .bg-white ul li a {
+            font-size: 0.34rem; } }
+        .personCenter .bg-white ul li a span {
+          font-weight: normal;
+          line-height: 0.6rem;
+          color: #5f646e;
+          float: right; }
+        .personCenter .bg-white ul li a .loan-index .sec .div-wrapper .contont em.a-arrow, .loan-index .sec .div-wrapper .contont .personCenter .bg-white ul li a em.a-arrow, .personCenter .bg-white ul li a em.arrow {
+          position: absolute;
+          top: 0.2rem;
+          right: 0; }
+
+header p {
+  color: #3d4145;
+  text-align: center;
+  font-weight: normal;
+  line-height: 0.5rem;
+  padding: 0.1rem;
+  background-color: #f7f7f7;
+  position: relative; }
+  @media screen and (max-width: 321px) {
+    header p {
+      font-size: 0.28rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    header p {
+      font-size: 0.29rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    header p {
+      font-size: 0.3rem; } }
+  @media screen and (min-width: 640px) {
+    header p {
+      font-size: 0.32rem; } }
+  header p .goback {
+    position: absolute;
+    top: 0.15rem;
+    left: 0;
+    color: #0894ec;
+    padding-left: 0.3rem; }
+
+/*充值按钮*/
+.recharge-btn, .recharge .recharge-btn {
+  padding: 0 0.25rem; }
+  .recharge-btn a, .recharge .recharge-btn a {
+    width: 100%;
+    margin: 0.75rem 0 0; }
+  .recharge-btn a.a-btn-blue {
+    background-color: #09F; }
+  .recharge-btn a.a-btn-red {
+    background-color: #F00; }
+  .recharge-btn a.a-btn-green {
+    background-color: #0C0; }
+  .recharge-btn a.a-btn-orange {
+    background-color: #F60; }
+
+/*充值页面*/
+.recharge {
+  padding-top: 0.4rem; }
+
+/*.VIPapply*/
+.VIPapply div {
+  width: 100%;
+  height: 2.8rem; }
+
+.VIPapply .sec01 img {
+  width: 100%;
+  height: 100%; }
+
+.VIPapply .sec02 img {
+  width: 100%;
+  height: 100%; }
+
+.VIPapply .submit-a, .VIPapply .recharge-btn a, .recharge-btn .VIPapply a {
+  margin-top: 0.7rem; }
+
+/*提交成功*/
+.submitSuccess .banner {
+  width: 100%;
+  height: 2.8rem;
+  text-align: center;
+  position: relative; }
+  .submitSuccess .banner .txt-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    width: 100%; }
+  .submitSuccess .banner h1 {
+    color: #3d4145;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0.8rem; }
+    @media screen and (max-width: 321px) {
+      .submitSuccess .banner h1 {
+        font-size: 0.4rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .submitSuccess .banner h1 {
+        font-size: 0.41rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .submitSuccess .banner h1 {
+        font-size: 0.42rem; } }
+    @media screen and (min-width: 640px) {
+      .submitSuccess .banner h1 {
+        font-size: 0.44rem; } }
+  .submitSuccess .banner .hightest {
+    margin-top: 0.2rem; }
+    .submitSuccess .banner .hightest p {
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      line-height: 0.6rem; }
+      @media screen and (max-width: 321px) {
+        .submitSuccess .banner .hightest p {
+          font-size: 0.34rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .submitSuccess .banner .hightest p {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .submitSuccess .banner .hightest p {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 640px) {
+        .submitSuccess .banner .hightest p {
+          font-size: 0.38rem; } }
+    .submitSuccess .banner .hightest p.money {
+      font-size: 0.55rem; }
+  .submitSuccess .banner .payDate {
+    margin-top: 0.55rem; }
+    .submitSuccess .banner .payDate p {
+      color: #3d4145;
+      text-align: center;
+      font-weight: bold;
+      line-height: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .submitSuccess .banner .payDate p {
+          font-size: 0.24rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .submitSuccess .banner .payDate p {
+          font-size: 0.25rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .submitSuccess .banner .payDate p {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 640px) {
+        .submitSuccess .banner .payDate p {
+          font-size: 0.28rem; } }
+
+.submitSuccess .wrapper {
+  padding-top: 0.25rem; }
+  .submitSuccess .wrapper p {
+    color: #6d6d72;
+    text-align: left;
+    font-weight: normal;
+    padding-left: 0.28rem; }
+    @media screen and (max-width: 321px) {
+      .submitSuccess .wrapper p {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .submitSuccess .wrapper p {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .submitSuccess .wrapper p {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 640px) {
+      .submitSuccess .wrapper p {
+        font-size: 0.32rem; } }
+  .submitSuccess .wrapper .submit-a, .submitSuccess .wrapper .recharge-btn a, .recharge-btn .submitSuccess .wrapper a {
+    margin-top: 0.16rem;
+    background: #F00;
+    border: 0;
+    padding: 0.06rem 0; }
+
+/*信贷员中心*/
+.creditOfficer .banner {
+  background-image: url("/global/images/user-money-bg1.jpg"); }
+
+.creditOfficer .recharge-btn a.a-btn-orange {
+  background-color: #F60;
+  margin-top: 0.3rem; }
+
+.creditOfficer .bg-white {
+  margin-top: 0.4rem; }
+
+/* 信贷员的 我的客户 */
+.credit-myCustomer .select-filter {
+  background-color: #fff;
+  overflow: hidden;
+  padding: 0.2rem 0; }
+  .credit-myCustomer .select-filter select {
+    width: 33%;
+    float: left;
+    background: none;
+    border: 1px solid transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    color: #3d4145;
+    text-align: center;
+    font-weight: normal;
+    padding-left: 10%;
+    color: #999; }
+    @media screen and (max-width: 321px) {
+      .credit-myCustomer .select-filter select {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .credit-myCustomer .select-filter select {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .credit-myCustomer .select-filter select {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 640px) {
+      .credit-myCustomer .select-filter select {
+        font-size: 0.34rem; } }
+
+.credit-myCustomer .sec-content {
+  padding: 0.6rem 0.2rem 0; }
+
+.credit-myCustomer .per-page {
+  background-color: #fff;
+  border-radius: 0.05rem;
+  box-shadow: 0 0.01rem 0.01rem rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.2rem;
+  padding: 0.2rem 0; }
+  .credit-myCustomer .per-page p {
+    margin: 0;
+    color: #6d6d72;
+    text-align: left;
+    font-weight: normal;
+    padding: 0.15rem 0.25rem 0; }
+    @media screen and (max-width: 321px) {
+      .credit-myCustomer .per-page p {
+        font-size: 0.26rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .credit-myCustomer .per-page p {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .credit-myCustomer .per-page p {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 640px) {
+      .credit-myCustomer .per-page p {
+        font-size: 0.3rem; } }
+  .credit-myCustomer .per-page table {
+    width: 94%;
+    margin: 0.2rem 3%;
+    display: table;
+    table-layout: fixed; }
+    .credit-myCustomer .per-page table th, .credit-myCustomer .per-page table td {
+      vertical-align: top;
+      color: #666;
+      text-align: left;
+      font-weight: bold;
+      line-height: 0.34rem;
+      padding: 0.15rem 0;
+      word-wrap: break-word;
+      word-break: break-all; }
+      @media screen and (max-width: 321px) {
+        .credit-myCustomer .per-page table th, .credit-myCustomer .per-page table td {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .credit-myCustomer .per-page table th, .credit-myCustomer .per-page table td {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .credit-myCustomer .per-page table th, .credit-myCustomer .per-page table td {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 640px) {
+        .credit-myCustomer .per-page table th, .credit-myCustomer .per-page table td {
+          font-size: 0.3rem; } }
+  .credit-myCustomer .per-page .view-detail {
+    border-top: 1px solid #efeff4;
+    height: 0.6rem; }
+    .credit-myCustomer .per-page .view-detail a {
+      float: right;
+      color: #0894ec;
+      text-align: left;
+      font-weight: normal;
+      line-height: 0.85rem;
+      margin-right: 0.3rem; }
+      @media screen and (max-width: 321px) {
+        .credit-myCustomer .per-page .view-detail a {
+          font-size: 0.24rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .credit-myCustomer .per-page .view-detail a {
+          font-size: 0.25rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .credit-myCustomer .per-page .view-detail a {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 640px) {
+        .credit-myCustomer .per-page .view-detail a {
+          font-size: 0.28rem; } }
+
+/*信用卡*/
+.creditCard p.title {
+  color: #363636;
+  font-size: 0.28rem;
+  text-align: center;
+  padding: 0.15rem 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ebebea; }
+
+.creditCard .card-list {
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 0.4rem; }
+  .creditCard .card-list li {
+    float: left;
+    width: 50%;
+    border-right: 1px solid #ebebea;
+    border-bottom: 1px solid #ebebea;
+    overflow: hidden;
+    padding: 0.2rem 0.25rem; }
+  .creditCard .card-list .col-l {
+    float: left;
+    height: 100%;
+    padding-right: 0.1rem; }
+    .creditCard .card-list .col-l img {
+      width: 0.7rem;
+      height: 0.7rem;
+      vertical-align: middle;
+      margin-top: 0.05rem; }
+  .creditCard .card-list .col-r p.row-t {
+    float: left;
+    font-size: 0.3rem;
+    color: #333;
+    line-height: 0.42rem; }
+    .creditCard .card-list .col-r p.row-t span.hot-red {
+      width: 0.56rem;
+      height: 0.32rem;
+      text-align: center;
+      font-size: 0.18rem;
+      color: #ff302e;
+      border: 0.01rem solid #ff302e;
+      border-radius: 0.02rem;
+      margin-left: 0.05rem;
+      line-height: 0.3rem; }
+  .creditCard .card-list .col-r p.row-b {
+    font-size: 0.23rem;
+    color: #999;
+    line-height: 0.42rem; }
+
+.creditCard .view-process p {
+  color: #333;
+  text-align: left;
+  font-weight: normal;
+  line-height: 0.4rem;
+  padding: 0.2rem 0.25rem;
+  position: relative; }
+  @media screen and (max-width: 321px) {
+    .creditCard .view-process p {
+      font-size: 0.3rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .creditCard .view-process p {
+      font-size: 0.31rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .creditCard .view-process p {
+      font-size: 0.32rem; } }
+  @media screen and (min-width: 640px) {
+    .creditCard .view-process p {
+      font-size: 0.34rem; } }
+  .creditCard .view-process p .oclok-icon {
+    width: 0.38rem;
+    height: 0.38rem;
+    margin-right: 0.25rem;
+    margin-top: 0.02rem;
+    background: url("/global/images/clock.png") no-repeat 0 0/cover; }
+  .creditCard .view-process p .arrow, .creditCard .view-process p .loan-index .sec .div-wrapper .contont .a-arrow, .loan-index .sec .div-wrapper .contont .creditCard .view-process p .a-arrow, .creditCard .view-process p .personCenter .bg-white ul li a em.arrow, .personCenter .bg-white ul li a .creditCard .view-process p em.arrow {
+    float: right;
+    margin-top: 0.1rem; }
+
+/*下拉刷新*/
+#scrollWrap {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  overflow: hidden; }
+  #scrollWrap #scroller {
+    padding-bottom: 0.8rem; }
+  #scrollWrap .loan-index .sec {
+    padding-bottom: 0; }
+  #scrollWrap #scroller-pullUp, #scrollWrap #scroller-pullDown {
+    border: 0; }
+  #scrollWrap #scroller-pullUp {
+    bottom: 0.8rem;
+    background-color: transparent; }

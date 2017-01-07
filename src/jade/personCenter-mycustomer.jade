@@ -1,0 +1,112 @@
+
+extends layout/layout
+
+block append headTitle
+  title VIP申请
+block append headCss
+  script(type="text/javascript" src="../global/js/iscroll.js")
+  script(type="text/javascript" src="../global/js/jsrender.min.js")
+block content
+  section.myCustomer#scrollWrap
+    #scroller
+      .sec
+        .tap-wrapper
+          .tab-btn#tabBtn
+            a.active 全部
+            a 关注未购买
+            a 已购买
+          #scroller-content
+            .tab-content
+              .tab-cont#temp-list
+                .per-page
+                  h1 T-Mac
+                  p  关注时间：2016/9/18 16:34:33
+                .per-page
+                  h1 T-Mac
+                    span.font-red  已购买：收益10元
+                  p  关注时间：2016/9/18 16:34:33
+
+
+          #scroller-pullUp
+            span#up-icon.icon-double-angle-up.pull-up-icon
+            span#pullUp-msg.pull-up-msg  上拉刷新
+
+
+  script.
+    $(function(){
+      //tab切换
+      $("#tabBtn").on("click","a",function() {
+        var sel = $(this);
+        sel.addClass('active').siblings().removeClass('active');
+        htmlList.initalList();
+      });
+      //显示列表
+      var htmlList = function () {
+        var showList = function () {
+          $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+              "org.id": "${org.id}"
+            },
+            success: function (result) {
+              var dataSrouce = [{
+                "name": "zhangling",
+                "money": "20玩"
+              }];
+              var html = $.templates("#testTmpl").render(dataSrouce);
+              $("#temp-list").append(html);
+            }
+          });
+        }
+        var initList = function () {
+          $("#temp-list").html("");
+          showList();
+        }
+        //下拉刷新
+        var scrollFun = function () {
+          if ($("#scrollWrap")[0]) {
+            var myScroll;
+            myScroll = new IScroll("#scrollWrap", { click: true, probeType: 3, mouseWheel: true});
+
+            myScroll.on("slideDown", function () {
+              if (this.maxScrollY - this.y > 40) {
+                showList();
+                myScroll.refresh();
+              }
+            });
+            myScroll.on("slideUp", function () {
+              if (this.maxScrollY - this.y > 40) {
+                showList();
+                myScroll.refresh();
+              }
+            });
+          }
+        }
+        return {
+          initalList: function () {
+            initList();
+          },
+          scrollList: function () {
+            scrollFun();
+          }
+        }
+      }();
+
+      //htmlList.initalList();
+      htmlList.scrollList();
+
+    })
+
+  script(id="testTmpl" type="text/x-jsrender").
+    <div class="per-page">
+      <h1>{{:name}}
+          {{if expection}}
+          <span class="font-red"> 已购买：收益{{:expection}}元</span>
+          {{/if}}
+      </h1>
+      <p> 关注时间：{{:time}}</p>
+    </div>
+
+
+
