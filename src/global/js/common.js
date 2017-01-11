@@ -43,7 +43,7 @@ $(function () {
         }
     });
    //地区联动
-    $(".region-select").regionSelect();
+    //$(".region-select").regionSelect();
   //申请页有无隐藏
    if($(".loan-applay-second")[0]){
        var isShowContent = function (self) {

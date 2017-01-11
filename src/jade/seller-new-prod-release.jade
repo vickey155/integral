@@ -1,0 +1,286 @@
+extends layout/layout
+
+block append headTitle
+  title 新品发布
+
+block content
+  section.sticky-cont.new-product-release
+    .sec
+      .sec-fill
+        .sec-fill-title
+          a 必填项
+        .form-row.select-wrapper
+          i.icon-caret-down
+          select
+            option(value="") 请选择您要发布的产品种类
+            option(value="包装") 包装
+        .sec-fill-cont.package(style="display:none")
+          .form-row.select-wrapper
+            i.icon-caret-down
+            select
+              option(value="") 请选择发布类型
+              option(value="包装") 包装
+          .form-row.a-tab-wrap.tab-w-s
+            a.a-tab.active 现货
+            a.a-tab.a-tab-orange 订货
+          .form-row
+            input(type="text" placeholder="请输入货品名称")
+          .form-row
+            input(type="text" placeholder="请输入货号")
+          .form-row.upload-pic
+            .row-title 图片(最多5张)
+            ul.row-cont
+              li
+                img(src="" alt="nopic")
+              li.add-li
+                a.add-btn +
+          .form-row
+            .row-title 价格设置
+            .row-cont
+              input(type="text" placeholder="请输入起订量").input-text-s
+              input(type="text" placeholder="请输入价格").input-text-s
+              a.add-btn  +
+          .form-row
+            .row-title 颜色（多选）
+            .row-cont.a-tab-wrap
+              a.a-tab.active 红色
+              a.a-tab 黄色
+              a.a-tab 自定义
+          .sec-fill-title
+            a 选填项
+          .form-row
+            .row-title 自定义规格
+            .row-cont
+              input(type="text" placeholder="请输入规格名").input-text-s
+              input(type="text" placeholder="请输入该规格介绍").input-text-l
+              a.add-btn.magin-top  +
+        .sec-fill-cont.stockings(style="display:none")
+          .form-row.select-wrapper
+            i.icon-caret-down
+            select
+              option(value="") 请选择发布类型
+              option(value="包装") 包装
+          .form-row.a-tab-wrap.tab-w-s
+            a.a-tab.active 现货
+            a.a-tab.a-tab-orange 订货
+          .form-row
+            input(type="text" placeholder="请输入货品名称")
+          .form-row
+            input(type="text" placeholder="请输入货号")
+          .form-row.upload-pic
+            .row-title 图片(最多5张)
+            ul.row-cont
+              li
+                img(src="" alt="nopic")
+              li.add-li
+                a.add-btn +
+          .form-row.select-wrapper
+            .row-title 面料
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 主面料名称
+              input(type="text" placeholder="含量（%）").input-text-s
+          .form-row
+            .row-title 价格设置
+            .row-cont
+              input(type="text" placeholder="请输入起订量").input-text-s
+              input(type="text" placeholder="请输入价格").input-text-s
+              a.add-btn  +
+          .form-row
+            .row-title 颜色（多选）
+            .row-cont.a-tab-wrap
+              a.a-tab.active 红色
+              a.a-tab 黄色
+              a.a-tab 自定义
+          .form-row
+            .row-title 尺码（多选）
+            .row-cont.a-tab-wrap
+              a.a-tab.active 均码
+              a.a-tab 单面加档
+              a.a-tab 双面加档
+              a.a-tab 双面加档
+              a.a-tab 自定义
+          .form-row.select-wrapper
+            .row-title 年龄
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row.select-wrapper
+            .row-title 适用性别
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row.select-wrapper
+            .row-title 筒高
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row
+            .row-title 季节（多选）
+            .row-cont.a-tab-wrap.last-grey-bg
+              a.a-tab.active 春季
+              a.a-tab 夏季
+              a.a-tab 夏季
+              a.a-tab 冬季
+              a.a-tab 四季
+          .form-row.select-wrapper
+            .row-title 厚度
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row
+            .row-title 克重
+            .row-cont
+              input(type="text" placeholder="克重（g）").input-text-s
+
+          .sec-fill-title
+            a 选填项
+          .form-row
+            .row-title 是否踩脚
+            .row-cont.a-tab-wrap.last-grey-bg
+              a.a-tab 是
+              a.a-tab 否
+          .form-row
+            .row-title 是否有跟
+            .row-cont.a-tab-wrap.last-grey-bg
+              a.a-tab 是
+              a.a-tab 否
+          .form-row
+            .row-title 功能
+            .row-cont
+              input(type="text" placeholder="请输入")
+          .form-row
+            .row-title 自定义规格
+            .row-cont
+              input(type="text" placeholder="请输入规格名").input-text-s
+              input(type="text" placeholder="请输入该规格介绍").input-text-l
+              a.add-btn.magin-top  +
+        .sec-fill-cont.stockings(style="display:block")
+          .form-row.select-wrapper
+            i.icon-caret-down
+            select
+              option(value="") 请选择发布类型
+              option(value="包装") 包装
+          .form-row.a-tab-wrap.tab-w-s
+            a.a-tab.active 现货
+            a.a-tab.a-tab-orange 订货
+          .form-row
+            input(type="text" placeholder="请输入货品名称")
+          .form-row
+            input(type="text" placeholder="请输入货号")
+          .form-row.upload-pic
+            .row-title 图片(最多5张)
+            ul.row-cont
+              li
+                img(src="" alt="nopic")
+              li.add-li
+                a.add-btn +
+          .form-row.select-wrapper
+            .row-title 面料
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 主面料名称
+              input(type="text" placeholder="含量（%）").input-text-s
+          .form-row
+            .row-title 价格设置
+            .row-cont
+              input(type="text" placeholder="请输入起订量").input-text-s
+              input(type="text" placeholder="请输入价格").input-text-s
+              a.add-btn  +
+          .form-row
+            .row-title 颜色（多选）
+            .row-cont.a-tab-wrap
+              a.a-tab.active 红色
+              a.a-tab 黄色
+              a.a-tab 自定义
+          .form-row
+            .row-title 尺码（多选）
+            .row-cont.a-tab-wrap
+              a.a-tab.active 均码
+              a.a-tab 单面加档
+              a.a-tab 双面加档
+              a.a-tab 双面加档
+              a.a-tab 自定义
+          .form-row.select-wrapper
+            .row-title 年龄
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row.select-wrapper
+            .row-title 适用性别
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row.select-wrapper
+            .row-title 筒高
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row
+            .row-title 季节（多选）
+            .row-cont.a-tab-wrap.last-grey-bg
+              a.a-tab.active 春季
+              a.a-tab 夏季
+              a.a-tab 夏季
+              a.a-tab 冬季
+              a.a-tab 四季
+          .form-row.select-wrapper
+            .row-title 厚度
+            .row-cont
+              .select-wrapper-s
+                i.icon-caret-down
+                select.select-s
+                  option(value="") 请选择
+          .form-row
+            .row-title 克重
+            .row-cont
+              input(type="text" placeholder="克重（g）").input-text-s
+
+          .sec-fill-title
+            a 选填项
+          .form-row
+            .row-title 功能
+            .row-cont
+              input(type="text" placeholder="请输入")
+          .form-row
+            .row-title 自定义规格
+            .row-cont
+              input(type="text" placeholder="请输入规格名").input-text-s
+              input(type="text" placeholder="请输入该规格介绍").input-text-l
+              a.add-btn.magin-top  +
+  footer.sticky-foot
+    a 确定
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

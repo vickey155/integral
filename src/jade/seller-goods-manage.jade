@@ -1,0 +1,88 @@
+extends layout/layout
+
+block append headTitle
+  title 货品管理
+
+block content
+  section.sticky-cont.seller-goods-sec
+    .sec
+      .sec-serch
+        input(type="text" placeholder='请输入您要搜索的货品').input-text-search
+        a.a-btn-bgred 搜索
+      .sec-manage-list
+        ul
+          li
+            .circle-choose
+              span.active
+                i.icon-ok
+              img(src="")
+            .status-cont
+              .status-title
+                span 现货
+                | 7047 一件代发纯棉袜 子男士四季中筒防臭...
+                a.icon-trash
+              .status-detail
+                p 颜色:随机混搭;尺码:均码
+                .num-wrap
+                  span ￥9.00/条
+                    i 4条起批
+                  span ￥8.50/条
+                    i 5-8条
+                  span ￥8.00/条
+                    i  ≥9条
+          li
+            .circle-choose
+              span
+              img(src="")
+            .status-cont
+              .status-title
+                span 现货
+                | 7047 一件代发纯棉袜 子男士四季中筒防臭...
+                a.icon-trash
+              .status-detail
+                p 颜色:随机混搭;尺码:均码
+                .num-wrap
+                  span ￥9.00/条
+                    i 4条起批
+                  span ￥8.50/条
+                    i 5-8条
+                  span ￥8.00/条
+                    i  ≥9条
+
+  footer.sticky-foot.seller-goods-footer.clearfix
+    .shelve
+      .circle-add-btn +
+      p 上架
+    ul.sec-bottom
+      li
+        .circle-choose
+          span.active
+            i.icon-ok
+          |全选
+        .sumNum
+          p 总计:
+            span.red-font ￥118.00
+          p.grey-font 1种12件;不含运费
+      li
+        a.delete-btn 删除
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

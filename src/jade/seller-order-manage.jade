@@ -1,0 +1,114 @@
+extends layout/layout
+
+block append headTitle
+  title 订单管理
+
+block content
+  section.seller-order-sec
+    .sec-serch
+      input(type="text" placeholder='请输入您要搜索的订单').input-text-search
+      a.a-btn-bgred 搜索
+    .sec-manage-list
+      .tab-opts
+        a.active 全部
+        a 待付款
+        a 待发货
+        a 已发货
+      ul
+        li
+          p.order-status 已发货
+          .order-per
+            img(src="")
+            .order-txt
+              span 7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款
+            .order-price
+              span ￥58.80
+          p.order-sum 共12件商品 合计：￥
+            span.bing-font 117
+            |.60（含运费￥0.00）
+          .btn-wrap
+            a.a-btn-bggrey 等待买家确认收货
+        li
+          p.order-status 已付款，等待发货
+          .order-per
+            img(src="")
+            .order-txt
+              span 7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款
+            .order-price
+              span ￥58.80
+          p.order-sum 共12件商品 合计：￥
+            span.bing-font 117
+            | .60（含运费￥0.00）
+          .btn-wrap
+            a.a-btn-bgred 确认发货
+        li
+          p.order-status 待付款（在线支付）
+          .order-per
+            img(src="")
+            .order-txt
+              span 7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款
+            .order-price
+              span ￥58.80
+          p.order-sum 共12件商品 合计：￥
+            span.bing-font 117
+            | .60（含运费￥0.00）
+          .btn-wrap
+            ul
+              li
+                a.a-btn-bggrey 删除订单
+              li
+                a.a-btn-bgblue(href='/template/seller-order-edit.html') 编辑订单
+        li
+          p.order-status 交易完成
+          .order-per
+            img(src="")
+            .order-txt
+              span 7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款
+            .order-price
+              span ￥58.80
+          p.order-sum 共12件商品 合计：￥
+            span.bing-font 117
+            | .60（含运费￥0.00）
+          .btn-wrap
+            a.a-btn-bggrey 删除订单
+        li
+          p.order-status 待付款（线下支付）
+          .order-per
+            img(src="")
+            .order-txt
+              span 7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款
+            .order-price
+              span ￥58.80
+          p.order-sum 共12件商品 合计：￥
+            span.bing-font 117
+            | .60（含运费￥0.00）
+          .btn-wrap
+            ul
+              li
+                a.a-btn-bggrey 删除订单
+              li
+                a.a-btn-bgred 确认付款
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

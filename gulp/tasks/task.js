@@ -11,7 +11,6 @@ var gulpBabel = require('gulp-babel');
 
 var browserSync = require('browser-sync');
 var runSequence = require("run-sequence");
-var imageMin = require('gulp-imagemin');
 var gulpCache = require('gulp-cache');
 var del = require('del');
 

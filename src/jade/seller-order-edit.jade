@@ -1,0 +1,100 @@
+extends layout/layout
+
+block append headTitle
+  title 编辑订单
+
+block content
+  section.sticky-cont.seller-wait-pay
+    .sec
+      .sec-title 待付款
+      .sec-address
+        span.address-icon
+        p.clearfix 收件人：张海泽
+          span.fr 13688888888
+        p 收件地址： 浙江省  绍兴市  诸暨市滨江南路滨江 南路
+      .order-detail
+        .order-per
+          img(src="")
+          .order-txt
+            span 7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款
+          .order-price 单价：
+            span.red-font ￥
+              i.big-font 22
+              |.50
+            |/手
+
+        .order-table
+          table(width="100%" cellpadding="0" cellspacing="0")
+            tr
+              th(width="33%") 颜色
+              th(width="34%") 尺码
+              th(width="33%") 进货量(手)
+            tr
+              td 名族风款
+              td
+                p M (约3-5岁)
+                p l (约6-8岁)
+                p XL (约9-12岁)
+              td
+                p 12
+                p 12
+                p 12
+            tr
+              td 拼色款
+              td
+                p M (约3-5岁)
+                p l (约6-8岁)
+              td
+                p 12
+                p 12
+            tr.bg-grey.border-top
+              td 商品总价
+              td
+              td ￥117.60
+            tr.bg-grey
+              td 运费（快递）
+              td
+              td ￥0.00
+            tr.bg-grey
+              td 付款方式
+              td
+              td 线下支付
+            tr.bg-grey.big-font
+              td 订单总价
+              td
+              td ￥117.60
+            tr.big-font
+              td 实付款
+              td
+              td.red-font ￥117.60
+                span.arrow-icon
+
+
+
+  footer.sticky-foot.seller-wait-pay.clearfix
+    ul.sec-bottom
+      li
+        a.delete-btn 删除
+      li
+        a.sure-btn 确认支付
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

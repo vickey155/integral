@@ -1,19 +1,23 @@
+@charset "UTF-8";
 body, ul, li, h1, h2, h3, h4, p, input, textarea, span, div, em, strong, dl, dt, dd {
   font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "微软雅黑";
   margin: 0;
   padding: 0;
   -webkit-text-size-adjust: none;
   box-sizing: border-box;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  border: 0; }
 
-a, a:hover, a:visited {
+a, a:link, a:hover, a:visited {
   text-decoration: none;
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
-  -webkit-touch-callout: none; }
+  -webkit-touch-callout: none;
+  color: #999; }
 
 select, input {
+  display: inline-block;
   text-decoration: none;
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
@@ -42,7 +46,7 @@ img {
   border: none;
   vertical-align: middle; }
 
-.cf:after {
+.clearfix:after {
   clear: both;
   content: ".";
   display: block;
@@ -51,7 +55,7 @@ img {
   line-height: 0;
   visibility: hidden; }
 
-.cf {
+.clearfix {
   *zoom: 1; }
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {

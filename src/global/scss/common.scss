@@ -1,15 +1,21 @@
 
-html,body{width:100%;overflow-x:hidden;overflow-y:auto;background-color: #efeff4;}
-*{box-sizing: border-box;font-family:"Helvetica Neue", Helvetica, sans-serif;line-height: 1.5}
-body{padding:0;color:#3d4145;}
-img,span,a{display: inline-block;vertical-align: top;}
+html,body{width:100%;height: 100%;overflow-x:hidden;overflow-y:auto;background-color: #f2f2f2;}
+*{box-sizing: border-box;font-family:"微软雅黑";}
+body{padding:0; color: #333;}
+img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
 h1{font-weight:normal;margin:0; padding:0;}
 .fl{float: left;}
 .fr{float:right;}
+$bg:#f2f2f2;
 $white:#fff;
-$defaultC:#3d4145;
 $c3:#333;
-$blue:#0894ec;
+$c6:#666;
+$c9:#999;
+$d9:#d9d9d9;
+$blue:#4b61d1;
+$red:#dd1718;
+$border-w:0.04rem;
+$borderRadius:0.1rem;
 @mixin opacity_bg($opa:0.8,$col:#000){
   background-color: $col;
   opacity: $opa;
@@ -33,901 +39,1676 @@ $blue:#0894ec;
     font-size:$val + 0.06rem;;
   }
 }
-@mixin fontFormat($fz:1rem,$fc:$defaultC,$ta:left,$wgt:normal){
+//- @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.5rem);
+@mixin fontFormat($fz:1rem,$fc:$c3,$ta:left,$lh:0.6rem){
   color:$fc;
   text-align: $ta;
-  font-weight: $wgt;
+  line-height: $lh;
   @media screen and (max-width: 321px) {
-    font-size:$fz;
+    font-size:$fz+0.04rem;
   }
   @media screen and (min-width: 321px) and (max-width:400px) {
-    font-size:$fz + 0.01rem;
+    font-size:$fz + 0.03rem;
   }
   @media screen and (min-width: 400px) and(max-width:640px) {
-    font-size:$fz + 0.02rem;
+    font-size:$fz;
   }
   @media screen and (min-width: 640px) {
-    font-size:$fz + 0.04rem ;
+    font-size:$fz ;
   }
+}
+@mixin fontFormatS($fz:1rem,$fc:$c3,$ta:left,$lh:0.6rem){
+  color:$fc;
+  text-align: $ta;
+  line-height: $lh;
+  @media screen and (max-width: 321px) {
+    font-size:$fz+0.06rem;
+  }
+  @media screen and (min-width: 321px) and (max-width:400px) {
+    font-size:$fz + 0.05rem;
+  }
+  @media screen and (min-width: 400px) and(max-width:640px) {
+    font-size:$fz + 0.03rem;;
+  }
+  @media screen and (min-width: 640px) {
+    font-size:$fz + 0.02rem;;
+  }
+}
+$a-btn-radius:0.1rem;
+.a-btn{
+  border-radius:$a-btn-radius;
+  text-align: center;
+  background-color: $white;
+  border:0.02rem solid $blue;
 }
 
-/* VIPapply.html */
-.vipsection{
-  min-height: 100%;
-  .banner{
-      width: 100%;
-      height:2.8rem;
-  }
-  .sec{
-    padding: 0.4rem 0.2rem;
-    .wrapper{
-      background:#fff;
-      box-shadow:0 0.02rem 0.03rem rgba(0, 0, 0, 0.3);
-      border-radius:0.04rem;
-      margin-bottom: 0.2rem;
-      text-align: center;
-      padding:0.28rem 0.2rem;
-      h2{
-         @include fontFormat($fz:0.36rem,$fc:#3d4145,$ta:center,$wgt:bold);
-      }
-      p{
-        @include fontFormat($fz:0.28rem,$fc:#3d4145,$ta:center,$wgt:bold);
-      }
-      p.price{
-        @include fontFormat($fz:0.48rem,$fc:#09F,$ta:center,$wgt:bold);
-      }
-      p.font-blue{
-        color: #09F;
-      }
-      p.font-s{
-        font-size:0.26rem;
-        margin-top: 0.05rem;
-      }
-    }
-    .btn{
-      overflow: hidden;
-      margin-left: -4%;
-      margin-top:0.4rem;
-      a{
-        width:46%;
-        margin-left: 4%;
-        border-radius:0.1rem;
-        @include fontFormat($fz:0.26rem,$fc:#fff,$ta:center);
-      }
-      a.blue-btn{
-        background-color:#0894ec;
-      }
-      a.yellow-btn{
-        background-color:#F90;
-      }
-    }
-  }
+.a-btn-wrap{text-align: center;}
+.btn-a{
+  @extend .a-btn;
+  width:6.5rem;
+  height:1.2rem;
+  @include fontFormat($fz:0.48rem,$fc:$blue,$ta:center,$lh:1.2rem);
 }
-/*表单格式*/
-/* form */
-.form-row{
-  $heival:0.48rem;
+.a-btn-bgblue{
+  border-radius:$a-btn-radius;
+  text-align: center;
+  background-color: $blue;
+  border:0.02rem solid $blue;
+}
+.btn-a-red{
+  border-radius:$a-btn-radius;
+  text-align: center;
+  background-color:$white;
+  border:0.02rem solid $white;
+  color: $red;
+}
+.a-btn-red{
+  border-radius:$a-btn-radius;
+  text-align: center;
+  background-color:$white;
+  border:0.02rem solid $white;
+  color: $red;
+}
+.a-btn-bgred{
+  border-radius:$a-btn-radius;
+  text-align: center;
+  background-color: $red;
+  border:0.02rem solid $red;
+  color: $white;
+}
+//省市区
+.select-region{
+   width: 100%;
   overflow: hidden;
-  font-size: 0.30rem;
-  border-bottom:1px solid #e8e8e8;
-  padding: 0.16rem 0 0.16rem 0.05rem;
-  label{
-    float:left;
-    color:#3d4145;
-    font-weight:bold;
-    width:2.2rem;
-    padding: 0.08rem 0;
-  }
-  .txt-wrap{
-    float:right;
-    color: #6d6d72;
-    padding: 0.08rem 0;
-  }
-
-  input[type=text], input[type=number], input[type=date], input[type=file]{
-    font-size: 0.28rem;
-    padding: 0.08rem 0;
-    border: 0.01rem solid transparent;
-    border-radius: 0.07rem;
-    padding-left: 0.1rem;
-    width: 3.5rem;
-    height: 0.56rem;
-    color: $defaultC;
-    overflow: hidden;
-  }
-  input[type=date]{
-    color: #999;
-  }
-  input[type=date].full{
-    color:#3d4145;
-  }
-  input[type=date]::-webkit-outer-spin-button{
-    color: $defaultC;
-  }
-  .inputFile{
-    display: inline-block;
-    position: relative;
-    width: 3.65rem;
-    height: 0.4rem;
-    background: none;
-    padding: 0.08rem 0 0.08rem 0.1rem;
-    line-height: 0.28rem;
-    span{
-      position: absolute;
-      top: 0.2rem;
-      left:0.1rem;
-      z-index:2;
-      color: $blue;
-      font-size: 0.28rem;
-      line-height: 0.28rem;
-      vertical-align: middle;
-    }
-    span.error-input{
-      color: red;
-    }
-    .font-color{
-      color:$defaultC;
-    }
-    input[type=file]{
-      position: absolute;
-      top: 0.12rem;
-      left:0;
-      z-index: 3;
-    }
-    img{
-      max-width: 0.8rem;
-    }
-    .opacity{
-      opacity: 0;
-    }
-  }
-
-  input.varityCode{
-    border:1px solid #b4b4b4;
-    background-color: #fff;
-    width: 3.2rem;
-  }
-  .select-wrapper{
-    padding: 0.08rem 0;
-  }
   select{
-    padding-left: 0.1rem;
-    margin-top: 0.04rem;
-    height: 0.56rem;
-    background:none;
-    border: 0.01rem solid transparent;
-    border-radius: 0.07rem;
+    float: left;
+    width: 33%;
+    padding-top:0.21rem;
+    padding-bottom:0.21rem;
+    height: 1.46rem;
+    background: $white;
+    border: 0.02rem solid $d9;
+    border-left: 0;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
-    @include fontFormat($fz:0.28rem,$fc:$defaultC,$ta:center);
-    color: #999;
+    @include fontFormat($fz:0.48rem,$fc:#979899,$ta:center,$lh:1rem);
+    padding-left: 10%;
   }
-  select.selected{
-    color:$defaultC;
+  select:last-child{
+    border-right:0;
   }
-  .selectM{
-    width:3.6rem;
-  }
-  .select-wrapper{
-    display: inline-block;
-     .selectS{
-       width:1.1rem;
-     }
-  }
-
-  input[type=text].error-input, input[type=number].error-input,input[type=date].error-input,input[type=file].error-input{
-    border-color:red;
-  }
-  .error-input{
-    border-color:red;
-  }
-
 }
-.form-row:last-child{border-bottom: 0;}
-form{
-  .bg-white{
-    margin-bottom:0.2rem;
-    padding:0 0.25rem;
-    .title{
-      color:#3d4145;
-      font-weight:bold;
-      font-size: 0.28rem;
-      margin-bottom: 0.2rem;
-      border-bottom: 1px solid #e8e8e8;
-      line-height: 0.8rem;
-      span{
-        font-weight:normal;
-        color: #999;
-        line-height: 0.8rem;
+//登陆，申请，忘记密码，找回密码页面
+.sec-login{
+  padding-bottom: 1.47rem;
+  .sec-log{
+    padding:0.95rem 0 0.9rem;
+    text-align: center;
+    span{
+       width:1.72rem;
+       height:1.72rem;
+      background-color: #00A4EE;
+    }
+    p{
+      margin-top: 0.1rem ;
+      @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.5rem);
+    }
+  }
+  form{
+    .form-row{
+      background-color: $white;
+      border:0.02rem solid $d9;
+      border-bottom: 0;
+      width: 100%;
+      padding: 0.28rem 0;
+      border-radius:0.04rem;
+      label{
+        width:2.5rem;
+        height:0.6rem;
+        line-height: 0.6rem;
+        font-size: 0.36rem;
+        color:$c9;
+        border-right:1px solid #d9d9d9;
+        span{
+          width:0.6rem;
+          height: 0.6rem;
+          background-color: red;
+          vertical-align: top;
+          margin: 0.01rem 0.1rem;
+        }
       }
+      input[type=text]{
+        background: transparent;
+        width:4.8rem;
+        height:0.6rem;
+        line-height: 0.6rem;
+        font-size: 0.36rem;
+        color:$c3;
+        padding-left: 0.2rem;
+      }
+    }
+    .form-row:last-child{
+      border:0.02rem solid $d9;
+    }
+  }
+  a.bg-blue{
+    background-color: $blue;
+    color:$white;
+  }
+  a.btn-a-red{
+    @extend .a-btn;
+    border:0.02rem solid $red;
+    color: $red;
+    width:2.4rem;
+    height: 0.7rem;
+    @include fontFormat($fz:0.48rem,$fc:$red,$ta:center,$lh:0.7rem);
+    margin-left: 0.2rem;
+  }
+  .btn-a-login{
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+  .password-rember{
+    line-height: 0.6rem;
+    color:$c9;
+    padding: 0.4rem 0.2rem;
+    overflow: hidden;
+    input[type=checkbox]{
+      width:0.5rem;
+      height:0.5rem;
+      border-radius: 0.1rem;
+      border:1px solid $c9;
+      background-color:$white;
+      vertical-align: top;
+      margin-top: 0.05rem;
+    }
+    span{
+      font-size: 0.36rem;
+      margin-left: 0.12rem;
+    }
+    a.forget-pass{
+      text-decoration: underline;
+      font-size: 0.36rem;
+    }
+  }
+  .apply-link{
+    margin-top: 0.6rem;
+    p{
+      @include fontFormat($fz:0.4rem,$fc:$c3,$ta:center,$lh:0.68rem);
+    }
+  }
+  ///商户申请成功
+  form{
+    .form-row{
+      input.input-text-s{
+        width: 2.9rem;
+      }
+    }
+  }
+  .btn-a-code{
+    @extend .a-btn;
+    width:1.6rem;
+    height:0.6rem;
+    @include fontFormat($fz:0.24rem,$fc:$white,$ta:center,$lh:0.62rem);
+    background-color: $blue;
+    margin-left: 0.1rem;
+  }
+  //商户申请成功页面
+  .register-suc{
+    .btn-a-login{
+       margin-top: 0;
     }
     .btn-a{
-      padding-top: 0.1rem;
-      a{
-        min-width:2.2rem;
-        padding:0 0.2rem;
-      }
-      a.active {
-        border-color: #0894ec;
-        color: #0894ec;
-      }
-      a:last-child{
-        margin-right: 0;
-      }
-    }
-  }
-  .bg-white:first-child{padding-top: 0;padding-bottom:0.2rem;}
-  .wrap-s{
-    padding:0 0.25rem 0.3rem;
-  }
-}
-/*提交按钮*/
-
-.btn-radius{
-  border-radius:0.08rem;
-}
-.btn-a{
-  a{
-    padding:0 0.6rem;
-    border-radius:0.1rem;
-    border:1px solid #6e727b;
-    @include fontFormat($fz:0.28rem,$fc:#5f646e,$ta:center);
-    padding: 0.16rem 0;
-    margin-right: 0.3rem;
-  }
-}
-.a-btn{
-  padding: 0.08rem 0.06rem;
-  border-radius:0.1rem;
-  @include fontFormat($fz:0.28rem,$fc:#fff,$ta:center);
-}
-
-.submit-a{
-  $w:92%;
-  @extend .a-btn;
-  width: $w;
-  margin-left:(100%-$w)/2;
-  margin-top: 0.7rem;
-}
-.codeBtn{
-  @extend .a-btn;
-  background-color: #0894ec;
-  margin-left: 0.25rem;
-  padding:0.06rem 0.1rem;
-}
-/*蓝色按钮*/
-.a-btn-blue{
-  background-color: #0894ec;
-}
-.a-btn-red{
-  background-color: #F00;
-}
-.a-btn-green{
-  background-color: #0C0;
-}
-.a-btn-orange{
-  background-color: #F60;
-}
-/*右侧箭头*/
-.arrow{
-  width: 0.16rem;
-  height: 0.28rem;
-  background: url("/global/images/sel.png") no-repeat 0 0/cover;
-}
-
-$pl:0.2rem;
-.sec{
-  padding-bottom: 0.8rem;
-  p{
-    @include fontFormat($fz:0.26rem,$fc:#6d6d72);
-    padding: 0.1rem 0 0.1rem $pl;;
-
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-top:0.3rem;
-  }
-}
-.bg-white{
-  background-color: #fff;
-  padding:0 $pl;
-}
-/*客户详情*/
-.customerDetail{
-}
-
-/*抵押贷款*/
-
-
-/*banner*/
-.banner{
-  width: 100%;
-  height: 2.8rem;
-  img{
-    width: 100%;
-    height: 100%;
-    border:0;
-    overflow: hidden;
-    outline: none;
-  }
-  .avater{
-    img{
-      border-radius: 50%;
-    }
-  }
-}
-
-
-/*贷款申请首页*/
-.font-family{  }
-.loan-index{
-  .sec{
-    p{
-      @include fontFormat($fz:0.24rem,$fc:#6d6d72);
-      line-height: 0.6rem;
-      margin-top: 0.2rem;
-    }
-    .div-wrapper{
-      display: block;
-      padding: 0.1rem 0;
-      border-bottom: 1px solid #d0d0d0;
-      h2{
-        @include fontFormat($fz:0.31rem,$fc:#333,$wgt:bolder);
-        font-family: '微软雅黑';
-        line-height: 0.6rem;
-        span{
-          float: right;
-          font-weight: normal;
-        }
-      }
-      .contont{
+      width: 5rem;
+      .ok-icon{
+        width: 0.6rem;
+        height:0.6rem;
         position: relative;
-        padding-bottom:0.1rem;
-        p{
-          @include fontFormat($fz:0.28rem,$fc:#333);
-          line-height: 0.46rem;
-          padding: 0;
-          margin-top: 0.1rem;
-        }
-        p.font-bold{
-          font-weight: bold;
-        }
-        p.font-color{
-          font-weight: bold;
-          color: #ea8010;
-          line-height:0.36rem;
-        }
-        .a-arrow{
-          @extend .arrow;
-          position: absolute;
-          top:0.25rem;
-          right: 0.1rem;
-        }
+        background-color: red;
+        margin-top: 0.3rem;
+        margin-right: 0.2rem;
+
       }
     }
-    .div-wrapper:last-child{
-      border-bottom: 0;
+    .suc-txt{
+      margin-top:0.7rem ;
+      p{
+        @include fontFormat($fz:0.46rem,$fc:$c3,$ta:center,$lh:0.62rem);
+      }
     }
   }
+
 }
-/*固定底部*/
-.fixed-footer{
-  position: fixed;
+
+//sticky固定顶部布局
+$footH:2rem;
+.sticky-cont{
+  min-height: 100%;
+  padding-bottom: $footH;
+  .sec{
+    padding-bottom: 3rem;
+  }
+}
+.sticky-foot{
+  position: relative;
   bottom: 0;
-  left:0;
+  left: 0;
+  z-index: 10;
+  height: $footH;
+  margin-top: -$footH;
   width:100%;
-  height:1rem;
-  z-index: 99;
-  background: #f7f7f8;
   ul{
     overflow: hidden;
     li{
       float: left;
-      width: 33%;
-      padding: 0.15rem 0;
-      a{width: 100%; text-align: center;}
-      .trangle{
-        border:1px solid #929292;
-        font-size: 0.20rem;
-        line-height: 0.3rem;
-        text-align: center;
-        width: 0.24rem;
-        height: 0.3rem;
-        position: relative;
-        top:0.08rem;
-        em{
-          $h:0.26rem;
-          display: inline-block;
-          width: $h;
-          border-radius: 50%;
-          background-color: red;
-          @include fontFormat($fc:#fff,$ta:center,$fz:0.18rem);
-          line-height: $h+0.01rem;
-          font-style: normal;
-          position: absolute;
-          top:-0.15rem;
-          right: -0.16rem;
-          z-index: 2;
-        }
-      }
-      p{
-        color: #929292;
-        padding:0.02rem 0;
-        text-align: center;
-        font-size: 0.28rem;
-
-      }
-      a.active{
-        .trangle{
-          border-color:#0894ec;
-        }
-        p{
-          color:#0894ec;
-        }
-      }
-    }
-  }
-}
-
-/*二次贷款贷款申请*/
-.loan-applay-second{
-   p.page-state{
-     margin:0.4rem 0 0.1rem;
-   }
-  form{
-    .a-long-txt{
-      a{
-        padding:0 0.14rem;
-        margin-right:0.2rem;
-        min-width: 1.8rem;
-      }
-      a:last-child{margin-right: 0;}
-    }
-  }
-
-  .sec-hide{
-    display: none;
-  }
-}
-
-
-/*myCustomer*/
-.tap-wrapper{
-  .tab-btn{
-    a{
-      width: 33%;
-      border-bottom: 0.05rem solid #fff;
-      background-color: #fff;
-      @include fontFormat($fz:0.3rem,$ta:center,$fc:#5f646e);
-      padding: 0.1rem 0;
-    }
-    a:last-child{
-      width: 34%;
-    }
-    a.active{
-      border-color:#0894ec;
-      color:#0894ec;
-    }
-  }
-}
-.myCustomer{
-  .tab-content{
-    padding:0.6rem 0.4rem 0;
-  }
-  .per-page{
-    background-color: #fff;
-    border-radius:0.05rem;
-    box-shadow: 0 0.02rem 0.04rem rgba(0, 0, 0, 0.3);
-    margin-bottom: 0.2rem;
-    h1{
-      @include fontFormat($fz:0.3rem,$fc:#6d6d72,$wgt:bold);
-      padding:0.15rem 0 0.15rem 0.22rem;
-      border-bottom:0.05rem solid #efeff4;
-      line-height: 0.5rem;
-      span.font-red{
-        @include fontFormat($fz:0.28rem,$fc:#eb1919);
-        line-height: 0.5rem;
-        float: right;
-        padding-right:0.22rem;
-      }
-    }
-    p{
-      margin: 0;
-      @include fontFormat($fz:0.26rem,$fc:#6d6d72);
-      padding:0.15rem 0 0.15rem 0.22rem;
-    }
-  }
-}
-/*个人中心*/
-.personCenter{
-  .banner {
-    width: 100%;
-    height: 5.12rem;
-    background: url('/global/images/user-money-bg.jpg') no-repeat 0 0;
-    .row-t{
-      padding-top:0.4rem;
-      text-align: center;
-      .avater{
-        border-radius: 50%;
-        background-color: #666;
-        height: 1.7rem;
-        width:1.7rem;
-        border: 0;
-        text-align: center;
-      }
-      p{
-        @include fontFormat($fz:0.34rem,$fc:#3d4145,$ta:center,$wgt:bold);
-        line-height: 0.4rem;
-      }
-      p.name{
-        margin-top: 0.18rem;
-      }
-      p.inviteCode{
-        font-size: 0.26rem;
-        span{
-          font-size: 0.26rem;
-        }
-      }
-    }
-    .row-b{
-      overflow: hidden;
-      margin-top: 0.3rem;
-      li{
-        float:left;
-        width: 50%;
-      }
-      p{
-        @include fontFormat($fz:0.34rem,$fc:#fff,$ta:center,$wgt:bold);
-        line-height: 0.5rem;
-      }
-      p.money{
-        font-size: 0.38rem;
-        margin-bottom: 0.05rem;
-        font-weight: bolder;
-      }
-    }
-  }
-  .bg-white{
-    margin-top: 0.3rem;
-    ul{
-      overflow: hidden;
-      li{
-        padding: 0.05rem 0;
-        position: relative;
-        border-bottom: 1px solid #eee;
-        a{
-          width: 100%;
-          padding-right: 0.3rem;
-          @include fontFormat($fz:0.3rem,$fc:#0894ec,$wgt:bold);
-          line-height: 0.6rem;
-          span{
-            font-weight: normal;
-            line-height: 0.6rem;
-            color:#5f646e;
-            float: right;
-          }
-          em.arrow{
-            @extend .arrow;
-            position: absolute;
-            top:0.2rem;
-            right: 0;
-          }
-        }
-      }
-    }
-  }
-}
-header{
-  p{
-    @include fontFormat($fz:0.28rem,$fc:#3d4145,$ta:center);
-    line-height: 0.5rem;
-    padding: 0.1rem;
-    background-color: #f7f7f7;
-    position: relative;
-    .goback{
-      position: absolute;
-      top: 0.15rem;
-      left: 0;
-      color: #0894ec;
-      padding-left: 0.3rem;
-    }
-  }
-}
-
-
-/*充值按钮*/
-.recharge-btn{
-  padding: 0 0.25rem;
-  a{
-    width: 100%;
-    @extend .submit-a;
-    margin:0.75rem 0 0;
-  }
-  a.a-btn-blue{
-    background-color: #09F;
-  }
-  a.a-btn-red{
-    background-color: #F00;
-  }
-  a.a-btn-green{
-    background-color: #0C0;
-  }
-  a.a-btn-orange{
-    background-color: #F60;
-  }
-}
-/*充值页面*/
-.recharge{
-  padding-top: 0.4rem;
-  .recharge-btn{
-    @extend  .recharge-btn
-  }
-
-}
-
-/*.VIPapply*/
-.VIPapply{
-  div{
-    width: 100%;
-    height:2.8rem;
-  }
-  .banner{
-  }
-  .sec01{
-     img{
-       width: 100%;
-       height:100%;
-     }
-  }
-  .sec02{
-    img{
-      width: 100%;
-      height:100%;
-    }
-  }
-  .submit-a{
-    margin-top: 0.7rem;
-  }
-}
-
-/*提交成功*/
-.submitSuccess{
-  .banner{
-    width: 100%;
-    height: 2.8rem;
-    text-align: center;
-    position: relative;
-    .txt-wrap{
-      position: absolute;
-      top:0;
-      left:0;
-      z-index: 4;
-      height: 100%;
-      width: 100%;
-    }
-
-    h1{
-      @include fontFormat($fz:0.4rem,$fc:$defaultC,$ta:center,$wgt:bold);
-      line-height: 0.8rem;
-    }
-    .hightest{
-      margin-top: 0.2rem;
-      p{
-        @include fontFormat($fz:0.34rem,$fc:#fff,$ta:center,$wgt:bold);
-        line-height: 0.6rem;
-      }
-      p.money{
-        font-size:0.55rem;
-      }
-    }
-    .payDate{
-      margin-top: 0.55rem;
-      p{
-        @include fontFormat($fz:0.24rem,$fc:$defaultC,$ta:center,$wgt:bold);
-        line-height: 0.4rem;
-      }
-    }
-  }
-  .sec{
-
-  }
-  .wrapper{
-    padding-top:0.25rem;
-    p{
-      @include fontFormat($fz:0.28rem,$fc:#6d6d72);
-      padding-left: 0.28rem;
-    }
-    .submit-a{
-      margin-top: 0.16rem;
-      background:#F00;
-      border: 0;
-      padding: 0.06rem 0;
-    }
-
-  }
-}
-
-/*信贷员中心*/
-.creditOfficer{
-  .banner{
-    background-image: url('/global/images/user-money-bg1.jpg');
-  }
-
-  .recharge-btn{
-    a.a-btn-orange{
-      background-color: #F60;
-      margin-top: 0.3rem;
-    }
-  }
-  .bg-white{
-    margin-top: 0.4rem;
-  }
-}
-/* 信贷员的 我的客户 */
-.credit-myCustomer{
-  .select-filter{
-    background-color: #fff;
-    overflow: hidden;
-    padding: 0.2rem 0;
-     select{
-       width:33% ;
-       float: left;
-       background:none;
-       border: 1px solid transparent;
-       appearance: none;
-       -webkit-appearance: none;
-       outline: none;
-       @include fontFormat($fz:0.3rem,$fc:$defaultC,$ta:center);
-       padding-left:10%;
-       color: #999;
-     }
-  }
-  .sec-content{
-    padding: 0.6rem 0.2rem 0;
-  }
-  .per-page{
-    background-color: #fff;
-    border-radius:0.05rem;
-    box-shadow: 0 0.01rem 0.01rem rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.2rem;
-    padding:0.2rem 0;
-    p{
-      margin: 0;
-      @include fontFormat($fz:0.26rem,$fc:#6d6d72);
-      padding:0.15rem 0.25rem 0;
-    }
-    table{
-      width: 94%;
-      margin:0.2rem 3%;
-      display: table;
-      table-layout: fixed;
-      th,td{
-        vertical-align: top;
-        @include fontFormat($fz:0.26rem,$fc:#666,$wgt:bold);
-        line-height: 0.34rem;
-        padding:0.15rem 0;
-        word-wrap: break-word;
-        word-break: break-all;
-      }
-
-    }
-    .view-detail{
-      border-top:1px solid #efeff4;
-      height: 0.6rem;
-      a{
-        float: right;
-        @include fontFormat($fz:0.24rem,$fc:$blue);
-        line-height: 0.85rem;
-        margin-right: 0.3rem;
-      }
-    }
-  }
-}
-
-/*信用卡*/
-.creditCard{
-  p.title{
-    color:#363636;
-    font-size: 0.28rem;
-    text-align: center;
-    padding: 0.15rem 0;
-    background-color: #fff;
-    border-bottom:1px solid #ebebea;
-  }
-  .card-list{
-    background-color: #fff;
-    overflow: hidden;
-    margin-bottom: 0.4rem;
-    li{
-      float:left;
       width: 50%;
-      border-right:1px solid #ebebea;
-      border-bottom:1px solid #ebebea;
-      overflow: hidden;
-      padding:0.2rem 0.25rem;
-    }
-    .col-l{
-      float: left;
-      height: 100%;
-      padding-right: 0.1rem;
-       img{
-         width: 0.7rem;
-         height:0.7rem;
-         vertical-align: middle;
-         margin-top: 0.05rem;
-       }
-    }
-    .col-r{
-       p.row-t{
-         float: left;
-         font-size: 0.3rem;
-         color:$c3;
-         line-height:0.42rem;
-         span.hot-red{
-           width:0.56rem;
-           height:0.32rem;
-           text-align: center;
-           font-size:0.18rem;
-           color: #ff302e;
-           border: 0.01rem solid #ff302e;
-           border-radius: 0.02rem;
-           margin-left: 0.05rem;
-           line-height: 0.3rem;
-         }
-       }
-      p.row-b{
-        font-size: 0.23rem;
-        color:#999;
-        line-height:0.42rem;
-      }
     }
   }
-  .view-process{
+  .li-2{
+    li{
+      width: 50%;
+    }
+  }
+  .li-3{
+    li{
+      width: 33%;
+    }
+  }
+  a{
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $red;
+    @include fontFormat($fz:0.72rem,$fc:$white,$ta:center,$lh:$footH);
+  }
+  a.delete-btn{
+    background-color:$d9;
+  }
+  a.a-btn-bggrey{
+    background-color: $d9;
+  }
+  a.a-btn-bgred{
+    background-color: $red;
+  }
+  a.a-btn-bgblue{
+    background-color: $blue;
+  }
+}
+.set-pw{
+  background-color: $white;
+   .form-row{
+      padding:0.8rem 0.7rem 0;
+     input[type=text]{
+       width: 100%;
+       border:0.04rem solid $d9;
+       height: 1.57rem;
+       padding: 0.3rem;
+       @include fontFormat($fz:0.6rem,$fc:c3,$lh:0.97rem);
+     }
+   }
 
-    p{
-       @include fontFormat($fz:0.3rem,$fc:$c3);
-      line-height: 0.4rem;
-      padding: 0.2rem 0.25rem;
+}
+
+// 新品发布
+.new-product-release{
+  background-color: $white;
+  .margin-b{
+    margin-bottom: 0.5rem;
+  }
+  .sec-fill{
+    padding: 0 0.7rem;
+  }
+  .fill-line{
+    display:block;
+    position: absolute;
+    top:0.7rem;
+    content:"";
+    width:4.4rem;
+    border-bottom: 0.04rem solid $c9;
+  }
+  .sec-fill-title{
+    position: relative;
+    @include fontFormat($fz:0.48rem,$fc:$c9,$ta:center,$lh:1.4rem);
+    height: 1.4rem;
+    &:before{
+      @extend .fill-line;
+      left: 0;
+    }
+    &:after{
+      @extend .fill-line;
+      right: 0;
+    }
+  }
+  .form-row{
+    padding-bottom: 0.3rem;
+    position: relative;
+    input[type=text]{
+      background: $white;
+      width:100%;
+      height:1.62rem;
+      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.92rem);
+      padding: 0.35rem;
+      border-radius:$borderRadius;
+      border:$border-w solid $d9;
+      @extend .margin-b;
+    }
+  }
+  .select-wrapper{
+    position: relative;
+    .icon-caret-down{
+      position: absolute;
+      right: 0.36rem;
+      top: 0.46rem;
+      font-size: 0.6rem;
+      color:$c9;
+    }
+    select{
+      width:100%;
+      height:1.55rem;
+      padding:0.35rem;
+      border:0.04rem solid $d9;
+      border-radius:$borderRadius;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      @include fontFormat($fz:0.48rem,$fc:$c9,$lh:0.65rem);
+      @extend .margin-b;
+    }
+    select.selected{
+      color:$c3;
+    }
+    .select-wrapper-s{
       position: relative;
-      .oclok-icon{
-        width: 0.38rem;
-        height: 0.38rem;
-        margin-right: 0.25rem;
-        margin-top: 0.02rem;
-        background: url('/global/images/clock.png') no-repeat 0 0/cover;
+      float: left;
+      margin-right: 0.36rem;
+      .select-s{
+        width: 4rem;
       }
-      .arrow{
-        float: right;
+    }
+
+  }
+  .a-tab-wrap{
+    .a-tab{
+      width:2.54rem;
+      height: 1.5rem;
+      @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1.5rem);
+      background-color: $c9;
+      border:$border-w solid $d9;
+      border-radius:$borderRadius;
+      margin-right: 0.44rem;
+      @extend .margin-b;
+    }
+    .a-tab:last-child{
+      background-color: $white;
+      color:$c9;
+    }
+    .active{
+      background-color: $red;
+      boder-color:$red;
+    }
+    .grey-bg{
+      background-color: $c9;
+    }
+  }
+  .tab-w-s{
+    .a-tab{
+      width:2.04rem;
+    }
+    .a-tab-orange{background-color: #fe6500;}
+  }
+  .last-grey-bg{
+    .a-tab:last-child{
+      background-color: $c9;
+      color: $white;
+    }
+  }
+  .form-row{
+    .row-title{
+      height:1.18rem;
+      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.7rem);
+    }
+    .row-cont{
+      overflow: hidden;
+      input[type=text]{
+        float: left;
+        margin-right: 0.36rem;
+      }
+      input[type=text].input-text-s{
+        width: 4rem;
+      }
+      input[type=text].input-text-l{
+        width:6.6rem;
+        margin-right:0;
+      }
+      .add-btn{
+        float: left;
+        height: 1.16rem;
+        width: 1.16rem;
+        background-color: $c9;
+        margin-top: 0.25rem;
+        border-radius: $borderRadius;
+        @include fontFormat($fz:1rem,$fc:$white,$ta:center,$lh:0.96rem);
+      }
+      .magin-top{
         margin-top: 0.1rem;
       }
     }
   }
+  .upload-pic{
+    ul{
+      overflow: hidden;
+      li{
+        float: left;
+        width:2.66rem;
+        height: 2.66rem;
+        margin-right: 0.8rem;
+        @extend .margin-b;
+        img{
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+      }
+      li.add-li{
+        .add-btn{
+          width: 100%;
+          height: 100%;
+          border:$border-w solid $d9;
+          @include fontFormat($fz:2.6rem,$fc:$d9,$ta:center,$lh:2.2rem);
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+//卖家中心
+.seller-sec{
+  .sec-top{
+    padding:1.5rem 0 0.6rem;
+    background: url('../../global/images/seller-bg.jpg') repeat-x 0 center;
+    .avatar{
+      text-align: center;
+      img{
+        height:3.04rem;
+        width: 3.04rem;
+        border: 0.1rem solid $white;
+        border-radius: 50%;
+      }
+    }
+    p{
+      @include fontFormat($fz:0.72rem,$fc:#f2f2f2,$ta:center,$lh:1.2rem);
+    }
+    .seller-name{
+      @include fontFormat($fz:0.6rem,$fc:#f2f2f2,$ta:center,$lh:1rem);
+    }
+    .a-btn-wrap{
+      text-align: center;
+      .a-btn-bg-red{
+        width:11rem;
+        height: 1.2rem;
+        @include fontFormat($fz:0.72rem,$fc:$white,$ta:center,$lh:1.2rem);
+        background-color: $red;
+        border-color:$red;
+      }
+    }
+    .a-link-opt{
+      margin-top: 0.96rem;
+      li{
+        float:left;
+        width:25%;
+        text-align: center;
+        a{
+          width: 100%;
+          position: relative;
+          &:after{
+            height:1.5rem ;
+            border-right: $border-w solid $white;
+            content:'';
+            display: block;
+            position: absolute;
+            top: 0.24rem;
+            right: 0;
+          }
+        }
+        span.icon{
+          width:1.3rem;
+          height: 1.3rem;
+        }
+        span.icon01{
+          background: url('../../global/images/seller-icon01.png') no-repeat 0 0 /cover;
+        }
+        span.icon02{
+          background: url('../../global/images/seller-icon02.png') no-repeat 0 0 /cover;
+        }
+        span.icon03{
+          background: url('../../global/images/seller-icon03.png') no-repeat 0 0 /cover;
+        }
+        span.icon04{
+          background: url('../../global/images/seller-icon04.png') no-repeat 0 0 /cover;
+        }
+        span.circle-red{
+          height: 0.82rem;
+          width: 0.82rem;
+          border-radius: 50%;
+          background-color: $red;
+          position: absolute;
+          top:-0.41rem;
+          right: 0.5rem;
+          @include fontFormat($fz:0.6rem,$fc:$white,$ta:center,$lh:0.82rem);
+        }
+        p{
+          margin-top: 0.05rem;
+          @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:0.88rem);
+        }
+
+      }
+      li:last-child{
+        a:after{
+          height: 0;
+        }
+      }
+    }
+  }
+  .sec-list{
+    background-color: $white;
+    margin-top: 0.4rem;
+    border-top:$border-w solid $d9;
+    padding-left: 0.7rem;
+    padding-bottom: 8rem;
+    ul{
+      li{
+        padding: 0.35rem 0.3rem;
+        border-bottom:$border-w solid $d9;
+        a{
+          display: block;
+          font-size: 0;
+          padding-right: 1.14rem;
+          position: relative;
+        }
+        .icon{
+          height: 1.1rem;
+          width: 1.1rem;
+          margin-right: 0.25rem;
+        }
+        span.icon01{
+          background: url('../../global/images/seller-icon11.png') no-repeat 0 0 /cover;
+        }
+        span.icon02{
+          background: url('../../global/images/seller-icon12.png') no-repeat 0 0 /cover;
+        }
+        span.icon03{
+          background: url('../../global/images/seller-icon13.png') no-repeat 0 0 /cover;
+        }
+        span.icon04{
+          background: url('../../global/images/seller-icon14.png') no-repeat 0 0 /cover;
+        }
+        .txt{
+          @include fontFormat($fz:0.6rem,$fc:$c6,$ta:center,$lh:1.1rem);
+        }
+        .status{
+          float: right;
+          @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.1rem);
+        }
+        i.icon-angle-right{
+          display: inline-block;
+          position: absolute;
+          right: 0.36rem;
+          top: 0.05rem;
+          font-size: 0.96rem;
+          color: $c9;
+        }
+      }
+    }
+  }
+}
+
+.circle-choose{
+  span{
+    border-radius: 50%;
+    border: 0.06rem solid $c9;
+    height:0.9rem;
+    width: 0.9rem;
+    position: relative;
+    .icon-ok{
+      font-size: 0;
+    }
+  }
+  span.active{
+    border-color:$red;
+    background-color: $red;
+    color: $white;
+    font-size: 0.6rem;
+    .icon-ok{
+      color: $white;
+      font-size: 0.58rem;
+      position: absolute;
+      top:0.1rem;
+      left:0.1rem;
+    }
+  }
+}
+
+//common 搜索查询
+.sec-serch{
+  padding: 0.2rem;
+  input[type=text]{
+    background: $white;
+    width:8.96rem;
+    height:1.12rem;
+    padding:0.3rem 0.2rem;
+    @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.52rem);
+    border-radius:$borderRadius;
+  }
+  .a-btn-bgred{
+    width:2.86rem;
+    height:1.12rem;
+    @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1.08rem);
+    margin-left: 0.2rem;
+  }
+}
+//common 现货 订货 status-title
+.status-cont{
+  .status-title{
+    height: 1.6rem;
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.8rem);
+    span{
+      margin-top: 0.12rem;
+      margin-right: 0.2rem;
+      width:1.2rem;
+      height:0.6rem;
+      @extend .a-btn-bgred;
+      @include fontFormatS($fz:0.36rem,$fc:$white,$ta:center,$lh:0.6rem);
+      background-color: #b60613;
+      border-color:#b60613;
+    }
+    span.now-goods{
+      background-color: #b60613;
+      border-color:#b60613;
+    }
+    span.book-goods{
+      background-color: #ff6600;
+      border-color:#ff6600;
+    }
+  }
+}
+//货品管理
+.seller-goods-sec{
+  .sec-manage-list{
+    padding-bottom: 0.4rem;
+    background-color: #e6e3e3;
+    border-top:$border-w solid $c9;
+    ul{
+      li{
+        padding:0.5rem 0.4rem;
+        background-color: $white;
+        border-bottom:$border-w solid $c9;
+        overflow: hidden;
+        .circle-choose{
+          float: left;
+          height: 3.62rem;
+          line-height: 3.62rem;
+          margin-right: 0.3rem;
+          span{
+             vertical-align: middle;
+          }
+          img{
+            margin-left: 0.3rem;
+            height:3.6rem;
+            width:3.5rem;
+          }
+        }
+        .status-cont{
+          float: left;
+          width: 6.62rem;
+          .status-title{
+            height: 1.5rem;
+            width: 100%;
+            overflow: hidden;
+            @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.75rem);
+            span{
+              margin-top: 0.12rem;
+              margin-right: 0.2rem;
+              width:1.2rem;
+              height:0.58rem;
+              font-size: 0.36rem;
+              line-height: 0.58rem;
+              @extend .a-btn-bgred;
+              background-color: #b60613;
+              border-color:#b60613;
+            }
+            span.now-goods{
+              background-color: #b60613;
+              border-color:#b60613;
+            }
+            span.book-goods{
+              background-color: #ff6600;
+              border-color:#ff6600;
+            }
+            a.icon-trash{
+              float: right;
+              margin-right: 0.01rem;
+              display: inline-block;
+              width:0.7rem;
+              height: 0.7rem;
+              padding:0.1rem 0.2rem;
+            }
+          }
+          .status-detail{
+            background-color: #f7f5f5;
+            padding:0.2rem 0.2rem 0.15rem;
+            p{
+              @include fontFormat($fz:0.3rem,$fc:$c6,$lh:0.5rem);
+              margin-bottom: 0.1rem;
+            }
+            .num-wrap{
+              overflow: hidden;
+              span{
+                float: left;
+                @include fontFormat($fz:0.36rem,$fc:#b60613,$lh:0.5rem);
+                margin-bottom: 0.09rem;
+                margin-right: 0.2rem;
+                i{
+                  font-style: normal;
+                  @include fontFormat($fz:0.24rem,$fc:#b60613,$lh:0.5rem);
+                  margin-left: 0.1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.seller-goods-sec{
+  padding-bottom: 5.9rem
+}
+.seller-goods-footer{
+  height: 5.9rem;
+  margin-top: -5.9rem;
+  .shelve{
+    float:right;
+    margin-right: 0.4rem;
+    .circle-add-btn{
+      height: 3.08rem;
+      width: 3.08rem;
+      background-color:$red;
+      border-radius: 50%;
+      @include fontFormat($fz:3rem,$fc:$white,$ta:center,$lh:2.6rem);
+    }
+    p{
+      @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:1.36rem);
+    }
+  }
+  ul.sec-bottom{
+    width: 100%;
+    overflow: hidden;
+    .circle-choose{
+      margin:0 0.3rem;
+      float: left;
+      height: 1.6rem;
+      @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.4rem);
+      span{
+        margin-right: 0.2rem;
+        vertical-align: middle;
+      }
+    }
+    .sumNum{
+      float: left;
+      padding: 0.05rem 0;
+      p{
+        @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.7rem);
+        span.red-font{
+          color: $red;
+        }
+      }
+      p.grey-font{
+        color: $c9;
+      }
+    }
+    a.delete-btn{
+      background-color: $c9;
+      @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1.6rem);
+    }
+     li{
+       float:left;
+       width: 50%;
+       line-height: 1.6rem;
+     }
+     li:first-child{
+       background-color: #fafafa;
+     }
+  }
+}
+
+//我的客户
+.seller-mycustomer-sec{
+  .sec-serch{
+    padding: 0.2rem;
+    input[type=text]{
+      background: $white;
+      width:10rem;
+      height:1rem;
+      padding:0.25rem 0.2rem;
+      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.5rem);
+      border-radius:$borderRadius;
+    }
+    .a-btn-bgblue{
+      width:1.78rem;
+      height:1rem;
+      @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1rem);
+      margin-left: 0.2rem;
+    }
+  }
+  .sec-mycustomer-list{
+    padding: 0 0.5rem;
+    li{
+      border:0.02rem solid $d9;
+      padding:0.4rem;
+      margin-top: 0.4rem;
+      background-color: $white;
+    }
+    .row{
+      margin-bottom:0.2rem;
+      word-wrap: break-word;
+      word-break:break-all;
+      label{
+        height:0.8rem;
+        @include fontFormat($fz:0.48rem,$fc:#323333,$ta:center,$lh:0.9rem);
+      }
+      span{
+        display: inline;
+        height:0.8rem;
+        @include fontFormat($fz:0.48rem,$fc:#323333,$ta:center,$lh:0.9rem);
+      }
+      span.red-font{
+        color:$red;
+      }
+    }
+    .row:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+//客服管理
+.seller-service-sec{
+  background-color: $white;
+  .sec{
+    padding:0.62rem 0.68rem;
+
+  }
+  .QR-code-upload{
+    border:0.02rem solid $d9;
+    width: 11.08rem;
+    height:11.08rem;
+    text-align: center;
+    .add-icon{
+      margin-top:1.2rem;
+      @include fontFormat($fz:10rem,$fc:$d9,$ta:center,$lh:6.6rem);
+    }
+    p{
+      margin-top: 1.5rem;
+      @include fontFormat($fz:0.72rem,$fc:$d9,$ta:center,$lh:0.8rem);
+    }
+  }
+  .edit-txt{
+    margin-top: 0.8rem;
+    input[type=text]{
+      background: $white;
+      width:11.08rem;
+      padding:0.42rem;
+      border:0.02rem solid $d9;
+      @include fontFormat($fz:0.72rem,$fc:$c3,$lh:0.8rem);
+      border-radius:$borderRadius;
+    }
+  }
+}
+// common 换行
+.word-wrap{
+  word-wrap: break-word;
+  word-break:break-all;
+}
+p{
+  @extend .word-wrap;
+}
+//订单列表
+.order-per-style{
+  padding: 0.4rem 0.3rem;
+  border-top: 0.02rem solid $d9;
+  border-bottom: 0.02rem solid $d9;
+  font-size: 0;
+  img{
+    height: 2.2rem;
+    width:2.2rem;
+  }
+  .order-txt{
+    display: inline-block;
+    vertical-align: top;
+    width:5.3rem;
+    padding:0 0.28rem;
+    @include fontFormat($fz:0.36rem,$fc:$c3,$lh:0.73rem);
+  }
+  .order-price{
+    vertical-align: top;
+    display: inline-block;
+    width:4.3rem;
+    @include fontFormat($fz:0.48rem,$fc:$c3,$lh:2.2rem);
+    .red-font{
+      color:$red;
+    }
+    .big-font{
+      font-size:0.6rem;
+    }
+  }
+}
+//待付款
+.seller-wait-pay{
+  .sec-title{
+    width:100%;
+    height:2.04rem;
+    background-color: $red;
+    @include fontFormat($fz:0.6rem,$fc:$white,$ta:center,$lh:2.04rem);
+  }
+  .sec-address{
+    background-color: $white;
+    height: 3.05rem;
+    padding: 0.4rem;
+    padding-left:1.5rem;
+    border-bottom:$border-w solid #e3e3e3;
+    position: relative;
+    .address-icon {
+      width: 0.7rem;
+      height: 1rem;
+      background-color: red;
+      position: absolute;
+      top: 1.1rem;
+      left: 0.4rem;
+    }
+    p,span{
+      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.82rem);
+    }
+  }
+  .order-detail{
+    margin-top: 0.4rem;
+    background-color: $white;
+    .order-per{
+        padding: 0.4rem 0.3rem;
+        border-top: 0.02rem solid $d9;
+        border-bottom: 0.02rem solid $d9;
+        font-size: 0;
+        img{
+          height: 2.2rem;
+          width:2.2rem;
+        }
+        .order-txt{
+          display: inline-block;
+          vertical-align: middle;
+          width:5.3rem;
+          height: 2.2rem;
+          line-height: 2.2rem;
+          overflow: hidden;
+          padding:0 0.28rem;
+          span{
+            vertical-align: middle;
+            @include fontFormat($fz:0.36rem,$fc:$c3,$lh:0.73rem);
+          }
+        }
+        .order-price{
+          vertical-align: top;
+          display: inline-block;
+          width:4.3rem;
+          @include fontFormat($fz:0.48rem,$fc:$c3,$lh:2.2rem);
+          .red-font{
+            @include fontFormat($fz:0.48rem,$fc:$red,$lh:2.2rem);
+            color:$red;
+          }
+          .big-font{
+            @include fontFormat($fz:0.6rem,$fc:$red,$lh:2.2rem);
+          }
+        }
+      }
+
+  }
+  .order-table{
+     table{
+       border-bottom:0.02rem solid $d9;
+       tr{
+         th{
+           height: 1.26rem;
+           border-top:0.02rem solid $d9;
+           @include fontFormat($fz:0.48rem,$fc:$c3,$ta:center,$lh:1.26rem);
+         }
+         td{
+           padding: 0.2rem 0;
+           vertical-align: top;
+           border-top:0.02rem solid $d9;
+           @include fontFormat($fz:0.36rem,$fc:$c6,$ta:center,$lh:1rem);
+           p{
+             @include fontFormat($fz:0.36rem,$fc:$c6,$ta:center,$lh:1rem);
+           }
+         }
+       }
+       tr.bg-grey{
+         td{
+           background-color: $bg;
+           border-top:0;
+           padding:0.4rem 0.5rem 0;
+           @include fontFormat($fz:0.36rem,$fc:$c6,$ta:left,$lh:0.46rem);
+         }
+         td:last-child{
+           text-align: right;
+         }
+       }
+       tr.border-top{
+         td{
+           border-top:0.02rem solid $d9;
+         }
+       }
+       tr.big-font{
+         td{
+           padding:0.4rem 0.5rem 0.2rem;
+           @include fontFormat($fz:0.48rem,$fc:$c3,$ta:left,$lh:1rem);
+         }
+         td.red-font{
+           color: $red;
+         }
+       }
+       tr:last-child{
+         td:last-child{
+           text-align: right;
+           position: relative;
+         }
+         .arrow-icon{
+           position: absolute;
+           top: -0.2rem;
+           right:1rem;
+           z-index: 1;
+           background-color: red;
+           height: 0.2rem;
+           width: 0.2rem;
+         }
+
+       }
+     }
+  }
+}
+
+//订单管理
+.tab-opts{
+   overflow: hidden;
+  background-color: $white;
+  a{
+    float:left;
+    width:25%;
+    height:1.42rem;
+    border-bottom: 0.02rem solid $d9;
+    @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.4rem);
+  }
+  a.active{
+    color: $red;
+    border-bottom: 0.1rem solid $red;
+    line-height: 1.3rem;
+  }
+}
+.seller-order-sec{
+  .sec-manage-list{
+    margin-bottom: 0.4rem;
+  }
+  ul{
+    li{
+      background-color: $white;
+      margin-bottom: 0.4rem;
+      .order-status{
+        padding-left: 0.2rem;
+        height: 1.04rem;
+        @include fontFormat($fz:0.48rem,$fc:$red,$lh:1.04rem);
+      }
+      .order-sum{
+        padding-right: 0.2rem;
+        height: 1.04rem;
+        @include fontFormat($fz:0.36rem,$fc:$c3,$ta:right,$lh:1.04rem);
+        .bing-font{
+          font-size: 0.48rem;
+        }
+      }
+      .order-per{
+        padding: 0.2rem;
+        font-size: 0;
+        background-color: #f7f7f7;
+        img{
+          height: 2.6rem;
+          width:2.6rem;
+        }
+        .order-txt{
+          display: inline-block;
+          vertical-align: top;
+          width:7rem;
+          height: 2.6rem;
+          line-height: 2.6rem;
+          overflow: hidden;
+          padding:0 0.2rem;
+          span{
+            vertical-align: middle;
+            @include fontFormat($fz:0.34rem,$fc:$c3,$lh:0.8rem);
+          }
+        }
+        .order-price{
+          display: inline-block;
+          vertical-align: top;
+          width:2.3rem;
+          height: 2.6rem;
+          line-height: 2.6rem;
+          span{
+            vertical-align: middle;
+            @include fontFormat($fz:0.48rem,$fc:$c3,$ta:right,$lh:2.2rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-wrap{
+  ul{
+    overflow: hidden;
+    li{
+      float: left;
+      width: 50%;
+    }
+  }
+  .li-2{
+    li{
+      width: 50%;
+    }
+  }
+  .li-3{
+    li{
+      width: 33%;
+    }
+  }
+  a{
+    border-radius: 0;
+    width: 100%;
+    height: 1.04rem;
+    @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1.04rem);
+  }
+  a.a-btn-bggrey{
+    background-color: $d9;
+  }
+  a.a-btn-bgred{
+    background-color: $red;
+  }
+  a.a-btn-bgblue{
+    background-color: $blue;
+  }
 }
 
 
-/*下拉刷新*/
-#scrollWrap{
-  position: absolute;
-  z-index: 1;
-  top: 0px;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
 
-  #scroller{
-    padding-bottom: 0.8rem;
+//买家
+ //common 展示列表
+.sec-show-list{
+  background-color: #fafafa;
+  padding: 0.2rem 0;
+  .list-title-wrap{
+    background-color: #e6e6e6;
+    padding: 0.2rem 0;
   }
-   .loan-index{
-      .sec{
-        padding-bottom: 0;
+  .list-title{
+    width: 94%;
+    margin: 0 auto;
+    @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.82rem);
+    border-radius: $borderRadius;
+    background-color: #fafafa;
+    .red-font{
+      @include fontFormat($fz:0.36rem,$fc:$red,$ta:center,$lh:0.82rem);
+    }
+  }
+  ul{
+    li{
+      a{
+        padding: 0.1rem;
+        border-bottom:0.02rem solid #ebebea;
       }
-   }
-  #scroller-pullUp,#scroller-pullDown{
-    border: 0;
+      &:last-child{
+        a{
+          border-bottom: 0;
+        }
+      }
+      img{
+        height: 3.8rem;
+        width: 3.8rem;
+        background-color:#fef3fb ;
+        border:0
+      }
+      .status-cont{
+        display: inline-block;
+        width: 7.9rem;
+        margin-left:0.2rem;
+        .status-title{
+        }
+        .num{
+          margin-top: 0.15rem;
+          @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:0.9rem);
+        }
+        .price{
+          overflow: hidden;
+          span.fl{
+            @include fontFormat($fz:0.72rem,$fc:#b60613,$lh:1.2rem);
+          }
+          span.fr{
+            @include fontFormat($fz:0.48rem,$fc:$c6,$lh:1.2rem);
+            i{
+              margin-left: 0.1rem;
+              @include fontFormat($fz:0.6rem,$fc:$c6,$lh:1rem);
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
   }
-  #scroller-pullUp{
-    bottom:0.8rem;
-    background-color: transparent;
+  p.try-loading{
+    height: 1.04rem;
+    background-color: #e6e6e6;
+    @include fontFormat($fz:0.3rem,$fc:$c6,$ta:center,$lh:1.04rem);
+    span{
+      width:0.8rem;
+      height: 0.8rem;
+      margin: 0 0.3rem;
+      background-color: red;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+ //首页
+.index-home{
+  .sec-serch-buy{
+    padding-left: 0.35rem ;
+    background-color: $red;
+    .log-pic{
+      height:1.22rem;
+      width:2.3rem;
+    }
+    .serch-input-wrap{
+      display: inline-block;
+      margin-top: 0.17rem;
+      margin-left: 1.12rem ;
+      height: 0.84rem;
+      border-radius:0.4rem;
+      position: relative;
+      .serch-icon{
+        width:0.5rem;
+        height:0.5rem;
+        position: absolute;
+        top:0.15rem;
+        left:0.25rem;
+        z-index: 3;
+        color: $red;
+        font-size: 0.5rem;
+      }
+      .serch-input{
+        width:6.83rem;
+        height: 0.86rem;
+        background: $white;
+        padding:0.2rem;
+        padding-left: 0.8rem;
+        @include fontFormat($fz:0.36rem,$fc:$c3,$lh:0.46rem);
+        border-radius:0.4rem;
+      }
+    }
+    .serch-txt{
+      margin-left: 0.2rem;
+      @include fontFormat($fz:0.48rem,$fc:$white,$lh:1.22rem);
+    }
+  }
+  .sec-tab{
+    overflow: hidden;
+    a{
+      float: left;
+      width: 33%;
+      background-color: $white;
+      height: 3.02rem;
+      text-align: center;
+      padding: 0.33rem 0rem 0.2rem;
+      span{
+        width:1.84rem;
+        height: 1.84rem;
+        background-color: red;
+      }
+      p{
+        @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.8rem);
+      }
+    }
+    a.active{
+      background-color: #e6e6e6;
+    }
+  }
+  .sec-show-list{
+     padding-bottom: 2.04rem;
+  }
+}
+ //固定底部
+.fixed-footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  height: 2.04rem;
+  width: 100%;
+  border-top:$border-w solid #ccc;
+  ul{
+    overflow: hidden;
+    li{
+      width: 25%;
+      float: left;
+      a{
+        width: 100%;
+        text-align: center;
+        padding-top: 0.22rem;
+      }
+      a.active{
+        span,p{
+          color: $red;
+        }
+      }
+      span{
+        width: 1.1rem;
+        height: 1.1rem;
+        background-color: red;
+      }
+      p{
+        @include fontFormat($fz:0.36rem,$fc:$c6,$ta:center,$lh:0.6rem);
+      }
+    }
+  }
+
+}
+
+//分类搜索展示列表
+.sort-show-list{
+  h2{
+    height: 1.24rem;
+    background-color: #f3f3f3;
+    @include fontFormat($fz:0.6rem,$fc:$c3,$ta:center,$lh:1.24rem);
+  }
+}
+
+//产品详情页
+.product-detail{
+  .sec-banner{
+    width: 100%;
+    height: 10rem;
+  }
+  .sec-txt-wrap{
+    background-color: $white;
+    .sec-txt-title{
+      padding: 0.25rem 0.35rem;
+      @extend .status-cont;
+      .status-title{
+        width: 10.4rem;
+        border-right: $border-w solid $d9;
+      }
+    }
+    .red-heart-collect{
+      width:1.1rem;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      margin-left: 0.08rem;
+      span.red-heart{
+        width: 0.9rem;
+        height: 0.8rem;
+        background-color: red;
+      }
+      p{
+        @include fontFormatS($fz:0.36rem,$fc:$c6,$ta:center,$lh:0.6rem);
+      }
+    }
+    .sec-txt-list{
+      overflow: hidden;
+      li{
+        float: left;
+        width:33%;
+        padding:0.3rem 0 0.3rem 0.3rem;
+        p{
+          @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.8rem);
+        }
+        p.red-font{
+          @include fontFormat($fz:0.6rem,$fc:$red,$lh:0.8rem);
+          span.bing-font{
+            @include fontFormat($fz:0.72rem,$fc:$red,$lh:0.8rem);
+          }
+        }
+        p.grey-font{
+          @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:0.6rem);
+        }
+      }
+    }
+  }
+  .sec-pro-formate{
+    margin: 0.4rem;
+    border:$border-w solid $d9;
+    background-color: $white;
+    overflow: hidden;
+    padding: 0.4rem;
+    position: relative;
+    .fl{
+      float: left;
+      span.icon{
+        width: 0.9rem;
+        height: 1rem;
+        background-color: red;
+      }
+      p{
+        @include fontFormat($fz:0.48rem,$fc:#595959,$lh:0.8rem);
+        margin-top: 0.16rem;
+      }
+    }
+    .col-l{
+      width:2.4rem;
+      height: 2rem;
+      text-align: center;
+      border-right: $border-w solid $d9;
+      margin-right: 0.45rem;
+      padding-right: 0.2rem;
+      p{
+        text-align: center;
+        margin-top: 0.25rem;
+      }
+    }
+    .icon-caret-down{
+      position: absolute;
+      right: 0.9rem;
+      top:0.9rem;
+      font-size: 1rem;
+      color: $c6;
+    }
+
+  }
+  .sec-detail-info{
+    background-color: $white;
+    .list-title{
+      height: 1.2rem;
+      @include fontFormat($fz:0.48rem,$fc:$blue,$ta:center,$lh:1.1rem);
+      border-bottom:0.06rem solid $blue;
+    }
+    .list-cont{
+      padding-left: 0.7rem;
+      .list-row{
+        border-bottom: $border-w solid $d9;
+        min-height: 1.2rem;
+        label{
+          width: 3.84rem;
+          @include fontFormat($fz:0.48rem,$fc:#737373,$lh:1.2rem);
+        }
+        .txt-wrap{
+          width:7.5rem;
+          @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1.2rem);
+          @extend .word-wrap;
+        }
+        &:last-child{
+          border-bottom: 0;
+        }
+      }
+    }
+
+  }
+}
+.bg-pop{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 6;
+  width:100%;
+  height: 100%;
+  background-color:#000;
+  opacity:0.8;
+  -ms-opacity:0.8;
+  -moz-opacity:0.8;
+  -webkit-opacity:0.8;
+  filter:alpha(opacity=80)
+}
+.dialog-container{
+  position: fixed;
+  bottom:0;
+  left:0;
+  z-index: 7;
+  width:100%;
+  height: 14.1rem;
+  background-color: $white;
+  .dia-close{
+    width:0.8rem;
+    height: 0.8rem;
+    position: absolute;
+    right: 0;
+    top:0;
+  }
+  .dia-sec-01{
+    padding: 0.4rem 0;
+    margin: 0 0.4rem;
+    border-bottom: $border-w solid $bg;
+    img{
+      width:4.1rem;
+      height: 4.1rem;
+      border-radius: $borderRadius;
+      margin-top:-0.8rem ;
+    }
+  }
+  .state-cont{
+    display: inline-block;
+    margin-left: 0.4rem;
+    .state-txt{
+      margin-top: 0.1rem;
+      height: 1.6rem;
+      width:6.4rem;
+      overflow: hidden;
+      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.8rem);
+    }
+    .price-num{
+      margin-top: 0.2rem;
+      @include fontFormat($fz:0.6rem,$fc:$red,$lh:1.2rem);
+    }
+  }
+  .dia-sec-02 {
+    margin: 0 0.4rem;
+    border-bottom: $border-w solid $bg;
+    .title{
+      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1.2rem);
+    }
+    .a-tab{
+      a{
+        float:left;
+        padding:0 0.3rem;
+        height:1.2rem;
+        margin-right: 0.4rem;
+        margin-bottom: 0.4rem;
+        @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1.2rem);
+        position: relative;
+        background-color: #e5e5e5;
+        border-radius:$borderRadius;
+        span.num{
+          position: absolute;
+          top:-0.3rem;
+          right: -0.3rem;
+          height: 0.6rem;
+          width: 0.6rem;
+          background-color:$red;
+          border-radius:50%;
+          @include fontFormatS($fz:0.3rem,$fc:$white,$ta:center, $lh:0.6rem);
+        }
+      }
+      a.active{
+        color: $white;
+        background-color: $red;
+      }
+    }
+  }
+  .dia-sec-03{
+    padding-left: 0.4rem;
+    .list-cont{
+      padding-right: 0.26rem;
+      height: 4.5rem;
+      overflow: scroll;
+      .list-row{
+        height: 1.5rem;
+        border-bottom: $border-w solid $bg;
+        .big-font{
+          width:4rem;
+          display: inline-block;
+          @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1.5rem);
+        }
+        .small-font{
+          width:2.6rem;
+          display: inline-block;
+          @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:1.5rem);
+        }
+      }
+    }
+    .opts-wrap{
+      display: inline-block;
+      height: 1rem;
+      border: 0.08rem solid #e6e6e6;
+      a{
+        width:1.04rem;
+        height:100%;
+        background-color: #e6e6e6;
+        @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:0.8rem);
+      }
+      .input-s{
+        width:2.5rem;
+        height:100%;
+        background-color: $white;
+        @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:0.8rem);
+      }
+    }
+  }
+  .dia-sec-04{
+    height: 1rem;
+    border-top:0.05rem solid #bfbfbf;
+    padding: 0 0.4rem;
+    .fl{
+      height: 1rem;
+      @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:1rem);
+    }
+    .fr{
+      height: 1rem;
+      @include fontFormat($fz:0.6rem,$fc:$c6,$lh:1rem);
+      span.red-font{
+        @include fontFormat($fz:0.6rem,$fc:$red,$lh:1rem);
+        padding: 0 0.1rem;
+      }
+      span.sum{
+          margin-left:0.3rem ;
+      }
+    }
   }
 }

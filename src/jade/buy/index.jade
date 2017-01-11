@@ -1,0 +1,100 @@
+extends ../layout/layout-buyer
+
+block append headTitle
+  title 首页
+
+block content
+  section.index-home
+    .sec-serch-buy
+      img(src="").log-pic
+      .serch-input-wrap
+        span.serch-icon.icon-search
+        input(type="text" placeholder="请输入搜索内容").serch-input
+      span.serch-txt  搜索
+    .sec-tab
+      a
+        span
+        p 已购买产品
+      a.active
+        span
+        p 已收藏产品
+      a
+        span
+        p 包装
+      a
+        span
+        p 热销产品
+      a
+        span
+        p 天天特价
+      a
+        span
+        p 新品上线
+    .sec-show-list
+      .list-title 请浏览
+        span.red-font 2,600
+        |件商品
+      ul
+        li
+          a
+            img(src="")
+            .status-cont
+              .status-title
+                span.now-goods 现货
+                | 7047 一件代发纯棉袜子男士 四季中筒防臭全棉秋冬款袜厂家...
+              p.num  成交40845笔
+              p.price
+                span.fl.red-font  ￥9.00
+                span.fr 12双起批
+                  i ...
+        li
+          a
+            img(src="")
+            .status-cont
+              .status-title
+                span.book-goods 订货
+                | 7047 一件代发纯棉袜子男士 四季中筒防臭全棉秋冬款袜厂家...
+              p.num  成交40845笔
+              p.price
+                span.fl.red-font  ￥9.00
+                span.fr 12双起批
+                  i ...
+
+      p.try-loading  正在努力加载中
+        span
+        |请耐心等待片刻
+
+  footer.fixed-footer
+    ul
+      li
+        a(href="")
+          span
+          p 首页
+      li
+        a(href="")
+          span
+          p 商品分类
+      li
+        a(href="")
+          span
+          p 进货单
+      li
+        a(href="")
+          span
+          p 个人中心
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

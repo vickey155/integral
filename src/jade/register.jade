@@ -1,0 +1,52 @@
+extends layout/layout
+
+block append headTitle
+  title 商户申请
+
+block content
+  section.sec-login
+    .sec-log
+      span
+      p 悦融袜业城
+    .sec-cont
+      form
+        .form-row
+          label
+            span
+            | 账号
+          input(type="text" placeholder="请输入手机号").input-text
+        .form-row
+          label
+            span
+            | 密码
+          input(type="text" placeholder="请输入密码").input-text
+        .form-row
+            label
+              span
+              | 确认密码
+            input(type="text" placeholder="请输入密码").input-text
+        .form-row
+          label
+            span
+            | 验证码
+          input(type="text" placeholder="请输入验证码").input-text-s
+          a.btn-a-code  获取验证码
+      .btn-a-login
+        a.btn-a.bg-blue(href="/template/register-suc.html") 立即申请
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
