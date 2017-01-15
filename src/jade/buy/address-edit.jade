@@ -1,0 +1,46 @@
+extends ../layout/layout-buyer
+
+block append headTitle
+  title 地址编辑
+
+block content
+  section.sticky-cont.address-edit
+    .sec
+      .address-edit-wrap
+        form
+          .row-per
+            input(type="text" placeholder="收货人姓名").input-text-large
+          .row-per
+            input(type="text" placeholder="收货人手机号码").input-text-large
+          .row-per.select-region-wrap
+            select
+              option(value="请选择省") 请选择省
+            select
+              option(value="请选择市") 请选择市
+            select
+              option(value="请选择区/县") 请选择区/县
+          .row-per
+            input(type="text" placeholder="收货地区").input-text-large
+          .row-per
+            input(type="text" placeholder="街道地址").input-text-large
+          .row-per
+            input(type="text" placeholder="邮编").input-text-large
+          .set-default-address
+            .rectangle-choose
+              span
+                i.icon-ok
+              | 设为默认地址
+
+
+
+  footer.fixed-footer
+    a.a-btn.a-btn-bgred 确定
+
+
+
+
+
+
+
+
+

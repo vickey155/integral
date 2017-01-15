@@ -1,0 +1,43 @@
+extends ../layout/layout-buyer
+
+block append headTitle
+  title 收货地址
+
+block content
+  section.sticky-cont.shopping-address
+    .sec
+      ul.address-list
+        li
+          .circle-choose
+            span
+              i.icon-ok
+          .address-txt
+            span.default-address-icon
+            p.font-60.clearfix 张海泽
+              span.font-60.fr 13688888888
+            p 浙江省  绍兴市  诸暨市
+            p 滨江南路
+
+
+
+  footer.fixed-footer.two-layers.shopping-address-footer
+    ul.sec-bottom.li-2
+      li
+        .circle-choose
+          span.active
+            i.icon-ok
+          | 全选
+        .sumNum
+      li.btn-2
+        a.a-blank
+        a.a-btn-bggray.fr 删除
+    a.a-btn.a-btn-bgblue  新增收货地址
+
+
+
+
+
+
+
+
+

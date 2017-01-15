@@ -1,0 +1,102 @@
+extends ../layout/layout-buyer
+
+block append headTitle
+  title 确认订单
+
+block content
+  section.makesure-order
+    .sec
+      .sec-address-wrap
+        .address-border
+        .sec-address-show(style="display:block")
+          span.address-icon
+          p.font-60.clearfix 张海泽
+              span.font-60.fr 13688888888
+          p.font-60 浙江省  绍兴市  诸暨市 <br/>滨江南路
+          a.arrow-right >
+        .sec-address-edit(style="display:none")
+          span.address-icon
+          p.big-font 请选择收货地址
+          a.arrow-right >
+        .address-border
+      .sec-list-wrap
+        .list-title 货品清单
+        .list-cont
+          .list-one
+            .list-one-title <span class="red-font">订单1:</span> 诸暨市棉品轩针织有限公司
+            .list-one-top
+              img(src="")
+              .order-txt
+                span 新品SOX LAB日系基础款纯色复古 定标女袜子  中筒棉袜  双针短靴袜
+            .list-one-detail
+              ul.fl
+                li 颜色:
+                  span 咖啡
+                li 尺码:
+                  span 均码
+                li 单价:
+                  span ￥4.20/双
+              .fr
+                .row-t ￥50.40
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+            .list-one-detail
+              ul.fl
+                li 颜色:
+                  span 咖啡
+                li 尺码:
+                  span 均码
+                li 单价:
+                  span ￥4.20/双
+              .fr
+                .row-t ￥50.40
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+            .list-one-sum
+              p  12件
+                span.grey-font 丨
+                |小计（含运费）：
+                span.red-font ￥55.40
+
+        .list-foot
+          .row-per
+            label 交易方式
+            .select-wrapper
+              select
+                option(value="") 线下支付
+              i.arrow-down
+          .row-per
+            label 运费计算
+            .fr 快递：
+              .select-wrapper
+                select
+                  option(value="") ￥10.00
+                i.arrow-down
+          .leav-message
+            textarea  给卖家留言
+
+
+  footer.fixed-footer.two-layers.makesure-order-footer
+    ul.li-2
+      li.col-l
+        p 运费总计： ￥5.00
+        p 货款总计： ￥50.40
+      li.sum-price
+        p 总计:
+          span.red-font ￥55.40
+        p.grey-font 1种12件含运费
+    .foot-btn
+      a.a-btn.a-btn-bgred 提交订单
+
+
+
+
+
+
+
+
+

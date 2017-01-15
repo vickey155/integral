@@ -1,0 +1,168 @@
+extends ../layout/layout-buyer
+
+block append headTitle
+  title 进货单
+
+block content
+  section.sticky-cont.purchase-order
+    .sec
+      .sec-list-none
+        img(src="")
+        p 没有货物， 快去逛逛吧！
+      .sec-list(style="display:none;")
+        .order-one
+          .order-per
+            .circle-choose
+              span
+                i.icon-ok
+              img(src="")
+            .order-txt
+              span 7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款
+            .order-price 单价：
+              span.red-font ￥
+                i.big-font 22
+                |.50
+              | /手
+
+          .order-table
+            .order-table-tr.clearfix
+              .th  颜色
+              .th  尺码
+              .th  进货量(手)
+            .order-table-tr.clearfix
+              .td 名族风款
+              .td
+                p M (约3-5岁)
+                p l (约6-8岁)
+                p XL (约9-12岁)
+              .td
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+            .order-table-tr.clearfix
+              .td 拼色款
+              .td
+                p M (约3-5岁)
+                p l (约6-8岁)
+              .td
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+            .order-table-tr-grey.big-font.clearfix
+              .td 商品总价
+              .td
+              .td ￥117.60
+        .order-one
+          .order-per
+            .circle-choose
+              span.active
+                i.icon-ok
+              img(src="")
+            .order-txt
+              span 7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款
+            .order-price 单价：
+              span.red-font ￥
+                i.big-font 22
+                | .50
+              | /手
+
+          .order-table
+            .order-table-tr.clearfix
+              .th  颜色
+              .th  尺码
+              .th  进货量(手)
+            .order-table-tr.clearfix
+              .td 名族风款
+              .td
+                p M (约3-5岁)
+                p l (约6-8岁)
+                p XL (约9-12岁)
+              .td
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+            .order-table-tr.clearfix
+              .td 拼色款
+              .td
+                p M (约3-5岁)
+                p l (约6-8岁)
+              .td
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+                .opts-wrap
+                  a -
+                  input(type="text" value="12").input-s
+                  a +
+            .order-table-tr-grey.big-font.clearfix
+              .td 商品总价
+              .td
+              .td ￥117.60
+
+
+
+
+  footer.fixed-footer.two-layers
+    ul.sec-bottom.li-2
+      li
+        .circle-choose
+          span.active
+            i.icon-ok
+          | 全选
+        .sumNum
+          p 总计:
+            span.red-font ￥<i class="big-font">1</i>18.00
+          p.grey-font 1种12件;不含运费
+      li.btn-2
+        a.a-btn-bggray 删除
+        a.a-btn-bgred 下单
+    ul.footer-nav
+      li
+        a(href="")
+          span
+          p 首页
+      li
+        a(href="")
+          span
+          p 商品分类
+      li
+        a(href="").active
+          span
+          p 进货单
+      li
+        a(href="")
+          span
+          p 个人中心
+
+
+
+
+
+
+
+
+

@@ -1,10 +1,10 @@
-extends layout/layout
+extends ../layout/layout-buyer
 
 block append headTitle
-  title 编辑订单
+  title 订单详情
 
 block content
-  section.order-detail-option.seller-order-edit
+  section.order-detail-option
     .sec
       .sec-title 待付款
       .sec-address-show
@@ -69,12 +69,12 @@ block content
               span.arrow-icon
 
 
-  footer.fixed-footer.seller-order-edit-footer
-    ul
+  footer.fixed-footer
+    ul.li-2
       li
-        a.a-btn.a-btn-bggray 删除
+        a.a-btn.a-btn-bgblue 线下支付
       li
-        a.a-btn.a-btn-bgred 确认支付
+        a.a-btn.a-btn-bgred 在线支付
 
 
 

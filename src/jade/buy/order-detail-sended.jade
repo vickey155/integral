@@ -1,12 +1,16 @@
-extends layout/layout
+extends ../layout/layout-buyer
 
 block append headTitle
-  title 编辑订单
+  title 订单详情
 
 block content
-  section.order-detail-option.seller-order-edit
+  section.order-detail-option
     .sec
-      .sec-title 待付款
+      .sec-title
+        p 卖家已发货
+        p.last-time 剩余
+          span.time 13天14小时30分钟
+          |将自动确认收货
       .sec-address-show
         span.address-icon
         p.clearfix 收件人：张海泽
@@ -69,12 +73,8 @@ block content
               span.arrow-icon
 
 
-  footer.fixed-footer.seller-order-edit-footer
-    ul
-      li
-        a.a-btn.a-btn-bggray 删除
-      li
-        a.a-btn.a-btn-bgred 确认支付
+  footer.fixed-footer
+    a.a-btn.a-btn-bgred 确认收货
 
 
 
