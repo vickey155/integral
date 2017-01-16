@@ -119,6 +119,216 @@ h1 {
   .select-region select:last-child {
     border-right: 0; }
 
+section .sec {
+  padding-bottom: 6rem; }
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 12;
+  height: auto;
+  width: 100%;
+  border-top: 0.04rem solid #ccc;
+  background-color: #f2f2f2; }
+  .fixed-footer ul.footer-nav {
+    overflow: hidden; }
+    .fixed-footer ul.footer-nav li {
+      width: 25%;
+      float: left; }
+      .fixed-footer ul.footer-nav li a {
+        width: 100%;
+        text-align: center;
+        padding-top: 0.22rem; }
+      .fixed-footer ul.footer-nav li a.active span, .fixed-footer ul.footer-nav li a.active p {
+        color: #dd1718; }
+      .fixed-footer ul.footer-nav li span {
+        width: 1.1rem;
+        height: 1.1rem;
+        color: #666;
+        text-align: center;
+        line-height: 1.1rem; }
+        @media screen and (max-width: 321px) {
+          .fixed-footer ul.footer-nav li span {
+            font-size: 0.86rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .fixed-footer ul.footer-nav li span {
+            font-size: 0.85rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .fixed-footer ul.footer-nav li span {
+            font-size: 0.82rem; } }
+        @media screen and (min-width: 640px) {
+          .fixed-footer ul.footer-nav li span {
+            font-size: 0.82rem; } }
+      .fixed-footer ul.footer-nav li p {
+        color: #666;
+        text-align: center;
+        line-height: 0.6rem; }
+        @media screen and (max-width: 321px) {
+          .fixed-footer ul.footer-nav li p {
+            font-size: 0.4rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .fixed-footer ul.footer-nav li p {
+            font-size: 0.39rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .fixed-footer ul.footer-nav li p {
+            font-size: 0.36rem; } }
+        @media screen and (min-width: 640px) {
+          .fixed-footer ul.footer-nav li p {
+            font-size: 0.36rem; } }
+  .fixed-footer .foot-btn {
+    height: 2.04rem; }
+  .fixed-footer ul {
+    overflow: hidden;
+    height: 100%; }
+    .fixed-footer ul li {
+      float: left;
+      width: 50%;
+      height: 100%; }
+  .fixed-footer .li-2 li {
+    width: 50%; }
+  .fixed-footer .li-3 li {
+    width: 33%; }
+  .fixed-footer .li-4 li {
+    width: 25%; }
+  .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #dd1718;
+    border: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 2.04rem; }
+    @media screen and (max-width: 321px) {
+      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
+        font-size: 0.76rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
+        font-size: 0.75rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
+        font-size: 0.72rem; } }
+    @media screen and (min-width: 640px) {
+      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
+        font-size: 0.72rem; } }
+  .fixed-footer a.delete-btn {
+    background-color: #999; }
+  .fixed-footer a.a-btn-bggray {
+    background-color: #999; }
+  .fixed-footer a.a-btn-bggrey {
+    background-color: #d9d9d9; }
+  .fixed-footer a.a-btn-bgred {
+    background-color: #dd1718; }
+  .fixed-footer a.a-btn-bgblue {
+    background-color: #4b61d1; }
+  .fixed-footer ul.sec-bottom {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fafafa; }
+    .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
+      margin: 0 0.3rem;
+      float: left;
+      height: 1.6rem;
+      color: #666;
+      text-align: center;
+      line-height: 1.6rem; }
+      @media screen and (max-width: 321px) {
+        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
+          font-size: 0.52rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
+          font-size: 0.51rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
+          font-size: 0.48rem; } }
+      @media screen and (min-width: 640px) {
+        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
+          font-size: 0.48rem; } }
+      .fixed-footer ul.sec-bottom .circle-choose span, .fixed-footer ul.sec-bottom .rectangle-choose span {
+        margin-right: 0.2rem;
+        vertical-align: middle; }
+    .fixed-footer ul.sec-bottom .sumNum {
+      float: left;
+      padding: 0.05rem 0; }
+      .fixed-footer ul.sec-bottom .sumNum p {
+        color: #333;
+        text-align: center;
+        line-height: 0.7rem; }
+        @media screen and (max-width: 321px) {
+          .fixed-footer ul.sec-bottom .sumNum p {
+            font-size: 0.44rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .fixed-footer ul.sec-bottom .sumNum p {
+            font-size: 0.42rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .fixed-footer ul.sec-bottom .sumNum p {
+            font-size: 0.4rem; } }
+        @media screen and (min-width: 640px) {
+          .fixed-footer ul.sec-bottom .sumNum p {
+            font-size: 0.38rem; } }
+        .fixed-footer ul.sec-bottom .sumNum p span.red-font {
+          color: #dd1718;
+          text-align: center;
+          line-height: 0.7rem; }
+          @media screen and (max-width: 321px) {
+            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
+              font-size: 0.44rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
+              font-size: 0.42rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
+              font-size: 0.4rem; } }
+          @media screen and (min-width: 640px) {
+            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
+              font-size: 0.38rem; } }
+        .fixed-footer ul.sec-bottom .sumNum p .big-font {
+          color: #dd1718;
+          text-align: center;
+          line-height: 0.63rem; }
+          @media screen and (max-width: 321px) {
+            .fixed-footer ul.sec-bottom .sumNum p .big-font {
+              font-size: 0.52rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .fixed-footer ul.sec-bottom .sumNum p .big-font {
+              font-size: 0.51rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .fixed-footer ul.sec-bottom .sumNum p .big-font {
+              font-size: 0.48rem; } }
+          @media screen and (min-width: 640px) {
+            .fixed-footer ul.sec-bottom .sumNum p .big-font {
+              font-size: 0.48rem; } }
+      .fixed-footer ul.sec-bottom .sumNum p.grey-font {
+        color: #999; }
+    .fixed-footer ul.sec-bottom a {
+      color: #fff;
+      text-align: center;
+      line-height: 1.6rem; }
+      @media screen and (max-width: 321px) {
+        .fixed-footer ul.sec-bottom a {
+          font-size: 0.52rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .fixed-footer ul.sec-bottom a {
+          font-size: 0.51rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .fixed-footer ul.sec-bottom a {
+          font-size: 0.48rem; } }
+      @media screen and (min-width: 640px) {
+        .fixed-footer ul.sec-bottom a {
+          font-size: 0.48rem; } }
+    .fixed-footer ul.sec-bottom li {
+      float: left;
+      width: 50%;
+      line-height: 1.6rem; }
+    .fixed-footer ul.sec-bottom li:first-child {
+      background-color: #fafafa; }
+  .fixed-footer .btn-2 a {
+    width: 50%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    border-radius: 0; }
+
 .sec-login {
   padding-bottom: 1.47rem; }
   .sec-login .sec-log {
@@ -161,9 +371,25 @@ h1 {
       .sec-login form .form-row label span {
         width: 0.6rem;
         height: 0.6rem;
-        background-color: red;
+        color: #999;
+        text-align: center;
+        line-height: 0.6rem;
         vertical-align: top;
         margin: 0.01rem 0.1rem; }
+        @media screen and (max-width: 321px) {
+          .sec-login form .form-row label span {
+            font-size: 0.54rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .sec-login form .form-row label span {
+            font-size: 0.53rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .sec-login form .form-row label span {
+            font-size: 0.5rem; } }
+        @media screen and (min-width: 640px) {
+          .sec-login form .form-row label span {
+            font-size: 0.5rem; } }
+      .sec-login form .form-row label .icon-lock {
+        margin-top: 0; }
     .sec-login form .form-row input[type=text] {
       background: transparent;
       width: 4.8rem;
@@ -268,9 +494,23 @@ h1 {
       width: 0.6rem;
       height: 0.6rem;
       position: relative;
-      background-color: red;
       margin-top: 0.3rem;
-      margin-right: 0.2rem; }
+      margin-right: 0.2rem;
+      color: #4b61d1;
+      text-align: center;
+      line-height: 0.6rem; }
+      @media screen and (max-width: 321px) {
+        .sec-login .register-suc .btn-a .ok-icon {
+          font-size: 0.64rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .sec-login .register-suc .btn-a .ok-icon {
+          font-size: 0.63rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .sec-login .register-suc .btn-a .ok-icon {
+          font-size: 0.6rem; } }
+      @media screen and (min-width: 640px) {
+        .sec-login .register-suc .btn-a .ok-icon {
+          font-size: 0.6rem; } }
   .sec-login .register-suc .suc-txt {
     margin-top: 0.7rem; }
     .sec-login .register-suc .suc-txt p {
@@ -476,12 +716,25 @@ section.sticky-foot {
 
 .select-wrapper {
   position: relative; }
-  .select-wrapper .icon-caret-down {
+  .select-wrapper .icon-trangle-down {
     position: absolute;
     right: 0.36rem;
     top: 0.46rem;
-    font-size: 0.6rem;
-    color: #999; }
+    color: #999;
+    text-align: left;
+    line-height: 0.65rem; }
+    @media screen and (max-width: 321px) {
+      .select-wrapper .icon-trangle-down {
+        font-size: 0.64rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .select-wrapper .icon-trangle-down {
+        font-size: 0.63rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .select-wrapper .icon-trangle-down {
+        font-size: 0.6rem; } }
+    @media screen and (min-width: 640px) {
+      .select-wrapper .icon-trangle-down {
+        font-size: 0.6rem; } }
   .select-wrapper select {
     width: 100%;
     height: 1.55rem;
@@ -696,225 +949,273 @@ section.sticky-foot {
         .new-product-release .upload-pic ul li.add-li .add-btn {
           font-size: 2.6rem; } }
 
-.person-center-sec .sec-top {
-  padding: 1.5rem 0 0.6rem;
-  background: url("../../global/images/seller-bg.jpg") no-repeat 0 center/cover; }
-  .person-center-sec .sec-top .avatar {
-    text-align: center; }
-    .person-center-sec .sec-top .avatar img {
-      height: 3.04rem;
-      width: 3.04rem;
-      border: 0.1rem solid #fff;
-      border-radius: 50%; }
-  .person-center-sec .sec-top p {
-    color: #f2f2f2;
-    text-align: center;
-    line-height: 1.2rem; }
-    @media screen and (max-width: 321px) {
-      .person-center-sec .sec-top p {
-        font-size: 0.76rem; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .person-center-sec .sec-top p {
-        font-size: 0.75rem; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .person-center-sec .sec-top p {
-        font-size: 0.72rem; } }
-    @media screen and (min-width: 640px) {
-      .person-center-sec .sec-top p {
-        font-size: 0.72rem; } }
-  .person-center-sec .sec-top .seller-name {
-    color: #f2f2f2;
-    text-align: center;
-    line-height: 1rem; }
-    @media screen and (max-width: 321px) {
-      .person-center-sec .sec-top .seller-name {
-        font-size: 0.64rem; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .person-center-sec .sec-top .seller-name {
-        font-size: 0.63rem; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .person-center-sec .sec-top .seller-name {
-        font-size: 0.6rem; } }
-    @media screen and (min-width: 640px) {
-      .person-center-sec .sec-top .seller-name {
-        font-size: 0.6rem; } }
-  .person-center-sec .sec-top .a-btn-wrap {
-    text-align: center; }
-    .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
-      width: 11rem;
-      height: 1.2rem;
-      color: #fff;
+.person-center-sec {
+  height: 100%;
+  background-color: #fff; }
+  .person-center-sec .sec-top {
+    padding: 1.5rem 0 0.6rem;
+    background: url("../../global/images/seller-bg.jpg") no-repeat 0 center/cover; }
+    .person-center-sec .sec-top .avatar {
+      text-align: center; }
+      .person-center-sec .sec-top .avatar img {
+        height: 3.04rem;
+        width: 3.04rem;
+        border: 0.1rem solid #fff;
+        border-radius: 50%; }
+    .person-center-sec .sec-top p {
+      color: #f2f2f2;
       text-align: center;
-      line-height: 1.2rem;
-      background-color: #dd1718;
-      border-color: #dd1718; }
+      line-height: 1.2rem; }
       @media screen and (max-width: 321px) {
-        .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+        .person-center-sec .sec-top p {
           font-size: 0.76rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
-        .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+        .person-center-sec .sec-top p {
           font-size: 0.75rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
-        .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+        .person-center-sec .sec-top p {
           font-size: 0.72rem; } }
       @media screen and (min-width: 640px) {
-        .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+        .person-center-sec .sec-top p {
           font-size: 0.72rem; } }
-  .person-center-sec .sec-top .a-link-opt {
-    margin-top: 0.96rem; }
-    .person-center-sec .sec-top .a-link-opt li {
-      float: left;
-      width: 25%;
-      text-align: center; }
-      .person-center-sec .sec-top .a-link-opt li a {
-        width: 100%;
-        position: relative;
-        font-size: 0; }
-        .person-center-sec .sec-top .a-link-opt li a:after {
-          height: 1.5rem;
-          border-right: 0.04rem solid #fff;
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0.24rem;
-          right: 0; }
-      .person-center-sec .sec-top .a-link-opt li span.icon {
-        width: 1.3rem;
-        height: 1.3rem; }
-      .person-center-sec .sec-top .a-link-opt li span.icon01 {
-        background: url("../../global/images/seller-icon01.png") no-repeat 0 0/cover; }
-      .person-center-sec .sec-top .a-link-opt li span.icon02 {
-        background: url("../../global/images/seller-icon02.png") no-repeat 0 0/cover; }
-      .person-center-sec .sec-top .a-link-opt li span.icon03 {
-        background: url("../../global/images/seller-icon03.png") no-repeat 0 0/cover; }
-      .person-center-sec .sec-top .a-link-opt li span.icon04 {
-        background: url("../../global/images/seller-icon04.png") no-repeat 0 0/cover; }
-      .person-center-sec .sec-top .a-link-opt li span.circle-red {
-        height: 0.82rem;
-        width: 0.82rem;
-        border-radius: 50%;
-        background-color: #dd1718;
-        position: absolute;
-        top: -0.41rem;
-        right: 0.5rem;
-        color: #fff;
-        text-align: center;
-        line-height: 0.82rem; }
-        @media screen and (max-width: 321px) {
-          .person-center-sec .sec-top .a-link-opt li span.circle-red {
-            font-size: 0.64rem; } }
-        @media screen and (min-width: 321px) and (max-width: 400px) {
-          .person-center-sec .sec-top .a-link-opt li span.circle-red {
-            font-size: 0.63rem; } }
-        @media screen and (min-width: 400px) and (max-width: 640px) {
-          .person-center-sec .sec-top .a-link-opt li span.circle-red {
-            font-size: 0.6rem; } }
-        @media screen and (min-width: 640px) {
-          .person-center-sec .sec-top .a-link-opt li span.circle-red {
-            font-size: 0.6rem; } }
-      .person-center-sec .sec-top .a-link-opt li p {
-        margin-top: 0.05rem;
-        color: #fff;
-        text-align: center;
-        line-height: 0.88rem; }
-        @media screen and (max-width: 321px) {
-          .person-center-sec .sec-top .a-link-opt li p {
-            font-size: 0.52rem; } }
-        @media screen and (min-width: 321px) and (max-width: 400px) {
-          .person-center-sec .sec-top .a-link-opt li p {
-            font-size: 0.51rem; } }
-        @media screen and (min-width: 400px) and (max-width: 640px) {
-          .person-center-sec .sec-top .a-link-opt li p {
-            font-size: 0.48rem; } }
-        @media screen and (min-width: 640px) {
-          .person-center-sec .sec-top .a-link-opt li p {
-            font-size: 0.48rem; } }
-    .person-center-sec .sec-top .a-link-opt li:last-child a:after {
-      height: 0; }
-
-.person-center-sec .sec-list {
-  background-color: #fff;
-  margin-top: 0.4rem;
-  border-top: 0.04rem solid #d9d9d9;
-  padding-left: 0.7rem;
-  padding-bottom: 8rem; }
-  .person-center-sec .sec-list ul li {
-    padding: 0.35rem 0.3rem;
-    border-bottom: 0.04rem solid #d9d9d9; }
-    .person-center-sec .sec-list ul li a {
-      display: block;
-      font-size: 0;
-      padding-right: 1.14rem;
-      position: relative; }
-    .person-center-sec .sec-list ul li .icon {
-      height: 1.1rem;
-      width: 1.1rem;
-      margin-right: 0.25rem;
-      border-radius: 0.1rem;
-      color: #fff;
+    .person-center-sec .sec-top .seller-name {
+      color: #f2f2f2;
       text-align: center;
-      line-height: 1.1rem;
-      position: relative; }
+      line-height: 1rem; }
       @media screen and (max-width: 321px) {
-        .person-center-sec .sec-list ul li .icon {
-          font-size: 0.84rem; } }
-      @media screen and (min-width: 321px) and (max-width: 400px) {
-        .person-center-sec .sec-list ul li .icon {
-          font-size: 0.83rem; } }
-      @media screen and (min-width: 400px) and (max-width: 640px) {
-        .person-center-sec .sec-list ul li .icon {
-          font-size: 0.8rem; } }
-      @media screen and (min-width: 640px) {
-        .person-center-sec .sec-list ul li .icon {
-          font-size: 0.8rem; } }
-    .person-center-sec .sec-list ul li span.icon01 {
-      background-color: #ff6600; }
-    .person-center-sec .sec-list ul li span.icon02 {
-      background-color: #66669a; }
-    .person-center-sec .sec-list ul li span.icon03 {
-      background-color: #0099cb; }
-    .person-center-sec .sec-list ul li span.icon04 {
-      background-color: #66669a; }
-    .person-center-sec .sec-list ul li .txt {
-      color: #666;
-      text-align: center;
-      line-height: 1.1rem; }
-      @media screen and (max-width: 321px) {
-        .person-center-sec .sec-list ul li .txt {
+        .person-center-sec .sec-top .seller-name {
           font-size: 0.64rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
-        .person-center-sec .sec-list ul li .txt {
+        .person-center-sec .sec-top .seller-name {
           font-size: 0.63rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
-        .person-center-sec .sec-list ul li .txt {
+        .person-center-sec .sec-top .seller-name {
           font-size: 0.6rem; } }
       @media screen and (min-width: 640px) {
-        .person-center-sec .sec-list ul li .txt {
+        .person-center-sec .sec-top .seller-name {
           font-size: 0.6rem; } }
-    .person-center-sec .sec-list ul li .status {
-      float: right;
-      color: #666;
-      text-align: center;
-      line-height: 1.1rem; }
-      @media screen and (max-width: 321px) {
-        .person-center-sec .sec-list ul li .status {
-          font-size: 0.52rem; } }
-      @media screen and (min-width: 321px) and (max-width: 400px) {
-        .person-center-sec .sec-list ul li .status {
-          font-size: 0.51rem; } }
-      @media screen and (min-width: 400px) and (max-width: 640px) {
-        .person-center-sec .sec-list ul li .status {
-          font-size: 0.48rem; } }
-      @media screen and (min-width: 640px) {
-        .person-center-sec .sec-list ul li .status {
-          font-size: 0.48rem; } }
-    .person-center-sec .sec-list ul li i.icon-angle-right {
-      display: inline-block;
-      position: absolute;
-      right: 0.36rem;
-      top: 0.05rem;
-      font-size: 0.96rem;
-      color: #999; }
+    .person-center-sec .sec-top .a-btn-wrap {
+      text-align: center; }
+      .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+        width: 11rem;
+        height: 1.2rem;
+        color: #fff;
+        text-align: center;
+        line-height: 1.2rem;
+        background-color: #dd1718;
+        border-color: #dd1718; }
+        @media screen and (max-width: 321px) {
+          .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+            font-size: 0.76rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+            font-size: 0.75rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+            font-size: 0.72rem; } }
+        @media screen and (min-width: 640px) {
+          .person-center-sec .sec-top .a-btn-wrap .a-btn-bg-red {
+            font-size: 0.72rem; } }
+    .person-center-sec .sec-top .a-link-opt {
+      margin-top: 0.96rem; }
+      .person-center-sec .sec-top .a-link-opt li {
+        float: left;
+        width: 25%;
+        text-align: center; }
+        .person-center-sec .sec-top .a-link-opt li a {
+          width: 100%;
+          position: relative;
+          font-size: 0; }
+          .person-center-sec .sec-top .a-link-opt li a:after {
+            height: 1.5rem;
+            border-right: 0.04rem solid #fff;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0.24rem;
+            right: 0; }
+        .person-center-sec .sec-top .a-link-opt li span.icon {
+          width: 1.3rem;
+          height: 1.3rem;
+          position: relative;
+          color: #fff;
+          text-align: center;
+          line-height: 1.3rem; }
+          @media screen and (max-width: 321px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon {
+              font-size: 1.2rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon {
+              font-size: 1.19rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon {
+              font-size: 1.16rem; } }
+          @media screen and (min-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon {
+              font-size: 1.16rem; } }
+        .person-center-sec .sec-top .a-link-opt li span.icon-receive {
+          color: #fff;
+          text-align: center;
+          line-height: 1.3rem; }
+          @media screen and (max-width: 321px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon-receive {
+              font-size: 1.34rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon-receive {
+              font-size: 1.33rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon-receive {
+              font-size: 1.3rem; } }
+          @media screen and (min-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li span.icon-receive {
+              font-size: 1.3rem; } }
+        .person-center-sec .sec-top .a-link-opt li span.icon01 {
+          background: url("../../global/images/seller-icon01.png") no-repeat 0 0/cover; }
+        .person-center-sec .sec-top .a-link-opt li span.icon02 {
+          background: url("../../global/images/seller-icon02.png") no-repeat 0 0/cover; }
+        .person-center-sec .sec-top .a-link-opt li span.icon03 {
+          background: url("../../global/images/seller-icon03.png") no-repeat 0 0/cover; }
+        .person-center-sec .sec-top .a-link-opt li span.icon04 {
+          background: url("../../global/images/seller-icon04.png") no-repeat 0 0/cover; }
+        .person-center-sec .sec-top .a-link-opt li span.circle-red {
+          height: 0.82rem;
+          width: 0.82rem;
+          border-radius: 50%;
+          background-color: #dd1718;
+          position: absolute;
+          top: -0.28rem;
+          right: 0.56rem;
+          z-index: 5;
+          color: #fff;
+          text-align: center;
+          line-height: 0.82rem; }
+          @media screen and (max-width: 321px) {
+            .person-center-sec .sec-top .a-link-opt li span.circle-red {
+              font-size: 0.64rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .person-center-sec .sec-top .a-link-opt li span.circle-red {
+              font-size: 0.63rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li span.circle-red {
+              font-size: 0.6rem; } }
+          @media screen and (min-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li span.circle-red {
+              font-size: 0.6rem; } }
+        .person-center-sec .sec-top .a-link-opt li p {
+          margin-top: 0.05rem;
+          color: #fff;
+          text-align: center;
+          line-height: 0.88rem; }
+          @media screen and (max-width: 321px) {
+            .person-center-sec .sec-top .a-link-opt li p {
+              font-size: 0.52rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .person-center-sec .sec-top .a-link-opt li p {
+              font-size: 0.51rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li p {
+              font-size: 0.48rem; } }
+          @media screen and (min-width: 640px) {
+            .person-center-sec .sec-top .a-link-opt li p {
+              font-size: 0.48rem; } }
+      .person-center-sec .sec-top .a-link-opt li:last-child a:after {
+        height: 0; }
+  .person-center-sec .sec-list {
+    background-color: #fff;
+    margin-top: 0.4rem;
+    border-top: 0.04rem solid #d9d9d9;
+    padding-left: 0.7rem;
+    padding-bottom: 8rem; }
+    .person-center-sec .sec-list ul li {
+      padding: 0.35rem 0.3rem;
+      border-bottom: 0.04rem solid #d9d9d9; }
+      .person-center-sec .sec-list ul li a {
+        display: block;
+        font-size: 0;
+        padding-right: 1.14rem;
+        position: relative; }
+      .person-center-sec .sec-list ul li .icon {
+        height: 1.1rem;
+        width: 1.1rem;
+        margin-right: 0.25rem;
+        border-radius: 0.1rem;
+        color: #fff;
+        text-align: center;
+        line-height: 1.1rem;
+        position: relative; }
+        @media screen and (max-width: 321px) {
+          .person-center-sec .sec-list ul li .icon {
+            font-size: 0.94rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .person-center-sec .sec-list ul li .icon {
+            font-size: 0.93rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .person-center-sec .sec-list ul li .icon {
+            font-size: 0.9rem; } }
+        @media screen and (min-width: 640px) {
+          .person-center-sec .sec-list ul li .icon {
+            font-size: 0.9rem; } }
+      .person-center-sec .sec-list ul li span.icon01 {
+        background-color: #ff6600; }
+      .person-center-sec .sec-list ul li span.icon02 {
+        background-color: #66669a; }
+      .person-center-sec .sec-list ul li span.icon03 {
+        background-color: #0099cb; }
+      .person-center-sec .sec-list ul li span.icon04 {
+        background-color: #66669a; }
+      .person-center-sec .sec-list ul li .txt {
+        color: #666;
+        text-align: center;
+        line-height: 1.1rem; }
+        @media screen and (max-width: 321px) {
+          .person-center-sec .sec-list ul li .txt {
+            font-size: 0.64rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .person-center-sec .sec-list ul li .txt {
+            font-size: 0.63rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .person-center-sec .sec-list ul li .txt {
+            font-size: 0.6rem; } }
+        @media screen and (min-width: 640px) {
+          .person-center-sec .sec-list ul li .txt {
+            font-size: 0.6rem; } }
+      .person-center-sec .sec-list ul li .status {
+        float: right;
+        color: #666;
+        text-align: center;
+        line-height: 1.1rem; }
+        @media screen and (max-width: 321px) {
+          .person-center-sec .sec-list ul li .status {
+            font-size: 0.52rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .person-center-sec .sec-list ul li .status {
+            font-size: 0.51rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .person-center-sec .sec-list ul li .status {
+            font-size: 0.48rem; } }
+        @media screen and (min-width: 640px) {
+          .person-center-sec .sec-list ul li .status {
+            font-size: 0.48rem; } }
+      .person-center-sec .sec-list ul li i.icon-arrow-right {
+        display: inline-block;
+        position: absolute;
+        right: 0.3rem;
+        top: 0.05rem;
+        color: #6b6b6b;
+        text-align: center;
+        line-height: 1.1rem; }
+        @media screen and (max-width: 321px) {
+          .person-center-sec .sec-list ul li i.icon-arrow-right {
+            font-size: 0.72rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .person-center-sec .sec-list ul li i.icon-arrow-right {
+            font-size: 0.71rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .person-center-sec .sec-list ul li i.icon-arrow-right {
+            font-size: 0.68rem; } }
+        @media screen and (min-width: 640px) {
+          .person-center-sec .sec-list ul li i.icon-arrow-right {
+            font-size: 0.68rem; } }
 
 .circle-choose, .rectangle-choose {
   display: inline-block;
@@ -931,19 +1232,30 @@ section.sticky-foot {
   .circle-choose span.active, .rectangle-choose span.active {
     border-color: #dd1718;
     background-color: #dd1718;
-    color: #fff;
-    font-size: 0.6rem; }
+    position: relative; }
     .circle-choose span.active .icon-ok, .rectangle-choose span.active .icon-ok {
-      color: #fff;
-      font-size: 0.58rem;
       position: absolute;
       top: 0.1rem;
-      left: 0.1rem; }
+      left: 0.1rem;
+      color: #fff;
+      text-align: left;
+      line-height: 0.6rem; }
+      @media screen and (max-width: 321px) {
+        .circle-choose span.active .icon-ok, .rectangle-choose span.active .icon-ok {
+          font-size: 0.64rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .circle-choose span.active .icon-ok, .rectangle-choose span.active .icon-ok {
+          font-size: 0.63rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .circle-choose span.active .icon-ok, .rectangle-choose span.active .icon-ok {
+          font-size: 0.6rem; } }
+      @media screen and (min-width: 640px) {
+        .circle-choose span.active .icon-ok, .rectangle-choose span.active .icon-ok {
+          font-size: 0.6rem; } }
 
 .rectangle-choose span {
   border-color: #d9d9d9;
-  border-radius: 0.1rem;
-  background-color: #fff; }
+  border-radius: 0.1rem; }
 
 .sec-serch {
   padding: 0.2rem; }
@@ -1097,11 +1409,26 @@ section.sticky-foot {
           border-color: #ff6600; }
         .seller-goods-sec .sec-manage-list ul li .status-cont .status-title a.icon-trash, .seller-goods-sec .sec-manage-list ul li .product-detail .sec-txt-wrap .sec-txt-title .status-title a.icon-trash, .product-detail .sec-txt-wrap .seller-goods-sec .sec-manage-list ul li .sec-txt-title .status-title a.icon-trash {
           float: right;
-          margin-right: 0.01rem;
+          margin-right: 0.2rem;
           display: inline-block;
           width: 0.7rem;
           height: 0.7rem;
-          padding: 0.1rem 0.2rem; }
+          padding: 0;
+          color: #666;
+          text-align: left;
+          line-height: 0.7rem; }
+          @media screen and (max-width: 321px) {
+            .seller-goods-sec .sec-manage-list ul li .status-cont .status-title a.icon-trash, .seller-goods-sec .sec-manage-list ul li .product-detail .sec-txt-wrap .sec-txt-title .status-title a.icon-trash, .product-detail .sec-txt-wrap .seller-goods-sec .sec-manage-list ul li .sec-txt-title .status-title a.icon-trash {
+              font-size: 0.52rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .seller-goods-sec .sec-manage-list ul li .status-cont .status-title a.icon-trash, .seller-goods-sec .sec-manage-list ul li .product-detail .sec-txt-wrap .sec-txt-title .status-title a.icon-trash, .product-detail .sec-txt-wrap .seller-goods-sec .sec-manage-list ul li .sec-txt-title .status-title a.icon-trash {
+              font-size: 0.51rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .seller-goods-sec .sec-manage-list ul li .status-cont .status-title a.icon-trash, .seller-goods-sec .sec-manage-list ul li .product-detail .sec-txt-wrap .sec-txt-title .status-title a.icon-trash, .product-detail .sec-txt-wrap .seller-goods-sec .sec-manage-list ul li .sec-txt-title .status-title a.icon-trash {
+              font-size: 0.48rem; } }
+          @media screen and (min-width: 640px) {
+            .seller-goods-sec .sec-manage-list ul li .status-cont .status-title a.icon-trash, .seller-goods-sec .sec-manage-list ul li .product-detail .sec-txt-wrap .sec-txt-title .status-title a.icon-trash, .product-detail .sec-txt-wrap .seller-goods-sec .sec-manage-list ul li .sec-txt-title .status-title a.icon-trash {
+              font-size: 0.48rem; } }
       .seller-goods-sec .sec-manage-list ul li .status-cont .status-detail, .seller-goods-sec .sec-manage-list ul li .product-detail .sec-txt-wrap .sec-txt-title .status-detail, .product-detail .sec-txt-wrap .seller-goods-sec .sec-manage-list ul li .sec-txt-title .status-detail {
         background-color: #f7f5f5;
         padding: 0.2rem 0.2rem 0.15rem; }
@@ -1163,11 +1490,11 @@ section.sticky-foot {
                   font-size: 0.24rem; } }
 
 .seller-goods-sec {
-  padding-bottom: 5.9rem; }
+  padding-bottom: 6rem; }
 
 .seller-goods-footer {
   height: 5.9rem;
-  margin-top: -5.9rem; }
+  border-top: 0; }
   .seller-goods-footer .shelve {
     float: right;
     margin-right: 0.4rem; }
@@ -1634,18 +1961,31 @@ section.sticky-foot {
 
 .sec-address, .order-detail-option .sec-address-show, .makesure-order .sec-address-wrap .sec-address-show, .makesure-order .sec-address-wrap .sec-address-edit {
   background-color: #fff;
-  height: 3.05rem;
   padding: 0.4rem;
   padding-left: 1.5rem;
   border-bottom: 0.04rem solid #e3e3e3;
   position: relative; }
-  .sec-address .address-icon, .order-detail-option .sec-address-show .address-icon, .makesure-order .sec-address-wrap .sec-address-show .address-icon, .makesure-order .sec-address-wrap .sec-address-edit .address-icon {
+  .sec-address .icon-address, .order-detail-option .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
     width: 1.2rem;
     height: 1.6rem;
-    background-color: red;
     position: absolute;
     top: 0.8rem;
-    left: 0.4rem; }
+    left: 0.2rem;
+    color: #999;
+    text-align: left;
+    line-height: 1.6rem; }
+    @media screen and (max-width: 321px) {
+      .sec-address .icon-address, .order-detail-option .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+        font-size: 1.14rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .sec-address .icon-address, .order-detail-option .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+        font-size: 1.13rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .sec-address .icon-address, .order-detail-option .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+        font-size: 1.1rem; } }
+    @media screen and (min-width: 640px) {
+      .sec-address .icon-address, .order-detail-option .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+        font-size: 1.1rem; } }
   .sec-address p, .order-detail-option .sec-address-show p, .makesure-order .sec-address-wrap .sec-address-show p, .makesure-order .sec-address-wrap .sec-address-edit p, .sec-address span, .order-detail-option .sec-address-show span, .makesure-order .sec-address-wrap .sec-address-show span, .makesure-order .sec-address-wrap .sec-address-edit span {
     padding-left: 0.2rem;
     color: #333;
@@ -1816,26 +2156,26 @@ section.sticky-foot {
     @media screen and (min-width: 640px) {
       .order-manage-list ul li .order-status {
         font-size: 0.48rem; } }
-    .order-manage-list ul li .order-status .icon-angle-right {
+    .order-manage-list ul li .order-status .icon-arrow-right {
       float: right;
-      margin-right: 0.4rem;
+      margin-right: 0.6rem;
       width: 0.2rem;
       height: 1.04rem;
-      color: #bebebe;
+      color: #bdbdbd;
       text-align: left;
       line-height: 1.04rem; }
       @media screen and (max-width: 321px) {
-        .order-manage-list ul li .order-status .icon-angle-right {
-          font-size: 0.84rem; } }
+        .order-manage-list ul li .order-status .icon-arrow-right {
+          font-size: 0.68rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
-        .order-manage-list ul li .order-status .icon-angle-right {
-          font-size: 0.83rem; } }
+        .order-manage-list ul li .order-status .icon-arrow-right {
+          font-size: 0.67rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
-        .order-manage-list ul li .order-status .icon-angle-right {
-          font-size: 0.8rem; } }
+        .order-manage-list ul li .order-status .icon-arrow-right {
+          font-size: 0.64rem; } }
       @media screen and (min-width: 640px) {
-        .order-manage-list ul li .order-status .icon-angle-right {
-          font-size: 0.8rem; } }
+        .order-manage-list ul li .order-status .icon-arrow-right {
+          font-size: 0.64rem; } }
   .order-manage-list ul li .order-sum {
     padding-right: 0.2rem;
     height: 1.04rem;
@@ -2100,8 +2440,22 @@ section.sticky-foot {
       width: 0.8rem;
       height: 0.8rem;
       margin: 0 0.3rem;
-      background-color: red;
-      vertical-align: middle; }
+      vertical-align: middle;
+      color: #666;
+      text-align: center;
+      line-height: 0.8rem; }
+      @media screen and (max-width: 321px) {
+        .sec-show-list p.try-loading span {
+          font-size: 0.84rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .sec-show-list p.try-loading span {
+          font-size: 0.83rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .sec-show-list p.try-loading span {
+          font-size: 0.8rem; } }
+      @media screen and (min-width: 640px) {
+        .sec-show-list p.try-loading span {
+          font-size: 0.8rem; } }
 
 .add-cut-opt, .dialog-container .dia-sec-03 .opts-wrap {
   display: inline-block;
@@ -2164,8 +2518,8 @@ section.sticky-foot {
       width: 0.5rem;
       height: 0.5rem;
       position: absolute;
-      top: 0.15rem;
-      left: 0.25rem;
+      top: 0.18rem;
+      left: 0.22rem;
       z-index: 3;
       color: #dd1718;
       font-size: 0.5rem; }
@@ -2225,22 +2579,37 @@ section.sticky-foot {
       border-radius: 50%;
       position: relative;
       color: #fff;
-      text-align: left;
+      text-align: center;
       line-height: 1.84rem; }
       @media screen and (max-width: 321px) {
         .index-home .sec-tab a span {
-          font-size: 0.8 rem0.04rem; } }
+          font-size: 1.24rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .index-home .sec-tab a span {
-          font-size: 0.8 rem0.03rem; } }
+          font-size: 1.23rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .index-home .sec-tab a span {
-          font-size: 0.8 rem; } }
+          font-size: 1.2rem; } }
       @media screen and (min-width: 640px) {
         .index-home .sec-tab a span {
-          font-size: 0.8 rem; } }
+          font-size: 1.2rem; } }
     .index-home .sec-tab a span.home-icon01 {
-      background-color: #009663; }
+      background-color: #009663;
+      color: #fff;
+      text-align: center;
+      line-height: 1.84rem; }
+      @media screen and (max-width: 321px) {
+        .index-home .sec-tab a span.home-icon01 {
+          font-size: 1.2rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .index-home .sec-tab a span.home-icon01 {
+          font-size: 1.19rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .index-home .sec-tab a span.home-icon01 {
+          font-size: 1.16rem; } }
+      @media screen and (min-width: 640px) {
+        .index-home .sec-tab a span.home-icon01 {
+          font-size: 1.16rem; } }
     .index-home .sec-tab a span.home-icon02 {
       background-color: #079bc3; }
     .index-home .sec-tab a span.home-icon03 {
@@ -2273,202 +2642,6 @@ section.sticky-foot {
 .index-home .sec-show-list {
   padding-bottom: 2.04rem; }
 
-section .sec {
-  padding-bottom: 6rem; }
-
-.fixed-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 12;
-  height: auto;
-  width: 100%;
-  border-top: 0.04rem solid #ccc;
-  background-color: #f2f2f2; }
-  .fixed-footer ul.footer-nav {
-    overflow: hidden; }
-    .fixed-footer ul.footer-nav li {
-      width: 25%;
-      float: left; }
-      .fixed-footer ul.footer-nav li a {
-        width: 100%;
-        text-align: center;
-        padding-top: 0.22rem; }
-      .fixed-footer ul.footer-nav li a.active span, .fixed-footer ul.footer-nav li a.active p {
-        color: #dd1718; }
-      .fixed-footer ul.footer-nav li span {
-        width: 1.1rem;
-        height: 1.1rem;
-        background-color: red; }
-      .fixed-footer ul.footer-nav li p {
-        color: #666;
-        text-align: center;
-        line-height: 0.6rem; }
-        @media screen and (max-width: 321px) {
-          .fixed-footer ul.footer-nav li p {
-            font-size: 0.4rem; } }
-        @media screen and (min-width: 321px) and (max-width: 400px) {
-          .fixed-footer ul.footer-nav li p {
-            font-size: 0.39rem; } }
-        @media screen and (min-width: 400px) and (max-width: 640px) {
-          .fixed-footer ul.footer-nav li p {
-            font-size: 0.36rem; } }
-        @media screen and (min-width: 640px) {
-          .fixed-footer ul.footer-nav li p {
-            font-size: 0.36rem; } }
-  .fixed-footer .foot-btn {
-    height: 2.04rem; }
-  .fixed-footer ul {
-    overflow: hidden;
-    height: 100%; }
-    .fixed-footer ul li {
-      float: left;
-      width: 50%;
-      height: 100%; }
-  .fixed-footer .li-2 li {
-    width: 50%; }
-  .fixed-footer .li-3 li {
-    width: 33%; }
-  .fixed-footer .li-4 li {
-    width: 25%; }
-  .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #dd1718;
-    border: 0;
-    color: #fff;
-    text-align: center;
-    line-height: 2rem; }
-    @media screen and (max-width: 321px) {
-      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
-        font-size: 0.76rem; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
-        font-size: 0.75rem; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
-        font-size: 0.72rem; } }
-    @media screen and (min-width: 640px) {
-      .fixed-footer a.a-btn, .fixed-footer a.btn-a, .fixed-footer .sec-login a.btn-a-red, .sec-login .fixed-footer a.btn-a-red, .fixed-footer .sec-login a.btn-a-code, .sec-login .fixed-footer a.btn-a-code {
-        font-size: 0.72rem; } }
-  .fixed-footer a.delete-btn {
-    background-color: #999; }
-  .fixed-footer a.a-btn-bggray {
-    background-color: #999; }
-  .fixed-footer a.a-btn-bggrey {
-    background-color: #d9d9d9; }
-  .fixed-footer a.a-btn-bgred {
-    background-color: #dd1718; }
-  .fixed-footer a.a-btn-bgblue {
-    background-color: #4b61d1; }
-  .fixed-footer ul.sec-bottom {
-    width: 100%;
-    overflow: hidden;
-    background-color: #fafafa; }
-    .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
-      margin: 0 0.3rem;
-      float: left;
-      height: 1.6rem;
-      color: #666;
-      text-align: center;
-      line-height: 1.6rem; }
-      @media screen and (max-width: 321px) {
-        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
-          font-size: 0.52rem; } }
-      @media screen and (min-width: 321px) and (max-width: 400px) {
-        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
-          font-size: 0.51rem; } }
-      @media screen and (min-width: 400px) and (max-width: 640px) {
-        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
-          font-size: 0.48rem; } }
-      @media screen and (min-width: 640px) {
-        .fixed-footer ul.sec-bottom .circle-choose, .fixed-footer ul.sec-bottom .rectangle-choose {
-          font-size: 0.48rem; } }
-      .fixed-footer ul.sec-bottom .circle-choose span, .fixed-footer ul.sec-bottom .rectangle-choose span {
-        margin-right: 0.2rem;
-        vertical-align: middle; }
-    .fixed-footer ul.sec-bottom .sumNum {
-      float: left;
-      padding: 0.05rem 0; }
-      .fixed-footer ul.sec-bottom .sumNum p {
-        color: #333;
-        text-align: center;
-        line-height: 0.7rem; }
-        @media screen and (max-width: 321px) {
-          .fixed-footer ul.sec-bottom .sumNum p {
-            font-size: 0.44rem; } }
-        @media screen and (min-width: 321px) and (max-width: 400px) {
-          .fixed-footer ul.sec-bottom .sumNum p {
-            font-size: 0.42rem; } }
-        @media screen and (min-width: 400px) and (max-width: 640px) {
-          .fixed-footer ul.sec-bottom .sumNum p {
-            font-size: 0.4rem; } }
-        @media screen and (min-width: 640px) {
-          .fixed-footer ul.sec-bottom .sumNum p {
-            font-size: 0.38rem; } }
-        .fixed-footer ul.sec-bottom .sumNum p span.red-font {
-          color: #dd1718;
-          text-align: center;
-          line-height: 0.7rem; }
-          @media screen and (max-width: 321px) {
-            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
-              font-size: 0.44rem; } }
-          @media screen and (min-width: 321px) and (max-width: 400px) {
-            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
-              font-size: 0.42rem; } }
-          @media screen and (min-width: 400px) and (max-width: 640px) {
-            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
-              font-size: 0.4rem; } }
-          @media screen and (min-width: 640px) {
-            .fixed-footer ul.sec-bottom .sumNum p span.red-font {
-              font-size: 0.38rem; } }
-        .fixed-footer ul.sec-bottom .sumNum p .big-font {
-          color: #dd1718;
-          text-align: center;
-          line-height: 0.63rem; }
-          @media screen and (max-width: 321px) {
-            .fixed-footer ul.sec-bottom .sumNum p .big-font {
-              font-size: 0.52rem; } }
-          @media screen and (min-width: 321px) and (max-width: 400px) {
-            .fixed-footer ul.sec-bottom .sumNum p .big-font {
-              font-size: 0.51rem; } }
-          @media screen and (min-width: 400px) and (max-width: 640px) {
-            .fixed-footer ul.sec-bottom .sumNum p .big-font {
-              font-size: 0.48rem; } }
-          @media screen and (min-width: 640px) {
-            .fixed-footer ul.sec-bottom .sumNum p .big-font {
-              font-size: 0.48rem; } }
-      .fixed-footer ul.sec-bottom .sumNum p.grey-font {
-        color: #999; }
-    .fixed-footer ul.sec-bottom a {
-      color: #fff;
-      text-align: center;
-      line-height: 1.6rem; }
-      @media screen and (max-width: 321px) {
-        .fixed-footer ul.sec-bottom a {
-          font-size: 0.52rem; } }
-      @media screen and (min-width: 321px) and (max-width: 400px) {
-        .fixed-footer ul.sec-bottom a {
-          font-size: 0.51rem; } }
-      @media screen and (min-width: 400px) and (max-width: 640px) {
-        .fixed-footer ul.sec-bottom a {
-          font-size: 0.48rem; } }
-      @media screen and (min-width: 640px) {
-        .fixed-footer ul.sec-bottom a {
-          font-size: 0.48rem; } }
-    .fixed-footer ul.sec-bottom li {
-      float: left;
-      width: 50%;
-      line-height: 1.6rem; }
-    .fixed-footer ul.sec-bottom li:first-child {
-      background-color: #fafafa; }
-  .fixed-footer .btn-2 a {
-    width: 50%;
-    height: 1.6rem;
-    line-height: 1.6rem;
-    border-radius: 0; }
-
 .sort-show-list h2 {
   height: 1.24rem;
   background-color: #f3f3f3;
@@ -2497,7 +2670,7 @@ section .sec {
   .product-detail .sec-txt-wrap .sec-txt-title {
     padding: 0.25rem 0.35rem; }
     .product-detail .sec-txt-wrap .sec-txt-title .status-title {
-      width: 10.4rem;
+      width: 10.2rem;
       border-right: 0.04rem solid #d9d9d9; }
   .product-detail .sec-txt-wrap .red-heart-collect {
     width: 1.1rem;
@@ -2507,8 +2680,8 @@ section .sec {
     margin-left: 0.08rem; }
     .product-detail .sec-txt-wrap .red-heart-collect span.red-heart {
       width: 0.9rem;
-      height: 0.8rem;
-      background-color: red; }
+      height: 0.9rem;
+      background: url("../images/collect_icon.png") no-repeat 0 0/cover; }
     .product-detail .sec-txt-wrap .red-heart-collect p {
       color: #666;
       text-align: center;
@@ -2608,7 +2781,21 @@ section .sec {
     .product-detail .sec-pro-formate .fl span.icon {
       width: 0.9rem;
       height: 1rem;
-      background-color: red; }
+      color: #dd1718;
+      text-align: left;
+      line-height: 1.2rem; }
+      @media screen and (max-width: 321px) {
+        .product-detail .sec-pro-formate .fl span.icon {
+          font-size: 1.2rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .product-detail .sec-pro-formate .fl span.icon {
+          font-size: 1.19rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .product-detail .sec-pro-formate .fl span.icon {
+          font-size: 1.16rem; } }
+      @media screen and (min-width: 640px) {
+        .product-detail .sec-pro-formate .fl span.icon {
+          font-size: 1.16rem; } }
     .product-detail .sec-pro-formate .fl p {
       color: #595959;
       text-align: left;
@@ -2636,12 +2823,25 @@ section .sec {
     .product-detail .sec-pro-formate .col-l p {
       text-align: center;
       margin-top: 0.25rem; }
-  .product-detail .sec-pro-formate .icon-caret-down {
+  .product-detail .sec-pro-formate .icon-trangle-down {
     position: absolute;
     right: 0.9rem;
     top: 0.9rem;
-    font-size: 1rem;
-    color: #666; }
+    color: #666;
+    text-align: center;
+    line-height: 0.9rem; }
+    @media screen and (max-width: 321px) {
+      .product-detail .sec-pro-formate .icon-trangle-down {
+        font-size: 1.04rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .product-detail .sec-pro-formate .icon-trangle-down {
+        font-size: 1.03rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .product-detail .sec-pro-formate .icon-trangle-down {
+        font-size: 1rem; } }
+    @media screen and (min-width: 640px) {
+      .product-detail .sec-pro-formate .icon-trangle-down {
+        font-size: 1rem; } }
 
 .product-detail .sec-detail-info {
   background-color: #fff; }
@@ -2706,7 +2906,7 @@ section .sec {
         border-bottom: 0; }
 
 .bg-pop {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -2721,7 +2921,7 @@ section .sec {
   filter: alpha(opacity=80); }
 
 .dialog-container {
-  display: none;
+  display: block;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -2734,7 +2934,22 @@ section .sec {
     height: 0.8rem;
     position: absolute;
     right: 0;
-    top: 0; }
+    top: 0rem;
+    color: #999;
+    text-align: left;
+    line-height: 1rem; }
+    @media screen and (max-width: 321px) {
+      .dialog-container .dia-close {
+        font-size: 0.64rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .dialog-container .dia-close {
+        font-size: 0.63rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .dialog-container .dia-close {
+        font-size: 0.6rem; } }
+    @media screen and (min-width: 640px) {
+      .dialog-container .dia-close {
+        font-size: 0.6rem; } }
   .dialog-container .dia-sec-01 {
     padding: 0.4rem 0;
     margin: 0 0.4rem;
@@ -2863,7 +3078,7 @@ section .sec {
         height: 1.5rem;
         border-bottom: 0.04rem solid #f2f2f2; }
         .dialog-container .dia-sec-03 .list-cont .list-row .big-font {
-          width: 4rem;
+          width: 3.6rem;
           display: inline-block;
           color: #333;
           text-align: left;
@@ -2881,7 +3096,7 @@ section .sec {
             .dialog-container .dia-sec-03 .list-cont .list-row .big-font {
               font-size: 0.48rem; } }
         .dialog-container .dia-sec-03 .list-cont .list-row .small-font {
-          width: 2.6rem;
+          width: 2.8rem;
           display: inline-block;
           color: #666;
           text-align: left;
@@ -2959,13 +3174,28 @@ section .sec {
 .sec-list-none {
   padding-top: 4.9rem;
   text-align: center; }
-  .sec-list-none img {
-    width: 6.04rem;
+  .sec-list-none span.icon-shopcar {
+    width: 6rem;
     height: 5.4rem;
-    background-color: red; }
+    margin-left: -0.5rem;
+    color: #d9d9d9;
+    text-align: center;
+    line-height: 5.4rem; }
+    @media screen and (max-width: 321px) {
+      .sec-list-none span.icon-shopcar {
+        font-size: 6.04rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .sec-list-none span.icon-shopcar {
+        font-size: 6.03rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .sec-list-none span.icon-shopcar {
+        font-size: 6rem; } }
+    @media screen and (min-width: 640px) {
+      .sec-list-none span.icon-shopcar {
+        font-size: 6rem; } }
   .sec-list-none p {
     margin: 0 auto;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     width: 4.5rem;
     color: #999;
     text-align: center;
@@ -3083,7 +3313,8 @@ section .sec {
 .makesure-order {
   padding-bottom: 8rem; }
   .makesure-order .sec-address-wrap {
-    background-color: #fff; }
+    background-color: #fff;
+    position: relative; }
     .makesure-order .sec-address-wrap .new-css, .makesure-order .sec-address-wrap .sec-address-show, .makesure-order .sec-address-wrap .sec-address-edit {
       border-bottom: 0;
       padding: 0.6rem 2rem;
@@ -3092,10 +3323,46 @@ section .sec {
         padding-left: 0.4rem; }
       .makesure-order .sec-address-wrap .new-css .address-icon, .makesure-order .sec-address-wrap .sec-address-show .address-icon, .makesure-order .sec-address-wrap .sec-address-edit .address-icon {
         top: 1.2rem; }
+      .makesure-order .sec-address-wrap .new-css .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+        top: 1.3rem;
+        color: #dd1718;
+        text-align: left;
+        line-height: 1.5rem; }
+        @media screen and (max-width: 321px) {
+          .makesure-order .sec-address-wrap .new-css .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+            font-size: 1.44rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .makesure-order .sec-address-wrap .new-css .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+            font-size: 1.43rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .makesure-order .sec-address-wrap .new-css .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+            font-size: 1.4rem; } }
+        @media screen and (min-width: 640px) {
+          .makesure-order .sec-address-wrap .new-css .icon-address, .makesure-order .sec-address-wrap .sec-address-show .icon-address, .makesure-order .sec-address-wrap .sec-address-edit .icon-address {
+            font-size: 1.4rem; } }
     .makesure-order .sec-address-wrap .address-border {
       height: 0.3rem;
       padding: 0;
       background-color: red; }
+    .makesure-order .sec-address-wrap .icon-arrow-right {
+      position: absolute;
+      right: 0.3rem;
+      top: 1.2rem;
+      color: #999;
+      text-align: left;
+      line-height: 1.5rem; }
+      @media screen and (max-width: 321px) {
+        .makesure-order .sec-address-wrap .icon-arrow-right {
+          font-size: 1.24rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .makesure-order .sec-address-wrap .icon-arrow-right {
+          font-size: 1.23rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .makesure-order .sec-address-wrap .icon-arrow-right {
+          font-size: 1.2rem; } }
+      @media screen and (min-width: 640px) {
+        .makesure-order .sec-address-wrap .icon-arrow-right {
+          font-size: 1.2rem; } }
   .makesure-order .sec-list-wrap {
     background-color: #fff;
     margin-top: 0.4rem; }
@@ -3334,7 +3601,9 @@ section .sec {
             font-size: 0.38rem; } }
       .makesure-order .sec-list-wrap .list-foot .select-wrapper {
         float: right;
-        width: 2rem; }
+        width: 2.4rem;
+        padding-right: 0.3rem;
+        position: relative; }
         .makesure-order .sec-list-wrap .list-foot .select-wrapper select {
           height: 0.8rem;
           color: #999;
@@ -3354,6 +3623,10 @@ section .sec {
           @media screen and (min-width: 640px) {
             .makesure-order .sec-list-wrap .list-foot .select-wrapper select {
               font-size: 0.38rem; } }
+        .makesure-order .sec-list-wrap .list-foot .select-wrapper .icon-arrow-down {
+          position: absolute;
+          right: 0.1rem;
+          top: 0.2rem; }
       .makesure-order .sec-list-wrap .list-foot .leav-message {
         padding: 0.4rem 0; }
         .makesure-order .sec-list-wrap .list-foot .leav-message textarea {

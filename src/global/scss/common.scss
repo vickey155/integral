@@ -139,6 +139,155 @@ $a-btn-radius:0.1rem;
     border-right:0;
   }
 }
+
+//固定底部
+section{
+  .sec{
+    padding-bottom: 6rem;
+  }
+}
+$footH:2.04rem;
+.fixed-footer{
+  position: fixed;
+  bottom:0;
+  left:0;
+  z-index: 12;
+  height: auto;
+  width: 100%;
+  border-top:$border-w solid #ccc;
+  background-color: $bg;
+  ul.footer-nav{
+    overflow: hidden;
+    li{
+      width: 25%;
+      float: left;
+      a{
+        width: 100%;
+        text-align: center;
+        padding-top: 0.22rem;
+      }
+      a.active{
+        span,p{
+          color: $red;
+        }
+      }
+      span{
+        width: 1.1rem;
+        height: 1.1rem;
+        @include fontFormat($fz:0.82rem,$fc:$c6,$ta:center,$lh:1.1rem);
+      }
+      p{
+        @include fontFormat($fz:0.36rem,$fc:$c6,$ta:center,$lh:0.6rem);
+      }
+    }
+  }
+  .foot-btn{
+    height: 2.04rem;
+  }
+  ul{
+    overflow: hidden;
+    height: 100%;
+    li{
+      float: left;
+      width: 50%;
+      height: 100%;
+    }
+  }
+  .li-2{
+    li{
+      width: 50%;
+    }
+  }
+  .li-3{
+    li{
+      width: 33%;
+    }
+  }
+  .li-4{
+    li{
+      width: 25%;
+    }
+  }
+  //2.04rem高的按钮
+  a.a-btn{
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $red;
+    border:0;
+    @include fontFormat($fz:0.72rem,$fc:$white,$ta:center,$lh:$footH);
+  }
+  a.delete-btn{
+    background-color:$c9;
+  }
+  a.a-btn-bggray{
+    background-color:$c9;
+  }
+  a.a-btn-bggrey{
+    background-color: $d9;
+  }
+  a.a-btn-bgred{
+    background-color: $red;
+  }
+  a.a-btn-bgblue{
+    background-color: $blue;
+  }
+
+
+  ul.sec-bottom{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fafafa;
+    .circle-choose{
+      margin:0 0.3rem;
+      float: left;
+      height: 1.6rem;
+      @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.6rem);
+      span{
+        margin-right: 0.2rem;
+        vertical-align: middle;
+      }
+    }
+    .sumNum{
+      float: left;
+      padding: 0.05rem 0;
+      p{
+        @include fontFormatS($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.7rem);
+        span.red-font{
+          @include fontFormatS($fz:0.36rem,$fc:$red,$ta:center,$lh:0.7rem);
+        }
+        .big-font{
+          @include fontFormat($fz:0.48rem,$fc:$red,$ta:center,$lh:0.63rem);
+        }
+      }
+      p.grey-font{
+        color: $c9;
+      }
+    }
+    a{
+      @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1.6rem);
+    }
+    li{
+      float:left;
+      width: 50%;
+      line-height: 1.6rem;
+    }
+    li:first-child{
+      background-color: #fafafa;
+    }
+  }
+  //1.6rem高的小按钮
+  .btn-2{
+    a{
+      width: 50%;
+      height: 1.6rem;
+      line-height: 1.6rem;
+      border-radius: 0;
+    }
+  }
+
+}
+
 //登陆，申请，忘记密码，找回密码页面
 .sec-login{
   padding-bottom: 1.47rem;
@@ -172,9 +321,12 @@ $a-btn-radius:0.1rem;
         span{
           width:0.6rem;
           height: 0.6rem;
-          background-color: red;
+          @include fontFormat($fz:0.5rem,$fc:$c9,$ta:center,$lh:0.6rem);
           vertical-align: top;
           margin: 0.01rem 0.1rem;
+        }
+        .icon-lock{
+          margin-top:0;
         }
       }
       input[type=text]{
@@ -264,9 +416,9 @@ $a-btn-radius:0.1rem;
         width: 0.6rem;
         height:0.6rem;
         position: relative;
-        background-color: red;
         margin-top: 0.3rem;
         margin-right: 0.2rem;
+        @include fontFormat($fz:0.6rem,$fc:$blue,$ta:center,$lh:0.6rem);
 
       }
     }
@@ -402,12 +554,11 @@ section.sticky-foot{
 //common select
 .select-wrapper{
   position: relative;
-  .icon-caret-down{
+  .icon-trangle-down{
     position: absolute;
     right: 0.36rem;
     top: 0.46rem;
-    font-size: 0.6rem;
-    color:$c9;
+    @include fontFormat($fz:0.6rem,$fc:$c9,$lh:0.65rem);
   }
   select{
     width:100%;
@@ -577,6 +728,8 @@ section.sticky-foot{
 
 //卖家中心
 .person-center-sec{
+  height: 100%;
+  background-color:$white;
   .sec-top{
     padding:1.5rem 0 0.6rem;
     background: url('../../global/images/seller-bg.jpg') no-repeat 0 center/cover;
@@ -628,6 +781,11 @@ section.sticky-foot{
         span.icon{
           width:1.3rem;
           height: 1.3rem;
+          position: relative;
+          @include fontFormat($fz:1.16rem,$fc:$white,$ta:center,$lh:1.3rem);
+        }
+        span.icon-receive{
+          @include fontFormat($fz:1.3rem,$fc:$white,$ta:center,$lh:1.3rem);
         }
         span.icon01{
           background: url('../../global/images/seller-icon01.png') no-repeat 0 0 /cover;
@@ -647,8 +805,9 @@ section.sticky-foot{
           border-radius: 50%;
           background-color: $red;
           position: absolute;
-          top:-0.41rem;
-          right: 0.5rem;
+          top:-0.28rem;
+          right: 0.56rem;
+          z-index: 5;
           @include fontFormat($fz:0.6rem,$fc:$white,$ta:center,$lh:0.82rem);
         }
         p{
@@ -685,7 +844,7 @@ section.sticky-foot{
           width: 1.1rem;
           margin-right: 0.25rem;
           border-radius: $borderRadius;
-          @include fontFormat($fz:0.8rem,$fc:$white,$ta:center,$lh:1.1rem);
+          @include fontFormat($fz:0.9rem,$fc:$white,$ta:center,$lh:1.1rem);
           position: relative;
         }
         span.icon01{
@@ -711,13 +870,12 @@ section.sticky-foot{
           float: right;
           @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.1rem);
         }
-        i.icon-angle-right{
+        i.icon-arrow-right{
           display: inline-block;
           position: absolute;
-          right: 0.36rem;
+          right: 0.3rem;
           top: 0.05rem;
-          font-size: 0.96rem;
-          color: $c9;
+          @include fontFormat($fz:0.68rem,$fc:#6b6b6b,$ta:center,$lh:1.1rem);
         }
       }
     }
@@ -742,14 +900,12 @@ section.sticky-foot{
   span.active{
     border-color:$red;
     background-color: $red;
-    color: $white;
-    font-size: 0.6rem;
+    position: relative;
     .icon-ok{
-      color: $white;
-      font-size: 0.58rem;
       position: absolute;
       top:0.1rem;
       left:0.1rem;
+      @include fontFormat($fz:0.6rem,$fc:$white,$lh:0.6rem);
     }
   }
 }
@@ -758,7 +914,6 @@ section.sticky-foot{
   span{
     border-color:$d9;
     border-radius:$borderRadius;
-    background-color: $white;
   }
 }
 
@@ -864,11 +1019,12 @@ section.sticky-foot{
             }
             a.icon-trash{
               float: right;
-              margin-right: 0.01rem;
+              margin-right: 0.2rem;
               display: inline-block;
               width:0.7rem;
               height: 0.7rem;
-              padding:0.1rem 0.2rem;
+              padding:0;
+              @include fontFormat($fz:0.48rem,$fc:$c6,$lh:0.7rem);
             }
           }
           .status-detail{
@@ -899,11 +1055,11 @@ section.sticky-foot{
   }
 }
 .seller-goods-sec{
-  padding-bottom: 5.9rem
+  padding-bottom: 6rem
 }
 .seller-goods-footer{
   height: 5.9rem;
-  margin-top: -5.9rem;
+  border-top:0;
   .shelve{
     float:right;
     margin-right: 0.4rem;
@@ -1153,18 +1309,18 @@ p{
 //common 地址
 .sec-address{
   background-color: $white;
-  height: 3.05rem;
+  //height: 3.05rem;
   padding: 0.4rem;
   padding-left:1.5rem;
   border-bottom:$border-w solid #e3e3e3;
   position: relative;
-  .address-icon {
+  .icon-address {
     width: 1.2rem;
     height: 1.6rem;
-    background-color: red;
     position: absolute;
     top: 0.8rem;
-    left: 0.4rem;
+    left: 0.2rem;
+    @include fontFormat($fz:1.1rem,$fc:$c9,$lh:1.6rem);
   }
   p,span{
     padding-left: 0.2rem;
@@ -1244,12 +1400,12 @@ p{
         padding-left: 0.2rem;
         height: 1.04rem;
         @include fontFormat($fz:0.48rem,$fc:$red,$lh:1.04rem);
-        .icon-angle-right{
+        .icon-arrow-right{
           float: right;
-          margin-right: 0.4rem;
+          margin-right: 0.6rem;
           width: 0.2rem;
           height: 1.04rem;
-          @include fontFormat($fz:0.8rem,$fc:#bebebe,$lh:1.04rem);
+          @include fontFormat($fz:0.64rem,$fc:#bdbdbd,$lh:1.04rem);
         }
       }
       .order-sum{
@@ -1403,8 +1559,8 @@ p{
       width:0.8rem;
       height: 0.8rem;
       margin: 0 0.3rem;
-      background-color: red;
       vertical-align: middle;
+      @include fontFormat($fz:0.8rem,$fc:$c6,$ta:center,$lh:0.8rem);
     }
   }
 }
@@ -1448,8 +1604,8 @@ p{
         width:0.5rem;
         height:0.5rem;
         position: absolute;
-        top:0.15rem;
-        left:0.25rem;
+        top:0.18rem;
+        left:0.22rem;
         z-index: 3;
         color: $red;
         font-size: 0.5rem;
@@ -1484,13 +1640,11 @@ p{
         background-color: red;
         border-radius: 50%;
         position: relative;
-        @include fontFormat($fz:0.8 rem,$fc:$white,$lh:1.84rem);
-        i{
-
-        }
+        @include fontFormat($fz:1.2rem,$fc:$white,$ta:center,$lh:1.84rem);
       }
       span.home-icon01{
         background-color: #009663;
+        @include fontFormat($fz:1.16rem,$fc:$white,$ta:center,$lh:1.84rem);
       }
       span.home-icon02{
         background-color: #079bc3;
@@ -1519,152 +1673,7 @@ p{
      padding-bottom: 2.04rem;
   }
 }
- //固定底部
-section{
-  .sec{
-    padding-bottom: 6rem;
-  }
-}
-.fixed-footer{
-  position: fixed;
-  bottom:0;
-  left:0;
-  z-index: 12;
-  height: auto;
-  width: 100%;
-  border-top:$border-w solid #ccc;
-  background-color: $bg;
-  ul.footer-nav{
-    overflow: hidden;
-    li{
-      width: 25%;
-      float: left;
-      a{
-        width: 100%;
-        text-align: center;
-        padding-top: 0.22rem;
-      }
-      a.active{
-        span,p{
-          color: $red;
-        }
-      }
-      span{
-        width: 1.1rem;
-        height: 1.1rem;
-        background-color: red;
-      }
-      p{
-        @include fontFormat($fz:0.36rem,$fc:$c6,$ta:center,$lh:0.6rem);
-      }
-    }
-  }
-  .foot-btn{
-    height: 2.04rem;
-  }
-  ul{
-    overflow: hidden;
-    height: 100%;
-    li{
-      float: left;
-      width: 50%;
-      height: 100%;
-    }
-  }
-  .li-2{
-    li{
-      width: 50%;
-    }
-  }
-  .li-3{
-    li{
-      width: 33%;
-    }
-  }
-  .li-4{
-    li{
-      width: 25%;
-    }
-  }
-  //2.04rem高的按钮
-  a.a-btn{
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $red;
-    border:0;
-    @include fontFormat($fz:0.72rem,$fc:$white,$ta:center,$lh:$footH);
-  }
-  a.delete-btn{
-    background-color:$c9;
-  }
-  a.a-btn-bggray{
-    background-color:$c9;
-  }
-  a.a-btn-bggrey{
-    background-color: $d9;
-  }
-  a.a-btn-bgred{
-    background-color: $red;
-  }
-  a.a-btn-bgblue{
-    background-color: $blue;
-  }
 
-
-  ul.sec-bottom{
-    width: 100%;
-    overflow: hidden;
-    background-color: #fafafa;
-    .circle-choose{
-      margin:0 0.3rem;
-      float: left;
-      height: 1.6rem;
-      @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.6rem);
-      span{
-        margin-right: 0.2rem;
-        vertical-align: middle;
-      }
-    }
-    .sumNum{
-      float: left;
-      padding: 0.05rem 0;
-      p{
-        @include fontFormatS($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.7rem);
-        span.red-font{
-          @include fontFormatS($fz:0.36rem,$fc:$red,$ta:center,$lh:0.7rem);
-        }
-        .big-font{
-          @include fontFormat($fz:0.48rem,$fc:$red,$ta:center,$lh:0.63rem);
-        }
-      }
-      p.grey-font{
-        color: $c9;
-      }
-    }
-    a{
-      @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1.6rem);
-    }
-    li{
-      float:left;
-      width: 50%;
-      line-height: 1.6rem;
-    }
-    li:first-child{
-      background-color: #fafafa;
-    }
-  }
-  //1.6rem高的小按钮
-  .btn-2{
-    a{
-      width: 50%;
-      height: 1.6rem;
-      line-height: 1.6rem;
-      border-radius: 0;
-    }
-  }
-
-}
 
 //分类搜索展示列表
 .sort-show-list{
@@ -1687,7 +1696,7 @@ section{
       padding: 0.25rem 0.35rem;
       @extend .status-cont;
       .status-title{
-        width: 10.4rem;
+        width: 10.2rem;
         border-right: $border-w solid $d9;
       }
     }
@@ -1699,8 +1708,8 @@ section{
       margin-left: 0.08rem;
       span.red-heart{
         width: 0.9rem;
-        height: 0.8rem;
-        background-color: red;
+        height: 0.9rem;
+        background:url('../images/collect_icon.png') no-repeat 0 0/cover;
       }
       p{
         @include fontFormatS($fz:0.36rem,$fc:$c6,$ta:center,$lh:0.6rem);
@@ -1739,7 +1748,7 @@ section{
       span.icon{
         width: 0.9rem;
         height: 1rem;
-        background-color: red;
+        @include fontFormat($fz:1.16rem,$fc:$red,$lh:1.2rem);
       }
       p{
         @include fontFormat($fz:0.48rem,$fc:#595959,$lh:0.8rem);
@@ -1758,12 +1767,11 @@ section{
         margin-top: 0.25rem;
       }
     }
-    .icon-caret-down{
+    .icon-trangle-down{
       position: absolute;
       right: 0.9rem;
       top:0.9rem;
-      font-size: 1rem;
-      color: $c6;
+      @include fontFormat($fz:1rem,$fc:$c6,$ta:center,$lh:0.9rem);
     }
 
   }
@@ -1797,7 +1805,7 @@ section{
   }
 }
 .bg-pop{
-  display: none;
+  display: block;
   position: fixed;
   top:0;
   left:0;
@@ -1812,7 +1820,7 @@ section{
   filter:alpha(opacity=80)
 }
 .dialog-container{
-  display: none;
+  display: block;
   position: fixed;
   bottom:0;
   left:0;
@@ -1825,7 +1833,8 @@ section{
     height: 0.8rem;
     position: absolute;
     right: 0;
-    top:0;
+    top:0rem;
+    @include fontFormat($fz:0.6rem,$fc:$c9,$lh:1rem);
   }
   .dia-sec-01{
     padding: 0.4rem 0;
@@ -1897,12 +1906,12 @@ section{
         height: 1.5rem;
         border-bottom: $border-w solid $bg;
         .big-font{
-          width:4rem;
+          width:3.6rem;
           display: inline-block;
           @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1.5rem);
         }
         .small-font{
-          width:2.6rem;
+          width:2.8rem;
           display: inline-block;
           @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:1.5rem);
         }
@@ -1939,14 +1948,15 @@ section{
 .sec-list-none{
   padding-top:4.9rem;
   text-align: center;
-  img{
-    width:6.04rem;
+  span.icon-shopcar{
+    width:6rem;
     height: 5.4rem;
-    background-color: red;
+    margin-left:-0.5rem;
+    @include fontFormat($fz:6rem,$fc:$d9,$ta:center,$lh:5.4rem);
   }
   p{
     margin: 0 auto;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     width: 4.5rem;
     @include fontFormat($fz:0.72rem,$fc:$c9,$ta:center,$lh:1.1rem);
   }
@@ -2033,6 +2043,7 @@ section{
   padding-bottom: 8rem;
   .sec-address-wrap{
     background-color: $white;
+    position: relative;
     .new-css{
       border-bottom: 0;
       padding:0.6rem 2rem;
@@ -2042,6 +2053,10 @@ section{
       }
       .address-icon {
         top:1.2rem;
+      }
+      .icon-address{
+        top:1.3rem;
+        @include fontFormat($fz:1.4rem,$fc:$red,$lh:1.5rem);
       }
     }
     .sec-address-show{
@@ -2058,6 +2073,12 @@ section{
       height: 0.3rem;
       padding: 0;
       background-color: red;
+    }
+    .icon-arrow-right{
+      position:absolute;
+      right:0.3rem;
+      top:1.2rem;
+      @include fontFormat($fz:1.2rem,$fc:$c9,$lh:1.5rem);
     }
   }
   .sec-list-wrap{
@@ -2170,12 +2191,19 @@ section{
       }
       .select-wrapper{
         float:right;
-        width:2rem ;
+        width:2.4rem ;
+        padding-right: 0.3rem;
+        position: relative;
         select{
           height: 0.8rem;
           @include fontFormatS($fz:0.36rem,$fc:$c9,$lh:0.8rem);
           padding: 0;
           border:0;
+        }
+        .icon-arrow-down{
+          position: absolute;
+          right:0.1rem;
+          top:0.2rem;
         }
       }
       .leav-message{
