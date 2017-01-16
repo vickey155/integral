@@ -145,10 +145,9 @@ $a-btn-radius:0.1rem;
   .sec-log{
     padding:0.95rem 0 0.9rem;
     text-align: center;
-    span{
+    img{
        width:1.72rem;
        height:1.72rem;
-      background-color: #00A4EE;
     }
     p{
       margin-top: 0.1rem ;
@@ -685,18 +684,25 @@ section.sticky-foot{
           height: 1.1rem;
           width: 1.1rem;
           margin-right: 0.25rem;
+          border-radius: $borderRadius;
+          @include fontFormat($fz:0.8rem,$fc:$white,$ta:center,$lh:1.1rem);
+          position: relative;
         }
         span.icon01{
-          background: url('../../global/images/seller-icon11.png') no-repeat 0 0 /cover;
+          background-color: #ff6600;
+          //background: url('../../global/images/seller-icon11.png') no-repeat 0 0 /cover;
         }
         span.icon02{
-          background: url('../../global/images/seller-icon12.png') no-repeat 0 0 /cover;
+          background-color: #66669a;
+          //background: url('../../global/images/seller-icon12.png') no-repeat 0 0 /cover;
         }
         span.icon03{
-          background: url('../../global/images/seller-icon13.png') no-repeat 0 0 /cover;
+          background-color: #0099cb;
+          //background: url('../../global/images/seller-icon13.png') no-repeat 0 0 /cover;
         }
         span.icon04{
-          background: url('../../global/images/seller-icon14.png') no-repeat 0 0 /cover;
+          background-color: #66669a;
+          //background: url('../../global/images/seller-icon14.png') no-repeat 0 0 /cover;
         }
         .txt{
           @include fontFormat($fz:0.6rem,$fc:$c6,$ta:center,$lh:1.1rem);
@@ -723,6 +729,7 @@ section.sticky-foot{
   display: inline-block;
   vertical-align: top;
   span{
+    background-color: $white;
     border-radius: 50%;
     border: 0.05rem solid $c9;
     height:0.86rem;
@@ -1129,12 +1136,12 @@ p{
         }
         .arrow-icon{
           position: absolute;
-          top: -0.2rem;
+          top: -0.3rem;
           right:1rem;
           z-index: 1;
-          background-color: red;
-          height: 0.2rem;
-          width: 0.2rem;
+          width:0.5rem;
+          height: 0.4rem;
+          background:url('../images/arr-up.png') no-repeat 0 0/cover;
         }
       }
       .red-font{
@@ -1170,7 +1177,7 @@ p{
     @include fontFormat($fz:0.72rem,$fc:$c9,$lh:1rem);
     margin-top:0.66rem ;
   }
-  a.arrow-right{
+  a.icon-angle-right{
     width: 0.7rem;
     height: 1rem;
     font-size: 0.8rem;
@@ -1237,12 +1244,12 @@ p{
         padding-left: 0.2rem;
         height: 1.04rem;
         @include fontFormat($fz:0.48rem,$fc:$red,$lh:1.04rem);
-        .arrow-right{
+        .icon-angle-right{
           float: right;
           margin-right: 0.4rem;
           width: 0.2rem;
-          height: 0.4rem;
-          background-color: red;
+          height: 1.04rem;
+          @include fontFormat($fz:0.8rem,$fc:#bebebe,$lh:1.04rem);
         }
       }
       .order-sum{
@@ -1426,13 +1433,14 @@ p{
     padding-left: 0.35rem ;
     background-color: $red;
     .log-pic{
-      height:1.22rem;
+      height:1.04rem;
       width:2.3rem;
+      vertical-align: middle;
     }
     .serch-input-wrap{
       display: inline-block;
       margin-top: 0.17rem;
-      margin-left: 1.12rem ;
+      margin-left: 1.1rem ;
       height: 0.84rem;
       border-radius:0.4rem;
       position: relative;
@@ -1474,6 +1482,30 @@ p{
         width:1.84rem;
         height: 1.84rem;
         background-color: red;
+        border-radius: 50%;
+        position: relative;
+        @include fontFormat($fz:0.8 rem,$fc:$white,$lh:1.84rem);
+        i{
+
+        }
+      }
+      span.home-icon01{
+        background-color: #009663;
+      }
+      span.home-icon02{
+        background-color: #079bc3;
+      }
+      span.home-icon03{
+        background-color: #ff6600;
+      }
+      span.home-icon04{
+        background-color: #cb3398;
+      }
+      span.home-icon05{
+        background-color: #646498;
+      }
+      span.home-icon06{
+        background-color: #fecb31;
       }
       p{
         @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.8rem);
@@ -1765,6 +1797,7 @@ section{
   }
 }
 .bg-pop{
+  display: none;
   position: fixed;
   top:0;
   left:0;
@@ -1779,13 +1812,14 @@ section{
   filter:alpha(opacity=80)
 }
 .dialog-container{
+  display: none;
   position: fixed;
   bottom:0;
   left:0;
   z-index: 7;
   width:100%;
-  height: 14.1rem;
   background-color: $white;
+  padding-bottom: 2.04rem;
   .dia-close{
     width:0.8rem;
     height: 0.8rem;
@@ -2271,7 +2305,7 @@ section{
         padding:0.2rem 0.35rem;
         position: relative;
         width: 10.1rem;
-        border-radius: $borderRadius;
+        border-radius: $borderRadius + 0.02rem;
         background-color: $white;
         margin-left: 0.4rem;
         p{
@@ -2286,7 +2320,8 @@ section{
           left: 0;
           width: 0.8rem;
           height:0.8rem;
-          background-color: red;
+          background:url('../images/address_default.png') no-repeat 0 0/cover;
+
         }
       }
     }
@@ -2352,6 +2387,14 @@ section{
     background: url('../../global/images/buyer-bg.jpg') no-repeat 0 center/cover;
     .seller-name{
       margin-top: 0.2rem;
+    }
+  }
+  .sec-list{
+    span.icon01{
+       background-color:#ffd105 ;
+    }
+    span.icon02{
+      background-color:#7fe2b3 ;
     }
   }
 }

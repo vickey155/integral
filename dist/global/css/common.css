@@ -124,10 +124,9 @@ h1 {
   .sec-login .sec-log {
     padding: 0.95rem 0 0.9rem;
     text-align: center; }
-    .sec-login .sec-log span {
+    .sec-login .sec-log img {
       width: 1.72rem;
-      height: 1.72rem;
-      background-color: #00A4EE; }
+      height: 1.72rem; }
     .sec-login .sec-log p {
       margin-top: 0.1rem;
       color: #333;
@@ -850,15 +849,32 @@ section.sticky-foot {
     .person-center-sec .sec-list ul li .icon {
       height: 1.1rem;
       width: 1.1rem;
-      margin-right: 0.25rem; }
+      margin-right: 0.25rem;
+      border-radius: 0.1rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1.1rem;
+      position: relative; }
+      @media screen and (max-width: 321px) {
+        .person-center-sec .sec-list ul li .icon {
+          font-size: 0.84rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .person-center-sec .sec-list ul li .icon {
+          font-size: 0.83rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .person-center-sec .sec-list ul li .icon {
+          font-size: 0.8rem; } }
+      @media screen and (min-width: 640px) {
+        .person-center-sec .sec-list ul li .icon {
+          font-size: 0.8rem; } }
     .person-center-sec .sec-list ul li span.icon01 {
-      background: url("../../global/images/seller-icon11.png") no-repeat 0 0/cover; }
+      background-color: #ff6600; }
     .person-center-sec .sec-list ul li span.icon02 {
-      background: url("../../global/images/seller-icon12.png") no-repeat 0 0/cover; }
+      background-color: #66669a; }
     .person-center-sec .sec-list ul li span.icon03 {
-      background: url("../../global/images/seller-icon13.png") no-repeat 0 0/cover; }
+      background-color: #0099cb; }
     .person-center-sec .sec-list ul li span.icon04 {
-      background: url("../../global/images/seller-icon14.png") no-repeat 0 0/cover; }
+      background-color: #66669a; }
     .person-center-sec .sec-list ul li .txt {
       color: #666;
       text-align: center;
@@ -904,6 +920,7 @@ section.sticky-foot {
   display: inline-block;
   vertical-align: top; }
   .circle-choose span, .rectangle-choose span {
+    background-color: #fff;
     border-radius: 50%;
     border: 0.05rem solid #999;
     height: 0.86rem;
@@ -1606,12 +1623,12 @@ section.sticky-foot {
         position: relative; }
       .order-one .order-table .big-font .td .arrow-icon, .order-detail-option .order-detail .order-table .big-font .td .arrow-icon {
         position: absolute;
-        top: -0.2rem;
+        top: -0.3rem;
         right: 1rem;
         z-index: 1;
-        background-color: red;
-        height: 0.2rem;
-        width: 0.2rem; }
+        width: 0.5rem;
+        height: 0.4rem;
+        background: url("../images/arr-up.png") no-repeat 0 0/cover; }
     .order-one .order-table .big-font .red-font, .order-detail-option .order-detail .order-table .big-font .red-font {
       color: #dd1718; }
 
@@ -1679,7 +1696,7 @@ section.sticky-foot {
     @media screen and (min-width: 640px) {
       .sec-address p.big-font, .order-detail-option .sec-address-show p.big-font, .makesure-order .sec-address-wrap .sec-address-show p.big-font, .makesure-order .sec-address-wrap .sec-address-edit p.big-font {
         font-size: 0.72rem; } }
-  .sec-address a.arrow-right, .order-detail-option .sec-address-show a.arrow-right, .makesure-order .sec-address-wrap .sec-address-show a.arrow-right, .makesure-order .sec-address-wrap .sec-address-edit a.arrow-right {
+  .sec-address a.icon-angle-right, .order-detail-option .sec-address-show a.icon-angle-right, .makesure-order .sec-address-wrap .sec-address-show a.icon-angle-right, .makesure-order .sec-address-wrap .sec-address-edit a.icon-angle-right {
     width: 0.7rem;
     height: 1rem;
     font-size: 0.8rem;
@@ -1799,12 +1816,26 @@ section.sticky-foot {
     @media screen and (min-width: 640px) {
       .order-manage-list ul li .order-status {
         font-size: 0.48rem; } }
-    .order-manage-list ul li .order-status .arrow-right {
+    .order-manage-list ul li .order-status .icon-angle-right {
       float: right;
       margin-right: 0.4rem;
       width: 0.2rem;
-      height: 0.4rem;
-      background-color: red; }
+      height: 1.04rem;
+      color: #bebebe;
+      text-align: left;
+      line-height: 1.04rem; }
+      @media screen and (max-width: 321px) {
+        .order-manage-list ul li .order-status .icon-angle-right {
+          font-size: 0.84rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .order-manage-list ul li .order-status .icon-angle-right {
+          font-size: 0.83rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .order-manage-list ul li .order-status .icon-angle-right {
+          font-size: 0.8rem; } }
+      @media screen and (min-width: 640px) {
+        .order-manage-list ul li .order-status .icon-angle-right {
+          font-size: 0.8rem; } }
   .order-manage-list ul li .order-sum {
     padding-right: 0.2rem;
     height: 1.04rem;
@@ -2119,12 +2150,13 @@ section.sticky-foot {
   padding-left: 0.35rem;
   background-color: #dd1718; }
   .index-home .sec-serch-buy .log-pic {
-    height: 1.22rem;
-    width: 2.3rem; }
+    height: 1.04rem;
+    width: 2.3rem;
+    vertical-align: middle; }
   .index-home .sec-serch-buy .serch-input-wrap {
     display: inline-block;
     margin-top: 0.17rem;
-    margin-left: 1.12rem;
+    margin-left: 1.1rem;
     height: 0.84rem;
     border-radius: 0.4rem;
     position: relative; }
@@ -2189,7 +2221,36 @@ section.sticky-foot {
     .index-home .sec-tab a span {
       width: 1.84rem;
       height: 1.84rem;
-      background-color: red; }
+      background-color: red;
+      border-radius: 50%;
+      position: relative;
+      color: #fff;
+      text-align: left;
+      line-height: 1.84rem; }
+      @media screen and (max-width: 321px) {
+        .index-home .sec-tab a span {
+          font-size: 0.8 rem0.04rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .index-home .sec-tab a span {
+          font-size: 0.8 rem0.03rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .index-home .sec-tab a span {
+          font-size: 0.8 rem; } }
+      @media screen and (min-width: 640px) {
+        .index-home .sec-tab a span {
+          font-size: 0.8 rem; } }
+    .index-home .sec-tab a span.home-icon01 {
+      background-color: #009663; }
+    .index-home .sec-tab a span.home-icon02 {
+      background-color: #079bc3; }
+    .index-home .sec-tab a span.home-icon03 {
+      background-color: #ff6600; }
+    .index-home .sec-tab a span.home-icon04 {
+      background-color: #cb3398; }
+    .index-home .sec-tab a span.home-icon05 {
+      background-color: #646498; }
+    .index-home .sec-tab a span.home-icon06 {
+      background-color: #fecb31; }
     .index-home .sec-tab a p {
       color: #333;
       text-align: center;
@@ -2645,6 +2706,7 @@ section .sec {
         border-bottom: 0; }
 
 .bg-pop {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -2659,13 +2721,14 @@ section .sec {
   filter: alpha(opacity=80); }
 
 .dialog-container {
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 7;
   width: 100%;
-  height: 14.1rem;
-  background-color: #fff; }
+  background-color: #fff;
+  padding-bottom: 2.04rem; }
   .dialog-container .dia-close {
     width: 0.8rem;
     height: 0.8rem;
@@ -3462,7 +3525,7 @@ section .sec {
     padding: 0.2rem 0.35rem;
     position: relative;
     width: 10.1rem;
-    border-radius: 0.1rem;
+    border-radius: 0.12rem;
     background-color: #fff;
     margin-left: 0.4rem; }
     .shopping-address .address-list li .address-txt p {
@@ -3503,7 +3566,7 @@ section .sec {
       left: 0;
       width: 0.8rem;
       height: 0.8rem;
-      background-color: red; }
+      background: url("../images/address_default.png") no-repeat 0 0/cover; }
 
 .shopping-address-footer {
   border-top: 0; }
@@ -3592,3 +3655,9 @@ section .sec {
   background: url("../../global/images/buyer-bg.jpg") no-repeat 0 center/cover; }
   .buyer-center .sec-top .seller-name {
     margin-top: 0.2rem; }
+
+.buyer-center .sec-list span.icon01 {
+  background-color: #ffd105; }
+
+.buyer-center .sec-list span.icon02 {
+  background-color: #7fe2b3; }
