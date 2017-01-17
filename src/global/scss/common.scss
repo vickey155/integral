@@ -146,7 +146,7 @@ section{
     padding-bottom: 6rem;
   }
 }
-$footH:2.04rem;
+$footH:2rem;
 .fixed-footer{
   position: fixed;
   bottom:0;
@@ -182,7 +182,7 @@ $footH:2.04rem;
     }
   }
   .foot-btn{
-    height: 2.04rem;
+    height: 2rem;
   }
   ul{
     overflow: hidden;
@@ -208,7 +208,7 @@ $footH:2.04rem;
       width: 25%;
     }
   }
-  //2.04rem高的按钮
+  //2rem高的按钮
   a.a-btn{
     border-radius: 0;
     width: 100%;
@@ -533,7 +533,7 @@ $footH:2rem;
   }
 }
 section.sticky-foot{
-  bottom: 2.04rem;
+  bottom: 2rem;
 }
 .set-pw{
   background-color: $white;
@@ -656,7 +656,7 @@ section.sticky-foot{
   }
   .tab-w-s{
     .a-tab{
-      width:2.04rem;
+      width:2rem;
     }
     .a-tab-orange{background-color: #fe6500;}
   }
@@ -1346,9 +1346,9 @@ p{
 .order-detail-option{
   .sec-title{
     width:100%;
-    height:2.04rem;
+    height:2rem;
     background-color: $red;
-    @include fontFormat($fz:0.6rem,$fc:$white,$ta:center,$lh:2.04rem);
+    @include fontFormat($fz:0.6rem,$fc:$white,$ta:center,$lh:2rem);
     p{
       padding-top: 0.25rem;
       @include fontFormat($fz:0.6rem,$fc:$white,$ta:center,$lh:0.8rem);
@@ -1670,7 +1670,7 @@ p{
     }
   }
   .sec-show-list{
-     padding-bottom: 2.04rem;
+     padding-bottom: 2rem;
   }
 }
 
@@ -1827,7 +1827,7 @@ p{
   z-index: 7;
   width:100%;
   background-color: $white;
-  padding-bottom: 2.04rem;
+  padding-bottom: 2rem;
   .dia-close{
     width:0.8rem;
     height: 0.8rem;
@@ -2070,9 +2070,9 @@ p{
     }
 
     .address-border{
-      height: 0.3rem;
+      height: 0.2rem;
       padding: 0;
-      background-color: red;
+      background:url("../images/addres-border.png") no-repeat 0 0/cover;
     }
     .icon-arrow-right{
       position:absolute;
