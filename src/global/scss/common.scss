@@ -584,7 +584,30 @@ section.sticky-foot{
     width: 4rem;
   }
 }
-
+//上传图片按钮
+.input-file-wrap{
+  overflow: hidden;
+  position: relative;
+  input[type=file]{
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+    opacity:0;
+  }
+  .add-btn{
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+  }
+}
 
 // 新品发布
 .new-product-release{
@@ -684,6 +707,9 @@ section.sticky-foot{
         width:6.6rem;
         margin-right:0;
       }
+      input[type=file]{
+
+      }
       .add-btn{
         float: left;
         height: 1.16rem;
@@ -691,7 +717,7 @@ section.sticky-foot{
         background-color: $c9;
         margin-top: 0.25rem;
         border-radius: $borderRadius;
-        @include fontFormat($fz:1rem,$fc:$white,$ta:center,$lh:0.96rem);
+        @include fontFormat($fz:1rem,$fc:$white,$ta:center,$lh:1.1rem);
       }
       .magin-top{
         margin-top: 0.1rem;
@@ -701,6 +727,7 @@ section.sticky-foot{
   .upload-pic{
     ul{
       overflow: hidden;
+      display: inline-block;
       li{
         float: left;
         width:2.66rem;
@@ -713,14 +740,20 @@ section.sticky-foot{
           border: 0;
         }
       }
-      li.add-li{
-        .add-btn{
-          width: 100%;
-          height: 100%;
-          border:$border-w solid $d9;
-          @include fontFormat($fz:2.6rem,$fc:$d9,$ta:center,$lh:2.2rem);
-          margin-top: 0;
-        }
+    }
+    .input-file-wrap{
+      width:2.66rem;
+      height: 2.66rem;
+      input[type=file]{
+        border:$border-w solid $d9;
+        @include fontFormat($fz:2.1rem,$fc:$d9,$ta:center,$lh:2.2rem);
+      }
+      .add-btn{
+        width: 100%;
+        height: 100%;
+        border:$border-w solid $d9;
+        @include fontFormat($fz:2.6rem,$fc:$d9,$ta:center,$lh:2.1rem);
+
       }
     }
   }
@@ -1136,14 +1169,26 @@ section.sticky-foot{
   .QR-code-upload{
     border:0.02rem solid $d9;
     width: 11.08rem;
-    height:11.08rem;
+    height:12rem;
     text-align: center;
+    padding-top: 1rem;
     .add-icon{
-      margin-top:1.2rem;
+
       @include fontFormat($fz:10rem,$fc:$d9,$ta:center,$lh:6.6rem);
     }
+    .input-file-wrap{
+      width:100%;
+      height: 9rem;
+      input[type=file]{
+        @include fontFormat($fz:2.1rem,$fc:$d9,$ta:center,$lh:2.2rem);
+      }
+      .add-btn{
+        width: 100%;
+        height: 100%;
+        @include fontFormat($fz:10rem,$fc:$d9,$ta:center,$lh:8rem);
+      }
+    }
     p{
-      margin-top: 1.5rem;
       @include fontFormat($fz:0.72rem,$fc:$d9,$ta:center,$lh:0.8rem);
     }
   }
@@ -1804,6 +1849,8 @@ p{
 
   }
 }
+
+//弹层
 .bg-pop{
   display: block;
   position: fixed;
@@ -1942,8 +1989,49 @@ p{
     }
   }
 }
-
-
+.dialog-alert-pop {
+  display: block;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-left:-4rem;
+  z-index: 7;
+  width:8rem;
+  background-color: $white;
+  .dialog-title{
+    height: 1.1rem;
+    @include fontFormat($fz:0.48rem,$fc:$c3,$ta:center,$lh:1.1rem);
+    border-bottom:$border-w solid $d9;
+  }
+  .dialog-cont{
+    padding: 0.6rem 0.4rem;
+    p{
+      @include fontFormat($fz:0.6rem,$fc:$c6,$ta:center,$lh:1rem);
+    }
+    p.red-font{
+      @include fontFormat($fz:0.6rem,$fc:$red,$ta:center,$lh:1rem);
+    }
+  }
+  .dialog-btn{
+    a{
+      width:100%;
+      height: 2rem;
+      width:100%;
+      @include fontFormat($fz:0.72rem,$fc:$white,$ta:center,$lh:2rem);
+    }
+    a.a-btn-graybg{
+      background-color: #ccc;
+    }
+    a.a-btn-redbg{
+      background-color: $red;
+    }
+  }
+  .a-2{
+    a{
+      width: 50%;
+    }
+  }
+}
 //进货单
 .sec-list-none{
   padding-top:4.9rem;
