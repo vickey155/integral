@@ -3,32 +3,32 @@ extends ../layout/layout-buyer
 block append headTitle
   title 产品详情
 
+block append headCss
+  script(type="text/javascript" src="../../global/js/TouchSlide.1.1.js")
+
 block content
   header.fixed-header
-    a(href="")
+    a(href="javascript:window.history.back();").go-back.icon-arrow-left
     .fr
-      a(href="").home-icon
-      a(href="").shopping-car-icon
+      a(href="/template/buy/index.html").icon-home
+      a(href="").icon-shopcar
 
   section.sticky-cont.product-detail
     .sec
-      .sec-banner
-        ul
-          li
-            a
-              img(src="")
-          li
-            a
-              img(src="")
-          li
-            a
-              img(src="")
-          li
-            a
-              img(src="")
-          li
-            a
-              img(src="")
+      .sec-banner#banner
+        .hd
+          ul
+        .bd
+          ul
+            li
+              a
+                img(src="../../global/images/img.jpg")
+            li
+              a
+                img(src="../../global/images/img.jpg")
+            li
+              a
+                img(src="../../global/images/img.jpg")
       .sec-txt-wrap
         .sec-txt-title
           .status-title
@@ -97,8 +97,8 @@ block content
             span.txt-wrap M（约3-5岁），L（约6-8岁）， XL（约9-12岁）
 
 
-      .bg-pop
-      .dialog-container
+      .bg-pop(style="display:block")
+      .dialog-container(style="display:block")
         .dia-close.icon-close
         .dia-sec-01
           img(src="")
@@ -107,7 +107,7 @@ block content
             p.price-num ￥22.50-￥24.00
         .dia-sec-02
           .title 颜色
-          .a-tab.clearfix
+          .a-tab.clearfix.a-tab-wrap
             a.active 拼色款
               span.num 10
             a 纯色款
@@ -122,23 +122,23 @@ block content
               .big-font M (约3-5岁)
               .small-font 库存：20360
               .opts-wrap
-                a -
-                input(type="text" value="12").input-s
-                a +
+                a(href="javascript:void(0);") -
+                input(type="number" value="12").input-s
+                a(href="javascript:void(0);") +
             .list-row
               .big-font M (约3-5岁)
               .small-font 库存：20360
               .opts-wrap
-                a -
-                input(type="text" value="12").input-s
-                a +
+                a(href="javascript:void(0);") -
+                input(type="number" value="12").input-s
+                a(href="javascript:void(0);") +
             .list-row
               .big-font M (约3-5岁)
               .small-font 库存：20360
               .opts-wrap
-                a -
-                input(type="text" value="12").input-s
-                a +
+                a(href="javascript:void(0);") -
+                input(type="number" value="12").input-s
+                a(href="javascript:void(0);") +
         .dia-sec-04.sum-data
           .fl 本产品按手批发，一手=10双
           .fr 共

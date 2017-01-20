@@ -9,7 +9,7 @@ body, ul, li, h1, h2, h3, h4, p, input, textarea, span, div, em, strong, dl, dt,
   -webkit-appearance: none;
   border: 0; }
 
-a, a:link, a:hover, a:visited {
+a, a:link {
   text-decoration: none;
   outline: none;
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);

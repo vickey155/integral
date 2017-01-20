@@ -1,10 +1,9 @@
 @charset "UTF-8";
 html, body {
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow-x: hidden;
-  overflow-y: auto;
-  background-color: #f2f2f2; }
+  overflow-y: auto; }
 
 * {
   box-sizing: border-box;
@@ -12,7 +11,8 @@ html, body {
 
 body {
   padding: 0;
-  color: #333; }
+  color: #333;
+  background-color: #f2f2f2; }
 
 img, span, a, label, i {
   display: inline-block;
@@ -398,6 +398,8 @@ section .sec {
       font-size: 0.36rem;
       color: #333;
       padding-left: 0.2rem; }
+    .sec-login form .form-row input.error-input {
+      border-color: #dd1718; }
   .sec-login form .form-row:last-child {
     border: 0.02rem solid #d9d9d9; }
   .sec-login a.bg-blue {
@@ -439,7 +441,11 @@ section .sec {
       border: 1px solid #999;
       background-color: #fff;
       vertical-align: top;
-      margin-top: 0.05rem; }
+      margin-top: 0.05rem;
+      font-size: 0.4rem;
+      line-height: 0.5rem;
+      color: #999;
+      text-align: center; }
     .sec-login .password-rember span {
       font-size: 0.36rem;
       margin-left: 0.12rem; }
@@ -713,6 +719,8 @@ section.sticky-foot {
       @media screen and (min-width: 640px) {
         .set-pw .form-row input[type=text] {
           font-size: 0.6rem; } }
+    .set-pw .form-row input.error-input {
+      border-color: #dd1718; }
 
 .select-wrapper {
   position: relative; }
@@ -761,6 +769,8 @@ section.sticky-foot {
         font-size: 0.48rem; } }
   .select-wrapper select.selected {
     color: #333; }
+  .select-wrapper select.error-input {
+    border-color: #dd1718; }
 
 .select-wrapper-s {
   position: relative;
@@ -790,12 +800,15 @@ section.sticky-foot {
     left: 0;
     z-index: 1; }
 
+.bg-white {
+  background-color: #fff; }
+
 .new-product-release {
   background-color: #fff; }
-  .new-product-release .margin-b, .new-product-release .select-wrapper select, .select-wrapper .new-product-release select, .new-product-release .form-row input[type=text], .new-product-release .a-tab-wrap .a-tab, .new-product-release .upload-pic ul li {
-    margin-bottom: 0.5rem; }
+  .new-product-release .margin-b, .new-product-release .select-wrapper select, .select-wrapper .new-product-release select, .new-product-release .form-row input[type=text], .new-product-release .a-tab-wrap .a-tab, .new-product-release .a-tab-wrap span, .new-product-release .upload-pic ul li {
+    margin-bottom: 0.6rem; }
   .new-product-release .sec-fill {
-    padding: 0 0.7rem; }
+    padding: 0 0.5rem; }
   .new-product-release .fill-line, .new-product-release .sec-fill-title:before, .new-product-release .sec-fill-title:after {
     display: block;
     position: absolute;
@@ -850,6 +863,8 @@ section.sticky-foot {
       @media screen and (min-width: 640px) {
         .new-product-release .form-row input[type=text] {
           font-size: 0.48rem; } }
+    .new-product-release .form-row input.error-input {
+      border-color: #dd1718; }
   .new-product-release .a-tab-wrap .a-tab {
     width: 2.54rem;
     height: 1.5rem;
@@ -872,21 +887,44 @@ section.sticky-foot {
     @media screen and (min-width: 640px) {
       .new-product-release .a-tab-wrap .a-tab {
         font-size: 0.48rem; } }
-  .new-product-release .a-tab-wrap .a-tab:last-child {
+  .new-product-release .a-tab-wrap .last-a {
     background-color: #fff;
     color: #999; }
+  .new-product-release .a-tab-wrap span {
+    width: 2.54rem;
+    height: 1.5rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5rem;
+    background-color: #999;
+    border: 0.04rem solid #d9d9d9;
+    border-radius: 0.1rem;
+    margin-right: 0.44rem; }
+    @media screen and (max-width: 321px) {
+      .new-product-release .a-tab-wrap span {
+        font-size: 0.52rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .new-product-release .a-tab-wrap span {
+        font-size: 0.51rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .new-product-release .a-tab-wrap span {
+        font-size: 0.48rem; } }
+    @media screen and (min-width: 640px) {
+      .new-product-release .a-tab-wrap span {
+        font-size: 0.48rem; } }
   .new-product-release .a-tab-wrap .active {
     background-color: #dd1718;
-    boder-color: #dd1718; }
+    border-color: #dd1718; }
   .new-product-release .a-tab-wrap .grey-bg {
     background-color: #999; }
-  .new-product-release .tab-w-s .a-tab {
+  .new-product-release .tab-w-s span {
     width: 2rem; }
   .new-product-release .tab-w-s .a-tab-orange {
-    background-color: #fe6500; }
-  .new-product-release .last-grey-bg .a-tab:last-child {
-    background-color: #999;
-    color: #fff; }
+    background-color: #fe6500;
+    border-color: #fe6500; }
+  .new-product-release .tab-w-s .active {
+    background-color: #dd1718;
+    border-color: #dd1718; }
   .new-product-release .form-row .row-title {
     height: 1.18rem;
     color: #333;
@@ -911,6 +949,8 @@ section.sticky-foot {
       margin-right: 0.36rem; }
     .new-product-release .form-row .row-cont input[type=text].input-text-s {
       width: 4rem; }
+    .new-product-release .form-row .row-cont .input-text-m {
+      width: 5.4rem; }
     .new-product-release .form-row .row-cont input[type=text].input-text-l {
       width: 6.6rem;
       margin-right: 0; }
@@ -936,20 +976,69 @@ section.sticky-foot {
       @media screen and (min-width: 640px) {
         .new-product-release .form-row .row-cont .add-btn {
           font-size: 1rem; } }
+    .new-product-release .form-row .row-cont .cut-btn {
+      float: left;
+      height: 1.16rem;
+      width: 1.16rem;
+      background-color: #999;
+      margin-top: 0.25rem;
+      border-radius: 0.1rem;
+      margin-right: 0.2rem;
+      margin-bottom: 0.2rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1.1rem; }
+      @media screen and (max-width: 321px) {
+        .new-product-release .form-row .row-cont .cut-btn {
+          font-size: 1.04rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .new-product-release .form-row .row-cont .cut-btn {
+          font-size: 1.03rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .new-product-release .form-row .row-cont .cut-btn {
+          font-size: 1rem; } }
+      @media screen and (min-width: 640px) {
+        .new-product-release .form-row .row-cont .cut-btn {
+          font-size: 1rem; } }
     .new-product-release .form-row .row-cont .magin-top {
       margin-top: 0.1rem; }
+  .new-product-release .form-row:last-child .cut-btn {
+    margin-right: 0; }
   .new-product-release .upload-pic ul {
-    overflow: hidden;
     display: inline-block; }
     .new-product-release .upload-pic ul li {
       float: left;
       width: 2.66rem;
       height: 2.66rem;
-      margin-right: 0.8rem; }
+      margin-right: 0.8rem;
+      position: relative; }
       .new-product-release .upload-pic ul li img {
         width: 100%;
         height: 100%;
         border: 0; }
+      .new-product-release .upload-pic ul li .icon-close {
+        position: absolute;
+        right: -0.3rem;
+        top: -0.3rem;
+        width: 0.6rem;
+        height: 0.6rem;
+        color: #fff;
+        text-align: center;
+        line-height: 0.68rem;
+        background-color: #dd1718;
+        border-radius: 50%; }
+        @media screen and (max-width: 321px) {
+          .new-product-release .upload-pic ul li .icon-close {
+            font-size: 0.36rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .new-product-release .upload-pic ul li .icon-close {
+            font-size: 0.35rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .new-product-release .upload-pic ul li .icon-close {
+            font-size: 0.32rem; } }
+        @media screen and (min-width: 640px) {
+          .new-product-release .upload-pic ul li .icon-close {
+            font-size: 0.32rem; } }
   .new-product-release .upload-pic .input-file-wrap {
     width: 2.66rem;
     height: 2.66rem; }
@@ -973,10 +1062,11 @@ section.sticky-foot {
     .new-product-release .upload-pic .input-file-wrap .add-btn {
       width: 100%;
       height: 100%;
+      margin-top: 0;
       border: 0.04rem solid #d9d9d9;
       color: #d9d9d9;
       text-align: center;
-      line-height: 2.1rem; }
+      line-height: 2.6rem; }
       @media screen and (max-width: 321px) {
         .new-product-release .upload-pic .input-file-wrap .add-btn {
           font-size: 2.64rem; } }
@@ -989,6 +1079,27 @@ section.sticky-foot {
       @media screen and (min-width: 640px) {
         .new-product-release .upload-pic .input-file-wrap .add-btn {
           font-size: 2.6rem; } }
+  .new-product-release .input-wrap {
+    float: left;
+    overflow: hidden;
+    margin-bottom: 0.5rem; }
+    .new-product-release .input-wrap input[type=text] {
+      margin-bottom: 0; }
+  .new-product-release .radio-wrap {
+    display: inline-block; }
+    .new-product-release .radio-wrap input[type=radio] {
+      height: 0;
+      width: 0;
+      background: none;
+      font-size: 0; }
+  .new-product-release .checkbox-wrap {
+    display: inline-block;
+    overflow: hidden; }
+    .new-product-release .checkbox-wrap input[type=checkbox] {
+      height: 0;
+      width: 0;
+      background: none;
+      font-size: 0; }
 
 .person-center-sec {
   height: 100%;
@@ -2537,14 +2648,16 @@ section.sticky-foot {
 .add-cut-opt, .dialog-container .dia-sec-03 .opts-wrap {
   display: inline-block;
   height: 1rem;
-  border: 0.08rem solid #e6e6e6; }
+  overflow: hidden;
+  vertical-align: middle; }
   .add-cut-opt a, .dialog-container .dia-sec-03 .opts-wrap a {
-    width: 1.04rem;
-    height: 100%;
+    float: left;
+    width: 1.2rem;
+    height: 1rem;
     background-color: #e6e6e6;
     color: #333;
     text-align: center;
-    line-height: 0.8rem; }
+    line-height: 1rem; }
     @media screen and (max-width: 321px) {
       .add-cut-opt a, .dialog-container .dia-sec-03 .opts-wrap a {
         font-size: 0.76rem; } }
@@ -2558,12 +2671,15 @@ section.sticky-foot {
       .add-cut-opt a, .dialog-container .dia-sec-03 .opts-wrap a {
         font-size: 0.72rem; } }
   .add-cut-opt .input-s, .dialog-container .dia-sec-03 .opts-wrap .input-s {
-    width: 2.5rem;
-    height: 100%;
+    float: left;
+    width: 2.2rem;
+    height: 1rem;
     background-color: #fff;
+    border: 0.08rem solid #e6e6e6;
+    border-radius: 0;
     color: #333;
     text-align: center;
-    line-height: 0.8rem; }
+    line-height: 1rem; }
     @media screen and (max-width: 321px) {
       .add-cut-opt .input-s, .dialog-container .dia-sec-03 .opts-wrap .input-s {
         font-size: 0.76rem; } }
@@ -2738,9 +2854,76 @@ section.sticky-foot {
     .sort-show-list h2 {
       font-size: 0.6rem; } }
 
+.fixed-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  height: 1.6rem;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.8; }
+  .fixed-header a {
+    height: 100%;
+    width: 1.2rem;
+    padding: 0.2rem 0;
+    color: #666;
+    text-align: center;
+    line-height: 1.2rem;
+    margin-right: 0.4rem; }
+    @media screen and (max-width: 321px) {
+      .fixed-header a {
+        font-size: 1.08rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .fixed-header a {
+        font-size: 1.06rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .fixed-header a {
+        font-size: 1.04rem; } }
+    @media screen and (min-width: 640px) {
+      .fixed-header a {
+        font-size: 1.02rem; } }
+
 .product-detail .sec-banner {
   width: 100%;
-  height: 10rem; }
+  height: 10rem;
+  position: relative; }
+  .product-detail .sec-banner .hd {
+    position: absolute;
+    left: 0;
+    bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    height: 0.3rem;
+    z-index: 2; }
+    .product-detail .sec-banner .hd ul {
+      display: inline-block;
+      overflow: hidden; }
+      .product-detail .sec-banner .hd ul li {
+        background-color: #666;
+        height: 0.3rem;
+        width: 0.3rem;
+        border-radius: 50%;
+        float: left;
+        margin-right: 0.25rem;
+        font-size: 0; }
+      .product-detail .sec-banner .hd ul li.on {
+        background-color: #dd1718; }
+  .product-detail .sec-banner .bd {
+    width: 100%;
+    height: 10rem;
+    overflow: hidden; }
+    .product-detail .sec-banner .bd ul {
+      overflow: hidden; }
+      .product-detail .sec-banner .bd ul li {
+        width: 100%;
+        height: 10rem; }
+        .product-detail .sec-banner .bd ul li img {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          overflow: hidden;
+          outline: none; }
 
 .product-detail .sec-txt-wrap {
   background-color: #fff; }
@@ -2983,7 +3166,7 @@ section.sticky-foot {
         border-bottom: 0; }
 
 .bg-pop {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -2998,7 +3181,7 @@ section.sticky-foot {
   filter: alpha(opacity=80); }
 
 .dialog-container {
-  display: block;
+  display: none;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -3155,6 +3338,7 @@ section.sticky-foot {
         height: 1.5rem;
         border-bottom: 0.04rem solid #f2f2f2; }
         .dialog-container .dia-sec-03 .list-cont .list-row .big-font {
+          vertical-align: middle;
           width: 3.6rem;
           display: inline-block;
           color: #333;
@@ -3173,6 +3357,7 @@ section.sticky-foot {
             .dialog-container .dia-sec-03 .list-cont .list-row .big-font {
               font-size: 0.48rem; } }
         .dialog-container .dia-sec-03 .list-cont .list-row .small-font {
+          vertical-align: middle;
           width: 2.8rem;
           display: inline-block;
           color: #666;
@@ -3248,13 +3433,26 @@ section.sticky-foot {
       .dialog-container .dia-sec-04 .fr span.sum {
         margin-left: 0.3rem; }
 
+.bg-alert-pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+  -ms-opacity: 0.8;
+  -moz-opacity: 0.8;
+  -webkit-opacity: 0.8;
+  filter: alpha(opacity=80); }
+
 .dialog-alert-pop {
-  display: block;
   position: fixed;
   top: 30%;
   left: 50%;
   margin-left: -4rem;
-  z-index: 7;
+  z-index: 16;
   width: 8rem;
   background-color: #fff; }
   .dialog-alert-pop .dialog-title {
@@ -3294,46 +3492,116 @@ section.sticky-foot {
         .dialog-alert-pop .dialog-cont p {
           font-size: 0.6rem; } }
     .dialog-alert-pop .dialog-cont p.red-font {
-      color: #dd1718;
-      text-align: center;
-      line-height: 1rem; }
+      color: #dd1718; }
+    .dialog-alert-pop .dialog-cont input[type=text] {
+      width: 100%;
+      height: 1.4rem;
+      border: 0.04rem solid #999;
+      padding: 0.2rem 0.2rem;
+      color: #666;
+      text-align: left;
+      line-height: 1rem;
+      background-color: #f2f2f2; }
       @media screen and (max-width: 321px) {
-        .dialog-alert-pop .dialog-cont p.red-font {
-          font-size: 0.64rem; } }
+        .dialog-alert-pop .dialog-cont input[type=text] {
+          font-size: 0.52rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
-        .dialog-alert-pop .dialog-cont p.red-font {
-          font-size: 0.63rem; } }
+        .dialog-alert-pop .dialog-cont input[type=text] {
+          font-size: 0.51rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
-        .dialog-alert-pop .dialog-cont p.red-font {
-          font-size: 0.6rem; } }
+        .dialog-alert-pop .dialog-cont input[type=text] {
+          font-size: 0.48rem; } }
       @media screen and (min-width: 640px) {
-        .dialog-alert-pop .dialog-cont p.red-font {
-          font-size: 0.6rem; } }
-  .dialog-alert-pop .dialog-btn a {
-    width: 100%;
-    height: 2rem;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    line-height: 2rem; }
-    @media screen and (max-width: 321px) {
-      .dialog-alert-pop .dialog-btn a {
-        font-size: 0.76rem; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .dialog-alert-pop .dialog-btn a {
-        font-size: 0.75rem; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .dialog-alert-pop .dialog-btn a {
-        font-size: 0.72rem; } }
-    @media screen and (min-width: 640px) {
-      .dialog-alert-pop .dialog-btn a {
-        font-size: 0.72rem; } }
-  .dialog-alert-pop .dialog-btn a.a-btn-graybg {
-    background-color: #ccc; }
-  .dialog-alert-pop .dialog-btn a.a-btn-redbg {
-    background-color: #dd1718; }
+        .dialog-alert-pop .dialog-cont input[type=text] {
+          font-size: 0.48rem; } }
+    .dialog-alert-pop .dialog-cont input[type=text].input-error {
+      border-color: #dd1718; }
+  .dialog-alert-pop .dialog-btn {
+    height: 1.8rem; }
+    .dialog-alert-pop .dialog-btn a {
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      text-align: center;
+      line-height: 1.8rem; }
+      @media screen and (max-width: 321px) {
+        .dialog-alert-pop .dialog-btn a {
+          font-size: 0.76rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dialog-alert-pop .dialog-btn a {
+          font-size: 0.75rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dialog-alert-pop .dialog-btn a {
+          font-size: 0.72rem; } }
+      @media screen and (min-width: 640px) {
+        .dialog-alert-pop .dialog-btn a {
+          font-size: 0.72rem; } }
+    .dialog-alert-pop .dialog-btn a.a-btn-graybg {
+      background-color: #ccc; }
+    .dialog-alert-pop .dialog-btn a.a-btn-redbg {
+      background-color: #dd1718; }
   .dialog-alert-pop .a-2 a {
     width: 50%; }
+
+.w750 .dialog-alert-pop {
+  margin-left: -2.4rem;
+  width: 4.8rem; }
+  .w750 .dialog-alert-pop .dialog-title {
+    height: 0.66rem;
+    color: #333;
+    text-align: center;
+    line-height: 0.66rem;
+    border-bottom: 0.02rem solid #d9d9d9; }
+    @media screen and (max-width: 321px) {
+      .w750 .dialog-alert-pop .dialog-title {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .w750 .dialog-alert-pop .dialog-title {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .w750 .dialog-alert-pop .dialog-title {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .w750 .dialog-alert-pop .dialog-title {
+        font-size: 0.29rem; } }
+  .w750 .dialog-alert-pop .dialog-cont {
+    padding: 0.32rem 0.1rem; }
+    .w750 .dialog-alert-pop .dialog-cont p {
+      color: #666;
+      text-align: center;
+      line-height: 0.66rem; }
+      @media screen and (max-width: 321px) {
+        .w750 .dialog-alert-pop .dialog-cont p {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .w750 .dialog-alert-pop .dialog-cont p {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .w750 .dialog-alert-pop .dialog-cont p {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 640px) {
+        .w750 .dialog-alert-pop .dialog-cont p {
+          font-size: 0.36rem; } }
+    .w750 .dialog-alert-pop .dialog-cont p.red-font {
+      color: #dd1718; }
+  .w750 .dialog-alert-pop .dialog-btn {
+    height: 1.2rem; }
+    .w750 .dialog-alert-pop .dialog-btn a {
+      color: #fff;
+      text-align: center;
+      line-height: 1.2rem; }
+      @media screen and (max-width: 321px) {
+        .w750 .dialog-alert-pop .dialog-btn a {
+          font-size: 0.48rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .w750 .dialog-alert-pop .dialog-btn a {
+          font-size: 0.47rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .w750 .dialog-alert-pop .dialog-btn a {
+          font-size: 0.44rem; } }
+      @media screen and (min-width: 640px) {
+        .w750 .dialog-alert-pop .dialog-btn a {
+          font-size: 0.44rem; } }
 
 .sec-list-none {
   padding-top: 4.9rem;

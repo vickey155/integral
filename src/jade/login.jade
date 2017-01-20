@@ -3,6 +3,7 @@ extends layout/layout
 block append headTitle
   title 登录
 
+
 block content
   section.sec-login
     .sec-log
@@ -14,17 +15,17 @@ block content
           label
             span.icon-account
             | 账号
-          input(type="text" placeholder="请输入手机号").input-text
+          input(type="text" placeholder="请输入手机号" data-validate="telephone").input-text#user
         .form-row
           label
             span.icon-lock.pw-icon
             | 密码
-          input(type="text" placeholder="请输入密码").input-text
+          input(type="text" placeholder="请输入密码" data-validate="password").input-text#password
       .btn-a-login
-        a.btn-a.bg-blue 立即登录
+        a.btn-a.bg-blue.submit-a 立即登录
       .password-rember.clearfix
         .fl
-          input(type="checkbox").input-cbox
+          input(type="checkbox" checked).input-cbox#rmbUser
           span 记住密码
         .fr
           a.forget-pass(href="/template/pw-forget.html") 忘记密码？

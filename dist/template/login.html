@@ -14,11 +14,14 @@
     <link rel="stylesheet" href="../global/font/style.css">
     <link rel="stylesheet" href="../global/css/common.css">
     <script type="text/javascript" src="../global/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../global/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="../global/js/common.js"></script>
+    <script type="text/javascript" src="../global/js/index-seller.js"></script>
     <script>
       $(function () {
         if($('.sec-login')[0]){
           document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+          $('body').addClass('w750');
         }
         else{
           document.documentElement.style.fontSize = document.documentElement.clientWidth / 12.42 + 'px';
@@ -36,17 +39,17 @@
         <form>
           <div class="form-row">
             <label><span class="icon-account"></span>账号</label>
-            <input type="text" placeholder="请输入手机号" class="input-text">
+            <input type="text" placeholder="请输入手机号" data-validate="telephone" id="user" class="input-text">
           </div>
           <div class="form-row">
             <label><span class="icon-lock pw-icon"></span>密码</label>
-            <input type="text" placeholder="请输入密码" class="input-text">
+            <input type="text" placeholder="请输入密码" data-validate="password" id="password" class="input-text">
           </div>
         </form>
-        <div class="btn-a-login"><a class="btn-a bg-blue">立即登录</a></div>
+        <div class="btn-a-login"><a class="btn-a bg-blue submit-a">立即登录</a></div>
         <div class="password-rember clearfix">
           <div class="fl">
-            <input type="checkbox" class="input-cbox"><span>记住密码</span>
+            <input type="checkbox" checked id="rmbUser" class="input-cbox"><span>记住密码</span>
           </div>
           <div class="fr"><a href="/template/pw-forget.html" class="forget-pass">忘记密码？</a></div>
         </div>

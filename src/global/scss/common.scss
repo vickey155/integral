@@ -1,7 +1,7 @@
 
-html,body{width:100%;height: 100%;overflow-x:hidden;overflow-y:auto;background-color: #f2f2f2;}
+html,body{width:100%;height: auto;overflow-x:hidden;overflow-y:auto;}
 *{box-sizing: border-box;font-family:"微软雅黑";}
-body{padding:0; color: #333;}
+body{padding:0; color: #333;background-color: #f2f2f2;}
 img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
 h1{font-weight:normal;margin:0; padding:0;}
 .fl{float: left;}
@@ -338,6 +338,9 @@ $footH:2rem;
         color:$c3;
         padding-left: 0.2rem;
       }
+      input.error-input{
+        border-color:$red;
+      }
     }
     .form-row:last-child{
       border:0.02rem solid $d9;
@@ -373,6 +376,10 @@ $footH:2rem;
       background-color:$white;
       vertical-align: top;
       margin-top: 0.05rem;
+      font-size: 0.4rem;
+      line-height: 0.5rem;
+      color: $c9;
+      text-align: center;
     }
     span{
       font-size: 0.36rem;
@@ -546,6 +553,9 @@ section.sticky-foot{
        padding: 0.3rem;
        @include fontFormat($fz:0.6rem,$fc:c3,$lh:0.97rem);
      }
+     input.error-input{
+       border-color:$red;
+     }
    }
 
 }
@@ -574,6 +584,9 @@ section.sticky-foot{
   }
   select.selected{
     color:$c3;
+  }
+  select.error-input{
+    border-color:$red;
   }
 }
 .select-wrapper-s{
@@ -610,13 +623,16 @@ section.sticky-foot{
 }
 
 // 新品发布
+.bg-white{
+  background-color: $white;
+}
 .new-product-release{
   background-color: $white;
   .margin-b{
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
   .sec-fill{
-    padding: 0 0.7rem;
+    padding: 0 0.5rem;
   }
   .fill-line{
     display:block;
@@ -652,6 +668,9 @@ section.sticky-foot{
       border:$border-w solid $d9;
       @extend .margin-b;
     }
+    input.error-input{
+      border-color:$red;
+    }
   }
 
   .a-tab-wrap{
@@ -665,29 +684,40 @@ section.sticky-foot{
       margin-right: 0.44rem;
       @extend .margin-b;
     }
-    .a-tab:last-child{
+    .last-a{
       background-color: $white;
       color:$c9;
     }
+    span{
+      width:2.54rem;
+      height: 1.5rem;
+      @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1.5rem);
+      background-color: $c9;
+      border:$border-w solid $d9;
+      border-radius:$borderRadius;
+      margin-right: 0.44rem;
+      @extend .margin-b;
+    }
     .active{
       background-color: $red;
-      boder-color:$red;
+      border-color:$red;
     }
     .grey-bg{
       background-color: $c9;
     }
   }
   .tab-w-s{
-    .a-tab{
+    span{
       width:2rem;
     }
-    .a-tab-orange{background-color: #fe6500;}
+    .a-tab-orange{background-color: #fe6500;border-color:#fe6500;}
+    .active {
+      background-color: $red;
+      border-color: $red;
+    }
   }
   .last-grey-bg{
-    .a-tab:last-child{
-      background-color: $c9;
-      color: $white;
-    }
+
   }
   .form-row{
     .row-title{
@@ -702,6 +732,9 @@ section.sticky-foot{
       }
       input[type=text].input-text-s{
         width: 4rem;
+      }
+      .input-text-m{
+        width: 5.4rem;
       }
       input[type=text].input-text-l{
         width:6.6rem;
@@ -719,25 +752,51 @@ section.sticky-foot{
         border-radius: $borderRadius;
         @include fontFormat($fz:1rem,$fc:$white,$ta:center,$lh:1.1rem);
       }
+      .cut-btn{
+        float: left;
+        height: 1.16rem;
+        width: 1.16rem;
+        background-color: $c9;
+        margin-top: 0.25rem;
+        border-radius: $borderRadius;
+        margin-right: 0.2rem;
+        margin-bottom: 0.2rem;
+        @include fontFormat($fz:1rem,$fc:$white,$ta:center,$lh:1.1rem);
+      }
       .magin-top{
         margin-top: 0.1rem;
+      }
+    }
+    &:last-child{
+      .cut-btn{
+        margin-right: 0;
       }
     }
   }
   .upload-pic{
     ul{
-      overflow: hidden;
       display: inline-block;
       li{
         float: left;
         width:2.66rem;
         height: 2.66rem;
         margin-right: 0.8rem;
+        position: relative;
         @extend .margin-b;
         img{
           width: 100%;
           height: 100%;
           border: 0;
+        }
+        .icon-close{
+          position: absolute;
+          right: -0.3rem;
+          top:-0.3rem;
+          width: 0.6rem;
+          height: 0.6rem;
+          @include fontFormat($fz:0.32rem,$fc:$white,$ta:center,$lh:0.68rem);
+          background-color: $red;
+          border-radius: 50%;
         }
       }
     }
@@ -751,12 +810,43 @@ section.sticky-foot{
       .add-btn{
         width: 100%;
         height: 100%;
+        margin-top:0;
         border:$border-w solid $d9;
-        @include fontFormat($fz:2.6rem,$fc:$d9,$ta:center,$lh:2.1rem);
+        @include fontFormat($fz:2.6rem,$fc:$d9,$ta:center,$lh:2.6rem);
 
       }
     }
   }
+  .input-wrap{
+    float: left;
+    overflow: hidden;
+    margin-bottom:0.5rem ;
+    input[type=text]{
+      margin-bottom:0;
+    }
+  }
+  .radio-wrap{
+    display: inline-block;
+    input[type=radio]{
+      height: 0;
+      width: 0;
+      background: none;
+      font-size: 0;
+    }
+  }
+
+  .checkbox-wrap{
+    display: inline-block;
+    overflow: hidden;
+    input[type=checkbox]{
+      height: 0;
+      width: 0;
+      background: none;
+      font-size: 0;
+    }
+  }
+
+
 }
 
 //卖家中心
@@ -1613,18 +1703,23 @@ p{
 .add-cut-opt{
   display: inline-block;
   height: 1rem;
-  border: 0.08rem solid #e6e6e6;
+  overflow: hidden;
+  vertical-align: middle;
   a{
-    width:1.04rem;
-    height:100%;
+    float: left;
+    width:1.2rem;
+    height:1rem;
     background-color: #e6e6e6;
-    @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:0.8rem);
+    @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:1rem);
   }
   .input-s{
-    width:2.5rem;
-    height:100%;
+    float: left;
+    width:2.2rem;
+    height:1rem;
     background-color: $white;
-    @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:0.8rem);
+    border: 0.08rem solid #e6e6e6;
+    border-radius: 0;
+    @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:1rem);
   }
 }
 
@@ -1730,10 +1825,73 @@ p{
 }
 
 //产品详情页
+.fixed-header{
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 3;
+  height:1.6rem;
+  width: 100%;
+  background-color: $white;
+  opacity: 0.8;
+  a{
+    height: 100%;
+    width: 1.2rem;
+    padding: 0.2rem 0;
+    @include fontFormatS($fz:1rem,$fc:$c6,$ta:center,$lh:1.2rem);
+    margin-right: 0.4rem;
+  }
+}
 .product-detail{
   .sec-banner{
     width: 100%;
     height: 10rem;
+    position: relative;
+    .hd{
+      position: absolute;
+      left: 0;
+      bottom:0.5rem;
+      text-align: center;
+      width: 100%;
+      height: 0.3rem;
+      z-index: 2;
+      ul{
+        display: inline-block;
+        overflow: hidden;
+        li{
+          background-color: $c6;
+          height: 0.3rem;
+          width:0.3rem;
+          border-radius:50%;
+          float: left;
+          margin-right:0.25rem;
+          font-size: 0;
+        }
+        li.on{
+          background-color: $red;
+        }
+      }
+    }
+    .bd{
+      width: 100%;
+      height:10rem;
+      overflow: hidden;
+      ul{
+        overflow: hidden;
+        li{
+          width: 100%;
+          height: 10rem;
+          img{
+            width: 100%;
+            height: 100%;
+            border:0;
+            overflow: hidden;
+            outline: none;
+          }
+        }
+      }
+
+    }
   }
   .sec-txt-wrap{
     background-color: $white;
@@ -1852,7 +2010,7 @@ p{
 
 //弹层
 .bg-pop{
-  display: block;
+  display: none;
   position: fixed;
   top:0;
   left:0;
@@ -1867,7 +2025,7 @@ p{
   filter:alpha(opacity=80)
 }
 .dialog-container{
-  display: block;
+  display: none;
   position: fixed;
   bottom:0;
   left:0;
@@ -1953,11 +2111,13 @@ p{
         height: 1.5rem;
         border-bottom: $border-w solid $bg;
         .big-font{
+          vertical-align: middle;
           width:3.6rem;
           display: inline-block;
           @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1.5rem);
         }
         .small-font{
+          vertical-align: middle;
           width:2.8rem;
           display: inline-block;
           @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:1.5rem);
@@ -1989,13 +2149,26 @@ p{
     }
   }
 }
+.bg-alert-pop{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 15;
+  width:100%;
+  height: 100%;
+  background-color:#000;
+  opacity:0.8;
+  -ms-opacity:0.8;
+  -moz-opacity:0.8;
+  -webkit-opacity:0.8;
+  filter:alpha(opacity=80)
+}
 .dialog-alert-pop {
-  display: block;
   position: fixed;
   top: 30%;
   left: 50%;
-  margin-left:-4rem;
-  z-index: 7;
+  margin-left: -4rem;
+  z-index: 16;
   width:8rem;
   background-color: $white;
   .dialog-title{
@@ -2009,15 +2182,26 @@ p{
       @include fontFormat($fz:0.6rem,$fc:$c6,$ta:center,$lh:1rem);
     }
     p.red-font{
-      @include fontFormat($fz:0.6rem,$fc:$red,$ta:center,$lh:1rem);
+      color:$red;
+    }
+    input[type=text]{
+      width:100% ;
+      height: 1.4rem;
+      border:$border-w solid $c9;
+      padding:0.2rem 0.2rem;
+      @include fontFormat($fz:0.48rem,$fc:$c6,$lh:1rem);
+      background-color: $bg;
+    }
+    input[type=text].input-error{
+      border-color:$red;
     }
   }
   .dialog-btn{
+    height: 1.8rem;
     a{
       width:100%;
-      height: 2rem;
-      width:100%;
-      @include fontFormat($fz:0.72rem,$fc:$white,$ta:center,$lh:2rem);
+      height: 100%;
+      @include fontFormat($fz:0.72rem,$fc:$white,$ta:center,$lh:1.8rem);
     }
     a.a-btn-graybg{
       background-color: #ccc;
@@ -2029,6 +2213,32 @@ p{
   .a-2{
     a{
       width: 50%;
+    }
+  }
+}
+.w750{
+  .dialog-alert-pop {
+    margin-left: -2.4rem;
+    width:4.8rem;
+    .dialog-title{
+      height: 0.66rem;
+      @include fontFormat($fz:0.29rem,$fc:$c3,$ta:center,$lh:0.66rem);
+      border-bottom: 0.02rem solid $d9;
+    }
+    .dialog-cont{
+      padding: 0.32rem 0.1rem;
+      p{
+        @include fontFormat($fz:0.36rem,$fc:$c6,$ta:center,$lh:0.66rem);
+      }
+      p.red-font{
+        color:$red;
+      }
+    }
+    .dialog-btn {
+      height: 1.2rem;
+      a{
+        @include fontFormat($fz:0.44rem,$fc:$white,$ta:center,$lh:1.2rem);
+      }
     }
   }
 }

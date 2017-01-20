@@ -14,25 +14,26 @@ block content
           label
             span.icon-account
             | 账号
-          input(type="text" placeholder="请输入手机号").input-text
+          input(type="text" placeholder="请输入手机号" data-validate="telephone").input-text
         .form-row
           label
             span.icon-lock
             | 密码
-          input(type="text" placeholder="请输入密码").input-text
+          input(type="text" placeholder="请输入密码" data-validate="password").input-text
         .form-row
             label
               span.icon-lock
               | 确认密码
-            input(type="text" placeholder="请输入密码").input-text
+            input(type="text" placeholder="请确认密码" data-validate="password").input-text
         .form-row
           label
             span.icon-lock
             | 验证码
-          input(type="text" placeholder="请输入验证码").input-text-s
+          input(type="text" placeholder="请输入验证码" data-validate="varycode").input-text-s
           a.btn-a-code  获取验证码
       .btn-a-login
-        a.btn-a.bg-blue(href="/template/register-suc.html") 立即申请
+        a.btn-a.bg-blue.submit-a 立即申请
+        a.btn-a.bg-blue(href="/template/register-suc.html") 申请成功
 
 
 
