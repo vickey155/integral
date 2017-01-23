@@ -1,21 +1,5 @@
 
-;(function ($) {
-    var isTouch = 'ontouchstart' in document.documentElement ? 'touchstart' : 'click',
-        _on = $.fn.on;
-    $.fn.onClick = function () {
-        arguments[0] = arguments[0] === 'click' ? isTouch : arguments[0];
-        return _on.apply(this, arguments);
-    };
-    $(document).on('change', 'select', function () {
-        var self = $(this);
-        var selectedVal = $.trim(self.find("option:selected").val());
-        if (selectedVal === '' && self.hasClass('selected')) {
-            self.removeClass('selected');
-        } else if (selectedVal != '' && !self.hasClass('selected')) {
-            self.addClass('selected');
-        }
-    });
-})(jQuery);
+;
 $(function () {
 
     //买家

@@ -33,17 +33,31 @@
   <body>
     <section class="sticky-cont seller-service-sec">
       <div class="sec">
-        <div class="QR-code-upload">
-          <div class="input-file-wrap">
-            <input type="file"><a class="add-btn">+</a>
+        <form>
+          <div class="QR-code-upload">
+            <div class="input-file-wrap"><img src="">
+              <input type="file"><a class="add-btn">+</a>
+            </div>
+            <p>请上传客服的微信二维码</p>
           </div>
-          <p>请上传客服的微信二维码</p>
-        </div>
-        <div class="edit-txt">
-          <input type="text" placeholder="请输入想要编辑的文字">
-        </div>
+          <div class="edit-txt">
+            <input type="text" placeholder="请输入想要编辑的文字">
+          </div>
+        </form>
       </div>
     </section>
-    <footer class="fixed-footer"><a class="btn-a">确认</a></footer>
+    <footer class="fixed-footer"><a href="javascript:void(0);" class="btn-a">确认</a></footer>
+    <script>
+      $('.fixed-footer').onClick('click','.btn-a',function(){
+          var inputFile = $('form').find("input[type=file]");
+          var inputText = $('form').find("input[type=text]");
+          if($.trim(inputFile.val()) == ''){
+            commonEvent.validataDialog('请上传客服的微信二维码');
+          }
+          else if($.trim(inputText.val()) == '') {
+            commonEvent.validataDialog('请输入想要编辑的文字');
+          }
+      });
+    </script>
   </body>
 </html>

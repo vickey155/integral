@@ -37,9 +37,9 @@
           <input type="text" placeholder="请输入您要搜索的货品" class="input-text-search"><a class="a-btn-bgred">搜索</a>
         </div>
         <div class="sec-manage-list">
-          <ul>
+          <ul id="choose-list">
             <li>
-              <div class="circle-choose"><span class="active"><i class="icon-ok"></i></span><img src=""></div>
+              <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
               <div class="status-cont">
                 <div class="status-title"><span>现货</span>7047 一件代发纯棉袜 子男士四季中筒防臭...<a class="icon-trash"></a></div>
                 <div class="status-detail">
@@ -49,7 +49,7 @@
               </div>
             </li>
             <li>
-              <div class="circle-choose"><span></span><img src=""></div>
+              <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
               <div class="status-cont">
                 <div class="status-title"><span>现货</span>7047 一件代发纯棉袜 子男士四季中筒防臭...<a class="icon-trash"></a></div>
                 <div class="status-detail">
@@ -62,21 +62,35 @@
         </div>
       </div>
     </section>
-    <footer class="fixed-footer seller-goods-footer clearfix">
-      <div class="shelve">
+    <footer class="fixed-footer seller-goods-footer clearfix"><a href="" class="shelve">
         <div class="circle-add-btn">+</div>
-        <p>上架</p>
-      </div>
+        <p>上架</p></a>
       <ul class="sec-bottom">
         <li>
-          <div class="circle-choose"><span class="active"><i class="icon-ok"></i></span>全选</div>
-          <div class="sumNum">
-            <p>总计:<span class="red-font">￥<i class="big-font">1</i>18.00</span></p>
-            <p class="grey-font">1种12件;不含运费</p>
-          </div>
+          <div id="all-choose" class="circle-choose"><span><i class="icon-ok"></i></span>全选</div>
+          <!--.sumNum-->
+          <!--  p 总计:-->
+          <!--    span.red-font ￥<i class="big-font">1</i>18.00\-->
+          <p class="grey-font">1种12件;不含运费</p>
         </li>
         <li><a class="btn-a delete-btn">删除</a></li>
       </ul>
     </footer>
+    <script>
+      $(function(){
+        //全选及删除
+        commonEvent.chooseCircle('货品');
+         var chooseList = $("#choose-list");
+         //列表中删除图标事件
+         chooseList.onClick('click','.icon-trash',function(){
+           var sel = $(this);
+           var tip = '您确定要删除此订单吗？';
+           commonEvent.confirmDialog(tip, function () {
+             sel.closest('li').remove();
+           });
+         });
+      
+      });
+    </script>
   </body>
 </html>

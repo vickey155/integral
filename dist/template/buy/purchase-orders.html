@@ -31,129 +31,135 @@
   <body>
     <section class="purchase-order">
       <div class="sec">
-        <div class="sec-list-none"><span class="icon-shopcar"></span>
+        <div style="display:none;" class="sec-list-none"><span class="icon-shopcar"></span>
           <p>没有货物， 快去逛逛吧！</p>
         </div>
-        <div style="display:none;" class="sec-list">
-          <div class="order-one">
-            <div class="order-per">
-              <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
-              <div class="order-txt"><span>7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款</span></div>
-              <div class="order-price">单价：<span class="red-font">￥<i class="big-font">22</i>.50</span>/手</div>
-            </div>
-            <div class="order-table">
-              <div class="order-table-tr clearfix">
-                <div class="th"> 颜色</div>
-                <div class="th"> 尺码</div>
-                <div class="th"> 进货量(手)</div>
-              </div>
-              <div class="order-table-tr clearfix">
-                <div class="td">名族风款</div>
-                <div class="td">
-                  <p>M (约3-5岁)</p>
-                  <p>l (约6-8岁)</p>
-                  <p>XL (约9-12岁)</p>
-                </div>
-                <div class="td">
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
-                  </div>
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
-                  </div>
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
-                  </div>
+        <div style="display:block;" class="sec-list">
+          <ul id="choose-list">
+            <li class="order-one">
+              <div class="order-per">
+                <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
+                <div class="order-txt"><span>7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款</span></div>
+                <div class="order-price">
+                  <p>单价：<span class="red-font">￥<i class="big-font">22</i>.50</span>/手</p><a class="icon-trash"></a>
                 </div>
               </div>
-              <div class="order-table-tr clearfix">
-                <div class="td">拼色款</div>
-                <div class="td">
-                  <p>M (约3-5岁)</p>
-                  <p>l (约6-8岁)</p>
+              <div class="order-table">
+                <div class="order-table-tr clearfix">
+                  <div class="th"> 颜色</div>
+                  <div class="th"> 尺码</div>
+                  <div class="th"> 进货量(手)</div>
                 </div>
-                <div class="td">
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
+                <div class="order-table-tr clearfix">
+                  <div class="td">名族风款</div>
+                  <div class="td">
+                    <p>M (约3-5岁)</p>
+                    <p>l (约6-8岁)</p>
+                    <p>XL (约9-12岁)</p>
                   </div>
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
-                  </div>
-                </div>
-              </div>
-              <div class="order-table-tr-grey big-font clearfix">
-                <div class="td">商品总价</div>
-                <div class="td"></div>
-                <div class="td">￥117.60</div>
-              </div>
-            </div>
-          </div>
-          <div class="order-one">
-            <div class="order-per">
-              <div class="circle-choose"><span class="active"><i class="icon-ok"></i></span><img src=""></div>
-              <div class="order-txt"><span>7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款</span></div>
-              <div class="order-price">单价：<span class="red-font">￥<i class="big-font">22</i>.50</span>/手</div>
-            </div>
-            <div class="order-table">
-              <div class="order-table-tr clearfix">
-                <div class="th"> 颜色</div>
-                <div class="th"> 尺码</div>
-                <div class="th"> 进货量(手)</div>
-              </div>
-              <div class="order-table-tr clearfix">
-                <div class="td">名族风款</div>
-                <div class="td">
-                  <p>M (约3-5岁)</p>
-                  <p>l (约6-8岁)</p>
-                  <p>XL (约9-12岁)</p>
-                </div>
-                <div class="td">
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
-                  </div>
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
-                  </div>
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
+                  <div class="td">
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="order-table-tr clearfix">
-                <div class="td">拼色款</div>
-                <div class="td">
-                  <p>M (约3-5岁)</p>
-                  <p>l (约6-8岁)</p>
-                </div>
-                <div class="td">
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
+                <div class="order-table-tr clearfix">
+                  <div class="td">拼色款</div>
+                  <div class="td">
+                    <p>M (约3-5岁)</p>
+                    <p>l (约6-8岁)</p>
                   </div>
-                  <div class="opts-wrap"><a>-</a>
-                    <input type="text" value="12" class="input-s"><a>+</a>
+                  <div class="td">
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
                   </div>
                 </div>
+                <div class="order-table-tr-grey big-font clearfix">
+                  <div class="td">商品总价</div>
+                  <div class="td"></div>
+                  <div class="td">￥<span class="sumPiceS">117.60</span></div>
+                </div>
               </div>
-              <div class="order-table-tr-grey big-font clearfix">
-                <div class="td">商品总价</div>
-                <div class="td"></div>
-                <div class="td">￥117.60</div>
+            </li>
+            <li class="order-one">
+              <div class="order-per">
+                <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
+                <div class="order-txt"><span>7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款</span></div>
+                <div class="order-price">
+                  <p>单价：<span class="red-font">￥<i class="big-font">22</i>.50</span>/手</p><a class="icon-trash"></a>
+                </div>
               </div>
-            </div>
-          </div>
+              <div class="order-table">
+                <div class="order-table-tr clearfix">
+                  <div class="th"> 颜色</div>
+                  <div class="th"> 尺码</div>
+                  <div class="th"> 进货量(手)</div>
+                </div>
+                <div class="order-table-tr clearfix">
+                  <div class="td">名族风款</div>
+                  <div class="td">
+                    <p>M (约3-5岁)</p>
+                    <p>l (约6-8岁)</p>
+                    <p>XL (约9-12岁)</p>
+                  </div>
+                  <div class="td">
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-table-tr clearfix">
+                  <div class="td">拼色款</div>
+                  <div class="td">
+                    <p>M (约3-5岁)</p>
+                    <p>l (约6-8岁)</p>
+                  </div>
+                  <div class="td">
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                    <div class="opts-wrap"><a>-</a>
+                      <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a>+</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-table-tr-grey big-font clearfix">
+                  <div class="td">商品总价</div>
+                  <div class="td"></div>
+                  <div class="td">￥<span class="sumPiceS">117.60</span></div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
     <footer class="fixed-footer two-layers">
       <ul class="sec-bottom li-2">
         <li>
-          <div class="circle-choose"><span class="active"><i class="icon-ok"></i></span>全选</div>
+          <div id="all-choose" class="circle-choose"><span><i class="icon-ok"></i></span>全选</div>
           <div class="sumNum">
-            <p>总计:<span class="red-font">￥<i class="big-font">1</i>18.00</span></p>
+            <p>总计:<span id="sumPrice" class="red-font">￥<i class="big-font">1</i>18.00</span></p>
             <p class="grey-font">1种12件;不含运费</p>
           </div>
         </li>
-        <li class="btn-2"><a class="a-btn-bggray">删除</a><a class="a-btn-bgred">下单</a></li>
+        <li class="btn-2"><a class="a-btn-bggray delete-btn">删除</a><a class="a-btn-bgred">下单</a></li>
       </ul>
       <ul class="footer-nav">
         <li><a href="/template/buy/index.html"><span class="icon-home"></span>
@@ -166,5 +172,63 @@
             <p>个人中心</p></a></li>
       </ul>
     </footer>
+    <script>
+      $(function(){
+        //全选及删除
+        commonEvent.chooseCircle('货品');
+        var chooseList = $("#choose-list");
+        //列表中删除图标事件
+        chooseList.onClick('click', '.icon-trash', function () {
+          var sel = $(this);
+          var tip = '您确定要删除此订单吗？';
+          commonEvent.confirmDialog(tip, function () {
+            sel.closest('li.order-one').remove();
+            var liLen = chooseList.find('.circle-choose').length;
+            if(liLen<=0){
+               $(".sec-list-none").show();
+               $(".sec-list-none").next('div').hide();
+            }
+            else{
+              $(".sec-list-none").hide();
+              $(".sec-list-none").next('div').show();
+            }
+          });
+        });
+      
+      
+        //显示双数及总价
+      
+        var showSumNum = function (self) {
+          var listOne = self.closest(".order-one");
+          var inputNumber = listOne.find('input[type=number]');
+          var inputNumberLen = inputNumber.length;
+          var totalSum = 0;
+          var sumPrice = 0;
+          for (var i = 0; i < inputNumberLen; i++) {
+            var sel = inputNumber.eq(i);
+            var selVal = Number(sel.val());
+            var selPrice = Number(sel.data('price'));
+            sumPrice += selPrice * selVal;
+          }
+          listOne.find(".sumPiceS").html(sumPrice);
+          $("#choose-list").find('.sumPiceS').each(function(){
+            var sel = $(this);
+            var selVal = Number(sel.html());
+            totalSum += selVal;
+          });
+          $("#sumPrice").html('￥' + totalSum);
+        }
+        //初始化
+        $("#choose-list").find('input[type=number]').each(function(){
+          var sel = $(this);
+          showSumNum(sel);
+        });
+      
+        //加减
+        commonEvent.addAndCutFun(function (sel) {
+          showSumNum(sel);
+        });
+      });
+    </script>
   </body>
 </html>

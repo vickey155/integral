@@ -33,7 +33,7 @@
     <header class="fixed-header"><a href="javascript:window.history.back();" class="go-back icon-arrow-left"></a>
       <div class="fr"><a href="/template/buy/index.html" class="icon-home"></a><a href="" class="icon-shopcar"></a></div>
     </header>
-    <section class="sticky-cont product-detail">
+    <section class="product-detail">
       <div class="sec">
         <div id="banner" class="sec-banner">
           <div class="hd">
@@ -50,7 +50,7 @@
         <div class="sec-txt-wrap">
           <div class="sec-txt-title">
             <div class="status-title"><span class="now-goods">现货</span>7047 一件代发纯棉袜子男士四季中筒防 臭全棉秋冬款优质产品淘宝爆款</div>
-            <div class="red-heart-collect"><span class="red-heart"></span>
+            <div class="red-heart-collect"><span class="icon-collect"></span>
               <p>收藏</p>
             </div>
           </div>
@@ -72,7 +72,7 @@
             </li>
           </ul>
         </div>
-        <div class="sec-pro-formate">
+        <div id="format-choose" class="sec-pro-formate">
           <div class="fl col-l"><span class="icon icon-write"></span>
             <p>规格选择</p>
           </div>
@@ -119,8 +119,8 @@
             </div>
           </div>
         </div>
-        <div style="display:block" class="bg-pop"></div>
-        <div style="display:block" class="dialog-container">
+        <div style="display:none" class="bg-pop"></div>
+        <div style="display:none" class="dialog-container">
           <div class="dia-close icon-close"></div>
           <div class="dia-sec-01"><img src="">
             <div class="state-cont">
@@ -130,7 +130,23 @@
           </div>
           <div class="dia-sec-02">
             <div class="title">颜色</div>
-            <div class="a-tab clearfix a-tab-wrap"><a class="active">拼色款<span class="num">10</span></a><a>纯色款</a><a>卡通款</a><a>条纹款<span class="num">10</span></a><a>民族风款</a></div>
+            <div class="a-tab clearfix a-tab-wrap">
+              <div class="checkbox-wrap">
+                <input type="checkbox" name="拼色款" checked="checked"><a href="javascript:void(0);" class="active">拼色款<span class="num">10</span></a>
+              </div>
+              <div class="checkbox-wrap">
+                <input type="checkbox" name="纯色款" checked="checked"><a href="javascript:void(0);">纯色款</a>
+              </div>
+              <div class="checkbox-wrap">
+                <input type="checkbox" name="卡通款" checked="checked"><a href="javascript:void(0);">卡通款</a>
+              </div>
+              <div class="checkbox-wrap">
+                <input type="checkbox" name="条纹款" checked="checked"><a href="javascript:void(0);">条纹款<span class="num">10</span></a>
+              </div>
+              <div class="checkbox-wrap">
+                <input type="checkbox" name="民族风款" checked="checked"><a href="javascript:void(0);">民族风款</a>
+              </div>
+            </div>
           </div>
           <div class="dia-sec-03">
             <div class="list-cont">
@@ -138,37 +154,189 @@
                 <div class="big-font">M (约3-5岁)</div>
                 <div class="small-font">库存：20360</div>
                 <div class="opts-wrap"><a href="javascript:void(0);">-</a>
-                  <input type="number" value="12" class="input-s"><a href="javascript:void(0);">+</a>
+                  <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a href="javascript:void(0);">+</a>
                 </div>
               </div>
               <div class="list-row">
-                <div class="big-font">M (约3-5岁)</div>
+                <div class="big-font">l (约6-8岁)</div>
                 <div class="small-font">库存：20360</div>
                 <div class="opts-wrap"><a href="javascript:void(0);">-</a>
-                  <input type="number" value="12" class="input-s"><a href="javascript:void(0);">+</a>
+                  <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a href="javascript:void(0);">+</a>
                 </div>
               </div>
               <div class="list-row">
-                <div class="big-font">M (约3-5岁)</div>
+                <div class="big-font">XL (约9-12岁)</div>
                 <div class="small-font">库存：20360</div>
                 <div class="opts-wrap"><a href="javascript:void(0);">-</a>
-                  <input type="number" value="12" class="input-s"><a href="javascript:void(0);">+</a>
+                  <input type="number" value="12" data-defaultval="12" data-price="24" class="input-s"><a href="javascript:void(0);">+</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="dia-sec-04 sum-data">
             <div class="fl">本产品按手批发，一手=10双</div>
-            <div class="fr">共<span class="red-font">0</span>双<span class="red-font sum">￥0</span></div>
+            <div class="fr">共<span id="sumNum" class="red-font">0</span>双<span id="sumPrice" class="red-font sum">￥0</span></div>
           </div>
         </div>
       </div>
     </section>
     <footer class="fixed-footer two-layers pro-detail-footer">
       <ul class="li-2">
-        <li><a class="a-btn a-btn-bgblue">加入进货单</a></li>
-        <li><a class="a-btn a-btn-bgred">立即抢购</a></li>
+        <li><a id="buyOrder" href="javascript:void(0);" class="a-btn a-btn-bgblue">加入进货单</a></li>
+        <li><a id="buyNow" href="javascript:void(0);" class="a-btn a-btn-bgred">立即抢购</a></li>
       </ul>
     </footer>
+    <script>
+      $(function(){
+      
+        //规格选择弹层
+        var bgPop = $(".bg-pop");
+        var dialogFormate = $(".dialog-container");
+        $(".dialog-container").onClick("click", ".icon-close", function () {
+          bgPop.hide();
+          dialogFormate.hide();
+        });
+        $("#format-choose").on('click',function(){
+          bgPop.fadeIn(300);
+          dialogFormate.fadeIn(300);
+        });
+         //红心收藏
+        $(".red-heart-collect").on("click",'.icon-collect',function(){
+          var sel = $(this);
+          if(sel.hasClass('red-heart')){
+            sel.removeClass('red-heart')
+          }
+          else{
+            sel.addClass('red-heart');
+          }
+        });
+      
+        //弹层颜色多选
+        $(".a-tab-wrap").onClick('click', '.checkbox-wrap a', function () {
+          var sel = $(this);
+          var selCheckbox = sel.parent(".checkbox-wrap").find("input[type=checkbox]");
+          if (sel.hasClass('active')) {
+            sel.removeClass('active');
+            selCheckbox.attr("checked", false);
+          }
+          else {
+            sel.addClass('active');
+            selCheckbox.attr("checked", true);
+          }
+        });
+        $("#format-choose").trigger('click');
+         //验证规格填写的信息
+      
+        var checkFormateInfo = function(){
+          var checkboxLen = dialogFormate.find('.dia-sec-02 input[type=checkbox]:checked').length;
+          var inputNumber = dialogFormate.find('.dia-sec-03 input[type=number]');
+          var inputVal = function (ind) {
+            console.log(ind + Number($.trim(inputNumber.eq(ind).val())));
+            return  Number($.trim(inputNumber.eq(ind).val()));
+          }
+          var defaultVal = function(ind){
+            return  Number($.trim(inputNumber.eq(ind).data('defaultval')));
+          }
+          if(checkboxLen <=0){
+            var tip="请选择规格颜色";
+            commonEvent.validataDialog(tip);
+            dialogFormate.find('.dia-sec-02').addClass("error-input");
+            return false;
+          }
+          else{
+            dialogFormate.find('.dia-sec-02').removeClass("error-input");
+          }
+          if (inputVal(0) == 0 && inputVal(1) == 0 && inputVal(2) == 0) {
+            var tip = "尺码数量不能都为0";
+            commonEvent.validataDialog(tip);
+            inputNumber.addClass('error-input');
+            return false;
+          }
+          else{
+            inputNumber.removeClass('error-input');
+          }
+          inputNumber.each(function () {
+            var sel = $(this);
+            var selVal = Number($.trim(sel.val()));
+            var selDefaultVal = Number($.trim(sel.data('defaultval')));
+            if (selVal< selDefaultVal) {
+              var tip = "输入的值不能小于默认值";
+              commonEvent.validataDialog(tip);
+              sel.addClass('error-input');
+              return false;
+            }
+            else {
+              inputNumber.removeClass('error-input');
+            }
+          });
+          inputNumber.on("focus",function(){
+            $(this).removeClass('error-input');
+          });
+      
+          if(dialogFormate.find('.error-input').length>0){
+            return false;
+          }
+          else {
+            return true;
+          }
+        }
+      
+        //显示双数及总价
+        var showSumNum = function () {
+          var inputNumber = dialogFormate.find('.dia-sec-03 input[type=number]');
+          var inputNumberLen = inputNumber.length;
+          var sumNum = 0;
+          var sumPrice = 0;
+          for (var i = 0; i < inputNumberLen; i++) {
+            var sel = inputNumber.eq(i);
+            var selVal = Number(sel.val());
+            var selPrice =Number(sel.data('price'));
+            sumNum += selVal *10;
+            sumPrice += selPrice * selVal;
+          }
+          $("#sumNum").html(sumNum);
+          $("#sumPrice").html('￥'+sumPrice);
+        }
+        showSumNum();
+        //加减
+        commonEvent.addAndCutFun(function() {
+          showSumNum();
+        });
+        //加入进货单按钮
+        $("#buyOrder").onClick('click',function(){
+           if(dialogFormate.is(':hidden')){
+             var tip = "请先规格选择"
+             commonEvent.confirmDialog(tip,function () {
+               $("#format-choose").trigger('click');
+             });
+           }
+           else{
+             if(checkFormateInfo()){
+                alert('ok');
+             }
+             else{
+               alert('fail');
+             }
+           }
+        });
+        //加入进货单按钮
+        $("#buyNow").onClick('click', function () {
+          if (dialogFormate.is(':hidden')) {
+            var tip = "请先规格选择"
+            commonEvent.confirmDialog(tip, function () {
+              $("#format-choose").trigger('click');
+            });
+          }
+          else {
+            if (checkFormateInfo()) {
+              alert('ok');
+            }
+            else {
+              alert('fail');
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

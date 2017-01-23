@@ -10,10 +10,10 @@ block content
         input(type="text" placeholder='请输入您要搜索的货品').input-text-search
         a.a-btn-bgred 搜索
       .sec-manage-list
-        ul
+        ul#choose-list
           li
             .circle-choose
-              span.active
+              span
                 i.icon-ok
               img(src="")
             .status-cont
@@ -33,6 +33,7 @@ block content
           li
             .circle-choose
               span
+                i.icon-ok
               img(src="")
             .status-cont
               .status-title
@@ -50,23 +51,37 @@ block content
                     i  ≥9条
 
   footer.fixed-footer.seller-goods-footer.clearfix
-    .shelve
+    a.shelve(href="")
       .circle-add-btn +
       p 上架
     ul.sec-bottom
       li
-        .circle-choose
-          span.active
+        .circle-choose#all-choose
+          span
             i.icon-ok
           |全选
-        .sumNum
-          p 总计:
-            span.red-font ￥<i class="big-font">1</i>18.00
-          p.grey-font 1种12件;不含运费
+        //.sumNum
+        //  p 总计:
+        //    span.red-font ￥<i class="big-font">1</i>18.00\
+        p.grey-font 1种12件;不含运费
       li
         a.btn-a.delete-btn 删除
 
+  script.
+    $(function(){
+      //全选及删除
+      commonEvent.chooseCircle('货品');
+       var chooseList = $("#choose-list");
+       //列表中删除图标事件
+       chooseList.onClick('click','.icon-trash',function(){
+         var sel = $(this);
+         var tip = '您确定要删除此订单吗？';
+         commonEvent.confirmDialog(tip, function () {
+           sel.closest('li').remove();
+         });
+       });
 
+    });
 
 
 

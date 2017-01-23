@@ -6,19 +6,31 @@ block append headTitle
 block content
   section.sticky-cont.seller-service-sec
     .sec
-      .QR-code-upload
-        .input-file-wrap
-          input(type="file")
-          a.add-btn +
-        p 请上传客服的微信二维码
-      .edit-txt
-        input(type="text" placeholder="请输入想要编辑的文字")
+      form
+        .QR-code-upload
+          .input-file-wrap
+            img(src="")
+            input(type="file")
+            a.add-btn +
+          p 请上传客服的微信二维码
+        .edit-txt
+          input(type="text" placeholder="请输入想要编辑的文字")
 
 
   footer.fixed-footer
-    a.btn-a 确认
+    a.btn-a(href="javascript:void(0);") 确认
 
-
+  script.
+    $('.fixed-footer').onClick('click','.btn-a',function(){
+        var inputFile = $('form').find("input[type=file]");
+        var inputText = $('form').find("input[type=text]");
+        if($.trim(inputFile.val()) == ''){
+          commonEvent.validataDialog('请上传客服的微信二维码');
+        }
+        else if($.trim(inputText.val()) == '') {
+          commonEvent.validataDialog('请输入想要编辑的文字');
+        }
+    });
 
 
 

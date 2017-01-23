@@ -38,11 +38,11 @@
     <section class="new-product-release height100">
       <div class="sec">
         <div class="sec-fill">
-          <form>
+          <form class="product-release-form">
             <div class="sec-fill-title"><a>必填项</a></div>
             <div class="form-row select-wrapper"><i class="icon-trangle-down"></i>
-              <select id="product-type">
-                <option value="" data-validate="产品种类">请选择您要发布的产品种类</option>
+              <select id="product-type" data-validate="产品种类">
+                <option value="">请选择您要发布的产品种类</option>
                 <option value="package">包装</option>
                 <option value="cottonSock">棉袜</option>
                 <option value="stockings">丝袜</option>
@@ -50,8 +50,8 @@
             </div>
             <div style="display:none" class="sec-fill-cont package">
               <div class="form-row select-wrapper"><i class="icon-trangle-down"></i>
-                <select>
-                  <option value="" data-validate="发布类型">请选择发布类型</option>
+                <select data-validate="发布类型">
+                  <option value="">请选择发布类型</option>
                   <option value="全部">全部</option>
                   <option value="热销产品">热销产品</option>
                   <option value="天天特价">天天特价</option>
@@ -79,7 +79,7 @@
                 <div class="row-title">图片(最多5张)</div>
                 <ul class="clearfix">
                   <li class="input-file-wrap">
-                    <input type="file"><span class="add-btn">+</span>
+                    <input type="file" data-validate="上传图片"><span class="add-btn">+</span>
                   </li>
                 </ul>
               </div>
@@ -94,7 +94,7 @@
               </div>
               <div class="form-row">
                 <div class="row-title">颜色（多选）</div>
-                <div class="row-cont a-tab-wrap">
+                <div data-validate="颜色" class="row-cont a-tab-wrap">
                   <div class="checkbox-wrap"><span class="a-tab active">红色</span>
                     <input type="checkbox" name="红色" checked="checked">
                   </div>
@@ -117,16 +117,16 @@
                 <div class="row-title">自定义规格</div>
                 <div class="row-cont input-add-wrap">
                   <div class="input-wrap">
-                    <input type="text" placeholder="请输入规格名" class="input-text-s">
-                    <input type="text" placeholder="请输入该规格介绍" class="input-text-m">
+                    <input type="text" placeholder="请输入规格名" data-validate="规格名" class="input-text-s">
+                    <input type="text" placeholder="请输入该规格介绍" data-validate="规格介绍" class="input-text-m">
                   </div><span class="add-btn">+</span>
                 </div>
               </div>
             </div>
             <div style="display:none" class="sec-fill-cont cottonSock">
               <div class="form-row select-wrapper"><i class="icon-trangle-down"></i>
-                <select>
-                  <option value="" data-validate="发布类型">请选择发布类型</option>
+                <select data-validate="发布类型">
+                  <option value="">请选择发布类型</option>
                   <option value="全部">全部</option>
                   <option value="热销产品">热销产品</option>
                   <option value="天天特价">天天特价</option>
@@ -154,7 +154,7 @@
                 <div class="row-title">图片(最多5张)</div>
                 <ul class="clearfix">
                   <li class="input-file-wrap">
-                    <input type="file"><span class="add-btn">+</span>
+                    <input type="file" data-validate="上传图片"><span class="add-btn">+</span>
                   </li>
                 </ul>
               </div>
@@ -162,8 +162,24 @@
                 <div class="row-title">面料</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
+                    <select data-validate="面料" class="select-s">
                       <option value="">主面料名称</option>
+                      <option value="棉">棉</option>
+                      <option value="涤纶">涤纶</option>
+                      <option value="麻">麻</option>
+                      <option value="锦纶">锦纶</option>
+                      <option value="醋纤">醋纤</option>
+                      <option value="蚕丝">蚕丝</option>
+                      <option value="羊毛">羊毛</option>
+                      <option value="莱卡">莱卡</option>
+                      <option value="腈纶/化纤">腈纶/化纤</option>
+                      <option value="氯纶">氯纶</option>
+                      <option value="黏胶">黏胶</option>
+                      <option value="毛腈">毛腈</option>
+                      <option value="色纺纱">色纺纱</option>
+                      <option value="混纺">混纺</option>
+                      <option value="精硫棉">精硫棉</option>
+                      <option value="木纤维">木纤维</option>
                     </select>
                   </div>
                   <input type="text" placeholder="含量（%）" data-validate="含量（%）" class="input-text-s">
@@ -180,7 +196,7 @@
               </div>
               <div class="form-row">
                 <div class="row-title">颜色（多选）</div>
-                <div class="row-cont a-tab-wrap">
+                <div data-validate="颜色" class="row-cont a-tab-wrap">
                   <div class="checkbox-wrap"><span class="a-tab active">红色</span>
                     <input type="checkbox" name="红色" checked="checked">
                   </div>
@@ -195,23 +211,23 @@
                   </div>
                   <div class="checkbox-wrap"><span class="a-tab">玉色</span>
                     <input type="checkbox" name="玉色">
-                  </div><span class="a-tab last-a">自定义</span>
+                  </div><span data-tip="请输入自定义颜色" class="a-tab last-a">自定义</span>
                 </div>
               </div>
               <div class="form-row">
                 <div class="row-title">尺码（多选）</div>
-                <div class="row-cont a-tab-wrap">
+                <div data-validate="尺码" class="row-cont a-tab-wrap">
                   <div class="checkbox-wrap"><span class="a-tab active">均码</span>
                     <input type="checkbox" name="均码" checked="checked">
-                  </div><span class="a-tab last-a">自定义</span>
+                  </div><span data-tip="请输入自定义尺码" class="a-tab last-a">自定义</span>
                 </div>
               </div>
               <div class="form-row select-wrapper">
                 <div class="row-title">年龄</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
-                      <option value="" data-validate="年龄">请选择</option>
+                    <select data-validate="年龄" class="select-s">
+                      <option value="">请选择</option>
                       <option value="成人袜">成人袜</option>
                       <option value="儿童袜">儿童袜</option>
                       <option value="婴儿袜">婴儿袜</option>
@@ -223,8 +239,8 @@
                 <div class="row-title">适用性别</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
-                      <option value="" data-validate="适用性别">请选择</option>
+                    <select data-validate="适用性别" class="select-s">
+                      <option value="">请选择</option>
                       <option value="男袜">男袜</option>
                       <option value="女袜">女袜</option>
                       <option value="男女皆可">男女皆可</option>
@@ -236,8 +252,8 @@
                 <div class="row-title">筒高</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
-                      <option value="" data-validate="筒高">请选择</option>
+                    <select data-validate="筒高" class="select-s">
+                      <option value="">请选择</option>
                       <option value="隐形袜">隐形袜</option>
                       <option value="船袜">船袜</option>
                       <option value="短筒袜">短筒袜</option>
@@ -249,7 +265,7 @@
               </div>
               <div class="form-row">
                 <div class="row-title">季节（多选）</div>
-                <div class="row-cont a-tab-wrap last-grey-bg">
+                <div data-validate="季节" class="row-cont a-tab-wrap last-grey-bg">
                   <div class="checkbox-wrap"><span class="a-tab active">春季</span>
                     <input type="checkbox" name="春季" checked="checked">
                   </div>
@@ -277,8 +293,13 @@
                 <div class="row-title">厚度</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
+                    <select data-validate="厚度" class="select-s">
                       <option value="">请选择</option>
+                      <option value="">超薄</option>
+                      <option value="">薄</option>
+                      <option value="">中等</option>
+                      <option value="">加厚</option>
+                      <option value="">厚</option>
                     </select>
                   </div>
                 </div>
@@ -286,30 +307,30 @@
               <div class="form-row">
                 <div class="row-title">克重</div>
                 <div class="row-cont">
-                  <input type="text" placeholder="克重（g）" class="input-text-s">
+                  <input type="text" placeholder="克重（g）" data-validate="克重（g）" class="input-text-s">
                 </div>
               </div>
               <div class="sec-fill-title"><a>选填项</a></div>
               <div class="form-row">
                 <div class="row-title">功能</div>
                 <div class="row-cont">
-                  <input type="text" placeholder="请输入">
+                  <input type="text" placeholder="请输入功能" data-validate="功能">
                 </div>
               </div>
               <div class="form-row">
                 <div class="row-title">自定义规格</div>
                 <div class="row-cont input-add-wrap">
                   <div class="input-wrap">
-                    <input type="text" placeholder="请输入规格名" class="input-text-s">
-                    <input type="text" placeholder="请输入该规格介绍" class="input-text-l">
+                    <input type="text" placeholder="请输入规格名" data-validate="规格名" class="input-text-s">
+                    <input type="text" placeholder="请输入该规格介绍" data-validate="规格介绍" class="input-text-m">
                   </div><span class="add-btn magin-top"> +</span>
                 </div>
               </div>
             </div>
             <div style="display:none" class="sec-fill-cont stockings">
               <div class="form-row select-wrapper"><i class="icon-trangle-down"></i>
-                <select>
-                  <option value="" data-validate="发布类型">请选择发布类型</option>
+                <select data-validate="发布类型">
+                  <option value="">请选择发布类型</option>
                   <option value="全部">全部</option>
                   <option value="热销产品">热销产品</option>
                   <option value="天天特价">天天特价</option>
@@ -337,7 +358,7 @@
                 <div class="row-title">图片(最多5张)</div>
                 <ul class="clearfix">
                   <li class="input-file-wrap">
-                    <input type="file"><span class="add-btn">+</span>
+                    <input type="file" data-validate="上传图片"><span class="add-btn">+</span>
                   </li>
                 </ul>
               </div>
@@ -345,8 +366,24 @@
                 <div class="row-title">面料</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
+                    <select data-validate="面料" class="select-s">
                       <option value="">主面料名称</option>
+                      <option value="棉">棉</option>
+                      <option value="涤纶">涤纶</option>
+                      <option value="麻">麻</option>
+                      <option value="锦纶">锦纶</option>
+                      <option value="醋纤">醋纤</option>
+                      <option value="蚕丝">蚕丝</option>
+                      <option value="羊毛">羊毛</option>
+                      <option value="莱卡">莱卡</option>
+                      <option value="腈纶/化纤">腈纶/化纤</option>
+                      <option value="氯纶">氯纶</option>
+                      <option value="黏胶">黏胶</option>
+                      <option value="毛腈">毛腈</option>
+                      <option value="色纺纱">色纺纱</option>
+                      <option value="混纺">混纺</option>
+                      <option value="精硫棉">精硫棉</option>
+                      <option value="木纤维">木纤维</option>
                     </select>
                   </div>
                   <input type="text" placeholder="含量（%）" data-validate="含量（%）" class="input-text-s">
@@ -361,7 +398,7 @@
               </div>
               <div class="form-row">
                 <div class="row-title">颜色（多选）</div>
-                <div class="row-cont a-tab-wrap">
+                <div data-validate="颜色" class="row-cont a-tab-wrap">
                   <div class="checkbox-wrap"><span class="a-tab active">红色</span>
                     <input type="checkbox" name="红色" checked="checked">
                   </div>
@@ -376,12 +413,12 @@
                   </div>
                   <div class="checkbox-wrap"><span class="a-tab">玉色</span>
                     <input type="checkbox" name="玉色">
-                  </div><span class="a-tab last-a">自定义</span>
+                  </div><span data-tip="请输入自定义颜色" class="a-tab last-a">自定义</span>
                 </div>
               </div>
               <div class="form-row">
                 <div class="row-title">尺码（多选）</div>
-                <div class="row-cont a-tab-wrap">
+                <div data-validate="尺码" class="row-cont a-tab-wrap">
                   <div class="checkbox-wrap"><span class="a-tab active">均码</span>
                     <input type="checkbox" name="均码" checked="checked">
                   </div>
@@ -393,15 +430,15 @@
                   </div>
                   <div class="checkbox-wrap"><span class="a-tab">不加裆</span>
                     <input type="checkbox" name="不加裆">
-                  </div><span class="a-tab last-a">自定义</span>
+                  </div><span data-tip="请输入自定义尺码" class="a-tab last-a">自定义</span>
                 </div>
               </div>
               <div class="form-row select-wrapper">
                 <div class="row-title">年龄</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
-                      <option value="" data-validate="年龄">请选择</option>
+                    <select data-validate="年龄" class="select-s">
+                      <option value="">请选择</option>
                       <option value="成人袜">成人袜</option>
                       <option value="儿童袜">儿童袜</option>
                       <option value="婴儿袜">婴儿袜</option>
@@ -413,8 +450,8 @@
                 <div class="row-title">适用性别</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
-                      <option value="" data-validate="适用性别">请选择</option>
+                    <select data-validate="适用性别" class="select-s">
+                      <option value="">请选择</option>
                       <option value="男袜">男袜</option>
                       <option value="女袜">女袜</option>
                       <option value="男女皆可">男女皆可</option>
@@ -426,8 +463,8 @@
                 <div class="row-title">筒高</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
-                      <option value="" data-validate="筒高">请选择</option>
+                    <select data-validate="筒高" class="select-s">
+                      <option value="">请选择</option>
                       <option value="九分">九分</option>
                       <option value="踩脚">踩脚</option>
                       <option value="连裤">连裤</option>
@@ -437,7 +474,7 @@
               </div>
               <div class="form-row">
                 <div class="row-title">季节（多选）</div>
-                <div class="row-cont a-tab-wrap last-grey-bg">
+                <div data-validate="季节" class="row-cont a-tab-wrap last-grey-bg">
                   <div class="checkbox-wrap"><span class="a-tab active">春季</span>
                     <input type="checkbox" name="春季" checked="checked">
                   </div>
@@ -465,8 +502,8 @@
                 <div class="row-title">厚度</div>
                 <div class="row-cont">
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
-                    <select class="select-s">
-                      <option value="" data-validate="厚度">请选择</option>
+                    <select data-validate="厚度" class="select-s">
+                      <option value="">请选择</option>
                       <option value="">超薄</option>
                       <option value="">薄</option>
                       <option value="">中等</option>
@@ -508,14 +545,14 @@
               <div class="form-row">
                 <div class="row-title">功能</div>
                 <div class="row-cont">
-                  <input type="text" placeholder="请输入">
+                  <input type="text" placeholder="请输入功能" data-validate="功能">
                 </div>
               </div>
               <div class="form-row">
                 <div class="row-title">自定义规格</div>
                 <div class="row-cont">
-                  <input type="text" placeholder="请输入规格名" class="input-text-s">
-                  <input type="text" placeholder="请输入该规格介绍" class="input-text-l"><span class="add-btn magin-top"> +</span>
+                  <input type="text" placeholder="请输入规格名" data-validate="规格名" class="input-text-s">
+                  <input type="text" placeholder="请输入该规格介绍" data-validate="规格介绍" class="input-text-m"><span class="add-btn magin-top"> +</span>
                 </div>
               </div>
             </div>
@@ -523,6 +560,357 @@
         </div>
       </div>
     </section>
-    <footer class="fixed-footer product-release"><a class="a-btn submit-a">确定</a></footer>
+    <footer class="fixed-footer product-release"><a class="a-btn submit-a">确定</a>
+      <script>
+        //产品发布 验证
+        var productReleaseEvent = function () {
+          var checkForm = function () {
+            var isTerge = /^([1-9][0-9]*)$/;
+            var twoPoint = /^[1-9]\d+(\.\d{1,2})?$/;
+            var inputValidate = $(".product-release-form [data-validate]:not(:hidden)");
+        
+            var showDialog = function (sel, dialogExist, errTip) {
+              sel.addClass("error-input");
+              if(sel.is("select") || sel.find("input[type=checkbox]").length >0){
+                if (dialogExist == 0) {
+                  errTip ="您未选择<span>" + errTip;
+                }
+              }
+              else if ( sel.is("input[type=text]")) {
+                if (dialogExist == 0) {
+                  errTip = '您未填写<span>'+ errTip;
+                }
+              }
+              else if (sel.hasClass("add-btn")) {
+                if (dialogExist == 0) {
+                  errTip = '您未<span>' + errTip;
+                }
+              }
+              commonEvent.inputTextNone(errTip);
+              return false;
+            }
+            inputValidate.on('focus', function () {
+              var sel = $(this);
+              var selVal = $.trim(sel.val());
+              if (sel.hasClass('error-input')) {
+                $(this).removeClass('error-input');
+              }
+        
+            })
+            inputValidate.each(function () {
+              var sel = $(this);
+              var selVal = $.trim(sel.val());
+              var selType = $.trim(sel.data("validate"));
+              var dialogExist = $(".dialog-alert-pop").length;
+              if (selType == '产品种类' || selType == '发布类型') {   //select
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+              else if (selType == '货品名称') {
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else if (selVal != "") {
+                  if (selVal.length > 30) {
+                    var errTip = "货品名称长度不能超过30个字符"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '货号') {
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else if (selVal != "") {
+                  if (selVal.length > 10) {
+                    var errTip = "货号长度不能超过10个字符"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '上传图片') {
+                var uploadPic = sel.closest('.upload-pic');
+                var liLen = uploadPic.find('li').length;
+                var addBtn = sel.closest('li').find(".add-btn");
+                if (liLen <= 1) {
+                  return showDialog(addBtn, dialogExist, selType);
+                }
+                else {
+                  addBtn.removeClass("error-input");
+                }
+              }
+              else if (selType == '面料') {   //select
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+              else if (selType == '含量') {
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else if (selVal != "") {
+                  if (!twoPoint.test(selVal) && Number(selVal) > 100) {
+                    var errTip = "含量为数字，且最多保留两位小数，且最大为100.00"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '起订量') {
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else if (selVal != "") {
+                  if (!isTerge.test(selVal)) {
+                    var errTip = "起订量为整数"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '价格') {
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else if (selVal != "") {
+                  if (!twoPoint.test(selVal)) {
+                    var errTip = "价格为数字，且最多保留两位小数"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '颜色') {
+                var selRadioLen = sel.find("input[type=checkbox]:checked").length;
+                if (selRadioLen == 0) {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+              else if (selType == '尺码') {
+                var selRadioLen = sel.find("input[type=checkbox]:checked").length;
+                if (selRadioLen == 0) {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+              else if (selType == '年龄' || selType == '适用性别' || selType == '筒高') {   //select
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+              else if (selType == '季节') {
+                var selRadioLen = sel.find("input[type=checkbox]:checked").length;
+                if (selRadioLen == 0) {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+              else if (selType == '厚度') {   //select
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+              else if (selType == '克重') {
+                if (selVal == "") {
+                  return showDialog(sel, dialogExist, selType);
+                }
+                else if (selVal != "") {
+                  if (!twoPoint.test(selVal)) {
+                    var errTip = "克重为数字，且最多保留两位小数"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '功能') {
+                if (selVal != "") {
+                  if (selVal.length > 50) {
+                    var errTip = "功能长度不能超过50个字符"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '规格名') {
+                if (selVal != "") {
+                  if (selVal.length > 10) {
+                    var errTip = "规格名长度不能超过10个字符"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+              else if (selType == '规格介绍') {
+                if (selVal != "") {
+                  if (selVal.length > 50) {
+                    var errTip = "规格介绍长度不能超过50个字符"
+                    return showDialog(sel, dialogExist, errTip);
+                  }
+                  else {
+                    sel.removeClass("error-input");
+                  }
+                }
+              }
+            });
+        
+            if ($(".error-input").length > 0) {
+              return false
+            }
+            else {
+              return true;
+            }
+          };
+          return {
+            validateForm: function () {
+              return checkForm();
+            }
+          }
+        }();
+        $(function(){
+        
+          //产品发布
+          $("#product-type").on("change", function () {
+            var selVal = $.trim($(this).find("option:selected").val());
+            $(".sec-fill-cont").hide();
+            if (selVal == 'package') {
+              $(".package").show();
+            }
+            else if (selVal == 'cottonSock') {
+              $(".cottonSock").show();
+            }
+            else if (selVal == 'stockings') {
+              $(".stockings").show();
+            }
+            else if (selVal == '') {
+              $(".sec-fill-cont").hide();
+            }
+        
+          });
+          //tab-a 选择
+          //单选
+          $(".a-tab-wrap").onClick('click', '.radio-wrap span', function () {
+            var sel = $(this);
+            var selRadio = sel.parent(".radio-wrap").find("input[type=radio]");
+            $(".a-tab-wrap span").removeClass('active');
+            $(".a-tab-wrap input[type=radio]").attr("checked", false);
+            sel.addClass('active');
+            selRadio.attr("checked", true);
+          });
+          //多选
+          $(".a-tab-wrap").onClick('click', '.checkbox-wrap span', function () {
+            var sel = $(this);
+            var selCheckbox = sel.parent(".checkbox-wrap").find("input[type=checkbox]");
+            if (sel.hasClass('active')) {
+              sel.removeClass('active');
+              selCheckbox.attr("checked", false);
+            }
+            else {
+              sel.addClass('active');
+              selCheckbox.attr("checked", true);
+            }
+          });
+          //添加input
+          $(".input-add-wrap").onClick('click', '.add-btn', function () {
+            var sel = $(this);
+            var cutBtn = '<span class="cut-btn">-</span>';
+            var inputWrap = sel.prev('.input-wrap');
+            var cloneRow = inputWrap.clone(true);
+            if (inputWrap.find(".cut-btn").length == 0) {
+              inputWrap.append(cutBtn);
+            }
+            cloneRow.find("input").val("");
+            sel.before(cloneRow);
+          });
+          //删除input
+          $(".input-add-wrap").onClick('click', '.cut-btn', function () {
+            var sel = $(this);
+            var selWrap = sel.parent(".input-wrap");
+            selWrap.remove();
+          });
+        
+          //自定义点击事件
+          $(".a-tab-wrap").onClick("click", ".last-a", function () {
+            var sel = $(this);
+            var placeholderTxt = $.trim(sel.data('tip'));
+            commonEvent.customizeDialog(sel, placeholderTxt);
+          });
+          //图片上传最多五张
+          $(".upload-pic").on("change", "input[type=file]", function () {
+            var sel = $(this);
+            var ulWrap = sel.closest('ul');
+            var temp = '<li><img src="../global/images/pic' + liLen + '.png"/><i class="icon-close"></i></li>'
+            if ($(this).val() !== '') {
+              sel.closest('li').before(temp);
+              var liLen = ulWrap.find('li').length;
+              var addBtn = sel.closest('li').find(".add-btn");
+              if (addBtn.hasClass('error-input')) {
+                addBtn.removeClass('error-input');
+              }
+              if (liLen == 6) {
+                sel.closest('li').hide();
+              }
+            }
+          });
+          $(".upload-pic").onClick("click", 'li .icon-close', function () {
+            var sel = $(this);
+            var ulWrap = sel.closest('ul');
+            var liLen = ulWrap.find('li:not(:hidden)').length;
+            if (liLen <= 5) {
+              ulWrap.find("li.input-file-wrap").show();
+            }
+            sel.closest('li').remove();
+          })
+        
+           //表单验证提交
+          $(".product-release a.submit-a").onClick("click", function () {
+            if (productReleaseEvent.validateForm()) {
+              alert('ok');
+            }
+            else {
+              alert('fail');
+            }
+          });
+        
+        });
+      </script>
+    </footer>
   </body>
 </html>
