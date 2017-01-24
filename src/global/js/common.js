@@ -31,12 +31,44 @@ function stopDefault( e ) {
 }
 
 var commonEvent = function() {
+    var valTurnTwoNum = function(val){
+        var returnVal = '0.00';
+        if(val == null){
+            returnVal = '0.00';
+        }
+        else{
+            var selVal = $.trim(val.toString());
+            if(selVal == ''){
+                returnVal = '0.00';
+            }
+            else{
+                if(selVal.indexOf('.') == -1){   //整数
+                    returnVal = selVal+".00";
+                }
+                else{
+                    var arrNum = selVal.split(".");
+                    var pointNum = arrNum[1];
+                    if(pointNum.length == 1){ //一位小数
+                        returnVal = selVal +'0';
+                    }
+                    else if(pointNum.length == 2){ //两位小数
+                        returnVal = selVal;
+                    }
+                    else{     //两位以上小数
+                        arrNum[1] = pointNum.substring(0,2);
+                        returnVal = arrNum.join('.');
+                    }
+                }
+            }
+        }
+        return returnVal;
+    };
     var closeDialog = function(){
         $('body').onClick('click', '.close-btn', function () {
             $(".bg-alert-pop").remove();
             $(".dialog-alert-pop").remove();
         });
-    }
+    };
     var dialogErrTip = function (errTip) {
         var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' +
             '<div class="dialog-title"> 温馨提示</div><div class="dialog-cont">' +
@@ -110,15 +142,17 @@ var commonEvent = function() {
         //加减
         $(".opts-wrap input").on('keyup',function (e) {
             var sel = $(this);
-            var selVal =  $.trim(sel.val());
-            if(selVal == ''){
-                sel.val('0');
+            var selVal =  Number($.trim(sel.val()));
+            var defaultval = Number(sel.data('defaultval'));
+            if(selVal <= defaultval){
+                sel.val(defaultval);
+                return false;
             }
             else{
                 var selVla =parseInt(selVal);
                 sel.val(selVla);
             }
-            stopDefault(e);
+            //stopDefault(e);
         });
         $(".opts-wrap input").on('blur',function (e) {
             fun($(this));
@@ -128,9 +162,11 @@ var commonEvent = function() {
             var input = $(this).parent('.opts-wrap').find("input");
             input.trigger('blur');
             var num = Number(input.val());
+            var defaultval = Number(input.data('defaultval'));
             if(selInd == 0){  // -
-                if(num == 0){
-                    num = 0;
+                if(num <= defaultval){
+                    num = defaultval;
+                    return false;
                 }
                 else{
                     num--;
@@ -222,6 +258,9 @@ var commonEvent = function() {
 
     };
     return{
+        valPointTwoNum:function(val){
+            return valTurnTwoNum(val);
+        },
         initFun:function(){
             checkboxChecked();
         },
@@ -239,7 +278,7 @@ var commonEvent = function() {
             dialogFillNone(errTip);
             closeDialog();
         },
-        confirmDialog:function(tip,fun){
+        confirmDialog:function(tip,fun){ //fun为确认时执行的函数方法
             dialogConfirm(tip,fun);
             closeDialog();
         },

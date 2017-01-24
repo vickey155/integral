@@ -2733,6 +2733,12 @@ p{
   select:last-child{
     width: 33%;
   }
+  select.selected{
+    color:$c3;
+  }
+  select.error-input{
+    border-color:$red;
+  }
 }
 .address-edit{
   .address-edit-wrap{
@@ -2747,6 +2753,9 @@ p{
         border:$border-w solid $d9;
         @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.8rem);
         padding: 0.35rem;
+      }
+      input.error-input{
+        border-color:$red;
       }
 
     }

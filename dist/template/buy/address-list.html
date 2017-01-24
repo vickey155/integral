@@ -29,9 +29,9 @@
     </script>
   </head>
   <body>
-    <section class="sticky-cont shopping-address">
+    <section class="shopping-address">
       <div class="sec">
-        <ul class="address-list">
+        <ul id="choose-list" class="address-list">
           <li>
             <div class="circle-choose"><span><i class="icon-ok"></i></span></div>
             <div class="address-txt"><span class="default-address-icon"></span>
@@ -46,11 +46,17 @@
     <footer class="fixed-footer two-layers shopping-address-footer">
       <ul class="sec-bottom li-2">
         <li>
-          <div class="circle-choose"><span class="active"><i class="icon-ok"></i></span>全选</div>
+          <div id="all-choose" class="circle-choose"><span><i class="icon-ok"></i></span>全选</div>
           <div class="sumNum"></div>
         </li>
-        <li class="btn-2"><a class="a-blank"></a><a class="a-btn-bggray fr">删除</a></li>
-      </ul><a class="a-btn a-btn-bgblue"> 新增收货地址</a>
+        <li class="btn-2"><a href="javascript:void(0);" class="a-blank"></a><a href="javascript:void(0);" class="a-btn-bggray fr delete-btn">删除</a></li>
+      </ul><a href="/template/buy/address-edit.html" class="a-btn a-btn-bgblue"> 新增收货地址</a>
     </footer>
+    <script>
+      $(function(){
+        //全选及删除
+        commonEvent.chooseCircle('收货地址');
+      })
+    </script>
   </body>
 </html>

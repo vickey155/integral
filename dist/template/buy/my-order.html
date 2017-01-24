@@ -36,23 +36,23 @@
       <div class="sec-manage-list">
         <div class="tab-opts"><a class="active">全部</a><a>待付款</a><a>待发货</a><a>已发货</a></div>
         <ul>
-          <li><a class="order-status">卖家已发货<i class="icon-arrow-right"></i></a>
+          <li class="order-li"><a class="order-status">卖家已发货<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
               <div class="order-txt"><span>7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款</span></div>
               <div class="order-price"><span>￥58.80</span></div>
             </div>
             <p class="order-sum">共12件商品 合计：￥<span class="bing-font">117</span>.60（含运费￥0.00）</p>
-            <div class="btn-wrap"><a class="a-btn-bgred">确认收货</a></div>
+            <div class="btn-wrap"><a href="javascript:void(0);" class="a-btn-bgred make-sure-btn">确认收货</a></div>
           </li>
-          <li><a class="order-status">已付款，等待卖家发货<i class="icon-arrow-right"></i></a>
+          <li class="order-li"><a href="javascript:void(0);" class="order-status">已付款，等待卖家发货<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
               <div class="order-txt"><span>7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款</span></div>
               <div class="order-price"><span>￥58.80</span></div>
             </div>
             <p class="order-sum">共12件商品 合计：￥<span class="bing-font">117</span>.60（含运费￥0.00）</p>
-            <div class="btn-wrap"><a class="a-btn-bgred">联系卖家</a></div>
+            <div class="btn-wrap"><a href="javascript:void(0);" class="a-btn-bgred">联系卖家</a></div>
           </li>
-          <li><a class="order-status">待付款<i class="icon-arrow-right"></i></a>
+          <li class="order-li"><a href="javascript:void(0);" class="order-status">待付款<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
               <div class="order-txt"><span>7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款</span></div>
               <div class="order-price"><span>￥58.80</span></div>
@@ -60,22 +60,43 @@
             <p class="order-sum">共12件商品 合计：￥<span class="bing-font">117</span>.60（含运费￥0.00）</p>
             <div class="btn-wrap">
               <ul class="li-3">
-                <li><a class="a-btn-bggrey">删除订单</a></li>
-                <li><a class="a-btn-bgblue">线下支付</a></li>
-                <li><a class="a-btn-bgred">在线支付</a></li>
+                <li><a href="javascript:void(0);" class="a-btn-bggrey delete-btn">删除订单</a></li>
+                <li><a href="javascript:void(0);" class="a-btn-bgblue">线下支付</a></li>
+                <li><a href="javascript:void(0);" class="a-btn-bgred">在线支付</a></li>
               </ul>
             </div>
           </li>
-          <li><a class="order-status">交易完成<i class="icon-arrow-right"></i></a>
+          <li class="order-li"><a class="order-status">交易完成<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
               <div class="order-txt"><span>7047  一件代发纯棉袜子男士四季中筒 防臭全棉秋冬款优质产品淘宝爆款</span></div>
               <div class="order-price"><span>￥58.80</span></div>
             </div>
             <p class="order-sum">共12件商品 合计：￥<span class="bing-font">117</span>.60（含运费￥0.00）</p>
-            <div class="btn-wrap"><a class="a-btn-bggrey">删除订单</a></div>
+            <div class="btn-wrap"><a href="javascript:void(0);" class="a-btn-bggrey delete-btn">删除订单</a></div>
           </li>
         </ul>
       </div>
     </section>
+    <script>
+      $(function(){
+        var deleteFun = function (sel) {
+          sel.closest('li.order-li').remove();
+        };
+        $(".sec-manage-list").onClick('click','.delete-btn',function () {
+          var sel = $(this);
+          var tip='您确定要删除此订单吗？';
+          commonEvent.confirmDialog(tip,function () {
+            deleteFun(sel);
+          });
+        });
+        $(".sec-manage-list").onClick('click', '.make-sure-btn', function () {
+          var sel = $(this);
+          var tip = '您确认已经收到货物了吗？';
+          commonEvent.confirmDialog(tip, function () {
+            alert('收货ok');
+          });
+        });
+      });
+    </script>
   </body>
 </html>

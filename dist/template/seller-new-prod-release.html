@@ -650,7 +650,8 @@
                 }
               }
               else if (selType == '面料') {   //select
-                if (selVal == "") {
+                var selectVal = $.trim(sel.find('option:selected').val());
+                if (selectVal == "") {
                   return showDialog(sel, dialogExist, selType);
                 }
                 else {
@@ -718,7 +719,8 @@
                 }
               }
               else if (selType == '年龄' || selType == '适用性别' || selType == '筒高') {   //select
-                if (selVal == "") {
+                var selectVal = $.trim(sel.find('option:selected').val());
+                if (selectVal == "") {
                   return showDialog(sel, dialogExist, selType);
                 }
                 else {
@@ -735,7 +737,8 @@
                 }
               }
               else if (selType == '厚度') {   //select
-                if (selVal == "") {
+                var selectVal = $.trim(sel.find('option:selected').val());
+                if (selectVal == "") {
                   return showDialog(sel, dialogExist, selType);
                 }
                 else {

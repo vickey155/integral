@@ -42,7 +42,7 @@ block content
             span.bing-font 117
             | .60（含运费￥0.00）
           .btn-wrap
-            a.a-btn-bgred(href="javascript:void(0);") 确认发货
+            a.a-btn-bgred.make-sure-send-btn(href="javascript:void(0);") 确认发货
         li.order-li
           a.order-status(href="javascript:void(0);") 待付款（在线支付）
             i.icon-arrow-right
@@ -92,7 +92,7 @@ block content
               li
                 a.a-btn-bggrey(href="javascript:void(0);").delete-btn 删除订单
               li
-                a.a-btn-bgred(href="javascript:void(0);") 确认付款
+                a.a-btn-bgred.make-sure-paid-btn(href="javascript:void(0);") 确认付款
 
   script.
     $(function(){
@@ -104,6 +104,20 @@ block content
         var tip='您确定要删除此订单吗？';
         commonEvent.confirmDialog(tip,function () {
           deleteFun(sel);
+        });
+      });
+      $(".sec-manage-list").onClick('click', '.make-sure-send-btn', function () {
+        var sel = $(this);
+        var tip = '您确认要发送货物了吗？';
+        commonEvent.confirmDialog(tip, function () {
+          alert('发货ok');
+        });
+      });
+      $(".sec-manage-list").onClick('click', '.make-sure-paid-btn', function () {
+        var sel = $(this);
+        var tip = '您确认要付款了吗？';
+        commonEvent.confirmDialog(tip, function () {
+          alert('付款ok');
         });
       });
     });

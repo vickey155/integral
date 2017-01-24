@@ -4,9 +4,9 @@ block append headTitle
   title 收货地址
 
 block content
-  section.sticky-cont.shopping-address
+  section.shopping-address
     .sec
-      ul.address-list
+      ul.address-list#choose-list
         li
           .circle-choose
             span
@@ -23,16 +23,21 @@ block content
   footer.fixed-footer.two-layers.shopping-address-footer
     ul.sec-bottom.li-2
       li
-        .circle-choose
-          span.active
+        .circle-choose#all-choose
+          span
             i.icon-ok
           | 全选
         .sumNum
       li.btn-2
-        a.a-blank
-        a.a-btn-bggray.fr 删除
-    a.a-btn.a-btn-bgblue  新增收货地址
+        a.a-blank(href="javascript:void(0);")
+        a.a-btn-bggray.fr.delete-btn(href="javascript:void(0);") 删除
+    a.a-btn.a-btn-bgblue(href="/template/buy/address-edit.html")  新增收货地址
 
+  script.
+    $(function(){
+      //全选及删除
+      commonEvent.chooseCircle('收货地址');
+    })
 
 
 

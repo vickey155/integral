@@ -159,7 +159,7 @@
             <p class="grey-font">1种12件;不含运费</p>
           </div>
         </li>
-        <li class="btn-2"><a class="a-btn-bggray delete-btn">删除</a><a class="a-btn-bgred">下单</a></li>
+        <li class="btn-2"><a class="a-btn-bggray delete-btn">删除</a><a class="a-btn-bgred makeorder-btn">下单</a></li>
       </ul>
       <ul class="footer-nav">
         <li><a href="/template/buy/index.html"><span class="icon-home"></span>
@@ -197,7 +197,6 @@
       
       
         //显示双数及总价
-      
         var showSumNum = function (self) {
           var listOne = self.closest(".order-one");
           var inputNumber = listOne.find('input[type=number]');
@@ -227,6 +226,40 @@
         //加减
         commonEvent.addAndCutFun(function (sel) {
           showSumNum(sel);
+        });
+      
+        var checkInputVal =function() {
+         var inputObj = $("#choose-list").find("input[type=number]");
+         var inputLen = inputObj.length;
+         inputObj.each(function(){
+           var sel = $(this);
+           var selVal = $.trim(sel.val());
+           if(selVal == '0'){
+               sel.addClass('error-input');
+           }
+           else{
+             sel.removeClass('error-input');
+           }
+         });
+          var errLen = $("#choose-list").find("input.error-input");
+          if(errLen == inputLen){
+            var tip = "进货量不能都为0";
+            commonEvent.validataDialog(tip);
+            return false;
+          }
+          else{
+            return true;
+          }
+        }
+      
+        //下单
+        $(".makeorder-btn").onClick('click',function(){
+           if(checkInputVal()){
+             alert('ok');
+           }
+          else{
+             alert('fail');
+           }
         });
       });
     </script>

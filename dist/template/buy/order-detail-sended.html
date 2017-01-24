@@ -103,6 +103,17 @@
         </div>
       </div>
     </section>
-    <footer class="fixed-footer"><a class="a-btn a-btn-bgred">确认收货</a></footer>
+    <footer class="fixed-footer"><a class="a-btn a-btn-bgred make-sure-btn">确认收货</a></footer>
+    <script>
+      $(function () {
+        $(".fixed-footer").onClick('click', '.make-sure-btn', function () {
+          var sel = $(this);
+          var tip = '您确认已经收到货物了吗？';
+          commonEvent.confirmDialog(tip, function () {
+            alert('收货ok');
+          });
+        });
+      });
+    </script>
   </body>
 </html>

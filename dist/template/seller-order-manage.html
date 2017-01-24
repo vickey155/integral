@@ -52,7 +52,7 @@
               <div class="order-price"><span>￥58.80</span></div>
             </div>
             <p class="order-sum">共12件商品 合计：￥<span class="bing-font">117</span>.60（含运费￥0.00）</p>
-            <div class="btn-wrap"><a href="javascript:void(0);" class="a-btn-bgred">确认发货</a></div>
+            <div class="btn-wrap"><a href="javascript:void(0);" class="a-btn-bgred make-sure-send-btn">确认发货</a></div>
           </li>
           <li class="order-li"><a href="javascript:void(0);" class="order-status">待付款（在线支付）<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
@@ -84,7 +84,7 @@
             <div class="btn-wrap">
               <ul>
                 <li><a href="javascript:void(0);" class="a-btn-bggrey delete-btn">删除订单</a></li>
-                <li><a href="javascript:void(0);" class="a-btn-bgred">确认付款</a></li>
+                <li><a href="javascript:void(0);" class="a-btn-bgred make-sure-paid-btn">确认付款</a></li>
               </ul>
             </div>
           </li>
@@ -101,6 +101,20 @@
           var tip='您确定要删除此订单吗？';
           commonEvent.confirmDialog(tip,function () {
             deleteFun(sel);
+          });
+        });
+        $(".sec-manage-list").onClick('click', '.make-sure-send-btn', function () {
+          var sel = $(this);
+          var tip = '您确认要发送货物了吗？';
+          commonEvent.confirmDialog(tip, function () {
+            alert('发货ok');
+          });
+        });
+        $(".sec-manage-list").onClick('click', '.make-sure-paid-btn', function () {
+          var sel = $(this);
+          var tip = '您确认要付款了吗？';
+          commonEvent.confirmDialog(tip, function () {
+            alert('付款ok');
           });
         });
       });

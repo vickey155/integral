@@ -74,9 +74,18 @@ block content
 
 
   footer.fixed-footer
-    a.a-btn.a-btn-bgred 确认收货
+    a.a-btn.a-btn-bgred.make-sure-btn 确认收货
 
-
+  script.
+    $(function () {
+      $(".fixed-footer").onClick('click', '.make-sure-btn', function () {
+        var sel = $(this);
+        var tip = '您确认已经收到货物了吗？';
+        commonEvent.confirmDialog(tip, function () {
+          alert('收货ok');
+        });
+      });
+    });
 
 
 

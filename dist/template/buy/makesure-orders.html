@@ -33,13 +33,11 @@
       <div class="sec">
         <div class="sec-address-wrap">
           <div class="address-border"></div>
-          <div style="display:block" class="sec-address-show"><span class="address-icon icon-address"></span>
-            <p class="font-60 clearfix">张海泽<span class="font-60 fr">13688888888</span></p>
-            <p class="font-60">浙江省  绍兴市  诸暨市 <br/>滨江南路</p><a class="icon-arrow-right"></a>
-          </div>
-          <div style="display:none" class="sec-address-edit"><span class="address-icon"></span>
-            <p class="big-font">请选择收货地址</p><a class="arrow-right">></a>
-          </div>
+          <div style="display:block" class="sec-address-show"><a href=""><span class="address-icon icon-address"></span>
+              <p class="font-60 clearfix">张海泽<span class="font-60 fr">13688888888</span></p>
+              <p class="font-60">浙江省  绍兴市  诸暨市 <br/>滨江南路</p><i class="icon-arrow-right"></i></a></div>
+          <div style="display:none" class="sec-address-edit"><a href=""><span class="address-icon"></span>
+              <p class="big-font">请选择收货地址</p><i class="arrow-right">></i></a></div>
           <div class="address-border"></div>
         </div>
         <div class="sec-list-wrap">
@@ -54,12 +52,12 @@
                 <ul class="fl">
                   <li>颜色:<span>咖啡</span></li>
                   <li>尺码:<span>均码</span></li>
-                  <li>单价:<span>￥4.20/双</span></li>
+                  <li>单价:<span>￥<i class="per-price">4.20</i></span>/双</li>
                 </ul>
                 <div class="fr">
-                  <div class="row-t">￥50.40</div>
+                  <div class="row-t">￥<i class="sum-price">50.40</i></div>
                   <div class="opts-wrap"><a href="javascript:void(0);">-</a>
-                    <input type="number" value="12" class="input-s"><a href="javascript:void(0);">+</a>
+                    <input type="number" value="12" data-defaultval="12" class="input-s"><a href="javascript:void(0);">+</a>
                   </div>
                 </div>
               </div>
@@ -67,17 +65,54 @@
                 <ul class="fl">
                   <li>颜色:<span>咖啡</span></li>
                   <li>尺码:<span>均码</span></li>
-                  <li>单价:<span>￥4.20/双</span></li>
+                  <li>单价:<span>￥<i class="per-price">4.20</i></span>/双</li>
                 </ul>
                 <div class="fr">
-                  <div class="row-t">￥50.40</div>
+                  <div class="row-t">￥<i class="sum-price">50.40</i></div>
                   <div class="opts-wrap"><a href="javascript:void(0);">-</a>
-                    <input type="number" value="12" class="input-s"><a href="javascript:void(0);">+</a>
+                    <input type="number" value="12" data-defaultval="12" class="input-s"><a href="javascript:void(0);">+</a>
                   </div>
                 </div>
               </div>
               <div class="list-one-sum">
-                <p> 12件<span class="grey-font">丨</span>小计（含运费）：<span class="red-font">￥55.40</span></p>
+                <p><i class="total-num">12</i>件<span class="grey-font">丨</span>小计（含运费）：<span class="red-font">￥<i class="total-price">55.40</i></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="list-cont">
+            <div class="list-one">
+              <div class="list-one-title"><span class="red-font">订单2:</span> 诸暨市棉品轩针织有限公司</div>
+              <div class="list-one-top"><img src="">
+                <div class="order-txt"><span>新品SOX LAB日系基础款纯色复古 定标女袜子  中筒棉袜  双针短靴袜</span></div>
+              </div>
+              <div class="list-one-detail">
+                <ul class="fl">
+                  <li>颜色:<span>咖啡</span></li>
+                  <li>尺码:<span>均码</span></li>
+                  <li>单价:<span>￥<i class="per-price">4.20</i></span>/双</li>
+                </ul>
+                <div class="fr">
+                  <div class="row-t">￥<i class="sum-price">50.40</i></div>
+                  <div class="opts-wrap"><a href="javascript:void(0);">-</a>
+                    <input type="number" value="12" data-defaultval="12" class="input-s"><a href="javascript:void(0);">+</a>
+                  </div>
+                </div>
+              </div>
+              <div class="list-one-detail">
+                <ul class="fl">
+                  <li>颜色:<span>咖啡</span></li>
+                  <li>尺码:<span>均码</span></li>
+                  <li>单价:<span>￥<i class="per-price">4.20</i></span>/双</li>
+                </ul>
+                <div class="fr">
+                  <div class="row-t">￥<i class="sum-price">50.40</i></div>
+                  <div class="opts-wrap"><a href="javascript:void(0);">-</a>
+                    <input type="number" value="12" data-defaultval="12" class="input-s"><a href="javascript:void(0);">+</a>
+                  </div>
+                </div>
+              </div>
+              <div class="list-one-sum">
+                <p><i class="total-num">12</i>件<span class="grey-font">丨</span>小计（含运费）：<span class="red-font">￥<i class="total-price">55.40</i></span></p>
               </div>
             </div>
           </div>
@@ -94,8 +129,8 @@
               <label>运费计算</label>
               <div class="fr">快递：
                 <div class="select-wrapper">
-                  <select>
-                    <option value="">￥10.00</option>
+                  <select id="recieve-money">
+                    <option value="10.00">￥10.00</option>
                   </select><i class="icon-arrow-down"></i>
                 </div>
               </div>
@@ -110,15 +145,64 @@
     <footer class="fixed-footer two-layers makesure-order-footer">
       <ul class="li-2">
         <li class="col-l">
-          <p>运费总计： ￥5.00</p>
-          <p>货款总计： ￥50.40</p>
+          <p>运费总计： ￥<i id="total-money1">5.00</i></p>
+          <p>货款总计： ￥<i id="total-money2">50.40</i></p>
         </li>
         <li class="sum-price">
-          <p>总计:<span class="red-font">￥55.40</span></p>
+          <p>总计:<span class="red-font">￥<i id="total-money3">55.40</i></span></p>
           <p class="grey-font">1种12件含运费</p>
         </li>
       </ul>
       <div class="foot-btn"><a class="a-btn a-btn-bgred">提交订单</a></div>
     </footer>
+    <script>
+      $(function(){
+        var showNumAndPrice = function (sel) {
+          var listPer = sel.closest('.list-cont');
+          var totalPrice = listPer.find('.total-price');
+          var totalNum = listPer.find('.total-num');
+          var lastNum = 0,lastPrice =0;
+          listPer.find("input[type=number]").each(function(){
+            var sel = $(this);
+            var selNum = Number($.trim(sel.val()));
+            var listOnePer = sel.closest('.list-one-detail');
+            var perPriceVal = Number(listOnePer.find('.per-price').html());
+            var sumPrice = listOnePer.find('.sum-price');
+            var sumPriceVal = commonEvent.valPointTwoNum(perPriceVal*selNum);
+            sumPrice.html(sumPriceVal);
+            var sumPriceVal01 = Number(sumPrice.html());
+            lastNum += selNum;
+            lastPrice += sumPriceVal01;
+          })
+          lastPrice = commonEvent.valPointTwoNum(lastPrice);
+          totalPrice.html(lastPrice);
+          totalNum.html(lastNum);
+          var totalPriceAllVal = 0;
+          var totalPriceAll = sel.closest('.sec-list-wrap').find('.total-price');
+          totalPriceAll.each(function(){
+            var sel = $(this);
+            var selPrice = Number($.trim(sel.html()));
+            totalPriceAllVal +=selPrice;
+          });
+          totalPriceAllVal = commonEvent.valPointTwoNum(totalPriceAllVal);
+          $("#total-money2").html(totalPriceAllVal);
+          var recievedVal = Number($.trim($('#recieve-money').find('option:selected').val()));
+          recievedVal = commonEvent.valPointTwoNum(recievedVal);
+          $("#total-money1").html(recievedVal);
+          var totalMoney = commonEvent.valPointTwoNum(Number(totalPriceAllVal)+Number(recievedVal));
+          $("#total-money3").html(totalMoney);
+        }
+      
+      
+        $(".makesure-order input[type=number]").each(function(){
+          var sel = $(this);
+          showNumAndPrice(sel);
+        });
+        //加减
+        commonEvent.addAndCutFun(function (sel) {
+          showNumAndPrice(sel);
+        });
+      });
+    </script>
   </body>
 </html>

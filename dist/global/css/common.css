@@ -4430,6 +4430,10 @@ section.sticky-foot {
         font-size: 0.48rem; } }
   .select-region-wrap select:last-child {
     width: 33%; }
+  .select-region-wrap select.selected {
+    color: #333; }
+  .select-region-wrap select.error-input {
+    border-color: #dd1718; }
 
 .address-edit .address-edit-wrap {
   padding: 0.7rem; }
@@ -4457,6 +4461,8 @@ section.sticky-foot {
       @media screen and (min-width: 640px) {
         .address-edit .address-edit-wrap .row-per input.input-text-large {
           font-size: 0.48rem; } }
+    .address-edit .address-edit-wrap .row-per input.error-input {
+      border-color: #dd1718; }
 
 .address-edit .set-default-address {
   padding-top: 0.5rem; }

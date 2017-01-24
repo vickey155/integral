@@ -9,15 +9,17 @@ block content
       .sec-address-wrap
         .address-border
         .sec-address-show(style="display:block")
-          span.address-icon.icon-address
-          p.font-60.clearfix 张海泽
-              span.font-60.fr 13688888888
-          p.font-60 浙江省  绍兴市  诸暨市 <br/>滨江南路
-          a.icon-arrow-right
+          a(href="")
+            span.address-icon.icon-address
+            p.font-60.clearfix 张海泽
+                span.font-60.fr 13688888888
+            p.font-60 浙江省  绍兴市  诸暨市 <br/>滨江南路
+            i.icon-arrow-right
         .sec-address-edit(style="display:none")
-          span.address-icon
-          p.big-font 请选择收货地址
-          a.arrow-right >
+          a(href="")
+            span.address-icon
+            p.big-font 请选择收货地址
+            i.arrow-right >
         .address-border
       .sec-list-wrap
         .list-title 货品清单
@@ -35,12 +37,15 @@ block content
                 li 尺码:
                   span 均码
                 li 单价:
-                  span ￥4.20/双
+                  span ￥
+                    i.per-price 4.20
+                  |/双
               .fr
-                .row-t ￥50.40
+                .row-t ￥
+                  i.sum-price 50.40
                 .opts-wrap
                   a(href="javascript:void(0);") -
-                  input(type="number" value="12").input-s
+                  input(type="number" value="12" data-defaultval="12").input-s
                   a(href="javascript:void(0);") +
             .list-one-detail
               ul.fl
@@ -49,19 +54,73 @@ block content
                 li 尺码:
                   span 均码
                 li 单价:
-                  span ￥4.20/双
+                  span ￥
+                    i.per-price 4.20
+                  | /双
               .fr
-                .row-t ￥50.40
+                .row-t ￥
+                  i.sum-price 50.40
                 .opts-wrap
                   a(href="javascript:void(0);") -
-                  input(type="number" value="12").input-s
+                  input(type="number" value="12" data-defaultval="12").input-s
                   a(href="javascript:void(0);") +
             .list-one-sum
-              p  12件
+              p
+                i.total-num 12
+                |件
                 span.grey-font 丨
                 |小计（含运费）：
-                span.red-font ￥55.40
-
+                span.red-font ￥
+                  i.total-price 55.40
+        .list-cont
+          .list-one
+            .list-one-title <span class="red-font">订单2:</span> 诸暨市棉品轩针织有限公司
+            .list-one-top
+              img(src="")
+              .order-txt
+                span 新品SOX LAB日系基础款纯色复古 定标女袜子  中筒棉袜  双针短靴袜
+            .list-one-detail
+              ul.fl
+                li 颜色:
+                  span 咖啡
+                li 尺码:
+                  span 均码
+                li 单价:
+                  span ￥
+                    i.per-price 4.20
+                  | /双
+              .fr
+                .row-t ￥
+                  i.sum-price 50.40
+                .opts-wrap
+                  a(href="javascript:void(0);") -
+                  input(type="number" value="12" data-defaultval="12").input-s
+                  a(href="javascript:void(0);") +
+            .list-one-detail
+              ul.fl
+                li 颜色:
+                  span 咖啡
+                li 尺码:
+                  span 均码
+                li 单价:
+                  span ￥
+                    i.per-price 4.20
+                  | /双
+              .fr
+                .row-t ￥
+                  i.sum-price 50.40
+                .opts-wrap
+                  a(href="javascript:void(0);") -
+                  input(type="number" value="12" data-defaultval="12").input-s
+                  a(href="javascript:void(0);") +
+            .list-one-sum
+              p
+                i.total-num 12
+                | 件
+                span.grey-font 丨
+                | 小计（含运费）：
+                span.red-font ￥
+                  i.total-price 55.40
         .list-foot
           .row-per
             label 交易方式
@@ -73,8 +132,8 @@ block content
             label 运费计算
             .fr 快递：
               .select-wrapper
-                select
-                  option(value="") ￥10.00
+                select#recieve-money
+                  option(value="10.00") ￥10.00
                 i.icon-arrow-down
           .leav-message
             textarea  给卖家留言
@@ -83,17 +142,67 @@ block content
   footer.fixed-footer.two-layers.makesure-order-footer
     ul.li-2
       li.col-l
-        p 运费总计： ￥5.00
-        p 货款总计： ￥50.40
+        p 运费总计： ￥
+          i#total-money1 5.00
+        p 货款总计： ￥
+          i#total-money2 50.40
       li.sum-price
         p 总计:
-          span.red-font ￥55.40
+          span.red-font ￥
+            i#total-money3 55.40
         p.grey-font 1种12件含运费
     .foot-btn
       a.a-btn.a-btn-bgred 提交订单
 
 
+  script.
+    $(function(){
+      var showNumAndPrice = function (sel) {
+        var listPer = sel.closest('.list-cont');
+        var totalPrice = listPer.find('.total-price');
+        var totalNum = listPer.find('.total-num');
+        var lastNum = 0,lastPrice =0;
+        listPer.find("input[type=number]").each(function(){
+          var sel = $(this);
+          var selNum = Number($.trim(sel.val()));
+          var listOnePer = sel.closest('.list-one-detail');
+          var perPriceVal = Number(listOnePer.find('.per-price').html());
+          var sumPrice = listOnePer.find('.sum-price');
+          var sumPriceVal = commonEvent.valPointTwoNum(perPriceVal*selNum);
+          sumPrice.html(sumPriceVal);
+          var sumPriceVal01 = Number(sumPrice.html());
+          lastNum += selNum;
+          lastPrice += sumPriceVal01;
+        })
+        lastPrice = commonEvent.valPointTwoNum(lastPrice);
+        totalPrice.html(lastPrice);
+        totalNum.html(lastNum);
+        var totalPriceAllVal = 0;
+        var totalPriceAll = sel.closest('.sec-list-wrap').find('.total-price');
+        totalPriceAll.each(function(){
+          var sel = $(this);
+          var selPrice = Number($.trim(sel.html()));
+          totalPriceAllVal +=selPrice;
+        });
+        totalPriceAllVal = commonEvent.valPointTwoNum(totalPriceAllVal);
+        $("#total-money2").html(totalPriceAllVal);
+        var recievedVal = Number($.trim($('#recieve-money').find('option:selected').val()));
+        recievedVal = commonEvent.valPointTwoNum(recievedVal);
+        $("#total-money1").html(recievedVal);
+        var totalMoney = commonEvent.valPointTwoNum(Number(totalPriceAllVal)+Number(recievedVal));
+        $("#total-money3").html(totalMoney);
+      }
 
+
+      $(".makesure-order input[type=number]").each(function(){
+        var sel = $(this);
+        showNumAndPrice(sel);
+      });
+      //加减
+      commonEvent.addAndCutFun(function (sel) {
+        showNumAndPrice(sel);
+      });
+    });
 
 
 

@@ -100,6 +100,20 @@
         </div>
       </div>
     </section>
-    <footer class="fixed-footer"><a class="a-btn a-btn-bggrey">删除订单</a></footer>
+    <footer class="fixed-footer"><a class="a-btn a-btn-bggrey delete-btn">删除订单</a></footer>
+    <script>
+      $(function () {
+        var deleteFun = function (sel) {
+          sel.closest('li.order-li').remove();
+        };
+        $(".fixed-footer").onClick('click', '.delete-btn', function () {
+          var sel = $(this);
+          var tip = '您确定要删除此订单吗？';
+          commonEvent.confirmDialog(tip, function () {
+            deleteFun(sel);
+          });
+        });
+      });
+    </script>
   </body>
 </html>

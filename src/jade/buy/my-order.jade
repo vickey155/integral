@@ -15,7 +15,7 @@ block content
         a 待发货
         a 已发货
       ul
-        li
+        li.order-li
           a.order-status 卖家已发货
             i.icon-arrow-right
           .order-per
@@ -28,9 +28,9 @@ block content
             span.bing-font 117
             | .60（含运费￥0.00）
           .btn-wrap
-            a.a-btn-bgred 确认收货
-        li
-          a.order-status 已付款，等待卖家发货
+            a.a-btn-bgred.make-sure-btn(href="javascript:void(0);") 确认收货
+        li.order-li
+          a.order-status(href="javascript:void(0);") 已付款，等待卖家发货
             i.icon-arrow-right
           .order-per
             img(src="")
@@ -42,9 +42,9 @@ block content
             span.bing-font 117
             | .60（含运费￥0.00）
           .btn-wrap
-            a.a-btn-bgred 联系卖家
-        li
-          a.order-status 待付款
+            a.a-btn-bgred(href="javascript:void(0);") 联系卖家
+        li.order-li
+          a.order-status(href="javascript:void(0);") 待付款
             i.icon-arrow-right
           .order-per
             img(src="")
@@ -58,12 +58,12 @@ block content
           .btn-wrap
             ul.li-3
               li
-                a.a-btn-bggrey 删除订单
+                a.a-btn-bggrey.delete-btn(href="javascript:void(0);") 删除订单
               li
-                a.a-btn-bgblue 线下支付
+                a.a-btn-bgblue(href="javascript:void(0);") 线下支付
               li
-                a.a-btn-bgred 在线支付
-        li
+                a.a-btn-bgred(href="javascript:void(0);") 在线支付
+        li.order-li
           a.order-status 交易完成
             i.icon-arrow-right
           .order-per
@@ -76,9 +76,28 @@ block content
             span.bing-font 117
             | .60（含运费￥0.00）
           .btn-wrap
-            a.a-btn-bggrey 删除订单
+            a.a-btn-bggrey.delete-btn(href="javascript:void(0);") 删除订单
 
-
+  script.
+    $(function(){
+      var deleteFun = function (sel) {
+        sel.closest('li.order-li').remove();
+      };
+      $(".sec-manage-list").onClick('click','.delete-btn',function () {
+        var sel = $(this);
+        var tip='您确定要删除此订单吗？';
+        commonEvent.confirmDialog(tip,function () {
+          deleteFun(sel);
+        });
+      });
+      $(".sec-manage-list").onClick('click', '.make-sure-btn', function () {
+        var sel = $(this);
+        var tip = '您确认已经收到货物了吗？';
+        commonEvent.confirmDialog(tip, function () {
+          alert('收货ok');
+        });
+      });
+    });
 
 
 
