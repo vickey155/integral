@@ -192,7 +192,7 @@
         //规格选择弹层
         var bgPop = $(".bg-pop");
         var dialogFormate = $(".dialog-container");
-        $(".dialog-container").onClick("click", ".icon-close", function () {
+        $(".dialog-container").on("click", ".icon-close", function () {
           bgPop.hide();
           dialogFormate.hide();
         });
