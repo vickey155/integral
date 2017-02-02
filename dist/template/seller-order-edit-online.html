@@ -96,7 +96,11 @@
             <div class="order-table-tr big-font clearfix">
               <div class="td">实付款</div>
               <div class="td"></div>
-              <div class="td red-font"><span class="price-bg">￥117.60</span><span class="arrow-icon"></span></div>
+              <div class="td red-font">
+                <p class="price-bg"><span>￥</span>
+                  <input type="number" value="117.60">
+                </p><span class="arrow-icon"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -105,17 +109,30 @@
     <footer class="fixed-footer seller-order-edit-footer">
       <ul>
         <li><a class="a-btn a-btn-bggray delete-btn">删除</a></li>
-        <li><a class="a-btn a-btn-bgred">确认价格</a></li>
+        <li><a class="a-btn a-btn-bgred sure-btn">确认价格</a></li>
       </ul>
     </footer>
     <script>
       $(function(){
         var deleteFun = function () {
-          window.location.href="http://192.168.158.178:8889/template/seller-order-manage.html"
+          alert(0);
+          window.location.href="localhost:8889/template/seller-order-manage.html";
         };
         $(".fixed-footer").onClick('click','.delete-btn',function () {
-          var tip='您确定要删除此订单吗？'
+          var tip='您确定要删除此订单吗？';
           commonEvent.confirmDialog(tip,deleteFun);
+        });
+        var sureFun = function () {
+          alert("您确定要修改价格吗");
+        }
+        $(".fixed-footer").onClick('click', '.sure-btn', function () {
+          var tip = '您确定要修改价格吗？';
+          commonEvent.confirmDialog(tip,sureFun);
+        });
+        $(".price-bg input").on('blur',function () {
+          var sel = $(this);
+          var selVal = commonEvent.valPointTwoNum(sel.val());
+          sel.val(selVal);
         });
       });
     </script>

@@ -12,7 +12,15 @@ html, body {
 body {
   padding: 0;
   color: #333;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  width: 12.42rem;
+  margin: 0 auto; }
+
+.w750 {
+  width: 7.5rem;
+  margin: 0 auto; }
+  .w750 .fixed-footer {
+    width: 7.5rem; }
 
 img, span, a, label, i {
   display: inline-block;
@@ -128,7 +136,7 @@ section .sec {
   left: 0;
   z-index: 12;
   height: auto;
-  width: 100%;
+  width: 12.42rem;
   border-top: 0.04rem solid #ccc;
   background-color: #f2f2f2; }
   .fixed-footer ul.footer-nav {
@@ -492,6 +500,8 @@ section .sec {
     @media screen and (min-width: 640px) {
       .sec-login .btn-a-code {
         font-size: 0.24rem; } }
+  .sec-login .lastTime {
+    background-color: #999; }
   .sec-login .register-suc .btn-a-login {
     margin-top: 0; }
   .sec-login .register-suc .btn-a {
@@ -925,6 +935,9 @@ section.sticky-foot {
   .new-product-release .tab-w-s .active {
     background-color: #dd1718;
     border-color: #dd1718; }
+  .new-product-release .tab-w-s .radio-wrap:last-child span.active {
+    background-color: #fe6500;
+    border-color: #fe6500; }
   .new-product-release .form-row .row-title {
     height: 1.18rem;
     color: #333;
@@ -1081,6 +1094,29 @@ section.sticky-foot {
           font-size: 2.6rem; } }
     .new-product-release .upload-pic .input-file-wrap .error-input {
       border-color: #dd1718; }
+  .new-product-release .input-add-wrap {
+    position: relative; }
+    .new-product-release .input-add-wrap .outTxt {
+      position: absolute;
+      bottom: 0.4rem;
+      right: 0;
+      color: #d9d9d9;
+      text-align: center;
+      line-height: 1.6rem; }
+      @media screen and (max-width: 321px) {
+        .new-product-release .input-add-wrap .outTxt {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .new-product-release .input-add-wrap .outTxt {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .new-product-release .input-add-wrap .outTxt {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 640px) {
+        .new-product-release .input-add-wrap .outTxt {
+          font-size: 0.36rem; } }
+  .new-product-release .price-set .outTxt {
+    right: 1.1rem; }
   .new-product-release .input-wrap {
     float: left;
     overflow: hidden;
@@ -1094,14 +1130,43 @@ section.sticky-foot {
       width: 0;
       background: none;
       font-size: 0; }
+  .new-product-release .form-row .a-tab-wrap {
+    overflow: visible; }
   .new-product-release .checkbox-wrap {
     display: inline-block;
-    overflow: hidden; }
+    position: relative; }
     .new-product-release .checkbox-wrap input[type=checkbox] {
       height: 0;
       width: 0;
       background: none;
       font-size: 0; }
+  .new-product-release .icon-close {
+    position: absolute;
+    right: 0.3rem;
+    top: -0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+    font-weight: bold;
+    background-color: #dd1718;
+    border-radius: 50%; }
+    @media screen and (max-width: 321px) {
+      .new-product-release .icon-close {
+        font-size: 0.36rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .new-product-release .icon-close {
+        font-size: 0.35rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .new-product-release .icon-close {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 640px) {
+      .new-product-release .icon-close {
+        font-size: 0.32rem; } }
+  .new-product-release .active1 .icon-close {
+    background-color: #fff;
+    color: #dd1718; }
 
 .person-center-sec {
   height: 100%;
@@ -1415,7 +1480,7 @@ section.sticky-foot {
   padding: 0.2rem; }
   .sec-serch input[type=text] {
     background: #fff;
-    width: 8.96rem;
+    width: 8.9rem;
     height: 1.12rem;
     padding: 0.3rem 0.2rem;
     color: #333;
@@ -1648,7 +1713,8 @@ section.sticky-foot {
 
 .seller-goods-footer {
   height: 5.9rem;
-  border-top: 0; }
+  border-top: 0;
+  background: transparent; }
   .seller-goods-footer .shelve {
     float: right;
     margin-right: 0.4rem; }
@@ -1711,10 +1777,11 @@ section.sticky-foot {
     background: #fff;
     width: 10rem;
     height: 1rem;
-    padding: 0.25rem 0.2rem;
+    padding: 0 0.2rem;
     color: #333;
     text-align: left;
-    line-height: 0.5rem;
+    line-height: 1rem;
+    vertical-align: middle;
     border-radius: 0.1rem; }
     @media screen and (max-width: 321px) {
       .seller-mycustomer-sec .sec-serch input[type=text] {
@@ -1747,6 +1814,9 @@ section.sticky-foot {
     @media screen and (min-width: 640px) {
       .seller-mycustomer-sec .sec-serch .a-btn-bgblue {
         font-size: 0.48rem; } }
+
+.seller-mycustomer-sec .sec-filter .select-region select {
+  border-radius: 0; }
 
 .seller-mycustomer-sec .sec-mycustomer-list {
   padding: 0 0.5rem; }
@@ -1794,8 +1864,24 @@ section.sticky-foot {
       @media screen and (min-width: 640px) {
         .seller-mycustomer-sec .sec-mycustomer-list .row span {
           font-size: 0.48rem; } }
-    .seller-mycustomer-sec .sec-mycustomer-list .row span.red-font {
-      color: #dd1718; }
+    .seller-mycustomer-sec .sec-mycustomer-list .row .red-font {
+      display: inline;
+      height: 0.8rem;
+      color: #dd1718;
+      text-align: center;
+      line-height: 0.9rem; }
+      @media screen and (max-width: 321px) {
+        .seller-mycustomer-sec .sec-mycustomer-list .row .red-font {
+          font-size: 0.52rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .seller-mycustomer-sec .sec-mycustomer-list .row .red-font {
+          font-size: 0.51rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .seller-mycustomer-sec .sec-mycustomer-list .row .red-font {
+          font-size: 0.48rem; } }
+      @media screen and (min-width: 640px) {
+        .seller-mycustomer-sec .sec-mycustomer-list .row .red-font {
+          font-size: 0.48rem; } }
   .seller-mycustomer-sec .sec-mycustomer-list .row:last-child {
     margin-bottom: 0; }
 
@@ -2208,6 +2294,53 @@ section.sticky-foot {
         @media screen and (min-width: 640px) {
           .order-one .order-table .big-font .red-font span.price-bg, .order-detail-option .order-detail .order-table .big-font .red-font span.price-bg {
             font-size: 0.48rem; } }
+      .order-one .order-table .big-font .red-font .price-bg, .order-detail-option .order-detail .order-table .big-font .red-font .price-bg {
+        background-color: #f2f2f2;
+        padding-right: 0.2rem;
+        border-radius: 0.2rem;
+        overflow: hidden;
+        text-align: right;
+        font-size: 0; }
+        .order-one .order-table .big-font .red-font .price-bg span, .order-detail-option .order-detail .order-table .big-font .red-font .price-bg span {
+          display: inline;
+          color: #dd1718;
+          text-align: left;
+          line-height: 1rem; }
+          @media screen and (max-width: 321px) {
+            .order-one .order-table .big-font .red-font .price-bg span, .order-detail-option .order-detail .order-table .big-font .red-font .price-bg span {
+              font-size: 0.52rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .order-one .order-table .big-font .red-font .price-bg span, .order-detail-option .order-detail .order-table .big-font .red-font .price-bg span {
+              font-size: 0.51rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .order-one .order-table .big-font .red-font .price-bg span, .order-detail-option .order-detail .order-table .big-font .red-font .price-bg span {
+              font-size: 0.48rem; } }
+          @media screen and (min-width: 640px) {
+            .order-one .order-table .big-font .red-font .price-bg span, .order-detail-option .order-detail .order-table .big-font .red-font .price-bg span {
+              font-size: 0.48rem; } }
+        .order-one .order-table .big-font .red-font .price-bg input[type=number], .order-detail-option .order-detail .order-table .big-font .red-font .price-bg input[type=number] {
+          vertical-align: top;
+          display: inline-block;
+          width: 80%;
+          min-width: 0.6rem;
+          height: 1rem;
+          background: transparent;
+          color: #dd1718;
+          text-align: left;
+          line-height: 1rem;
+          overflow: hidden; }
+          @media screen and (max-width: 321px) {
+            .order-one .order-table .big-font .red-font .price-bg input[type=number], .order-detail-option .order-detail .order-table .big-font .red-font .price-bg input[type=number] {
+              font-size: 0.52rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .order-one .order-table .big-font .red-font .price-bg input[type=number], .order-detail-option .order-detail .order-table .big-font .red-font .price-bg input[type=number] {
+              font-size: 0.51rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .order-one .order-table .big-font .red-font .price-bg input[type=number], .order-detail-option .order-detail .order-table .big-font .red-font .price-bg input[type=number] {
+              font-size: 0.48rem; } }
+          @media screen and (min-width: 640px) {
+            .order-one .order-table .big-font .red-font .price-bg input[type=number], .order-detail-option .order-detail .order-table .big-font .red-font .price-bg input[type=number] {
+              font-size: 0.48rem; } }
 
 .sec-address, .order-detail-option .sec-address-show, .makesure-order .sec-address-wrap .sec-address-show, .makesure-order .sec-address-wrap .sec-address-edit {
   background-color: #fff;
@@ -2773,7 +2906,7 @@ section.sticky-foot {
       width: 0.5rem;
       height: 0.5rem;
       position: absolute;
-      top: 0.18rem;
+      top: 0.21rem;
       left: 0.22rem;
       z-index: 3;
       color: #dd1718;
@@ -2782,24 +2915,23 @@ section.sticky-foot {
       width: 6.83rem;
       height: 0.86rem;
       background: #fff;
-      padding: 0.2rem;
       padding-left: 0.8rem;
       color: #333;
       text-align: left;
-      line-height: 0.46rem;
+      line-height: 0.9rem;
       border-radius: 0.4rem; }
       @media screen and (max-width: 321px) {
         .index-home .sec-serch-buy .serch-input-wrap .serch-input {
-          font-size: 0.4rem; } }
+          font-size: 0.44rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .index-home .sec-serch-buy .serch-input-wrap .serch-input {
-          font-size: 0.39rem; } }
+          font-size: 0.42rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .index-home .sec-serch-buy .serch-input-wrap .serch-input {
-          font-size: 0.36rem; } }
+          font-size: 0.4rem; } }
       @media screen and (min-width: 640px) {
         .index-home .sec-serch-buy .serch-input-wrap .serch-input {
-          font-size: 0.36rem; } }
+          font-size: 0.38rem; } }
   .index-home .sec-serch-buy .serch-txt {
     margin-left: 0.2rem;
     color: #fff;
@@ -3362,6 +3494,9 @@ section.sticky-foot {
       height: 1.2rem;
       margin-right: 0.4rem;
       margin-bottom: 0.4rem; }
+      .dialog-container .dia-sec-02 .a-tab .checkbox-wrap input[type=checkbox] {
+        width: 0;
+        height: 0; }
     .dialog-container .dia-sec-02 .a-tab a {
       padding: 0 0.3rem;
       width: 100%;
@@ -3755,7 +3890,7 @@ section.sticky-foot {
     .purchase-order .order-one .circle-choose span, .purchase-order .order-detail-option .order-detail .circle-choose span, .order-detail-option .purchase-order .order-detail .circle-choose span, .purchase-order .order-one .rectangle-choose span, .purchase-order .order-detail-option .order-detail .rectangle-choose span, .order-detail-option .purchase-order .order-detail .rectangle-choose span {
       margin-top: 0.6rem; }
     .purchase-order .order-one img, .purchase-order .order-detail-option .order-detail img, .order-detail-option .purchase-order .order-detail img {
-      margin-left: 0.25rem;
+      margin-left: 0.2rem;
       width: 2.2rem;
       height: 2.2rem; }
     .purchase-order .order-one .order-txt, .purchase-order .order-detail-option .order-detail .order-txt, .order-detail-option .purchase-order .order-detail .order-txt {
@@ -3783,10 +3918,54 @@ section.sticky-foot {
       position: relative;
       text-align: right;
       line-height: 1.2rem; }
+      .purchase-order .order-one .order-price p, .purchase-order .order-detail-option .order-detail .order-price p, .order-detail-option .purchase-order .order-detail .order-price p {
+        color: #333;
+        text-align: left;
+        line-height: 1rem; }
+        @media screen and (max-width: 321px) {
+          .purchase-order .order-one .order-price p, .purchase-order .order-detail-option .order-detail .order-price p, .order-detail-option .purchase-order .order-detail .order-price p {
+            font-size: 0.54rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .purchase-order .order-one .order-price p, .purchase-order .order-detail-option .order-detail .order-price p, .order-detail-option .purchase-order .order-detail .order-price p {
+            font-size: 0.53rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .purchase-order .order-one .order-price p, .purchase-order .order-detail-option .order-detail .order-price p, .order-detail-option .purchase-order .order-detail .order-price p {
+            font-size: 0.5rem; } }
+        @media screen and (min-width: 640px) {
+          .purchase-order .order-one .order-price p, .purchase-order .order-detail-option .order-detail .order-price p, .order-detail-option .purchase-order .order-detail .order-price p {
+            font-size: 0.5rem; } }
       .purchase-order .order-one .order-price .red-font, .purchase-order .order-detail-option .order-detail .order-price .red-font, .order-detail-option .purchase-order .order-detail .order-price .red-font {
-        line-height: 1.2rem; }
-        .purchase-order .order-one .order-price .red-font i, .purchase-order .order-detail-option .order-detail .order-price .red-font i, .order-detail-option .purchase-order .order-detail .order-price .red-font i {
-          line-height: 1.1rem; }
+        color: #dd1718;
+        text-align: left;
+        line-height: 1rem; }
+        @media screen and (max-width: 321px) {
+          .purchase-order .order-one .order-price .red-font, .purchase-order .order-detail-option .order-detail .order-price .red-font, .order-detail-option .purchase-order .order-detail .order-price .red-font {
+            font-size: 0.5rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .purchase-order .order-one .order-price .red-font, .purchase-order .order-detail-option .order-detail .order-price .red-font, .order-detail-option .purchase-order .order-detail .order-price .red-font {
+            font-size: 0.49rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .purchase-order .order-one .order-price .red-font, .purchase-order .order-detail-option .order-detail .order-price .red-font, .order-detail-option .purchase-order .order-detail .order-price .red-font {
+            font-size: 0.46rem; } }
+        @media screen and (min-width: 640px) {
+          .purchase-order .order-one .order-price .red-font, .purchase-order .order-detail-option .order-detail .order-price .red-font, .order-detail-option .purchase-order .order-detail .order-price .red-font {
+            font-size: 0.46rem; } }
+        .purchase-order .order-one .order-price .red-font i.big-font, .purchase-order .order-detail-option .order-detail .order-price .red-font i.big-font, .order-detail-option .purchase-order .order-detail .order-price .red-font i.big-font {
+          color: #dd1718;
+          text-align: left;
+          line-height: 0.98rem; }
+          @media screen and (max-width: 321px) {
+            .purchase-order .order-one .order-price .red-font i.big-font, .purchase-order .order-detail-option .order-detail .order-price .red-font i.big-font, .order-detail-option .purchase-order .order-detail .order-price .red-font i.big-font {
+              font-size: 0.54rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .purchase-order .order-one .order-price .red-font i.big-font, .purchase-order .order-detail-option .order-detail .order-price .red-font i.big-font, .order-detail-option .purchase-order .order-detail .order-price .red-font i.big-font {
+              font-size: 0.53rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .purchase-order .order-one .order-price .red-font i.big-font, .purchase-order .order-detail-option .order-detail .order-price .red-font i.big-font, .order-detail-option .purchase-order .order-detail .order-price .red-font i.big-font {
+              font-size: 0.5rem; } }
+          @media screen and (min-width: 640px) {
+            .purchase-order .order-one .order-price .red-font i.big-font, .purchase-order .order-detail-option .order-detail .order-price .red-font i.big-font, .order-detail-option .purchase-order .order-detail .order-price .red-font i.big-font {
+              font-size: 0.5rem; } }
       .purchase-order .order-one .order-price .icon-trash, .purchase-order .order-detail-option .order-detail .order-price .icon-trash, .order-detail-option .purchase-order .order-detail .order-price .icon-trash {
         width: 1rem;
         height: 1rem;
@@ -3817,17 +3996,18 @@ section.sticky-foot {
       padding: 0;
       width: 3rem;
       height: 0.7rem;
-      border: 0.05rem solid #999;
       font-size: 0;
       text-align: left;
       margin-bottom: 0.16rem; }
       .purchase-order .order-one .order-table .opts-wrap a, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap a, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap a {
-        width: 0.67rem;
+        width: 0.64rem;
         height: 100%;
         background-color: #e6e6e6;
         color: #999;
         text-align: center;
-        line-height: 0.6rem; }
+        line-height: 0.7rem;
+        vertical-align: top;
+        border: 0.05rem solid #999; }
         @media screen and (max-width: 321px) {
           .purchase-order .order-one .order-table .opts-wrap a, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap a, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap a {
             font-size: 0.64rem; } }
@@ -3840,16 +4020,21 @@ section.sticky-foot {
         @media screen and (min-width: 640px) {
           .purchase-order .order-one .order-table .opts-wrap a, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap a, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap a {
             font-size: 0.6rem; } }
+      .purchase-order .order-one .order-table .opts-wrap .cut-btn, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap .cut-btn, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap .cut-btn {
+        border-right: 0; }
+      .purchase-order .order-one .order-table .opts-wrap .add-btn, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap .add-btn, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap .add-btn {
+        border-left: 0; }
       .purchase-order .order-one .order-table .opts-wrap .input-s, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap .input-s, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap .input-s {
         width: 1.6rem;
         height: 100%;
         background-color: #fff;
-        vertical-align: top;
-        border-left: 0.05rem solid #999;
-        border-right: 0.05rem solid #999;
         color: #999;
         text-align: center;
-        line-height: 0.7rem; }
+        line-height: 0.7rem;
+        vertical-align: top;
+        border-radius: 0;
+        border: 0.05rem solid #999;
+        overflow: hidden; }
         @media screen and (max-width: 321px) {
           .purchase-order .order-one .order-table .opts-wrap .input-s, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap .input-s, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap .input-s {
             font-size: 0.46rem; } }
@@ -3862,6 +4047,8 @@ section.sticky-foot {
         @media screen and (min-width: 640px) {
           .purchase-order .order-one .order-table .opts-wrap .input-s, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap .input-s, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap .input-s {
             font-size: 0.42rem; } }
+      .purchase-order .order-one .order-table .opts-wrap .error-input, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap .error-input, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap .error-input {
+        border-color: #dd1718; }
       .purchase-order .order-one .order-table .opts-wrap:first-child, .purchase-order .order-detail-option .order-detail .order-table .opts-wrap:first-child, .order-detail-option .purchase-order .order-detail .order-table .opts-wrap:first-child {
         margin-top: 0.15rem; }
 
@@ -4051,14 +4238,19 @@ section.sticky-foot {
         .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap {
           display: inline-block;
           height: 1rem;
-          border: 0.06rem solid #999; }
+          overflow: hidden; }
           .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap a {
-            width: 0.86rem;
+            float: left;
+            width: 0.88rem;
             height: 100%;
+            padding: 0.2rem 0;
             background-color: #e6e6e6;
             color: #333;
             text-align: center;
-            line-height: 0.8rem; }
+            line-height: 0.48rem;
+            vertical-align: top;
+            border: 0.06rem solid #999;
+            overflow: hidden; }
             @media screen and (max-width: 321px) {
               .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap a {
                 font-size: 0.76rem; } }
@@ -4071,15 +4263,22 @@ section.sticky-foot {
             @media screen and (min-width: 640px) {
               .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap a {
                 font-size: 0.72rem; } }
+          .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap .cut-btn {
+            border-right: 0; }
+          .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap .add-btn {
+            border-left: 0; }
           .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap .input-s {
-            width: 2rem;
+            float: left;
+            width: 2.1rem;
             height: 100%;
+            padding: 0.2rem 0;
             background-color: #fff;
-            border-left: 0.06rem solid #999;
-            border-right: 0.06rem solid #999;
+            border: 0.06rem solid #999;
             color: #333;
             text-align: center;
-            line-height: 0.8rem; }
+            line-height: 0.42rem;
+            vertical-align: top;
+            border-radius: 0; }
             @media screen and (max-width: 321px) {
               .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap .input-s {
                 font-size: 0.64rem; } }
@@ -4092,6 +4291,8 @@ section.sticky-foot {
             @media screen and (min-width: 640px) {
               .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap .input-s {
                 font-size: 0.6rem; } }
+          .makesure-order .sec-list-wrap .list-cont .list-one .list-one-detail .opts-wrap .error-input {
+            border-color: #dd1718; }
       .makesure-order .sec-list-wrap .list-cont .list-one .list-one-sum {
         padding: 0.15rem 0;
         border-top: 0.02rem solid #d9d9d9; }
@@ -4482,6 +4683,8 @@ section.sticky-foot {
     @media screen and (min-width: 640px) {
       .address-edit .set-default-address .rectangle-choose {
         font-size: 0.48rem; } }
+    .address-edit .set-default-address .rectangle-choose input {
+      height: 0; }
     .address-edit .set-default-address .rectangle-choose span {
       margin-right: 0.2rem; }
 

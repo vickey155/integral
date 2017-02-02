@@ -195,20 +195,24 @@
         $(".dialog-container").on("click", ".icon-close", function () {
           bgPop.hide();
           dialogFormate.hide();
+          return false;
         });
         $("#format-choose").on('click',function(){
           bgPop.fadeIn(300);
           dialogFormate.fadeIn(300);
+          return false;
         });
          //红心收藏
-        $(".red-heart-collect").on("click",'.icon-collect',function(){
+        $(".red-heart-collect").onClick("click",function(){
           var sel = $(this);
-          if(sel.hasClass('red-heart')){
-            sel.removeClass('red-heart')
+          var selSpan = sel.find('.icon-collect');
+          if(selSpan.hasClass('red-heart')){
+            selSpan.removeClass('red-heart')
           }
           else{
-            sel.addClass('red-heart');
+            selSpan.addClass('red-heart');
           }
+          return false;
         });
       
         //弹层颜色多选
@@ -224,7 +228,7 @@
             selCheckbox.attr("checked", true);
           }
         });
-        $("#format-choose").trigger('click');
+        //$("#format-choose").trigger('click');
          //验证规格填写的信息
       
         var checkFormateInfo = function(){

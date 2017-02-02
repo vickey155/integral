@@ -1,7 +1,12 @@
 
 html,body{width:100%;height: auto;overflow-x:hidden;overflow-y:auto;}
 *{box-sizing: border-box;font-family:"微软雅黑";}
-body{padding:0; color: #333;background-color: #f2f2f2;}
+body{padding:0; color: #333;background-color: #f2f2f2;width: 12.42rem;margin:0 auto;}
+.w750{width:7.5rem;margin:0 auto;
+  .fixed-footer{
+    width: 7.5rem;
+  }
+}
 img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
 h1{font-weight:normal;margin:0; padding:0;}
 .fl{float: left;}
@@ -153,7 +158,7 @@ $footH:2rem;
   left:0;
   z-index: 12;
   height: auto;
-  width: 100%;
+  width: 12.42rem;
   border-top:$border-w solid #ccc;
   background-color: $bg;
   ul.footer-nav{
@@ -411,6 +416,9 @@ $footH:2rem;
     @include fontFormat($fz:0.24rem,$fc:$white,$ta:center,$lh:0.62rem);
     background-color: $blue;
     margin-left: 0.1rem;
+  }
+  .lastTime{
+    background-color: $c9;
   }
   //商户申请成功页面
   .register-suc{
@@ -715,6 +723,13 @@ section.sticky-foot{
       background-color: $red;
       border-color: $red;
     }
+    .radio-wrap{
+      &:last-child{
+        span.active{
+          background-color: #fe6500;border-color:#fe6500;
+        }
+      }
+    }
   }
   .last-grey-bg{
 
@@ -819,6 +834,20 @@ section.sticky-foot{
       }
     }
   }
+  .input-add-wrap{
+    position: relative;
+    .outTxt{
+      position: absolute;
+      bottom: 0.4rem;
+      right: 0;
+      @include fontFormat($fz:0.36rem,$fc:$d9,$ta:center,$lh:1.6rem);
+    }
+  }
+  .price-set{
+    .outTxt{
+      right: 1.1rem;
+    }
+  }
   .input-wrap{
     float: left;
     overflow: hidden;
@@ -836,10 +865,15 @@ section.sticky-foot{
       font-size: 0;
     }
   }
+  .form-row{
+    .a-tab-wrap{
+      overflow: visible;
 
+    }
+}
   .checkbox-wrap{
     display: inline-block;
-    overflow: hidden;
+    position: relative;
     input[type=checkbox]{
       height: 0;
       width: 0;
@@ -847,7 +881,23 @@ section.sticky-foot{
       font-size: 0;
     }
   }
-
+  .icon-close{
+    position: absolute;
+    right:0.3rem;
+    top:-0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    @include fontFormat($fz:0.32rem,$fc:$white,$ta:center,$lh:0.6rem);
+    font-weight: bold;
+    background-color: $red;
+    border-radius: 50%;
+  }
+  .active1{
+    .icon-close{
+      background-color: $white;
+      color:$red;
+    }
+  }
 
 }
 
@@ -1047,7 +1097,7 @@ section.sticky-foot{
   padding: 0.2rem;
   input[type=text]{
     background: $white;
-    width:8.96rem;
+    width:8.9rem;
     height:1.12rem;
     padding:0.3rem 0.2rem;
     @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.52rem);
@@ -1185,6 +1235,7 @@ section.sticky-foot{
 .seller-goods-footer{
   height: 5.9rem;
   border-top:0;
+  background: transparent;
   .shelve{
     float:right;
     margin-right: 0.4rem;
@@ -1216,8 +1267,9 @@ section.sticky-foot{
       background: $white;
       width:10rem;
       height:1rem;
-      padding:0.25rem 0.2rem;
-      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.5rem);
+      padding:0 0.2rem;
+      @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1rem);
+      vertical-align: middle;
       border-radius:$borderRadius;
     }
     .a-btn-bgblue{
@@ -1225,6 +1277,13 @@ section.sticky-foot{
       height:1rem;
       @include fontFormat($fz:0.48rem,$fc:$white,$ta:center,$lh:1rem);
       margin-left: 0.2rem;
+    }
+  }
+  .sec-filter{
+    .select-region{
+      select{
+        border-radius:0;
+      }
     }
   }
   .sec-mycustomer-list{
@@ -1248,8 +1307,10 @@ section.sticky-foot{
         height:0.8rem;
         @include fontFormat($fz:0.48rem,$fc:#323333,$ta:center,$lh:0.9rem);
       }
-      span.red-font{
-        color:$red;
+      .red-font{
+        display: inline;
+        height:0.8rem;
+        @include fontFormat($fz:0.48rem,$fc:$red,$ta:center,$lh:0.9rem);
       }
     }
     .row:last-child{
@@ -1465,6 +1526,29 @@ p{
           padding-right: 0.2rem;
           border-radius: 0.2rem;
           @include fontFormat($fz:0.48rem,$fc:$red,$ta:right,$lh:1rem);
+        }
+        .price-bg{
+         // width: 100%;
+          background-color: $bg;
+          padding-right: 0.2rem;
+          border-radius: 0.2rem;
+          overflow: hidden;
+          text-align: right;
+          font-size: 0;
+          span{
+            display: inline;
+            @include fontFormat($fz:0.48rem,$fc:$red,$lh:1rem);
+          }
+          input[type=number]{
+            vertical-align: top;
+            display: inline-block;
+            width:80%;
+            min-width: 0.6rem;
+            height: 1rem;
+            background: transparent;
+            @include fontFormat($fz:0.48rem,$fc:$red,$lh:1rem);
+            overflow: hidden;
+          }
         }
       }
     }
@@ -1774,7 +1858,7 @@ p{
         width:0.5rem;
         height:0.5rem;
         position: absolute;
-        top:0.18rem;
+        top:0.21rem;
         left:0.22rem;
         z-index: 3;
         color: $red;
@@ -1784,9 +1868,8 @@ p{
         width:6.83rem;
         height: 0.86rem;
         background: $white;
-        padding:0.2rem;
         padding-left: 0.8rem;
-        @include fontFormat($fz:0.36rem,$fc:$c3,$lh:0.46rem);
+        @include fontFormatS($fz:0.36rem,$fc:$c3,$lh:0.9rem);
         border-radius:0.4rem;
       }
     }
@@ -2114,6 +2197,10 @@ p{
         height:1.2rem;
         margin-right: 0.4rem;
         margin-bottom: 0.4rem;
+        input[type=checkbox]{
+          width: 0;
+          height:0;
+        }
       }
       a{
         padding:0 0.3rem;
@@ -2319,7 +2406,7 @@ p{
       }
     }
     img{
-      margin-left: 0.25rem;
+      margin-left: 0.2rem;
       width:2.2rem;
       height: 2.2rem;
     }
@@ -2336,10 +2423,13 @@ p{
       position: relative;
       text-align: right;
       line-height:1.2rem;
+      p{
+        @include fontFormat($fz:0.5rem,$fc:$c3,$lh:1rem);
+      }
       .red-font{
-         line-height:1.2rem;
-        i{
-          line-height:1.1rem;
+        @include fontFormat($fz:0.46rem,$fc:$red,$lh:1rem);
+        i.big-font{
+          @include fontFormat($fz:0.5rem,$fc:$red,$lh:0.98rem);
         }
       }
       .icon-trash{
@@ -2364,24 +2454,35 @@ p{
         padding:0;
         width:3rem;
         height: 0.7rem;
-        border: 0.05rem solid $c9;
         font-size: 0;
         text-align: left;
         margin-bottom:0.16rem;
         a{
-          width:0.67rem;
+          width:0.64rem;
           height:100%;
           background-color: #e6e6e6;
-          @include fontFormat($fz:0.6rem,$fc:$c9,$ta:center,$lh:0.6rem);
+          @include fontFormat($fz:0.6rem,$fc:$c9,$ta:center,$lh:0.7rem);
+          vertical-align: top;
+          border: 0.05rem solid $c9;
+        }
+        .cut-btn{
+          border-right:0;
+        }
+        .add-btn{
+          border-left:0;
         }
         .input-s{
           width:1.6rem;
           height:100%;
           background-color: $white;
-          vertical-align: top;
-          border-left: 0.05rem solid $c9;
-          border-right: 0.05rem solid $c9;
           @include fontFormat($fz:0.42rem,$fc:$c9,$ta:center,$lh:0.7rem);
+          vertical-align: top;
+          border-radius:0;
+          border: 0.05rem solid $c9;
+          overflow: hidden;
+        }
+        .error-input{
+          border-color:$red;
         }
         &:first-child{
           margin-top: 0.15rem;
@@ -2497,20 +2598,37 @@ p{
           .opts-wrap{
             display: inline-block;
             height: 1rem;
-            border: 0.06rem solid $c9;
+            overflow: hidden;
             a{
-              width:0.86rem;
+              float: left;
+              width:0.88rem;
               height:100%;
+              padding: 0.2rem 0;
               background-color: #e6e6e6;
-              @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:0.8rem);
+              @include fontFormat($fz:0.72rem,$fc:$c3,$ta:center,$lh:0.48rem);
+              vertical-align: top;
+              border:0.06rem solid $c9;
+              overflow: hidden;
+            }
+            .cut-btn{
+              border-right:0;
+            }
+            .add-btn{
+              border-left:0;
             }
             .input-s{
-              width:2rem;
+              float: left;
+              width:2.1rem;
               height:100%;
+              padding: 0.2rem 0;
               background-color: $white;
-              border-left:0.06rem solid $c9;
-              border-right:0.06rem solid $c9;
-              @include fontFormat($fz:0.6rem,$fc:$c3,$ta:center,$lh:0.8rem);
+              border:0.06rem solid $c9;
+              @include fontFormat($fz:0.6rem,$fc:$c3,$ta:center,$lh:0.42rem);
+              vertical-align: top;
+              border-radius:0;
+            }
+            .error-input{
+              border-color:$red;
             }
           }
         }
@@ -2764,6 +2882,9 @@ p{
     padding-top: 0.5rem;
     .rectangle-choose{
       @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.8rem);
+      input{
+        height: 0;
+      }
       span{
         margin-right: 0.2rem;
       }

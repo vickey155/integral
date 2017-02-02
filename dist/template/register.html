@@ -57,5 +57,31 @@
         <div class="btn-a-login"><a class="btn-a bg-blue submit-a">立即申请</a><a href="/template/register-suc.html" class="btn-a bg-blue">申请成功</a></div>
       </div>
     </section>
+    <script>
+      $(function(){
+        $(".form-row a.btn-a-code").onClick('click',function () {
+          var sel = $(this);
+          var t=60;
+          var txt = '<i>'+t+'</i>秒后重新发送';
+          if(sel.hasClass('lastTime')){
+            return false;
+          }
+          else{
+            sel.addClass('lastTime').html(txt);
+            var tSpan = sel.find('i');
+            setInterval(function () {
+              t--;
+              if(t==0){
+                sel.removeClass('lastTime');
+                sel.html("获取验证码");
+              }
+              else{
+                tSpan.html(t);
+              }
+            },1000)
+          }
+        });
+      });
+    </script>
   </body>
 </html>

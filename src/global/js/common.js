@@ -64,9 +64,10 @@ var commonEvent = function() {
         return returnVal;
     };
     var closeDialog = function(){
-        $('body').onClick('click', '.close-btn', function () {
+        $('.dialog-alert-pop').onClick('click', '.close-btn', function () {
             $(".bg-alert-pop").remove();
             $(".dialog-alert-pop").remove();
+            return false;
         });
     };
     var dialogErrTip = function (errTip) {
@@ -92,18 +93,23 @@ var commonEvent = function() {
             '<div class="dialog-btn a-2"><a class="a-btn-graybg close-btn">取消</a><a class="a-btn-redbg sure-btn">确认</a>' +
             '</div> </div>';
         $('body').append(temp);
-        $('body').onClick('click', '.dialog-alert-pop .sure-btn', function () {
+        $('.dialog-alert-pop .sure-btn').onClick('click', function () {
             var inputObj = $(".dialog-alert-pop input");
             var inputVal = $.trim(inputObj.val());
             if( inputVal == ''){
                 inputObj.addClass("input-error");
             }
             else{
-                var temp='<div class="checkbox-wrap"><span class="a-tab active">'+inputVal +'</span><input type="checkbox" checked="checked" name="'+inputVal +'"/></div>'
+                var temp='<div class="checkbox-wrap"><span class="a-tab">'+inputVal +'<i class="icon-close"></i></span><input type="checkbox" name="'+inputVal +'"/></div>'
                 inputObj.removeClass("input-error");
                 formObj.before(temp);
                 $(".bg-alert-pop").remove();
                 $(".dialog-alert-pop").remove();
+                $(".a-tab-wrap .icon-close").onClick('click',function(e){
+                  var sel = $(this);
+                  sel.closest('.checkbox-wrap').remove();
+                  stopDefault(e);
+                })
             }
 
         });
@@ -115,8 +121,14 @@ var commonEvent = function() {
             '<div class="dialog-btn a-2"><a class="a-btn-graybg close-btn">取消</a><a class="a-btn-redbg sure-btn">确认</a>' +
             '</div> </div>';
         $('body').append(temp);
-        closeDialog();
-        confirmSureFun(fun);
+       // closeDialog();
+        //confirmSureFun(fun);
+      $('.dialog-alert-pop .sure-btn').onClick('click',function(){
+         fun();
+        $(".bg-alert-pop").remove();
+        $(".dialog-alert-pop").remove();
+        return false;
+      });
 
     };
     var confirmSureFun = function(fun){
