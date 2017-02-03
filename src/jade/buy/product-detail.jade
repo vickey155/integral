@@ -206,9 +206,9 @@ block content
           selCheckbox.attr("checked", true);
         }
       });
-      //$("#format-choose").trigger('click');
-       //验证规格填写的信息
 
+
+      //验证规格填写的信息
       var checkFormateInfo = function(){
         var checkboxLen = dialogFormate.find('.dia-sec-02 input[type=checkbox]:checked').length;
         var inputNumber = dialogFormate.find('.dia-sec-03 input[type=number]');
@@ -287,10 +287,11 @@ block content
       //加入进货单按钮
       $("#buyOrder").onClick('click',function(){
          if(dialogFormate.is(':hidden')){
-           var tip = "请先规格选择"
-           commonEvent.confirmDialog(tip,function () {
-             $("#format-choose").trigger('click');
-           });
+           $("#format-choose").trigger('click');
+           //var tip = "请先规格选择"
+           //commonEvent.confirmDialog(tip,function () {
+            // $("#format-choose").trigger('click');
+           //});
          }
          else{
            if(checkFormateInfo()){
@@ -301,13 +302,10 @@ block content
            }
          }
       });
-      //加入进货单按钮
+      //立即抢购按钮
       $("#buyNow").onClick('click', function () {
         if (dialogFormate.is(':hidden')) {
-          var tip = "请先规格选择"
-          commonEvent.confirmDialog(tip, function () {
-            $("#format-choose").trigger('click');
-          });
+          $("#format-choose").trigger('click');
         }
         else {
           if (checkFormateInfo()) {

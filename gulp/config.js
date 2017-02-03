@@ -29,7 +29,7 @@ module.exports.browserSync = {
 		},
         debugInfo: false,
 		host: 'localhost',
-		port:'8889',
+		port:'8888',
 		notify:false
 	}
 };

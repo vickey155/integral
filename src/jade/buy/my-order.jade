@@ -10,10 +10,10 @@ block content
       a.a-btn-bgred 搜索
     .sec-manage-list
       .tab-opts
-        a.active 全部
-        a 待付款
-        a 待发货
-        a 已发货
+        a.active(href="javascript:void(0);")  全部
+        a(href="javascript:void(0);")  待付款
+        a(href="javascript:void(0);")  待发货
+        a(href="javascript:void(0);")  已发货
       ul
         li.order-li
           a.order-status 卖家已发货
@@ -42,7 +42,7 @@ block content
             span.bing-font 117
             | .60（含运费￥0.00）
           .btn-wrap
-            a.a-btn-bgred(href="javascript:void(0);") 联系卖家
+            a.a-btn-bgred(href="/template/seller-service-manage.html") 联系卖家
         li.order-li
           a.order-status(href="javascript:void(0);") 待付款
             i.icon-arrow-right
@@ -80,6 +80,12 @@ block content
 
   script.
     $(function(){
+      //切换
+      $(".tab-opts a").onClick('click', function () {
+        var sel = $(this);
+        sel.addClass('active').siblings().removeClass('active');
+      });
+
       var deleteFun = function (sel) {
         sel.closest('li.order-li').remove();
       };

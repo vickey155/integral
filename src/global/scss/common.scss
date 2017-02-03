@@ -1571,7 +1571,7 @@ p{
     left: 0.2rem;
     @include fontFormat($fz:1.1rem,$fc:$c9,$lh:1.6rem);
   }
-  p,span{
+  p,span,a{
     padding-left: 0.2rem;
     @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.82rem);
   }
@@ -1627,7 +1627,7 @@ p{
     width:25%;
     height:1.42rem;
     border-bottom: 0.02rem solid $d9;
-    @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.4rem);
+    @include fontFormat($fz:0.48rem,$fc:$c6,$ta:center,$lh:1.3rem);
   }
   a.active{
     color: $red;
@@ -2663,19 +2663,25 @@ p{
       }
       .select-wrapper{
         float:right;
-        width:2.4rem ;
+        width:8.8rem ;
         padding-right: 0.3rem;
         position: relative;
         select{
           height: 0.8rem;
           @include fontFormatS($fz:0.36rem,$fc:$c9,$lh:0.8rem);
           padding: 0;
+          padding-right: 0.6rem;
           border:0;
+          direction: rtl;
+          option{
+            direction: ltr;
+          }
         }
         .icon-arrow-down{
           position: absolute;
           right:0.1rem;
           top:0.2rem;
+          @include fontFormatS($fz:0.36rem,$fc:$c9,$lh:0.52rem);
         }
       }
       .leav-message{

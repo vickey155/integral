@@ -12,7 +12,7 @@ block content
           a(href="")
             span.address-icon.icon-address
             p.font-60.clearfix 张海泽
-                span.font-60.fr 13688888888
+                a.font-60.fr(href="tel:13688888888") 13688888888
             p.font-60 浙江省  绍兴市  诸暨市 <br/>滨江南路
             i.icon-arrow-right
         .sec-address-edit(style="display:none")
@@ -125,16 +125,19 @@ block content
           .row-per
             label 交易方式
             .select-wrapper
-              select
-                option(value="") 线下支付
               i.icon-arrow-down
+              select
+                option(value="线下支付") 线下支付
+                option(value="在线支付") 在线支付
+
           .row-per
             label 运费计算
-            .fr 快递：
-              .select-wrapper
-                select#recieve-money
-                  option(value="10.00") ￥10.00
-                i.icon-arrow-down
+            .select-wrapper
+              i.icon-arrow-down
+              select#recieve-money
+                option(value="10.00") 快递：￥10.00
+                option(value="货运") 货运
+
           .leav-message
             textarea  给卖家留言
 
@@ -150,13 +153,30 @@ block content
         p 总计:
           span.red-font ￥
             i#total-money3 55.40
-        p.grey-font 1种12件含运费
+        p.grey-font
+          i.categrory 1
+          | 种
+          i.categorySum 12
+          | 件;不含运费
     .foot-btn
       a.a-btn.a-btn-bgred 提交订单
 
 
   script.
     $(function(){
+      $('.leav-message textarea').focus(function(){
+        var sel = $(this);
+        var selVal = $.trim(sel.val());
+        if(selVal == '给卖家留言'){
+          sel.val('');
+        }
+      }).blur(function () {
+        var sel = $(this);
+        var selVal = $.trim(sel.val());
+        if (selVal == '') {
+          sel.val('给卖家留言');
+        }
+      });
       var showNumAndPrice = function (sel) {
         var listPer = sel.closest('.list-cont');
         var totalPrice = listPer.find('.total-price');

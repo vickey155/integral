@@ -36,7 +36,7 @@
         <input type="text" placeholder="请输入您要搜索的订单" class="input-text-search"><a class="a-btn-bgred">搜索</a>
       </div>
       <div class="sec-manage-list">
-        <div class="tab-opts"><a class="active">全部</a><a>待付款</a><a>待发货</a><a>已发货</a></div>
+        <div class="tab-opts"><a href="javascript:void(0);" class="active"> 全部</a><a href="javascript:void(0);"> 待付款</a><a href="javascript:void(0);"> 待发货</a><a href="javascript:void(0);"> 已发货</a></div>
         <ul>
           <li class="order-li"><a href="javascript:void(0);" class="order-status">已发货<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
@@ -105,17 +105,23 @@
         });
         $(".sec-manage-list").onClick('click', '.make-sure-send-btn', function () {
           var sel = $(this);
-          var tip = '您确认要发送货物了吗？';
+          var tip = '您确认已发送货物了吗？';
           commonEvent.confirmDialog(tip, function () {
             alert('发货ok');
           });
         });
         $(".sec-manage-list").onClick('click', '.make-sure-paid-btn', function () {
           var sel = $(this);
-          var tip = '您确认要付款了吗？';
+          var tip = '您确认买家支付货款了吗？';
           commonEvent.confirmDialog(tip, function () {
             alert('付款ok');
           });
+        });
+      
+        //切换
+        $(".tab-opts a").onClick('click',function(){
+          var sel = $(this);
+          sel.addClass('active').siblings().removeClass('active');
         });
       });
     </script>

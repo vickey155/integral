@@ -34,7 +34,7 @@
         <div class="sec-address-wrap">
           <div class="address-border"></div>
           <div style="display:block" class="sec-address-show"><a href=""><span class="address-icon icon-address"></span>
-              <p class="font-60 clearfix">张海泽<span class="font-60 fr">13688888888</span></p>
+              <p class="font-60 clearfix">张海泽<a href="tel:13688888888" class="font-60 fr">13688888888</a></p>
               <p class="font-60">浙江省  绍兴市  诸暨市 <br/>滨江南路</p><i class="icon-arrow-right"></i></a></div>
           <div style="display:none" class="sec-address-edit"><a href=""><span class="address-icon"></span>
               <p class="big-font">请选择收货地址</p><i class="arrow-right">></i></a></div>
@@ -119,20 +119,20 @@
           <div class="list-foot">
             <div class="row-per">
               <label>交易方式</label>
-              <div class="select-wrapper">
+              <div class="select-wrapper"><i class="icon-arrow-down"></i>
                 <select>
-                  <option value="">线下支付</option>
-                </select><i class="icon-arrow-down"></i>
+                  <option value="线下支付">线下支付</option>
+                  <option value="在线支付">在线支付</option>
+                </select>
               </div>
             </div>
             <div class="row-per">
               <label>运费计算</label>
-              <div class="fr">快递：
-                <div class="select-wrapper">
-                  <select id="recieve-money">
-                    <option value="10.00">￥10.00</option>
-                  </select><i class="icon-arrow-down"></i>
-                </div>
+              <div class="select-wrapper"><i class="icon-arrow-down"></i>
+                <select id="recieve-money">
+                  <option value="10.00">快递：￥10.00</option>
+                  <option value="货运">货运</option>
+                </select>
               </div>
             </div>
             <div class="leav-message">
@@ -150,13 +150,26 @@
         </li>
         <li class="sum-price">
           <p>总计:<span class="red-font">￥<i id="total-money3">55.40</i></span></p>
-          <p class="grey-font">1种12件含运费</p>
+          <p class="grey-font"><i class="categrory">1</i>种<i class="categorySum">12</i>件;不含运费</p>
         </li>
       </ul>
       <div class="foot-btn"><a class="a-btn a-btn-bgred">提交订单</a></div>
     </footer>
     <script>
       $(function(){
+        $('.leav-message textarea').focus(function(){
+          var sel = $(this);
+          var selVal = $.trim(sel.val());
+          if(selVal == '给卖家留言'){
+            sel.val('');
+          }
+        }).blur(function () {
+          var sel = $(this);
+          var selVal = $.trim(sel.val());
+          if (selVal == '') {
+            sel.val('给卖家留言');
+          }
+        });
         var showNumAndPrice = function (sel) {
           var listPer = sel.closest('.list-cont');
           var totalPrice = listPer.find('.total-price');

@@ -34,7 +34,7 @@
         <input type="text" placeholder="请输入您要搜索的订单" class="input-text-search"><a class="a-btn-bgred">搜索</a>
       </div>
       <div class="sec-manage-list">
-        <div class="tab-opts"><a class="active">全部</a><a>待付款</a><a>待发货</a><a>已发货</a></div>
+        <div class="tab-opts"><a href="javascript:void(0);" class="active"> 全部</a><a href="javascript:void(0);"> 待付款</a><a href="javascript:void(0);"> 待发货</a><a href="javascript:void(0);"> 已发货</a></div>
         <ul>
           <li class="order-li"><a class="order-status">卖家已发货<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
@@ -50,7 +50,7 @@
               <div class="order-price"><span>￥58.80</span></div>
             </div>
             <p class="order-sum">共12件商品 合计：￥<span class="bing-font">117</span>.60（含运费￥0.00）</p>
-            <div class="btn-wrap"><a href="javascript:void(0);" class="a-btn-bgred">联系卖家</a></div>
+            <div class="btn-wrap"><a href="/template/seller-service-manage.html" class="a-btn-bgred">联系卖家</a></div>
           </li>
           <li class="order-li"><a href="javascript:void(0);" class="order-status">待付款<i class="icon-arrow-right"></i></a>
             <div class="order-per"><img src="">
@@ -79,6 +79,12 @@
     </section>
     <script>
       $(function(){
+        //切换
+        $(".tab-opts a").onClick('click', function () {
+          var sel = $(this);
+          sel.addClass('active').siblings().removeClass('active');
+        });
+      
         var deleteFun = function (sel) {
           sel.closest('li.order-li').remove();
         };
