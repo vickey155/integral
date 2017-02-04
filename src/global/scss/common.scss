@@ -317,7 +317,7 @@ $footH:2rem;
       padding: 0.28rem 0;
       border-radius:0.04rem;
       label{
-        width:2.5rem;
+        width:2.4rem;
         height:0.6rem;
         line-height: 0.6rem;
         font-size: 0.36rem;
@@ -405,20 +405,22 @@ $footH:2rem;
   form{
     .form-row{
       input.input-text-s{
-        width: 2.9rem;
+        width: 2.6rem;
       }
     }
   }
   .btn-a-code{
     @extend .a-btn;
-    width:1.6rem;
+    padding:0 0.1rem;
     height:0.6rem;
-    @include fontFormat($fz:0.24rem,$fc:$white,$ta:center,$lh:0.62rem);
+    @include fontFormat($fz:0.24rem,$fc:$white,$ta:center,$lh:0.6rem);
     background-color: $blue;
     margin-left: 0.1rem;
+
   }
   .lastTime{
     background-color: $c9;
+    border-color:$c9;
   }
   //商户申请成功页面
   .register-suc{
@@ -552,6 +554,7 @@ section.sticky-foot{
 }
 .set-pw{
   background-color: $white;
+  padding-bottom: 10rem;
    .form-row{
       padding:0.8rem 0.7rem 0;
      input[type=text]{
@@ -567,7 +570,35 @@ section.sticky-foot{
    }
 
 }
+//充值
+/*充值按钮*/
+.recharge {
+  width: 100%;
+  padding: 1rem 0.42rem 5.5rem;
+  .recharge-btn {
+    width: 100%;
+    a {
+      width: 100%;
+      padding: 0.13rem 0;
+      border-radius: 0.2rem;
+      @include fontFormat($fz: 0.52rem, $fc: $white, $ta: center, $lh:1rem);
+      margin-top: 1.5rem;
 
+    }
+    a.a-btn-blue {
+      background-color: #09F;
+    }
+    a.a-btn-red {
+      background-color: #F00;
+    }
+    a.a-btn-green {
+      background-color: #0C0;
+    }
+    a.a-btn-orange {
+      background-color: #F60;
+    }
+  }
+}
 
 //common select
 .select-wrapper{

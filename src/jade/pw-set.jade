@@ -4,17 +4,25 @@ block append headTitle
   title 修改密码
 
 block content
-  section.sticky-cont.set-pw
+  section.set-pw
     .sec
       form
         .form-row
           input(type="text" placeholder="请输入原密码" data-validate="password").input-text
         .form-row
-          input(type="text" placeholder="请输入新密码" data-validate="password").input-text
-  footer.sticky-foot
-      a.submit-a 确认修改
+          input(type="text" placeholder="请输入新密码" data-validate="rePassword").input-text
+  footer.fixed-footer
+      a.a-btn.submit-a 确认修改
 
-
+  script.
+    $(".fixed-footer a.submit-a").on("click", function () {
+      if (loginEvent.validateForm()) {
+        alert('ok');
+      }
+      else {
+        // alert('fail');
+      }
+    });
 
 
 

@@ -24,7 +24,7 @@ block content
             label
               span.icon-lock
               | 确认密码
-            input(type="text" placeholder="请确认密码" data-validate="password").input-text
+            input(type="text" placeholder="请确认密码" data-validate="rePassword").input-text
         .form-row
           label
             span.icon-lock
@@ -37,8 +37,20 @@ block content
 
   script.
     $(function(){
+      var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
       $(".form-row a.btn-a-code").onClick('click',function () {
         var sel = $(this);
+        var telephoneVal = $.trim($('input[data-validate="telephone"]').val());
+        if(telephoneVal == ''){
+          var errTip = "请输入手机号";
+          commonEvent.validataDialog(errTip);
+          return false;
+        }
+        else if(!mobile.test(telephoneVal)){
+          var errTip = "请输入正确的手机号";
+          commonEvent.validataDialog(errTip);
+          return false;
+        }
         var t=60;
         var txt = '<i>'+t+'</i>秒后重新发送';
         if(sel.hasClass('lastTime')){

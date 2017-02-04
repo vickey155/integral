@@ -8,7 +8,7 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta name="msapplication-tap-highlight" content="no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>修改密码</title>
+    <title>立即充值</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../global/css/reset.css">
     <link rel="stylesheet" href="../global/font/style.css">
@@ -31,28 +31,8 @@
     </script>
   </head>
   <body>
-    <section class="set-pw">
-      <div class="sec">
-        <form>
-          <div class="form-row">
-            <input type="text" placeholder="请输入原密码" data-validate="password" class="input-text">
-          </div>
-          <div class="form-row">
-            <input type="text" placeholder="请输入新密码" data-validate="rePassword" class="input-text">
-          </div>
-        </form>
-      </div>
+    <section class="recharge">
+      <div class="sec recharge-btn"><a class="a-btn-blue"> 立即充值100元体验</a><a class="a-btn-red"> 立即充值500元体验</a><a class="a-btn-green"> 立即充值1000元体验</a><a class="a-btn-orange"> 立即充值2000元体验</a></div>
     </section>
-    <footer class="fixed-footer"><a class="a-btn submit-a">确认修改</a></footer>
-    <script>
-      $(".fixed-footer a.submit-a").on("click", function () {
-        if (loginEvent.validateForm()) {
-          alert('ok');
-        }
-        else {
-          // alert('fail');
-        }
-      });
-    </script>
   </body>
 </html>

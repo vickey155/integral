@@ -370,7 +370,7 @@ section .sec {
     padding: 0.28rem 0;
     border-radius: 0.04rem; }
     .sec-login form .form-row label {
-      width: 2.5rem;
+      width: 2.4rem;
       height: 0.6rem;
       line-height: 0.6rem;
       font-size: 0.36rem;
@@ -479,13 +479,13 @@ section .sec {
         .sec-login .apply-link p {
           font-size: 0.4rem; } }
   .sec-login form .form-row input.input-text-s {
-    width: 2.9rem; }
+    width: 2.6rem; }
   .sec-login .btn-a-code {
-    width: 1.6rem;
+    padding: 0 0.1rem;
     height: 0.6rem;
     color: #fff;
     text-align: center;
-    line-height: 0.62rem;
+    line-height: 0.6rem;
     background-color: #4b61d1;
     margin-left: 0.1rem; }
     @media screen and (max-width: 321px) {
@@ -501,7 +501,8 @@ section .sec {
       .sec-login .btn-a-code {
         font-size: 0.24rem; } }
   .sec-login .lastTime {
-    background-color: #999; }
+    background-color: #999;
+    border-color: #999; }
   .sec-login .register-suc .btn-a-login {
     margin-top: 0; }
   .sec-login .register-suc .btn-a {
@@ -706,7 +707,8 @@ section.sticky-foot {
   bottom: 2rem; }
 
 .set-pw {
-  background-color: #fff; }
+  background-color: #fff;
+  padding-bottom: 10rem; }
   .set-pw .form-row {
     padding: 0.8rem 0.7rem 0; }
     .set-pw .form-row input[type=text] {
@@ -731,6 +733,41 @@ section.sticky-foot {
           font-size: 0.6rem; } }
     .set-pw .form-row input.error-input {
       border-color: #dd1718; }
+
+/*充值按钮*/
+.recharge {
+  width: 100%;
+  padding: 1rem 0.42rem 5.5rem; }
+  .recharge .recharge-btn {
+    width: 100%; }
+    .recharge .recharge-btn a {
+      width: 100%;
+      padding: 0.13rem 0;
+      border-radius: 0.2rem;
+      color: #fff;
+      text-align: center;
+      line-height: 1rem;
+      margin-top: 1.5rem; }
+      @media screen and (max-width: 321px) {
+        .recharge .recharge-btn a {
+          font-size: 0.56rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .recharge .recharge-btn a {
+          font-size: 0.55rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .recharge .recharge-btn a {
+          font-size: 0.52rem; } }
+      @media screen and (min-width: 640px) {
+        .recharge .recharge-btn a {
+          font-size: 0.52rem; } }
+    .recharge .recharge-btn a.a-btn-blue {
+      background-color: #09F; }
+    .recharge .recharge-btn a.a-btn-red {
+      background-color: #F00; }
+    .recharge .recharge-btn a.a-btn-green {
+      background-color: #0C0; }
+    .recharge .recharge-btn a.a-btn-orange {
+      background-color: #F60; }
 
 .select-wrapper {
   position: relative; }
