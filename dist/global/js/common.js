@@ -91,6 +91,7 @@ var commonEvent = function () {
                 $(".dialog-alert-pop").remove();
                 $(".a-tab-wrap .icon-close").onClick('click', function (e) {
                     var sel = $(this);
+                    //sel.closest('.checkbox-wrap').find('input[type=checkbox]').prop("checked", false);
                     sel.closest('.checkbox-wrap').remove();
                     stopDefault(e);
                 });

@@ -21,15 +21,31 @@ block content
     a.btn-a(href="javascript:void(0);") 确认
 
   script.
-    $('.fixed-footer').onClick('click','.btn-a',function(){
+    $(function(){
+      //图片上传
+      $(".input-file-wrap").on("change", "input[type=file]", function () {
+        var sel = $(this);
+        var img = sel.parent().find('img');
+        if ($(this).val() !== '') {
+          var imgSrc = '';
+          img.attr("src",imgSrc);
+          img.show();
+        }
+        else{
+          img.hide();
+        }
+      });
+      $('.fixed-footer').onClick('click', '.btn-a', function () {
         var inputFile = $('form').find("input[type=file]");
         var inputText = $('form').find("input[type=text]");
-        if($.trim(inputFile.val()) == ''){
+        if ($.trim(inputFile.val()) == '') {
           commonEvent.validataDialog('请上传客服的微信二维码');
         }
-        else if($.trim(inputText.val()) == '') {
+        else if ($.trim(inputText.val()) == '') {
           commonEvent.validataDialog('请输入想要编辑的文字');
         }
+      });
+
     });
 
 

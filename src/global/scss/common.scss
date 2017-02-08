@@ -142,6 +142,7 @@ $a-btn-radius:0.1rem;
   }
   select:last-child{
     border-right:0;
+    width: 34%;
   }
 }
 
@@ -293,6 +294,28 @@ $footH:2rem;
 
 }
 
+
+.search-fixed{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  background-color:#f2f2f2 ;
+  z-index: 20;
+}
+.padtop120{
+  padding-top:1.20rem;
+}
+.padtop160{
+  padding-top:1.6rem;
+}
+.padtop280{
+  padding-top:2.85rem;
+}
+.padtop300{
+  padding-top:3rem;
+}
+
 //登陆，申请，忘记密码，找回密码页面
 .sec-login{
   padding-bottom: 1.47rem;
@@ -335,6 +358,15 @@ $footH:2rem;
         }
       }
       input[type=text]{
+        background: transparent;
+        width:4.8rem;
+        height:0.6rem;
+        line-height: 0.6rem;
+        font-size: 0.36rem;
+        color:$c3;
+        padding-left: 0.2rem;
+      }
+      input[type=password]{
         background: transparent;
         width:4.8rem;
         height:0.6rem;
@@ -558,6 +590,13 @@ section.sticky-foot{
    .form-row{
       padding:0.8rem 0.7rem 0;
      input[type=text]{
+       width: 100%;
+       border:0.04rem solid $d9;
+       height: 1.57rem;
+       padding: 0.3rem;
+       @include fontFormat($fz:0.6rem,$fc:c3,$lh:0.97rem);
+     }
+     input[type=password]{
        width: 100%;
        border:0.04rem solid $d9;
        height: 1.57rem;
@@ -1068,6 +1107,9 @@ section.sticky-foot{
         span.icon04{
           background-color: #66669a;
           //background: url('../../global/images/seller-icon14.png') no-repeat 0 0 /cover;
+        }
+        span.icon05{
+          background-color: #42b035;
         }
         .txt{
           @include fontFormat($fz:0.6rem,$fc:$c6,$ta:center,$lh:1.1rem);
@@ -1831,17 +1873,19 @@ p{
       }
     }
   }
-  p.try-loading{
-    height: 1.04rem;
-    background-color: #e6e6e6;
-    @include fontFormat($fz:0.3rem,$fc:$c6,$ta:center,$lh:1.04rem);
-    span{
-      width:0.8rem;
-      height: 0.8rem;
-      margin: 0 0.3rem;
-      vertical-align: middle;
-      @include fontFormat($fz:0.8rem,$fc:$c6,$ta:center,$lh:0.8rem);
-    }
+}
+p.try-loading{
+  height: 1.04rem;
+  width: 120%;
+  margin-left: -10%;
+  background-color: #e6e6e6;
+  @include fontFormat($fz:0.3rem,$fc:$c6,$ta:center,$lh:1.04rem);
+  span{
+    width:0.8rem;
+    height: 0.8rem;
+    margin: 0 0.3rem;
+    vertical-align: middle;
+    @include fontFormat($fz:0.8rem,$fc:$c6,$ta:center,$lh:0.8rem);
   }
 }
 //common 加减数量

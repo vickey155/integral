@@ -30,8 +30,8 @@
     </script>
   </head>
   <body>
-    <section class="index-home">
-      <div class="sec-serch-buy"><img src="../../global/images/yuesong_log.png" class="log-pic">
+    <section class="index-home padtop120">
+      <div class="sec-serch-buy search-fixed"><img src="../../global/images/yuesong_log.png" class="log-pic">
         <div class="serch-input-wrap"><span class="serch-icon icon-search"></span>
           <input type="text" placeholder="请输入搜索内容" class="serch-input">
         </div><span class="serch-txt"> 搜索</span>
@@ -46,6 +46,18 @@
       <div class="sec-show-list">
         <div class="list-title">请浏览<span class="red-font">2,600</span>件商品</div>
         <ul id="temp-list">
+          <li><a><img src="">
+              <div class="status-cont">
+                <div class="status-title"><span class="now-goods">现货</span>7047 一件代发纯棉袜子男士 四季中筒防臭全棉秋冬款袜厂家...</div>
+                <p class="num"> 成交40845笔</p>
+                <p class="price"><span class="fl red-font"> ￥9.00</span><span class="fr">12双起批<i>...</i></span></p>
+              </div></a></li>
+          <li><a><img src="">
+              <div class="status-cont">
+                <div class="status-title"><span class="book-goods">订货</span>7047 一件代发纯棉袜子男士 四季中筒防臭全棉秋冬款袜厂家...</div>
+                <p class="num"> 成交40845笔</p>
+                <p class="price"><span class="fl red-font"> ￥9.00</span><span class="fr">12双起批<i>...</i></span></p>
+              </div></a></li>
           <li><a><img src="">
               <div class="status-cont">
                 <div class="status-title"><span class="now-goods">现货</span>7047 一件代发纯棉袜子男士 四季中筒防臭全棉秋冬款袜厂家...</div>
@@ -109,7 +121,7 @@
               },
               success: function (result) {
                 var dataNum = data.tatol;
-                var perPageNum = $("#temp-list .per-page").length;
+                var perPageNum = $("#temp-list li").length;
                 listWrap.find('.loading').remove();
                 if (dataNum > perPageNum) {
                   var dataSrouce = data.msg;
@@ -154,8 +166,8 @@
           }
         }();
       
-        htmlList.initalList();//初始化页面
-        htmlList.scrollList();
+        //htmlList.initalList();//初始化页面
+       // htmlList.scrollList();
       
       });
     </script>

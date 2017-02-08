@@ -24,6 +24,7 @@ select,input{
   outline:none;
   -webkit-tap-highlight-color:rgba(255,0,0,0);
   -webkit-touch-callout:none;
+  box-sizing: border-box;
 }
 
 ul, li {

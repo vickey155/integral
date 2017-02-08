@@ -4,9 +4,9 @@ block append headTitle
   title 货品管理
 
 block content
-  section.seller-goods-sec
+  section.seller-goods-sec.padtop160
     .sec
-      .sec-serch
+      .sec-serch.search-fixed
         input(type="text" placeholder='请输入您要搜索的货品').input-text-search
         a.a-btn-bgred 搜索
       .sec-manage-list
@@ -85,6 +85,80 @@ block content
          });
        });
 
+      //显示列表
+      var htmlList = function () {
+        var loading = true;
+        var listType = '';
+        var showLoadingTxt = function (txt) {
+          var listWrap = $("#choose-list").parent();
+          listWrap.find('.try-loading').remove();
+          var temp = '<p class="try-loading">' + txt + '</p>';
+          listWrap.append(temp);
+        }
+        var makeSureType = function () {
+          listType = 0
+        }
+        var showList = function () {
+          var listWrap = $("#choose-list");
+          listWrap.html("");
+          $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+              type: listType
+            },
+            beforeSend: function () {
+              showLoadingTxt('正在努力加载中<span class="icon-loading"></span>请耐心等待片刻');
+            },
+            success: function (result) {
+              var dataNum = data.tatol;
+              var perPageNum = $("#choose-list li").length;
+              listWrap.find('.loading').remove();
+              if (dataNum > perPageNum) {
+                var dataSrouce = data.msg;
+                var html = $.templates("#testTmpl").render(dataSrouce);
+                listWrap.append(html);
+              }
+              else if (dataNum == perPageNum) {
+                showLoadingTxt('无更多数据');
+              }
+              loading = true;
+            },
+            error: function () {
+              showLoadingTxt('系统繁忙，请稍后再试');
+            }
+          });
+        }
+        var initList = function () {
+          $("#choose-list").html("");
+          showList();
+        }
+        //加载更多
+        var loadMore = function () {
+          $(window).scroll(function () {
+            var docHei = $(document).height();
+            var scrollT = $(window).scrollTop();
+            if (scrollT + $(window).height() > docHei - 20) {
+              if (loading) {
+                loading = false;
+                showList();
+              }
+            }
+          });
+        };
+        return {
+          initalList: function () {
+            makeSureType();
+            initList();
+          },
+          scrollList: function () {
+            loadMore();
+          }
+        }
+      }();
+
+      htmlList.initalList();//初始化页面
+      htmlList.scrollList();
     });
 
 

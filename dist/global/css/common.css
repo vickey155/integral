@@ -125,7 +125,8 @@ h1 {
       .select-region select {
         font-size: 0.48rem; } }
   .select-region select:last-child {
-    border-right: 0; }
+    border-right: 0;
+    width: 34%; }
 
 section .sec {
   padding-bottom: 6rem; }
@@ -337,6 +338,26 @@ section .sec {
     line-height: 1.6rem;
     border-radius: 0; }
 
+.search-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  z-index: 20; }
+
+.padtop120 {
+  padding-top: 1.20rem; }
+
+.padtop160 {
+  padding-top: 1.6rem; }
+
+.padtop280 {
+  padding-top: 2.85rem; }
+
+.padtop300 {
+  padding-top: 3rem; }
+
 .sec-login {
   padding-bottom: 1.47rem; }
   .sec-login .sec-log {
@@ -399,6 +420,14 @@ section .sec {
       .sec-login form .form-row label .icon-lock {
         margin-top: 0; }
     .sec-login form .form-row input[type=text] {
+      background: transparent;
+      width: 4.8rem;
+      height: 0.6rem;
+      line-height: 0.6rem;
+      font-size: 0.36rem;
+      color: #333;
+      padding-left: 0.2rem; }
+    .sec-login form .form-row input[type=password] {
       background: transparent;
       width: 4.8rem;
       height: 0.6rem;
@@ -730,6 +759,26 @@ section.sticky-foot {
           font-size: 0.6rem; } }
       @media screen and (min-width: 640px) {
         .set-pw .form-row input[type=text] {
+          font-size: 0.6rem; } }
+    .set-pw .form-row input[type=password] {
+      width: 100%;
+      border: 0.04rem solid #d9d9d9;
+      height: 1.57rem;
+      padding: 0.3rem;
+      color: c3;
+      text-align: left;
+      line-height: 0.97rem; }
+      @media screen and (max-width: 321px) {
+        .set-pw .form-row input[type=password] {
+          font-size: 0.64rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .set-pw .form-row input[type=password] {
+          font-size: 0.63rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .set-pw .form-row input[type=password] {
+          font-size: 0.6rem; } }
+      @media screen and (min-width: 640px) {
+        .set-pw .form-row input[type=password] {
           font-size: 0.6rem; } }
     .set-pw .form-row input.error-input {
       border-color: #dd1718; }
@@ -1419,6 +1468,8 @@ section.sticky-foot {
         background-color: #0099cb; }
       .person-center-sec .sec-list ul li span.icon04 {
         background-color: #66669a; }
+      .person-center-sec .sec-list ul li span.icon05 {
+        background-color: #42b035; }
       .person-center-sec .sec-list ul li .txt {
         color: #666;
         text-align: center;
@@ -2838,44 +2889,47 @@ section.sticky-foot {
           @media screen and (min-width: 640px) {
             .sec-show-list ul li .status-cont .price span.fr i, .sec-show-list ul li .product-detail .sec-txt-wrap .sec-txt-title .price span.fr i, .product-detail .sec-txt-wrap .sec-show-list ul li .sec-txt-title .price span.fr i {
               font-size: 0.6rem; } }
-  .sec-show-list p.try-loading {
-    height: 1.04rem;
-    background-color: #e6e6e6;
+
+p.try-loading {
+  height: 1.04rem;
+  width: 120%;
+  margin-left: -10%;
+  background-color: #e6e6e6;
+  color: #666;
+  text-align: center;
+  line-height: 1.04rem; }
+  @media screen and (max-width: 321px) {
+    p.try-loading {
+      font-size: 0.34rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    p.try-loading {
+      font-size: 0.33rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    p.try-loading {
+      font-size: 0.3rem; } }
+  @media screen and (min-width: 640px) {
+    p.try-loading {
+      font-size: 0.3rem; } }
+  p.try-loading span {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 0.3rem;
+    vertical-align: middle;
     color: #666;
     text-align: center;
-    line-height: 1.04rem; }
+    line-height: 0.8rem; }
     @media screen and (max-width: 321px) {
-      .sec-show-list p.try-loading {
-        font-size: 0.34rem; } }
+      p.try-loading span {
+        font-size: 0.84rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
-      .sec-show-list p.try-loading {
-        font-size: 0.33rem; } }
+      p.try-loading span {
+        font-size: 0.83rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
-      .sec-show-list p.try-loading {
-        font-size: 0.3rem; } }
+      p.try-loading span {
+        font-size: 0.8rem; } }
     @media screen and (min-width: 640px) {
-      .sec-show-list p.try-loading {
-        font-size: 0.3rem; } }
-    .sec-show-list p.try-loading span {
-      width: 0.8rem;
-      height: 0.8rem;
-      margin: 0 0.3rem;
-      vertical-align: middle;
-      color: #666;
-      text-align: center;
-      line-height: 0.8rem; }
-      @media screen and (max-width: 321px) {
-        .sec-show-list p.try-loading span {
-          font-size: 0.84rem; } }
-      @media screen and (min-width: 321px) and (max-width: 400px) {
-        .sec-show-list p.try-loading span {
-          font-size: 0.83rem; } }
-      @media screen and (min-width: 400px) and (max-width: 640px) {
-        .sec-show-list p.try-loading span {
-          font-size: 0.8rem; } }
-      @media screen and (min-width: 640px) {
-        .sec-show-list p.try-loading span {
-          font-size: 0.8rem; } }
+      p.try-loading span {
+        font-size: 0.8rem; } }
 
 .add-cut-opt, .dialog-container .dia-sec-03 .opts-wrap {
   display: inline-block;

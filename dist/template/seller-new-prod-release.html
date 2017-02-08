@@ -295,11 +295,11 @@
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
                     <select data-validate="厚度" class="select-s">
                       <option value="">请选择</option>
-                      <option value="">超薄</option>
-                      <option value="">薄</option>
-                      <option value="">中等</option>
-                      <option value="">加厚</option>
-                      <option value="">厚</option>
+                      <option value="超薄">超薄</option>
+                      <option value="薄">薄</option>
+                      <option value="中等">中等</option>
+                      <option value="加厚">加厚</option>
+                      <option value="厚">厚</option>
                     </select>
                   </div>
                 </div>
@@ -392,8 +392,10 @@
               <div class="form-row">
                 <div class="row-title">价格设置</div>
                 <div class="row-cont input-add-wrap price-set">
-                  <input type="text" placeholder="请输入起订量" data-validate="起订量" class="input-text-s">
-                  <input type="text" placeholder="请输入价格" data-validate="价格" class="input-text-s"><span class="add-btn"> +</span>
+                  <div class="input-wrap">
+                    <input type="text" placeholder="请输入起订量" data-validate="起订量" class="input-text-s">
+                    <input type="text" placeholder="请输入价格" data-validate="价格" class="input-text-s">
+                  </div><span class="add-btn"> +</span>
                 </div>
               </div>
               <div class="form-row">
@@ -504,11 +506,11 @@
                   <div class="select-wrapper-s"><i class="icon-trangle-down"></i>
                     <select data-validate="厚度" class="select-s">
                       <option value="">请选择</option>
-                      <option value="">超薄</option>
-                      <option value="">薄</option>
-                      <option value="">中等</option>
-                      <option value="">加厚</option>
-                      <option value="">厚</option>
+                      <option value="超薄">超薄</option>
+                      <option value="薄">薄</option>
+                      <option value="中等">中等</option>
+                      <option value="加厚">加厚</option>
+                      <option value="厚">厚</option>
                     </select>
                   </div>
                 </div>
@@ -566,26 +568,34 @@
         var productReleaseEvent = function () {
           var checkForm = function () {
             var isTerge = /^([1-9][0-9]*)$/;
-            var twoPoint = /^[1-9]\d+(\.\d{1,2})?$/;
+            var twoPoint = /^([1-9]*)([0-9])(\.\d{1,2})?$/;
             var inputValidate = $(".product-release-form [data-validate]:not(:hidden)");
         
-            var showDialog = function (sel, dialogExist, errTip) {
+            var showDialog = function (sel, dialogExist, errTip,errType) {
               sel.addClass("error-input");
-              if(sel.is("select") || sel.find("input[type=checkbox]").length >0){
+              if(errType == 'err-tip' ){
                 if (dialogExist == 0) {
-                  errTip ="您未选择<span>" + errTip;
+                  errTip = "<span>" + errTip;
                 }
               }
-              else if ( sel.is("input[type=text]")) {
-                if (dialogExist == 0) {
-                  errTip = '您未填写<span>'+ errTip;
+              else{
+                if (sel.is("select") || sel.find("input[type=checkbox]").length > 0) {
+                  if (dialogExist == 0) {
+                    errTip = "您未选择<span>" + errTip;
+                  }
+                }
+                else if (sel.is("input[type=text]")) {
+                  if (dialogExist == 0) {
+                    errTip = '您未填写<span>' + errTip;
+                  }
+                }
+                else if (sel.hasClass("add-btn")) {
+                  if (dialogExist == 0) {
+                    errTip = '您未<span>' + errTip;
+                  }
                 }
               }
-              else if (sel.hasClass("add-btn")) {
-                if (dialogExist == 0) {
-                  errTip = '您未<span>' + errTip;
-                }
-              }
+        
               commonEvent.inputTextNone(errTip);
               return false;
             }
@@ -617,7 +627,7 @@
                 else if (selVal != "") {
                   if (selVal.length > 30) {
                     var errTip = "货品名称长度不能超过30个字符"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -631,7 +641,7 @@
                 else if (selVal != "") {
                   if (selVal.length > 10) {
                     var errTip = "货号长度不能超过10个字符"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -639,6 +649,7 @@
                 }
               }
               else if (selType == '上传图片') {
+                console.log(12);
                 var uploadPic = sel.closest('.upload-pic');
                 var liLen = uploadPic.find('li').length;
                 var addBtn = sel.closest('li').find(".add-btn");
@@ -665,7 +676,7 @@
                 else if (selVal != "") {
                   if (!twoPoint.test(selVal) && Number(selVal) > 100) {
                     var errTip = "含量为数字，且最多保留两位小数，且最大为100.00"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -679,7 +690,7 @@
                 else if (selVal != "") {
                   if (!isTerge.test(selVal)) {
                     var errTip = "起订量为整数"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -693,7 +704,7 @@
                 else if (selVal != "") {
                   if (!twoPoint.test(selVal)) {
                     var errTip = "价格为数字，且最多保留两位小数"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -752,7 +763,7 @@
                 else if (selVal != "") {
                   if (!twoPoint.test(selVal)) {
                     var errTip = "克重为数字，且最多保留两位小数"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -763,7 +774,7 @@
                 if (selVal != "") {
                   if (selVal.length > 50) {
                     var errTip = "功能长度不能超过50个字符"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -774,7 +785,7 @@
                 if (selVal != "") {
                   if (selVal.length > 10) {
                     var errTip = "规格名长度不能超过10个字符"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -785,7 +796,7 @@
                 if (selVal != "") {
                   if (selVal.length > 50) {
                     var errTip = "规格介绍长度不能超过50个字符"
-                    return showDialog(sel, dialogExist, errTip);
+                    return showDialog(sel, dialogExist, errTip,'err-tip');
                   }
                   else {
                     sel.removeClass("error-input");
@@ -810,7 +821,7 @@
         $(function(){
         
           //产品发布
-          $(".cottonSock").show();
+          //$(".package").show();
           $("#product-type").on("change", function () {
             var selVal = $.trim($(this).find("option:selected").val());
             $(".sec-fill-cont").hide();
@@ -834,9 +845,9 @@
             var sel = $(this);
             var selRadio = sel.parent(".radio-wrap").find("input[type=radio]");
             sel.closest(".a-tab-wrap").find("span").removeClass('active');
-            sel.closest(".a-tab-wrap").find(" input[type=radio]").attr("checked", false);
+            sel.closest(".a-tab-wrap").find(" input[type=radio]").prop("checked", false);
             sel.addClass('active');
-            selRadio.attr("checked", true);
+            selRadio.prop("checked", true);
           });
           //多选
           $(".a-tab-wrap").onClick('click', '.checkbox-wrap span', function () {
@@ -844,11 +855,11 @@
             var selCheckbox = sel.parent(".checkbox-wrap").find("input[type=checkbox]");
             if (sel.hasClass('active')) {
               sel.removeClass('active');
-              selCheckbox.attr("checked", false);
+              selCheckbox.prop("checked", false);
             }
             else {
               sel.addClass('active');
-              selCheckbox.attr("checked", true);
+              selCheckbox.prop("checked", true);
             }
           });
           //添加input
@@ -900,8 +911,9 @@
           $(".upload-pic").on("change", "input[type=file]", function () {
             var sel = $(this);
             var ulWrap = sel.closest('ul');
-            var temp = '<li><img src="../global/images/pic' + liLen + '.png"/><i class="icon-close"></i></li>'
-            if ($(this).val() !== '') {
+            var temp = '<li><img src="../global/images/pic0.png"/><i class="icon-close"></i></li>'
+            var selVal = $.trim($(this).val());
+            if (selVal != '') {
               sel.closest('li').before(temp);
               var liLen = ulWrap.find('li').length;
               var addBtn = sel.closest('li').find(".add-btn");
@@ -920,7 +932,9 @@
             if (liLen <= 5) {
               ulWrap.find("li.input-file-wrap").show();
             }
+            ulWrap.find('input[type=file]').val("");
             sel.closest('li').remove();
+            return false;
           })
         
            //表单验证提交

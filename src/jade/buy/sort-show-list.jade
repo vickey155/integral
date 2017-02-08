@@ -4,13 +4,15 @@ block append headTitle
   title 分类搜索展示列表
 
 block content
-  section.sort-show-list
-    h2 M木及良品
+  section.sort-show-list.padtop280
+    .search-fixed
+      h2 M木及良品
+      .sec-show-list
+        .list-title-wrap
+          .list-title 请浏览
+            span.red-font 2,600
+            | 件商品
     .sec-show-list
-      .list-title-wrap
-        .list-title 请浏览
-          span.red-font 2,600
-          |件商品
       ul#temp-list
         li
           a
@@ -122,8 +124,8 @@ block content
         }
       }();
 
-      htmlList.initalList();//初始化页面
-      htmlList.scrollList();
+     // htmlList.initalList();//初始化页面
+      //htmlList.scrollList();
 
     });
   script(id="testTmpl" type="text/x-jsrender").

@@ -1,0 +1,35 @@
+
+<div class="form-row select-wrapper"><i class="icon-trangle-down"></i>
+  <select data-validate="发布类型">
+    <option value="">请选择发布类型</option>
+    <option value="全部">全部</option>
+    <option value="热销产品">热销产品</option>
+    <option value="天天特价">天天特价</option>
+    <option value="新品上线">新品上线</option>
+    <option value="热销产品及天天特价">热销产品及天天特价</option>
+    <option value="热销产品及新品上线">热销产品及新品上线</option>
+    <option value="天天特价及新品上线">天天特价及新品上线</option>
+  </select>
+</div>
+<div class="form-row a-tab-wrap clearfix tab-w-s">
+  <div class="radio-wrap"><span class="active">现货</span>
+    <input type="radio" value="现货" name="productStatus" checked="checked"/>
+  </div>
+  <div class="radio-wrap"><span>订货</span>
+    <input type="radio" value="订货" name="productStatus"/>
+  </div>
+</div>
+<div class="form-row">
+  <input type="text" placeholder="请输入货品名称" data-validate="货品名称"/>
+</div>
+<div class="form-row">
+  <input type="text" placeholder="请输入货号" data-validate="货号"/>
+</div>
+<div class="form-row upload-pic">
+  <div class="row-title">图片(最多5张)</div>
+  <ul class="clearfix">
+    <li class="input-file-wrap">
+      <input type="file" data-validate="上传图片"/><span class="add-btn">+</span>
+    </li>
+  </ul>
+</div>
