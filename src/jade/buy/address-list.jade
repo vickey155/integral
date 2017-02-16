@@ -36,7 +36,11 @@ block content
   script.
     $(function(){
       //全选及删除
-      commonEvent.chooseCircle('收货地址');
+      var pram = {
+        tip: "收货地址",
+        url: ""
+      }
+      commonEvent.chooseCircle(pram);
     })
 
 

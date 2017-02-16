@@ -102,11 +102,10 @@ var commonEvent = function () {
         var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-title"> 温馨提示</div><div class="dialog-cont">' + '<p>' + errTip + '</p></div>' + '<div class="dialog-btn a-2"><a class="a-btn-graybg close-btn">取消</a><a class="a-btn-redbg sure-btn">确认</a>' + '</div> </div>';
         $('body').append(temp);
         // closeDialog();
-        //confirmSureFun(fun);
         $('.dialog-alert-pop .sure-btn').onClick('click', function () {
-            fun();
             $(".bg-alert-pop").remove();
             $(".dialog-alert-pop").remove();
+            fun();
             return false;
         });
     };
@@ -119,7 +118,7 @@ var commonEvent = function () {
         });
     };
     var checkboxChecked = function () {
-        $("input.input-cbox").onClick("click", function () {
+        $("body").onClick("click", "input.input-cbox", function () {
             var self = $(this);
             if (self.hasClass('icon-ok')) {
                 self.removeClass('icon-ok').attr('checked', false);
@@ -130,7 +129,7 @@ var commonEvent = function () {
     };
     var addAndCut = function (fun) {
         //加减
-        $(".opts-wrap input").on('keyup', function (e) {
+        $("body").on('keyup', ".opts-wrap input", function (e) {
             var sel = $(this);
             var selVal = Number($.trim(sel.val()));
             var defaultval = Number(sel.data('defaultval'));
@@ -143,10 +142,10 @@ var commonEvent = function () {
             }
             //stopDefault(e);
         });
-        $(".opts-wrap input").on('blur', function (e) {
+        $("body").on('blur', ".opts-wrap input", function (e) {
             fun($(this));
         });
-        $(".opts-wrap").on('click', 'a', function (e) {
+        $("body").on('click', '.opts-wrap a', function (e) {
             var selInd = $(this).index();
             var input = $(this).parent('.opts-wrap').find("input");
             input.trigger('blur');
@@ -169,11 +168,13 @@ var commonEvent = function () {
             stopDefault(e);
         });
     };
-    var circleChoose = function (txt) {
+    var circleChoose = function (pram) {
+        var txt = pram.tip;
         var num = 0;
         var chooseList = $('#choose-list');
         var circleObj = chooseList.find('.circle-choose');
-        circleObj.onClick('click', 'span', function () {
+        //单选
+        chooseList.onClick('click', '.circle-choose span', function () {
             var sel = $(this);
             var chooseAll = sel.closest('body').find('#all-choose');
             circleObj = chooseList.find('.circle-choose');
@@ -192,6 +193,7 @@ var commonEvent = function () {
                 }
             }
         });
+        //全选
         $("#all-choose").onClick('click', "span", function () {
             var sel = $(this);
             circleObj = chooseList.find('.circle-choose');
@@ -205,18 +207,9 @@ var commonEvent = function () {
                 chooseList.find('.circle-choose span').addClass('active');
                 num = circleLen;
             }
-            //console.log(num);
         });
-        var sureFun = function () {
-            circleObj = chooseList.find('.circle-choose');
-            var circleLen = circleObj.length;
-            for (var i = 0; i < circleLen; i++) {
-                var span = circleObj.eq(i).find('span');
-                if (span.hasClass('active')) {
-                    span.closest('li').remove();
-                    num--;
-                }
-            }
+        //显示没有列表的样式
+        var showListNone = function () {
             $("#all-choose").find('span').removeClass('active');
             var circleLen0 = chooseList.find('.circle-choose').length;
             if (circleLen0 <= 0 && $(".sec-list-none")[0]) {
@@ -227,6 +220,46 @@ var commonEvent = function () {
                 $(".sec-list-none").next('div').show();
             }
         };
+        var sureFun = function () {
+            circleObj = chooseList.find('.circle-choose');
+            var circleLen = circleObj.length;
+            var idsArr = [];
+            for (var i = 0; i < circleLen; i++) {
+                var span = circleObj.eq(i).find('span');
+                if (span.hasClass('active')) {
+                    var selLiId = span.closest('li').attr('id');
+                    idsArr.push(selLiId);
+                    // span.closest('li').remove();
+                    //num--;
+                }
+            }
+            var idsStr = idsArr.join(',');
+
+            $.ajax({
+                type: "POST",
+                url: pram.url,
+                data: {
+                    ids: idsStr
+                },
+                success: function (result) {
+                    if (result.status == 'ok') {
+                        for (var i = 0; i < idsArr.length; i++) {
+                            chooseList.find('li[id=' + idsArr[i] + ']').remove();
+                            num--;
+                        }
+                        showListNone();
+                    } else {
+                        dialogFillNone('删除出错，请稍后再试');
+                        closeDialog();
+                    }
+                },
+                error: function () {
+                    dialogFillNone('系统繁忙，请稍后再试');
+                    closeDialog();
+                }
+            });
+        };
+        //删除
         $(".fixed-footer").onClick('click', '.delete-btn', function () {
             if (num <= 0) {
                 var tip = "您没有选择所要删除的" + txt;
@@ -237,6 +270,7 @@ var commonEvent = function () {
                 dialogConfirm(tip, function () {
                     sureFun();
                 });
+                closeDialog();
             }
         });
     };
@@ -268,6 +302,11 @@ var commonEvent = function () {
         },
         customizeDialog: function (obj, errTip) {
             dialogInput(obj, errTip);
+            closeDialog();
+        },
+        alertDialog: function (tip) {
+            //alert提示框
+            dialogErrTip(tip);
             closeDialog();
         }
     };

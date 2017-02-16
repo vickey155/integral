@@ -38,19 +38,21 @@ block content
           .red-heart-collect
             span.icon-collect
             p 收藏
-        ul.sec-txt-list
-          li
-            p.red-font ￥<span class="bing-font">24</span>.00
-            p 2盒起批
-            p.grey-font 已成交4445双
-          li
-            p.red-font ￥<span class="bing-font">23</span>.00
-            p 6-11盒
-            p.grey-font 运费：￥20
-          li
-            p.red-font ￥<span class="bing-font">22</span>.50
-            p ≥12盒
-            p.grey-font 发货地： 浙江 绍兴
+        .sec-txt-list
+          ul
+            li
+              p.red-font ￥<span class="bing-font">24</span>.00
+              p 2盒起批
+            li
+              p.red-font ￥<span class="bing-font">23</span>.00
+              p 6-11盒
+            li
+              p.red-font ￥<span class="bing-font">22</span>.50
+              p ≥12盒
+          .grey-font
+            span 已成交4445双
+            span 运费：￥20
+            span 发货地： 浙江 绍兴
 
       .sec-pro-formate#format-choose
         .fl.col-l
@@ -111,24 +113,24 @@ block content
           .a-tab.clearfix.a-tab-wrap
             .checkbox-wrap
               input(type="checkbox" name="拼色款" checked="checked")
-              a(href="javascript:void(0);").active 拼色款
+              a(href="javascript:void(0);" data-color="拼色款").active 拼色款
                 span.num 10
-            .checkbox-wrap
-              input(type="checkbox" name="纯色款" checked="checked")
-              a(href="javascript:void(0);") 纯色款
-            .checkbox-wrap
-              input(type="checkbox" name="卡通款" checked="checked")
-              a(href="javascript:void(0);") 卡通款
-            .checkbox-wrap
-              input(type="checkbox" name="条纹款" checked="checked")
-              a(href="javascript:void(0);") 条纹款
-                span.num 10
-            .checkbox-wrap
-              input(type="checkbox" name="民族风款" checked="checked")
-              a(href="javascript:void(0);") 民族风款
+            //.checkbox-wrap
+            //  input(type="checkbox" name="纯色款" checked="checked")
+            //  a(href="javascript:void(0);" data-color="纯色款") 纯色款
+            //.checkbox-wrap
+            //  input(type="checkbox" name="卡通款" checked="checked")
+            //  a(href="javascript:void(0);" data-color="卡通款") 卡通款
+            //.checkbox-wrap
+            //  input(type="checkbox" name="条纹款" checked="checked")
+            //  a(href="javascript:void(0);" data-color="条纹款") 条纹款
+            //    span.num 10
+            //.checkbox-wrap
+            //  input(type="checkbox" name="民族风款" checked="checked")
+            //  a(href="javascript:void(0);" data-color="民族风款") 民族风款
 
-        .dia-sec-03
-          .list-cont
+        .dia-sec-03#colorNum
+          .list-cont(data-color="拼色款")
             .list-row
               .big-font M (约3-5岁)
               .small-font 库存：20360
@@ -150,6 +152,29 @@ block content
                 a(href="javascript:void(0);") -
                 input(type="number" value="12" data-defaultval="12" data-price="24").input-s
                 a(href="javascript:void(0);") +
+          .list-cont(data-color="纯色款")
+            .list-row
+              .big-font M (约3-5岁)
+              .small-font 库存：20360
+              .opts-wrap
+                a(href="javascript:void(0);") -
+                input(type="number" value="12" data-defaultval="12" data-price="22.5").input-s
+                a(href="javascript:void(0);") +
+            .list-row
+              .big-font l (约6-8岁)
+              .small-font 库存：20360
+              .opts-wrap
+                a(href="javascript:void(0);") -
+                input(type="number" value="12" data-defaultval="12" data-price="22.5").input-s
+                a(href="javascript:void(0);") +
+            .list-row
+              .big-font XL (约9-12岁)
+              .small-font 库存：20360
+              .opts-wrap
+                a(href="javascript:void(0);") -
+                input(type="number" value="12" data-defaultval="12" data-price="24").input-s
+                a(href="javascript:void(0);") +
+
         .dia-sec-04.sum-data
           .fl 本产品按手批发，一手=10双
           .fr 共
@@ -194,17 +219,15 @@ block content
       });
 
       //弹层颜色多选
+      $("#colorNum").find('.list-cont').eq(0).show();
       $(".a-tab-wrap").onClick('click', '.checkbox-wrap a', function () {
         var sel = $(this);
         var selCheckbox = sel.parent(".checkbox-wrap").find("input[type=checkbox]");
-        if (sel.hasClass('active')) {
-          sel.removeClass('active');
-          selCheckbox.attr("checked", false);
-        }
-        else {
-          sel.addClass('active');
-          selCheckbox.attr("checked", true);
-        }
+        var selColor = $.trim(sel.data('color'));
+        var listCont = $("#colorNum").find('.list-cont[data-color='+selColor+']');
+        sel.addClass('active').parent('.checkbox-wrap').siblings().find('a').removeClass('active');
+        listCont.show().siblings('.list-cont').hide();
+        selCheckbox.prop('checked',true);
       });
 
 

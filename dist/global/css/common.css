@@ -344,7 +344,7 @@ section .sec {
   left: 0;
   width: 100%;
   background-color: #f2f2f2;
-  z-index: 20; }
+  z-index: 4; }
 
 .padtop120 {
   padding-top: 1.20rem; }
@@ -1800,12 +1800,13 @@ section.sticky-foot {
   padding-bottom: 6rem; }
 
 .seller-goods-footer {
-  height: 5.9rem;
+  height: 1.6rem;
   border-top: 0;
   background: transparent; }
   .seller-goods-footer .shelve {
-    float: right;
-    margin-right: 0.4rem; }
+    position: absolute;
+    top: -4.3rem;
+    right: 0.4rem; }
     .seller-goods-footer .shelve .circle-add-btn {
       height: 3.08rem;
       width: 3.08rem;
@@ -3261,11 +3262,14 @@ p.try-loading {
         .product-detail .sec-txt-wrap .red-heart-collect p {
           font-size: 0.38rem; } }
   .product-detail .sec-txt-wrap .sec-txt-list {
-    overflow: hidden; }
+    overflow: hidden;
+    padding: 0.3rem 0 0.3rem 0.3rem; }
+    .product-detail .sec-txt-wrap .sec-txt-list ul {
+      width: 100%;
+      overflow: hidden; }
     .product-detail .sec-txt-wrap .sec-txt-list li {
       float: left;
-      width: 33%;
-      padding: 0.3rem 0 0.3rem 0.3rem; }
+      width: 33%; }
       .product-detail .sec-txt-wrap .sec-txt-list li p {
         color: #333;
         text-align: left;
@@ -3330,6 +3334,27 @@ p.try-loading {
         @media screen and (min-width: 640px) {
           .product-detail .sec-txt-wrap .sec-txt-list li p.grey-font {
             font-size: 0.38rem; } }
+    .product-detail .sec-txt-wrap .sec-txt-list .grey-font {
+      width: 100%;
+      overflow: hidden; }
+      .product-detail .sec-txt-wrap .sec-txt-list .grey-font span {
+        width: 33%;
+        float: left;
+        color: #666;
+        text-align: left;
+        line-height: 0.6rem; }
+        @media screen and (max-width: 321px) {
+          .product-detail .sec-txt-wrap .sec-txt-list .grey-font span {
+            font-size: 0.44rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .product-detail .sec-txt-wrap .sec-txt-list .grey-font span {
+            font-size: 0.42rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .product-detail .sec-txt-wrap .sec-txt-list .grey-font span {
+            font-size: 0.4rem; } }
+        @media screen and (min-width: 640px) {
+          .product-detail .sec-txt-wrap .sec-txt-list .grey-font span {
+            font-size: 0.38rem; } }
 
 .product-detail .sec-pro-formate {
   margin: 0.4rem;
@@ -3362,7 +3387,10 @@ p.try-loading {
       color: #595959;
       text-align: left;
       line-height: 0.8rem;
-      margin-top: 0.16rem; }
+      margin-top: 0.16rem;
+      height: 0.8rem;
+      overflow: hidden;
+      text-overflow: ellipsis; }
       @media screen and (max-width: 321px) {
         .product-detail .sec-pro-formate .fl p {
           font-size: 0.52rem; } }
@@ -3384,7 +3412,10 @@ p.try-loading {
     padding-right: 0.2rem; }
     .product-detail .sec-pro-formate .col-l p {
       text-align: center;
-      margin-top: 0.25rem; }
+      margin-top: 0.25rem;
+      width: 100%; }
+  .product-detail .sec-pro-formate .col-r p {
+    width: 6.5rem; }
   .product-detail .sec-pro-formate .icon-trangle-down {
     position: absolute;
     right: 0.9rem;
@@ -3587,11 +3618,10 @@ p.try-loading {
       margin-bottom: 0.4rem; }
       .dialog-container .dia-sec-02 .a-tab .checkbox-wrap input[type=checkbox] {
         width: 0;
-        height: 0; }
+        height: 0;
+        display: none; }
     .dialog-container .dia-sec-02 .a-tab a {
       padding: 0 0.3rem;
-      width: 100%;
-      height: 100%;
       color: #333;
       text-align: left;
       line-height: 1.2rem;
@@ -3641,7 +3671,8 @@ p.try-loading {
     .dialog-container .dia-sec-03 .list-cont {
       padding-right: 0.26rem;
       height: 4.5rem;
-      overflow: scroll; }
+      overflow: scroll;
+      display: none; }
       .dialog-container .dia-sec-03 .list-cont .list-row {
         height: 1.5rem;
         border-bottom: 0.04rem solid #f2f2f2; }
@@ -3685,6 +3716,8 @@ p.try-loading {
               font-size: 0.38rem; } }
     .dialog-container .dia-sec-03 .opts-wrap .error-input {
       border-color: #dd1718; }
+  .dialog-container .dia-sec-03:first-child {
+    display: block; }
   .dialog-container .dia-sec-04 {
     height: 1rem;
     border-top: 0.05rem solid #bfbfbf;

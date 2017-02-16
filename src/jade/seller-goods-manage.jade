@@ -11,7 +11,7 @@ block content
         a.a-btn-bgred 搜索
       .sec-manage-list
         ul#choose-list
-          li
+          li(id="13")
             .circle-choose
               span
                 i.icon-ok
@@ -30,7 +30,46 @@ block content
                     i 5-8条
                   span ￥8.00/条
                     i  ≥9条
-          li
+          li(id="121")
+            .circle-choose
+              span
+                i.icon-ok
+              img(src="")
+            .status-cont
+              .status-title
+                span 现货
+                | 7047 一件代发纯棉袜 子男士四季中筒防臭...
+                a.icon-trash
+              .status-detail
+                p 颜色:随机混搭;尺码:均码
+                .num-wrap
+                  span ￥9.00/条
+                    i 4条起批
+                  span ￥8.50/条
+                    i 5-8条
+                  span ￥8.00/条
+                    i  ≥9条
+
+          li(id="3")
+            .circle-choose
+              span
+                i.icon-ok
+              img(src="")
+            .status-cont
+              .status-title
+                span 现货
+                | 7047 一件代发纯棉袜 子男士四季中筒防臭...
+                a.icon-trash
+              .status-detail
+                p 颜色:随机混搭;尺码:均码
+                .num-wrap
+                  span ￥9.00/条
+                    i 4条起批
+                  span ￥8.50/条
+                    i 5-8条
+                  span ￥8.00/条
+                    i  ≥9条
+          li(id="33")
             .circle-choose
               span
                 i.icon-ok
@@ -73,8 +112,12 @@ block content
 
   script.
     $(function(){
-      //全选及删除
-       commonEvent.chooseCircle('货品');
+       //全选及删除
+       var pram = {
+         tip:"货品",
+         url:""
+       }
+       commonEvent.chooseCircle(pram);
        var chooseList = $("#choose-list");
        //列表中删除图标事件
        chooseList.onClick('click','.icon-trash',function(){
@@ -157,8 +200,8 @@ block content
         }
       }();
 
-      htmlList.initalList();//初始化页面
-      htmlList.scrollList();
+      //htmlList.initalList();//初始化页面
+     // htmlList.scrollList();
     });
 
 

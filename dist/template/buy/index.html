@@ -99,12 +99,12 @@
             listWrap.append(temp);
           }
           var makeSureType = function () {
-            $(".index-home").onClick('click', 'a', function () {
+            $(".index-home").on('click', '.sec-tab a', function () {
               var sel = $(this);
               sel.addClass('active').siblings('a').removeClass("active");
               listType = $.trim(sel.data('type'));
               showList();
-              return false;
+              //return false;
             });
           }
           var showList = function () {
@@ -122,7 +122,7 @@
               success: function (result) {
                 var dataNum = data.tatol;
                 var perPageNum = $("#temp-list li").length;
-                listWrap.find('.loading').remove();
+                listWrap.parent().find('.loading').remove();
                 if (dataNum > perPageNum) {
                   var dataSrouce = data.msg;
                   var html = $.templates("#testTmpl").render(dataSrouce);
@@ -158,7 +158,7 @@
           return {
             initalList: function () {
               makeSureType();
-              initList();
+              //initList();
             },
             scrollList: function () {
               loadMore();
@@ -166,7 +166,7 @@
           }
         }();
       
-        //htmlList.initalList();//初始化页面
+        htmlList.initalList();//初始化页面
        // htmlList.scrollList();
       
       });

@@ -54,23 +54,23 @@
               <p>收藏</p>
             </div>
           </div>
-          <ul class="sec-txt-list">
-            <li>
-              <p class="red-font">￥<span class="bing-font">24</span>.00</p>
-              <p>2盒起批</p>
-              <p class="grey-font">已成交4445双</p>
-            </li>
-            <li>
-              <p class="red-font">￥<span class="bing-font">23</span>.00</p>
-              <p>6-11盒</p>
-              <p class="grey-font">运费：￥20</p>
-            </li>
-            <li>
-              <p class="red-font">￥<span class="bing-font">22</span>.50</p>
-              <p>≥12盒</p>
-              <p class="grey-font">发货地： 浙江 绍兴</p>
-            </li>
-          </ul>
+          <div class="sec-txt-list">
+            <ul>
+              <li>
+                <p class="red-font">￥<span class="bing-font">24</span>.00</p>
+                <p>2盒起批</p>
+              </li>
+              <li>
+                <p class="red-font">￥<span class="bing-font">23</span>.00</p>
+                <p>6-11盒</p>
+              </li>
+              <li>
+                <p class="red-font">￥<span class="bing-font">22</span>.50</p>
+                <p>≥12盒</p>
+              </li>
+            </ul>
+            <div class="grey-font"><span>已成交4445双</span><span>运费：￥20</span><span>发货地： 浙江 绍兴</span></div>
+          </div>
         </div>
         <div id="format-choose" class="sec-pro-formate">
           <div class="fl col-l"><span class="icon icon-write"></span>
@@ -132,24 +132,48 @@
             <div class="title">颜色</div>
             <div class="a-tab clearfix a-tab-wrap">
               <div class="checkbox-wrap">
-                <input type="checkbox" name="拼色款" checked="checked"><a href="javascript:void(0);" class="active">拼色款<span class="num">10</span></a>
+                <input type="checkbox" name="拼色款" checked="checked"><a href="javascript:void(0);" data-color="拼色款" class="active">拼色款<span class="num">10</span></a>
               </div>
-              <div class="checkbox-wrap">
-                <input type="checkbox" name="纯色款" checked="checked"><a href="javascript:void(0);">纯色款</a>
-              </div>
-              <div class="checkbox-wrap">
-                <input type="checkbox" name="卡通款" checked="checked"><a href="javascript:void(0);">卡通款</a>
-              </div>
-              <div class="checkbox-wrap">
-                <input type="checkbox" name="条纹款" checked="checked"><a href="javascript:void(0);">条纹款<span class="num">10</span></a>
-              </div>
-              <div class="checkbox-wrap">
-                <input type="checkbox" name="民族风款" checked="checked"><a href="javascript:void(0);">民族风款</a>
-              </div>
+              <!--.checkbox-wrap-->
+              <!--  input(type="checkbox" name="纯色款" checked="checked")-->
+              <!--  a(href="javascript:void(0);" data-color="纯色款") 纯色款-->
+              <!--.checkbox-wrap-->
+              <!--  input(type="checkbox" name="卡通款" checked="checked")-->
+              <!--  a(href="javascript:void(0);" data-color="卡通款") 卡通款-->
+              <!--.checkbox-wrap-->
+              <!--  input(type="checkbox" name="条纹款" checked="checked")-->
+              <!--  a(href="javascript:void(0);" data-color="条纹款") 条纹款-->
+              <!--    span.num 10-->
+              <!--.checkbox-wrap-->
+              <!--  input(type="checkbox" name="民族风款" checked="checked")-->
+              <!--  a(href="javascript:void(0);" data-color="民族风款") 民族风款-->
             </div>
           </div>
-          <div class="dia-sec-03">
-            <div class="list-cont">
+          <div id="colorNum" class="dia-sec-03">
+            <div data-color="拼色款" class="list-cont">
+              <div class="list-row">
+                <div class="big-font">M (约3-5岁)</div>
+                <div class="small-font">库存：20360</div>
+                <div class="opts-wrap"><a href="javascript:void(0);">-</a>
+                  <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a href="javascript:void(0);">+</a>
+                </div>
+              </div>
+              <div class="list-row">
+                <div class="big-font">l (约6-8岁)</div>
+                <div class="small-font">库存：20360</div>
+                <div class="opts-wrap"><a href="javascript:void(0);">-</a>
+                  <input type="number" value="12" data-defaultval="12" data-price="22.5" class="input-s"><a href="javascript:void(0);">+</a>
+                </div>
+              </div>
+              <div class="list-row">
+                <div class="big-font">XL (约9-12岁)</div>
+                <div class="small-font">库存：20360</div>
+                <div class="opts-wrap"><a href="javascript:void(0);">-</a>
+                  <input type="number" value="12" data-defaultval="12" data-price="24" class="input-s"><a href="javascript:void(0);">+</a>
+                </div>
+              </div>
+            </div>
+            <div data-color="纯色款" class="list-cont">
               <div class="list-row">
                 <div class="big-font">M (约3-5岁)</div>
                 <div class="small-font">库存：20360</div>
@@ -216,17 +240,15 @@
         });
       
         //弹层颜色多选
+        $("#colorNum").find('.list-cont').eq(0).show();
         $(".a-tab-wrap").onClick('click', '.checkbox-wrap a', function () {
           var sel = $(this);
           var selCheckbox = sel.parent(".checkbox-wrap").find("input[type=checkbox]");
-          if (sel.hasClass('active')) {
-            sel.removeClass('active');
-            selCheckbox.attr("checked", false);
-          }
-          else {
-            sel.addClass('active');
-            selCheckbox.attr("checked", true);
-          }
+          var selColor = $.trim(sel.data('color'));
+          var listCont = $("#colorNum").find('.list-cont[data-color='+selColor+']');
+          sel.addClass('active').parent('.checkbox-wrap').siblings().find('a').removeClass('active');
+          listCont.show().siblings('.list-cont').hide();
+          selCheckbox.prop('checked',true);
         });
       
       

@@ -38,7 +38,7 @@
         </div>
         <div class="sec-manage-list">
           <ul id="choose-list">
-            <li>
+            <li id="13">
               <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
               <div class="status-cont">
                 <div class="status-title"><span>现货</span>7047 一件代发纯棉袜 子男士四季中筒防臭...<a class="icon-trash"></a></div>
@@ -48,7 +48,27 @@
                 </div>
               </div>
             </li>
-            <li>
+            <li id="121">
+              <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
+              <div class="status-cont">
+                <div class="status-title"><span>现货</span>7047 一件代发纯棉袜 子男士四季中筒防臭...<a class="icon-trash"></a></div>
+                <div class="status-detail">
+                  <p>颜色:随机混搭;尺码:均码</p>
+                  <div class="num-wrap"><span>￥9.00/条<i>4条起批</i></span><span>￥8.50/条<i>5-8条</i></span><span>￥8.00/条<i> ≥9条</i></span></div>
+                </div>
+              </div>
+            </li>
+            <li id="3">
+              <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
+              <div class="status-cont">
+                <div class="status-title"><span>现货</span>7047 一件代发纯棉袜 子男士四季中筒防臭...<a class="icon-trash"></a></div>
+                <div class="status-detail">
+                  <p>颜色:随机混搭;尺码:均码</p>
+                  <div class="num-wrap"><span>￥9.00/条<i>4条起批</i></span><span>￥8.50/条<i>5-8条</i></span><span>￥8.00/条<i> ≥9条</i></span></div>
+                </div>
+              </div>
+            </li>
+            <li id="33">
               <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
               <div class="status-cont">
                 <div class="status-title"><span>现货</span>7047 一件代发纯棉袜 子男士四季中筒防臭...<a class="icon-trash"></a></div>
@@ -78,8 +98,12 @@
     </footer>
     <script>
       $(function(){
-        //全选及删除
-         commonEvent.chooseCircle('货品');
+         //全选及删除
+         var pram = {
+           tip:"货品",
+           url:""
+         }
+         commonEvent.chooseCircle(pram);
          var chooseList = $("#choose-list");
          //列表中删除图标事件
          chooseList.onClick('click','.icon-trash',function(){
@@ -162,8 +186,8 @@
           }
         }();
       
-        htmlList.initalList();//初始化页面
-        htmlList.scrollList();
+        //htmlList.initalList();//初始化页面
+       // htmlList.scrollList();
       });
     </script>
   </body>

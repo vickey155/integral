@@ -139,7 +139,7 @@
               success: function (result) {
                 var dataNum = data.tatol;
                 var perPageNum = $("#temp-list li.order-li").length;
-                listWrap.find('.loading').remove();
+                listWrap.parent().find('.loading').remove();
                 if (dataNum > perPageNum) {
                   var dataSrouce = data.msg;
                   var html = $.templates("#testTmpl").render(dataSrouce);

@@ -169,7 +169,11 @@ block content
   script.
     $(function(){
       //全选及删除
-      commonEvent.chooseCircle('货品');
+      var pram = {
+        tip: "货品",
+        url: ""
+      }
+      commonEvent.chooseCircle(pram);
       var chooseList = $("#choose-list");
       //列表中删除图标事件
       chooseList.onClick('click', '.icon-trash', function () {

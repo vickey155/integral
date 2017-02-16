@@ -301,7 +301,7 @@ $footH:2rem;
   left:0;
   width: 100%;
   background-color:#f2f2f2 ;
-  z-index: 20;
+  z-index: 4;
 }
 .padtop120{
   padding-top:1.20rem;
@@ -1306,12 +1306,14 @@ section.sticky-foot{
   padding-bottom: 6rem
 }
 .seller-goods-footer{
-  height: 5.9rem;
+  //height: 5.9rem;
+  height: 1.6rem;
   border-top:0;
   background: transparent;
   .shelve{
-    float:right;
-    margin-right: 0.4rem;
+    position: absolute;
+    top:-4.3rem;
+    right:0.4rem;
     .circle-add-btn{
       height: 3.08rem;
       width: 3.08rem;
@@ -2113,10 +2115,14 @@ p.try-loading{
     }
     .sec-txt-list{
       overflow: hidden;
+      padding:0.3rem 0 0.3rem 0.3rem;
+      ul{
+        width: 100%;
+        overflow: hidden;
+      }
       li{
         float: left;
         width:33%;
-        padding:0.3rem 0 0.3rem 0.3rem;
         p{
           @include fontFormat($fz:0.48rem,$fc:$c3,$lh:0.8rem);
         }
@@ -2127,6 +2133,15 @@ p.try-loading{
           }
         }
         p.grey-font{
+          @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:0.6rem);
+        }
+      }
+      .grey-font{
+        width: 100%;
+        overflow: hidden;
+        span{
+          width: 33%;
+          float: left;
           @include fontFormatS($fz:0.36rem,$fc:$c6,$lh:0.6rem);
         }
       }
@@ -2149,6 +2164,9 @@ p.try-loading{
       p{
         @include fontFormat($fz:0.48rem,$fc:#595959,$lh:0.8rem);
         margin-top: 0.16rem;
+        height: 0.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     .col-l{
@@ -2161,6 +2179,12 @@ p.try-loading{
       p{
         text-align: center;
         margin-top: 0.25rem;
+        width:100%;
+      }
+    }
+    .col-r{
+      p{
+        width: 6.5rem;
       }
     }
     .icon-trangle-down{
@@ -2275,12 +2299,11 @@ p.try-loading{
         input[type=checkbox]{
           width: 0;
           height:0;
+          display: none;
         }
       }
       a{
         padding:0 0.3rem;
-        width: 100%;
-        height: 100%;
         @include fontFormat($fz:0.48rem,$fc:$c3,$lh:1.2rem);
         position: relative;
         background-color: #e5e5e5;
@@ -2308,6 +2331,7 @@ p.try-loading{
       padding-right: 0.26rem;
       height: 4.5rem;
       overflow: scroll;
+      display: none;
       .list-row{
         height: 1.5rem;
         border-bottom: $border-w solid $bg;
@@ -2331,6 +2355,9 @@ p.try-loading{
           border-color:$red;
       }
     }
+  }
+  .dia-sec-03:first-child{
+    display: block;
   }
   .dia-sec-04{
     height: 1rem;
