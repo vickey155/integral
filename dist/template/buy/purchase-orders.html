@@ -39,7 +39,7 @@
             <li class="order-one">
               <div class="order-per">
                 <div class="circle-choose"><span><i class="icon-ok"></i></span><img src=""></div>
-                <div class="order-txt"><span>7047 一件代发纯棉袜子男士四季中筒防臭全棉秋冬款优质产品淘宝爆款</span></div>
+                <div class="order-txt"><span>7047 一件代发</span></div>
                 <div class="order-price">
                   <p>单价：<span class="red-font">￥<i class="big-font">22</i>.50</span>/手</p><a class="icon-trash"></a>
                 </div>
@@ -199,13 +199,13 @@
           });
         });
       
-      
+         //显示总数有问题
         //显示双数及总价
+        var totalSum = 0;
         var showSumNum = function (self) {
           var listOne = self.closest(".order-one");
           var inputNumber = listOne.find('input[type=number]');
           var inputNumberLen = inputNumber.length;
-          var totalSum = 0;
           var sumPrice = 0;
           for (var i = 0; i < inputNumberLen; i++) {
             var sel = inputNumber.eq(i);
@@ -214,11 +214,13 @@
             sumPrice += selPrice * selVal;
           }
           listOne.find(".sumPiceS").html(sumPrice);
-          $("#choose-list").find('.sumPiceS').each(function(){
-            var sel = $(this);
-            var selVal = Number(sel.html());
-            totalSum += selVal;
-          });
+      
+          var selSelected =listOne.find(".circle-choose span");
+          console.log(selSelected.length);
+          if(selSelected.hasClass('active')){
+            var perSum = Number(listOne.find(".sumPiceS").html());
+            totalSum += perSum;
+          }
           $("#sumPrice").html('￥' + totalSum);
         }
         //初始化

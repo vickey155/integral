@@ -2518,6 +2518,7 @@ p.try-loading{
       overflow: hidden;
       line-height: 2.18rem;
       span{
+        vertical-align: top;
         @include fontFormatS($fz:0.36rem,$fc:$c3,$lh:0.74rem);
       }
     }

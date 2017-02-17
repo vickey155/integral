@@ -4023,6 +4023,7 @@ p.try-loading {
       overflow: hidden;
       line-height: 2.18rem; }
       .purchase-order .order-one .order-txt span, .purchase-order .order-detail-option .order-detail .order-txt span, .order-detail-option .purchase-order .order-detail .order-txt span {
+        vertical-align: top;
         color: #333;
         text-align: left;
         line-height: 0.74rem; }
