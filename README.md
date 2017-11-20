@@ -1,8 +1,8 @@
-# yuerongshoe
+# integral mall
 
 a simple mall website
 
-seller and buyer
+integral: sign,luck draw……
 
 
 css :unit is rem,
