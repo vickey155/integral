@@ -1,0 +1,81 @@
+
+html,body{width:100%;height: auto;overflow-x:hidden;overflow-y:auto;}
+*{box-sizing: border-box;font-family:"微软雅黑";}
+body{padding:0; color: #333;background-color: #f2f2f2;width: 12.42rem;margin:0 auto;}
+.w750{width:7.5rem;margin:0 auto;
+  .fixed-footer{
+    width: 7.5rem;
+  }
+}
+img,span,a,label,i{display: inline-block;vertical-align: top;font-style: normal}
+h1{font-weight:normal;margin:0; padding:0;}
+.fl{float: left;}
+.fr{float:right;}
+$bg:#f2f2f2;
+$white:#fff;
+$c3:#333;
+$c6:#666;
+$c9:#999;
+$d9:#d9d9d9;
+$blue:#4b61d1;
+$red:#dd1718;
+$border-w:0.04rem;
+$borderRadius:0.1rem;
+@mixin opacity_bg($opa:0.8,$col:#000){
+  background-color: $col;
+  opacity: $opa;
+  filter:alpha(opacity=$opa*100);
+  position: absolute;
+  left:0;
+  bottom:0;
+  z-index: 2;
+}
+@mixin fontSize($val:1rem){
+  @media screen and (max-width: 321px) {
+    font-size:$val;
+  }
+  @media screen and (min-width: 321px) and (max-width:400px) {
+    font-size:$val + 0.02rem;
+  }
+  @media screen and (min-width: 400px) and(max-width:640px) {
+    font-size:$val + 0.04rem;;
+  }
+  @media screen and (min-width: 640px) {
+    font-size:$val + 0.06rem;;
+  }
+}
+//- @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center,$lh:0.5rem);
+@mixin fontFormat($fz:1rem,$fc:$c3,$ta:left,$lh:0.6rem){
+  color:$fc;
+  text-align: $ta;
+  line-height: $lh;
+  @media screen and (max-width: 321px) {
+    font-size:$fz+0.04rem;
+  }
+  @media screen and (min-width: 321px) and (max-width:400px) {
+    font-size:$fz + 0.03rem;
+  }
+  @media screen and (min-width: 400px) and(max-width:640px) {
+    font-size:$fz;
+  }
+  @media screen and (min-width: 640px) {
+    font-size:$fz ;
+  }
+}
+@mixin fontFormatS($fz:1rem,$fc:$c3,$ta:left,$lh:0.6rem){
+  color:$fc;
+  text-align: $ta;
+  line-height: $lh;
+  @media screen and (max-width: 321px) {
+    font-size:$fz+0.08rem;
+  }
+  @media screen and (min-width: 321px) and (max-width:400px) {
+    font-size:$fz + 0.06rem;
+  }
+  @media screen and (min-width: 400px) and(max-width:640px) {
+    font-size:$fz + 0.04rem;
+  }
+  @media screen and (min-width: 640px) {
+    font-size:$fz + 0.02rem;;
+  }
+}

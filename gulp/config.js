@@ -27,9 +27,9 @@ module.exports.browserSync = {
 			baseDir: [src,dist],
 			index:"template/index.html"
 		},
-        debugInfo: false,
+    debugInfo: false,
 		host: 'localhost',
-		port:'8888',
+		port:'8898',
 		notify:false
 	}
 };
@@ -66,7 +66,7 @@ module.exports.template = {
 
 module.exports.script = {
 	src:path.join(src,script,'/**/*.js'),
-	dist:path.join(dist,script)	
+	dist:path.join(dist,script)
 }
 
 module.exports.watch ={
