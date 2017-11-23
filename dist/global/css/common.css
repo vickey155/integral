@@ -1,0 +1,254 @@
+body, ul, li, h1, h2, h3, h4, p, input, textarea, span, a, div, em, strong, dl, dt, dd {
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 0; }
+
+article, aside, dialog, footer, header, section, footer, nav, figure, menu {
+  display: block;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 0; }
+
+a, a:link {
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+  -webkit-touch-callout: none;
+  color: #999; }
+
+select, input {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+  -webkit-touch-callout: none;
+  box-sizing: border-box; }
+
+ul, li {
+  list-style: none; }
+
+input {
+  outline: none;
+  vertical-align: middle; }
+
+input:-webkit-autofill {
+  background-color: #fff;
+  background-image: none; }
+
+input[type=date]:before {
+  color: #A9A9A9;
+  content: attr(placeholder); }
+
+input[type=date].full:before {
+  color: #3d4145;
+  content: "" !important; }
+
+img {
+  border: none;
+  vertical-align: middle; }
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden; }
+
+.clearfix {
+  *zoom: 1; }
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
+input::-webkit-input-placeholder {
+  color: #999 !important;
+  /* WebKit browsers */ }
+
+input::-moz-placeholder {
+  color: #999 !important;
+  /* Mozilla Firefox 4 to 18 */ }
+
+input:-moz-placeholder {
+  color: #999 !important;
+  /* / Mozilla Firefox 19+ /*/ }
+
+input:-ms-input-placeholder {
+  color: #999 !important;
+  /*/ Internet Explorer 10+ *!*/ }
+
+html, body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
+
+body {
+  padding: 0;
+  color: #333;
+  background-color: #f5f4f9;
+  min-width: 7.5rem;
+  width: 100%;
+  margin: 0 auto; }
+
+img, span, a, label, i {
+  display: inline-block;
+  vertical-align: top;
+  font-style: normal; }
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.border-shadow {
+  box-shadow: 0 0.01rem 0.03rem #bfbfbf; }
+
+a.a-btn {
+  border-radius: 0.24rem;
+  text-align: center;
+  color: #fff;
+  text-align: center; }
+  @media screen and (max-width: 321px) {
+    a.a-btn {
+      font-size: 0.32rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    a.a-btn {
+      font-size: 0.31rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    a.a-btn {
+      font-size: 0.28rem; } }
+  @media screen and (min-width: 640px) {
+    a.a-btn {
+      font-size: 0.28rem; } }
+
+a.a-btn-border-white {
+  color: #fff;
+  border: 0.02rem solid #fff; }
+
+a.a-btn-border-red {
+  color: #f7655e;
+  border: 0.02rem solid #f7655e;
+  border-radius: 0.28rem; }
+
+a.a-btn-border-blue {
+  color: #508bee;
+  border: 0.02rem solid #508bee;
+  border-radius: 0.28rem; }
+
+.select-region {
+  width: 100%;
+  overflow: hidden; }
+  .select-region select {
+    float: left;
+    width: 33%;
+    padding-top: 0.21rem;
+    padding-bottom: 0.21rem;
+    height: 1.46rem;
+    background: #fff;
+    border: 0.02rem solid #d9d9d9;
+    border-left: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    color: #979899;
+    text-align: center;
+    padding-left: 10%; }
+    @media screen and (max-width: 321px) {
+      .select-region select {
+        font-size: 0.52rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .select-region select {
+        font-size: 0.51rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .select-region select {
+        font-size: 0.48rem; } }
+    @media screen and (min-width: 640px) {
+      .select-region select {
+        font-size: 0.48rem; } }
+  .select-region select:last-child {
+    border-right: 0;
+    width: 34%; }
+
+form .form-row {
+  background-color: #fff;
+  border: 0.02rem solid #d9d9d9;
+  border-bottom: 0;
+  width: 100%;
+  padding: 0.28rem 0;
+  border-radius: 0.04rem; }
+  form .form-row label {
+    width: 2.4rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.36rem;
+    color: #999;
+    border-right: 1px solid #d9d9d9; }
+    form .form-row label span {
+      width: 0.6rem;
+      height: 0.6rem;
+      color: #999;
+      text-align: center;
+      vertical-align: top;
+      margin: 0.01rem 0.1rem; }
+      @media screen and (max-width: 321px) {
+        form .form-row label span {
+          font-size: 0.54rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        form .form-row label span {
+          font-size: 0.53rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        form .form-row label span {
+          font-size: 0.5rem; } }
+      @media screen and (min-width: 640px) {
+        form .form-row label span {
+          font-size: 0.5rem; } }
+    form .form-row label .icon-lock {
+      margin-top: 0; }
+  form .form-row input[type=text] {
+    background: transparent;
+    width: 4.8rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.36rem;
+    color: #333;
+    padding-left: 0.2rem; }
+  form .form-row input[type=password] {
+    background: transparent;
+    width: 4.8rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.36rem;
+    color: #333;
+    padding-left: 0.2rem; }
+  form .form-row input.error-input {
+    border-color: #f7655e; }
+
+.icon-level-star {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: blue; }
+
+.icon {
+  background-color: red; }

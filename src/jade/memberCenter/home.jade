@@ -1,0 +1,119 @@
+extends ../layout/layout
+
+block append headTitle
+  title 会员中心
+
+block content
+  section.home
+    .banner
+      .col-l
+         img.avater(src="")
+         ul
+            li 张艳玲
+            li.integral-star
+              .bg-white
+                span.icon.icon-star-yellow
+                span.integral-num
+                  i.num 30
+                  |积分
+            li
+              p.txt 在投年化资产 3000元
+       div.col-r
+         span.icon-level-star
+         a.a-btn.a-btn-border-white(href="") 会员提升
+
+    .sec-li4.border-top-radius
+      ul
+        li
+          a(href="")
+            span.icon.icon-king
+            p 兑换特权
+        li
+          a(href="")
+            span.icon.icon-cake
+            p 生日特权
+        li
+          a(href="")
+            span.icon.icon-package
+            p 升级礼包
+        li
+          a(href="")
+            span.icon.icon-more
+            p 更多
+
+    .sec-li4
+      ul
+        li
+          a(href="")
+            span.icon.icon-sign-duihao
+            p 每日签到
+        li
+          a(href="")
+            span.icon.icon-luck-draw
+            p 积分抽奖
+        li
+          a(href="")
+            span.icon.icon-integral-mall
+            p 积分商城
+        li
+          a(href="")
+            span.icon.icon-invitation
+            p 邀请好友
+
+    .sec-list.sec-task
+      .title 做任务，领积分
+        a(href='') 更多
+          i.icon-arrow-right
+      ul
+        li
+          .col-l
+            span.icon-sign-day7
+            .txt
+              p 每连签7天任务
+              p 积分+5
+          .col-r.progress
+            .tips 还差
+              i#prossNum 5
+              |天
+            .progress-bar
+              .progress-ocuppy
+
+        li
+          .col-l
+            span.icon-task-invite
+            .txt
+              p 每日邀请好友任务
+              p.font-red 积分+8
+          .col-r
+            span.icon-status.icon-status-finished
+        li
+          .col-l
+            span.icon-task-invest
+            .txt
+              p 首次投资任务
+              p 积分+50
+          .col-r
+            a.a-btn.a-btn-border-red(href="") 去完成
+
+    .sec-list.sec-activity
+      .title 精彩活动
+        a(href="") 更多
+          i.icon-arrow-right
+      .box-wrapper
+        .box
+          .cont-border
+            h3 满减券来啦
+            span.txt 10万张满减券大奖等你来领
+        .box
+          .cont-border
+            h3 投资送豪礼
+            span.txt 在线投资送丰富豪礼
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,669 @@
+body, ul, li, h1, h2, h3, h4, p, input, textarea, span, a, div, em, strong, dl, dt, dd {
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 0; }
+
+article, aside, dialog, footer, header, section, footer, nav, figure, menu {
+  display: block;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border: 0; }
+
+a, a:link {
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+  -webkit-touch-callout: none;
+  color: #999; }
+
+select, input {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+  -webkit-touch-callout: none;
+  box-sizing: border-box; }
+
+ul, li {
+  list-style: none; }
+
+input {
+  outline: none;
+  vertical-align: middle; }
+
+input:-webkit-autofill {
+  background-color: #fff;
+  background-image: none; }
+
+input[type=date]:before {
+  color: #A9A9A9;
+  content: attr(placeholder); }
+
+input[type=date].full:before {
+  color: #3d4145;
+  content: "" !important; }
+
+img {
+  border: none;
+  vertical-align: middle; }
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  visibility: hidden; }
+
+.clearfix {
+  *zoom: 1; }
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; }
+
+input::-webkit-input-placeholder {
+  color: #999 !important;
+  /* WebKit browsers */ }
+
+input::-moz-placeholder {
+  color: #999 !important;
+  /* Mozilla Firefox 4 to 18 */ }
+
+input:-moz-placeholder {
+  color: #999 !important;
+  /* / Mozilla Firefox 19+ /*/ }
+
+input:-ms-input-placeholder {
+  color: #999 !important;
+  /*/ Internet Explorer 10+ *!*/ }
+
+html, body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
+
+body {
+  padding: 0;
+  color: #333;
+  background-color: #f5f4f9;
+  min-width: 7.5rem;
+  width: 100%;
+  margin: 0 auto; }
+
+img, span, a, label, i {
+  display: inline-block;
+  vertical-align: top;
+  font-style: normal; }
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.border-shadow {
+  box-shadow: 0 0.01rem 0.03rem #bfbfbf; }
+
+a.a-btn {
+  border-radius: 0.24rem;
+  text-align: center;
+  color: #fff;
+  text-align: center; }
+  @media screen and (max-width: 321px) {
+    a.a-btn {
+      font-size: 0.32rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    a.a-btn {
+      font-size: 0.31rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    a.a-btn {
+      font-size: 0.28rem; } }
+  @media screen and (min-width: 640px) {
+    a.a-btn {
+      font-size: 0.28rem; } }
+
+a.a-btn-border-white {
+  color: #fff;
+  border: 0.02rem solid #fff; }
+
+a.a-btn-border-red {
+  color: #f7655e;
+  border: 0.02rem solid #f7655e;
+  border-radius: 0.28rem; }
+
+a.a-btn-border-blue {
+  color: #508bee;
+  border: 0.02rem solid #508bee;
+  border-radius: 0.28rem; }
+
+.select-region {
+  width: 100%;
+  overflow: hidden; }
+  .select-region select {
+    float: left;
+    width: 33%;
+    padding-top: 0.21rem;
+    padding-bottom: 0.21rem;
+    height: 1.46rem;
+    background: #fff;
+    border: 0.02rem solid #d9d9d9;
+    border-left: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    color: #979899;
+    text-align: center;
+    padding-left: 10%; }
+    @media screen and (max-width: 321px) {
+      .select-region select {
+        font-size: 0.52rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .select-region select {
+        font-size: 0.51rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .select-region select {
+        font-size: 0.48rem; } }
+    @media screen and (min-width: 640px) {
+      .select-region select {
+        font-size: 0.48rem; } }
+  .select-region select:last-child {
+    border-right: 0;
+    width: 34%; }
+
+form .form-row {
+  background-color: #fff;
+  border: 0.02rem solid #d9d9d9;
+  border-bottom: 0;
+  width: 100%;
+  padding: 0.28rem 0;
+  border-radius: 0.04rem; }
+  form .form-row label {
+    width: 2.4rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.36rem;
+    color: #999;
+    border-right: 1px solid #d9d9d9; }
+    form .form-row label span {
+      width: 0.6rem;
+      height: 0.6rem;
+      color: #999;
+      text-align: center;
+      vertical-align: top;
+      margin: 0.01rem 0.1rem; }
+      @media screen and (max-width: 321px) {
+        form .form-row label span {
+          font-size: 0.54rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        form .form-row label span {
+          font-size: 0.53rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        form .form-row label span {
+          font-size: 0.5rem; } }
+      @media screen and (min-width: 640px) {
+        form .form-row label span {
+          font-size: 0.5rem; } }
+    form .form-row label .icon-lock {
+      margin-top: 0; }
+  form .form-row input[type=text] {
+    background: transparent;
+    width: 4.8rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.36rem;
+    color: #333;
+    padding-left: 0.2rem; }
+  form .form-row input[type=password] {
+    background: transparent;
+    width: 4.8rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    font-size: 0.36rem;
+    color: #333;
+    padding-left: 0.2rem; }
+  form .form-row input.error-input {
+    border-color: #f7655e; }
+
+.icon-level-star {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: blue; }
+
+.icon {
+  background-color: red; }
+
+.home .banner {
+  height: 2.9rem;
+  background-color: red;
+  padding: 0 0.32rem;
+  overflow: hidden;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between; }
+  .home .banner .col-l {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center; }
+    .home .banner .col-l img {
+      vertical-align: middle;
+      height: 1.2rem;
+      width: 1.2rem;
+      border: 0.04rem solid #ffa599;
+      margin-right: 0.2rem; }
+  .home .banner ul li {
+    color: #fff;
+    text-align: left;
+    padding-bottom: 0.2rem;
+    position: relative; }
+    @media screen and (max-width: 321px) {
+      .home .banner ul li {
+        font-size: 0.4rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .home .banner ul li {
+        font-size: 0.39rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .home .banner ul li {
+        font-size: 0.36rem; } }
+    @media screen and (min-width: 640px) {
+      .home .banner ul li {
+        font-size: 0.36rem; } }
+    .home .banner ul li .bg-white {
+      /*@include opacity_bg($col:$white);*/
+      display: inline-block;
+      border-radius: 0.2rem;
+      height: 0.42rem;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding-right: 0.15rem;
+      line-height: 0.42rem; }
+    .home .banner ul li .icon-star-yellow {
+      background-color: yellow;
+      border-radius: 50%;
+      height: 0.36rem;
+      width: 0.36rem;
+      margin-top: 0.03rem;
+      margin-left: 0.01rem; }
+    .home .banner ul li .integral-num {
+      margin-left: 0.1rem;
+      color: #fff;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .home .banner ul li .integral-num {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home .banner ul li .integral-num {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home .banner ul li .integral-num {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 640px) {
+        .home .banner ul li .integral-num {
+          font-size: 0.26rem; } }
+      .home .banner ul li .integral-num i {
+        color: #fff;
+        text-align: left;
+        margin-right: 0.05rem; }
+        @media screen and (max-width: 321px) {
+          .home .banner ul li .integral-num i {
+            font-size: 0.32rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .home .banner ul li .integral-num i {
+            font-size: 0.31rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .home .banner ul li .integral-num i {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 640px) {
+          .home .banner ul li .integral-num i {
+            font-size: 0.28rem; } }
+    .home .banner ul li p.txt {
+      padding-top: 0.15rem;
+      color: #fff;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .home .banner ul li p.txt {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home .banner ul li p.txt {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home .banner ul li p.txt {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 640px) {
+        .home .banner ul li p.txt {
+          font-size: 0.28rem; } }
+  .home .banner .col-r {
+    width: 1.6rem; }
+    .home .banner .col-r .a-btn {
+      margin-top: 0.25rem;
+      width: 100%;
+      height: 0.52rem;
+      line-height: 0.48rem; }
+
+.sec-li4 {
+  margin-bottom: 0.4rem;
+  background-color: #fff;
+  padding: 0.36rem 0 0.1rem; }
+  .sec-li4 ul {
+    overflow: hidden; }
+    .sec-li4 ul li {
+      float: left;
+      width: 25%; }
+      .sec-li4 ul li a {
+        width: 100%;
+        text-align: center; }
+      .sec-li4 ul li span.icon {
+        height: 0.8rem;
+        width: 0.8rem; }
+      .sec-li4 ul li p {
+        padding: 0.2rem 0;
+        color: #666;
+        text-align: center; }
+        @media screen and (max-width: 321px) {
+          .sec-li4 ul li p {
+            font-size: 0.3rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .sec-li4 ul li p {
+            font-size: 0.29rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .sec-li4 ul li p {
+            font-size: 0.26rem; } }
+        @media screen and (min-width: 640px) {
+          .sec-li4 ul li p {
+            font-size: 0.26rem; } }
+
+.border-top-radius {
+  position: relative;
+  z-index: 2;
+  margin-top: -0.18rem;
+  border-top-left-radius: 0.22rem;
+  border-top-right-radius: 0.22rem; }
+  .border-top-radius ul li span.icon {
+    height: 0.46rem;
+    width: 0.46rem; }
+
+.sec-list {
+  margin-bottom: 0.4rem;
+  background-color: #fff;
+  padding: 0 0 0 0.32rem; }
+  .sec-list .title {
+    padding-right: 0.32rem;
+    color: #333;
+    text-align: left;
+    line-height: 1rem;
+    border-bottom: 0.01rem solid #dddddd; }
+    @media screen and (max-width: 321px) {
+      .sec-list .title {
+        font-size: 0.34rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .sec-list .title {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .sec-list .title {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 640px) {
+      .sec-list .title {
+        font-size: 0.3rem; } }
+    .sec-list .title a {
+      color: #666;
+      text-align: left;
+      float: right; }
+      @media screen and (max-width: 321px) {
+        .sec-list .title a {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .sec-list .title a {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .sec-list .title a {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .sec-list .title a {
+          font-size: 0.29rem; } }
+      .sec-list .title a i {
+        width: 0.26rem;
+        height: 0.26rem;
+        vertical-align: middle; }
+  .sec-list ul li {
+    border-bottom: 0.01rem solid #dddddd;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    padding: 0.4rem 0.32rem 0.4rem 0; }
+    .sec-list ul li:last-child {
+      border: 0; }
+    .sec-list ul li .col-l {
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      align-items: center; }
+      .sec-list ul li .col-l span {
+        min-width: 0.8rem;
+        height: 0.8rem;
+        width: 0.8rem;
+        background-color: red;
+        margin-right: 0.25rem; }
+      .sec-list ul li .col-l p {
+        color: #333;
+        text-align: left;
+        max-height: 0.9rem;
+        overflow: hidden; }
+        @media screen and (max-width: 321px) {
+          .sec-list ul li .col-l p {
+            font-size: 0.32rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .sec-list ul li .col-l p {
+            font-size: 0.31rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .sec-list ul li .col-l p {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 640px) {
+          .sec-list ul li .col-l p {
+            font-size: 0.28rem; } }
+        .sec-list ul li .col-l p:last-child {
+          padding-top: 0.1rem;
+          color: #999;
+          text-align: left; }
+          @media screen and (max-width: 321px) {
+            .sec-list ul li .col-l p:last-child {
+              font-size: 0.31rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .sec-list ul li .col-l p:last-child {
+              font-size: 0.3rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .sec-list ul li .col-l p:last-child {
+              font-size: 0.27rem; } }
+          @media screen and (min-width: 640px) {
+            .sec-list ul li .col-l p:last-child {
+              font-size: 0.27rem; } }
+      .sec-list ul li .col-l p.font-red {
+        color: #f7655e; }
+    .sec-list ul li .col-r {
+      padding-left: 0.1rem;
+      min-width: 1.7rem;
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      justify-content: center; }
+  .sec-list .progress .progress-bar {
+    background-color: #eee;
+    width: 1.6rem;
+    height: 0.2rem;
+    border-radius: 0.24rem; }
+    .sec-list .progress .progress-bar .progress-ocuppy {
+      border-radius: 0.24rem;
+      width: 1rem;
+      height: 0.2rem;
+      background-color: #f7655e; }
+  .sec-list .progress .tips {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    border-radius: 0.1rem;
+    border: 0.01rem solid #f7655e;
+    margin-bottom: 0.2rem;
+    color: #f7655e;
+    text-align: center; }
+    @media screen and (max-width: 321px) {
+      .sec-list .progress .tips {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .sec-list .progress .tips {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .sec-list .progress .tips {
+        font-size: 0.26rem; } }
+    @media screen and (min-width: 640px) {
+      .sec-list .progress .tips {
+        font-size: 0.26rem; } }
+  .sec-list .icon-status {
+    height: 1rem;
+    width: 1rem;
+    background-color: red; }
+  .sec-list .a-btn {
+    height: 0.6rem;
+    line-height: 0.56rem;
+    padding: 0 0.4rem;
+    vertical-align: middle; }
+  .sec-list .box-wrapper {
+    padding: 0.32rem 0.32rem 0 0; }
+    .sec-list .box-wrapper .box {
+      height: 2rem;
+      width: 100%;
+      border-radius: 0.2rem;
+      background-color: #00a4ee;
+      margin-bottom: 0.55rem;
+      padding: 0.32rem 1.1rem; }
+      .sec-list .box-wrapper .box .cont-border {
+        height: 100%;
+        border: 0.03rem solid #fff;
+        border-radius: 0.2rem;
+        text-align: center; }
+        .sec-list .box-wrapper .box .cont-border h3 {
+          font-weight: normal;
+          color: #fff;
+          text-align: center;
+          margin-bottom: 0.1rem; }
+          @media screen and (max-width: 321px) {
+            .sec-list .box-wrapper .box .cont-border h3 {
+              font-size: 0.44rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .sec-list .box-wrapper .box .cont-border h3 {
+              font-size: 0.43rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .sec-list .box-wrapper .box .cont-border h3 {
+              font-size: 0.4rem; } }
+          @media screen and (min-width: 640px) {
+            .sec-list .box-wrapper .box .cont-border h3 {
+              font-size: 0.4rem; } }
+        .sec-list .box-wrapper .box .cont-border .txt {
+          min-width: 2.82rem;
+          line-height: 0.32rem;
+          border-radius: 0.24rem;
+          background-color: #fff;
+          padding: 0.02rem 0.1rem;
+          color: #f7655e;
+          text-align: center; }
+          @media screen and (max-width: 321px) {
+            .sec-list .box-wrapper .box .cont-border .txt {
+              font-size: 0.28rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .sec-list .box-wrapper .box .cont-border .txt {
+              font-size: 0.27rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .sec-list .box-wrapper .box .cont-border .txt {
+              font-size: 0.24rem; } }
+          @media screen and (min-width: 640px) {
+            .sec-list .box-wrapper .box .cont-border .txt {
+              font-size: 0.24rem; } }
+
+.task .banner {
+  height: 2.8rem;
+  background-color: #00a4ee;
+  text-align: center;
+  padding-top: 0.66rem; }
+  .task .banner h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.1rem;
+    font-weight: normal; }
+    @media screen and (max-width: 321px) {
+      .task .banner h1 {
+        font-size: 0.64rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .task .banner h1 {
+        font-size: 0.63rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .task .banner h1 {
+        font-size: 0.6rem; } }
+    @media screen and (min-width: 640px) {
+      .task .banner h1 {
+        font-size: 0.6rem; } }
+  .task .banner .border-white {
+    min-width: 4.6rem;
+    padding: 0 0.1rem;
+    border-radius: 0.36rem;
+    border: 0.03rem solid #fff;
+    line-height: 0.52rem;
+    color: #fff;
+    text-align: center; }
+    @media screen and (max-width: 321px) {
+      .task .banner .border-white {
+        font-size: 0.36rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .task .banner .border-white {
+        font-size: 0.35rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .task .banner .border-white {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 640px) {
+      .task .banner .border-white {
+        font-size: 0.32rem; } }
+    .task .banner .border-white .icon-star-white-border {
+      height: 0.32rem;
+      width: 0.32rem;
+      background-color: #fff;
+      vertical-align: middle;
+      margin: 0 0.15rem; }
+
+.task .sign-day7-tips {
+  position: relative; }
+  .task .sign-day7-tips .sign-bg-yellow {
+    padding: 0.1rem 0.32rem;
+    background-color: #fbf9e2;
+    position: absolute;
+    top: 2.7rem;
+    left: 0;
+    line-height: 0.36rem;
+    color: #e3ac49;
+    text-align: left; }
+    @media screen and (max-width: 321px) {
+      .task .sign-day7-tips .sign-bg-yellow {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .task .sign-day7-tips .sign-bg-yellow {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .task .sign-day7-tips .sign-bg-yellow {
+        font-size: 0.24rem; } }
+    @media screen and (min-width: 640px) {
+      .task .sign-day7-tips .sign-bg-yellow {
+        font-size: 0.24rem; } }

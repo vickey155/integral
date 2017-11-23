@@ -130,191 +130,10 @@ var commonEvent = function() {
         return false;
       });
     };
-    var confirmSureFun = function(fun){
-        $('body').onClick('click','.dialog-alert-pop .sure-btn',function(){
-            fun();
-            $(".bg-alert-pop").remove();
-            $(".dialog-alert-pop").remove();
-            return false;
-        });
-    };
-    var checkboxChecked = function(){
-        $("body").onClick("click","input.input-cbox", function () {
-            var self = $(this);
-            if (self.hasClass('icon-ok')) {
-                self.removeClass('icon-ok').attr('checked',false);
-            }
-            else {
-                self.addClass('icon-ok').attr('checked',true);
-            }
-        });
-    };
-    var addAndCut = function(fun){
-        //加减
-        $("body").on('keyup',".opts-wrap input",function (e) {
-            var sel = $(this);
-            var selVal =  Number($.trim(sel.val()));
-            var defaultval = Number(sel.data('defaultval'));
-            if(selVal <= defaultval){
-                sel.val(defaultval);
-                return false;
-            }
-            else{
-                var selVla =parseInt(selVal);
-                sel.val(selVla);
-            }
-            //stopDefault(e);
-        });
-        $("body").on('blur',".opts-wrap input",function (e) {
-            fun($(this));
-        });
-        $("body").on('click','.opts-wrap a',function (e) {
-            var selInd = $(this).index();
-            var input = $(this).parent('.opts-wrap').find("input");
-            input.trigger('blur');
-            var num = Number(input.val());
-            var defaultval = Number(input.data('defaultval'));
-            if(selInd == 0){  // -
-                if(num <= defaultval){
-                    num = defaultval;
-                    return false;
-                }
-                else{
-                    num--;
-                }
-            }
-            else if(selInd == 2){  // +
-                num++;
-            }
-            input.val(num);
-            fun($(this));
-            stopDefault(e);
-        });
-    };
-    var circleChoose = function(pram){
-        var txt = pram.tip;
-        var num = 0;
-        var chooseList = $('#choose-list');
-        var circleObj = chooseList.find('.circle-choose');
-        //单选
-        chooseList.onClick('click','.circle-choose span',function(){
-            var sel = $(this);
-            var chooseAll = sel.closest('body').find('#all-choose');
-            circleObj = chooseList.find('.circle-choose');
-            var circleLen = circleObj.length;
-           if(sel.hasClass('active')){
-               sel.removeClass('active');
-               num--;
-               if(num != circleLen){
-                   chooseAll.find('span').removeClass('active');
-               }
-           }
-           else{
-               sel.addClass('active');
-               num++;
-               if(num == circleLen){
-                   chooseAll.find('span').addClass('active');
-               }
-           }
-       });
-        //全选
-        $("#all-choose").onClick('click',"span",function(){
-            var sel = $(this);
-            circleObj = chooseList.find('.circle-choose');
-            var circleLen = circleObj.length;
-            if(sel.hasClass('active')){
-                sel.removeClass('active');
-                chooseList.find('.circle-choose span').removeClass('active');
-                num = 0;
-            }
-            else{
-                sel.addClass('active');
-                chooseList.find('.circle-choose span').addClass('active');
-                num = circleLen;
-            }
-        });
-        //显示没有列表的样式
-        var showListNone = function(){
-            $("#all-choose").find('span').removeClass('active');
-            var circleLen0 = chooseList.find('.circle-choose').length;
-            if(circleLen0<=0 && $(".sec-list-none")[0]){
-                $(".sec-list-none").show();
-                $(".sec-list-none").next('div').hide();
-            }
-            else{
-                $(".sec-list-none").hide();
-                $(".sec-list-none").next('div').show();
-            }
-        }
-        var sureFun = function () {
-            circleObj = chooseList.find('.circle-choose');
-            var circleLen = circleObj.length;
-            var idsArr = [];
-            for(var i=0;i<circleLen;i++){
-                var span = circleObj.eq(i).find('span');
-                if(span.hasClass('active')){
-                    var selLiId = span.closest('li').attr('id');
-                    idsArr.push(selLiId);
-                   // span.closest('li').remove();
-                    //num--;
-                }
-            }
-            var idsStr = idsArr.join(',');
 
-            $.ajax({
-                type: "POST",
-                url: pram.url,
-                data: {
-                    ids: idsStr
-                },
-                success: function (result) {
-                    if(result.status == 'ok'){
-                        for(var i=0;i<idsArr.length;i++){
-                            chooseList.find('li[id='+idsArr[i]+']').remove();
-                            num--;
-                        }
-                        showListNone();
-                    }
-                    else{
-                        dialogFillNone('删除出错，请稍后再试');
-                        closeDialog();
-                    }
-                },
-                error: function () {
-                    dialogFillNone('系统繁忙，请稍后再试');
-                    closeDialog();
-                }
-            });
-        }
-        //删除
-        $(".fixed-footer").onClick('click','.delete-btn',function(){
-            if(num <= 0){
-                var tip="您没有选择所要删除的"+txt;
-                dialogErrTip(tip);
-                closeDialog();
-            }
-             else{
-                var tip="您确定要删除所选定的"+txt+"吗";
-                dialogConfirm(tip,function(){
-                    sureFun();
-                });
-                closeDialog();
-            }
-        });
-
-    };
     return{
         valPointTwoNum:function(val){
             return valTurnTwoNum(val);
-        },
-        initFun:function(){
-            checkboxChecked();
-        },
-        addAndCutFun:function (fun) {
-            addAndCut(fun);
-        },
-        chooseCircle:function (txt) {
-            circleChoose(txt);
         },
         validataDialog:function (errTip) {
             dialogErrTip(errTip);
@@ -339,14 +158,11 @@ var commonEvent = function() {
     }
 }();
 
-$(function () {
-    //checkbox
-    //登录页面记住密码
-     commonEvent.initFun();
+
+$(function (){
 
 
-
-})
+});
 
 
 

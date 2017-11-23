@@ -1,0 +1,99 @@
+extends ../layout/layout
+
+block append headTitle
+  title 任务中心
+
+block content
+  section.task
+    .banner
+      h1 赚积分啦！
+      span.border-white
+        i.icon-star-white-border
+        | 小小任务轻松完成
+        i.icon-star-white-border
+
+
+    .sec-list.sign-day7-tips
+      .sign-bg-yellow 每连续签到7天，即可获得100体验金（完成快捷转入零钱包任务后开启）
+      .title 日常任务
+      ul
+        li
+          .col-l
+            span.icon-sign-day7
+            .txt
+              p 每连签7天任务
+              p 成长值+1，体验金+1
+          .col-r.progress
+            .tips 还差
+              i#prossNum 5
+              |天
+            .progress-bar
+              .progress-ocuppy
+        li
+        li
+          .col-l
+            span.icon-sign-days
+            .txt
+              p 每连签21天任务
+              p 连签7天后开启
+          .col-r
+            a.a-btn.a-btn-border-blue(href="javascript:void(0);") 未开启
+        li
+          .col-l
+            span.icon-task-invite
+            .txt
+              p 每日邀请好友任务
+              p.font-red 积分+8
+          .col-r
+            span.icon-status.icon-status-finished
+
+
+    .sec-list
+      .title 推荐任务
+      ul
+        li
+          .col-l
+            span.icon-invest-day58
+            .txt
+              p 首投58天 5000送5000
+              p 成长值+2，体验金+5000
+          .col-r
+            a.a-btn.a-btn-border-red(href="javascript:void(0);") 去完成
+        li
+          .col-l
+            span.icon-invest-day88
+            .txt
+              p 首投88天 1万送1万
+              p 成长值+3，体验金+10000
+          .col-r
+            a.a-btn.a-btn-border-red(href="") 去完成
+
+    .sec-list
+      .title 新手任务
+      ul
+        li
+          .col-l
+            span.icon-login-first
+            .txt
+              p 首次登录
+              p 积分+10
+          .col-r
+            a.a-btn.a-btn-border-red(href="javascript:void(0);") 去完成
+        li
+          .col-l
+            span.icon-invest-first
+            .txt
+              p 新手任务内容新手任务内容
+              p 积分+8
+          .col-r
+            span.icon-status.icon-status-finished
+
+
+
+
+
+
+
+
+
+

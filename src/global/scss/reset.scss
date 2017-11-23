@@ -1,7 +1,7 @@
 @charset "UTF-8";
-body, ul, li, h1, h2, h3, h4, p, input,textarea,span,div,em, strong, dl, dt, dd {
+body, ul, li, h1, h2, h3, h4, p, input,textarea,span,a,div,em, strong, dl, dt, dd {
   font-size: 16px;
-  font-family:"微软雅黑";
+  font-family:"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-text-size-adjust: none;
@@ -9,7 +9,17 @@ body, ul, li, h1, h2, h3, h4, p, input,textarea,span,div,em, strong, dl, dt, dd 
   -webkit-appearance: none;
   border:0;
 }
-
+article, aside, dialog, footer, header, section, footer, nav, figure, menu {
+  display: block;
+  font-size: 16px;
+  font-family:"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border:0;
+}
 a,a:link {
   text-decoration: none;
   outline:none;
@@ -78,6 +88,4 @@ input:-moz-placeholder {color: #999 !important;/* / Mozilla Firefox 19+ /*/  }
 input:-ms-input-placeholder { color: #999 !important; /*/ Internet Explorer 10+ *!*/}
 
 
-article, aside, dialog, footer, header, section, footer, nav, figure, menu {
-  display: block;
-}
+

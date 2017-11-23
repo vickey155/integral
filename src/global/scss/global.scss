@@ -1,0 +1,287 @@
+@import 'common';
+
+
+.home{
+  .banner{
+    height: 2.9rem;
+    background-color: red;
+    padding: 0 0.32rem;
+    overflow: hidden;
+    display: flex;
+    display:-webkit-flex;
+    justify-content: space-between;
+    .col-l{
+      display: flex;
+      display:-webkit-flex;
+      align-items: center;
+      img{
+        vertical-align: middle;
+        height: 1.2rem;
+        width: 1.2rem;
+        border:0.04rem solid #ffa599;
+        margin-right: 0.2rem;
+      }
+    }
+    ul{
+      li{
+        @include fontFormat($fz:0.36rem,$fc:$white);
+        padding-bottom: 0.2rem;
+        position: relative;
+        .bg-white{
+          /*@include opacity_bg($col:$white);*/
+          display: inline-block;
+          border-radius: 0.2rem;
+          height: 0.42rem;
+          background-color: rgba($white,0.5);
+          padding-right: 0.15rem;
+          line-height: 0.42rem;
+        }
+        .icon-star-yellow{
+          background-color: yellow;
+          border-radius: 50%;
+          height: 0.36rem;
+          width: 0.36rem;
+          margin-top: 0.03rem;
+          margin-left: 0.01rem;
+        }
+        .integral-num{
+          margin-left: 0.1rem;
+          @include fontFormat($fz:0.26rem,$fc:$white);
+          i{
+            @include fontFormat($fz:0.28rem,$fc:$white);
+            margin-right: 0.05rem;
+          }
+        }
+        p.txt{
+          padding-top: 0.15rem;
+          @include fontFormat($fz:0.28rem,$fc:$white);
+        }
+      }
+    }
+    .col-r{
+      width:1.6rem;
+      .a-btn{
+        margin-top: 0.25rem;
+        width: 100%;
+        height: 0.52rem;
+        line-height: 0.48rem;
+      }
+    }
+  }
+
+}
+
+.sec-li4{
+  margin-bottom: 0.4rem;
+  background-color: #fff;
+  padding: 0.36rem 0 0.1rem;
+  ul{
+    overflow: hidden;
+    li{
+      float: left;
+      width: 25%;
+      a{
+        width: 100%;
+        text-align: center;
+      }
+      span.icon{
+        height: 0.8rem;
+        width: 0.8rem;
+      }
+      p{
+        padding: 0.2rem 0;
+        @include fontFormat($fz:0.26rem,$fc:$c6,$ta:center);
+      }
+    }
+  }
+}
+
+.border-top-radius{
+  position: relative;
+  z-index: 2;
+  margin-top: -0.18rem;
+  border-top-left-radius: 0.22rem;
+  border-top-right-radius: 0.22rem;
+  ul{
+    li{
+      span.icon{
+        height: 0.46rem;
+        width: 0.46rem;
+      }
+    }
+  }
+
+}
+//列表排序
+.sec-list{
+  margin-bottom: 0.4rem;
+  background-color: $white;
+  padding: 0 0 0 0.32rem;
+  .title{
+    padding-right: 0.32rem;
+    @include fontFormat($fz:0.3rem,$fc:$c3);
+    line-height: 1rem;
+    border-bottom: 0.01rem solid $dd;
+    a{
+      @include fontFormat($fz:0.29rem,$fc:$c6);
+      float: right;
+      i{
+        width: 0.26rem;
+        height: 0.26rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  ul{
+    li{
+      border-bottom: 0.01rem solid $dd;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      padding: 0.4rem 0.32rem 0.4rem 0;
+      &:last-child{
+        border: 0;
+      }
+      .col-l{
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+          min-width: 0.8rem;
+          height: 0.8rem;
+          width: 0.8rem;
+          background-color: red;
+          margin-right: 0.25rem;
+        }
+        p{
+          @include fontFormat($fz:0.28rem,$fc:$c3);
+          max-height: 0.9rem;
+          overflow: hidden;
+          &:last-child{
+            padding-top: 0.1rem;
+            @include fontFormat($fz:0.27rem,$fc:$c9);
+          }
+        }
+        p.font-red{
+          color: $red;
+        }
+      }
+      .col-r{
+        padding-left: 0.1rem;
+        min-width: 1.7rem;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  .progress{
+    .progress-bar{
+      background-color: #eee;
+      width: 1.6rem;
+      height: 0.2rem;
+      border-radius: 0.24rem;
+      .progress-ocuppy{
+        border-radius: 0.24rem;
+        width: 1rem;
+        height: 0.2rem;
+        background-color: $red;
+      }
+    }
+    .tips{
+      height: 0.5rem;
+      line-height: 0.5rem;
+      border-radius: 0.1rem;
+      border: 0.01rem solid $red;
+      margin-bottom: 0.2rem;
+      @include fontFormat($fz:0.26rem,$fc:$red,$ta:center);
+    }
+  }
+  .icon-status{
+    height: 1rem;
+    width: 1rem;
+    background-color: red;
+  }
+  .a-btn{
+    height: 0.6rem;
+    line-height: 0.56rem;
+    padding: 0 0.4rem;
+    vertical-align: middle;
+  }
+  .box-wrapper{
+    padding: 0.32rem 0.32rem 0 0;
+    .box{
+      height: 2rem;
+      width: 100%;
+      border-radius: 0.2rem;
+      background-color: #00a4ee;
+      margin-bottom: 0.55rem;
+      padding: 0.32rem 1.1rem;
+      .cont-border{
+        height: 100%;
+        border: 0.03rem solid $white;
+        border-radius:0.2rem;
+        text-align: center;
+        h3{
+          font-weight: normal;
+          @include fontFormat($fz:0.4rem,$fc:$white,$ta:center);
+          margin-bottom: 0.1rem;
+        }
+        .txt{
+          min-width: 2.82rem;
+          line-height: 0.32rem;
+          border-radius: 0.24rem;
+          background-color: $white;
+          padding: 0.02rem 0.1rem;
+          @include fontFormat($fz:0.24rem,$fc:$red,$ta:center);
+        }
+      }
+    }
+  }
+}
+
+
+
+//任务中心
+.task{
+  .banner{
+    height: 2.8rem;
+    background-color: #00a4ee;
+    text-align: center;
+    padding-top:0.66rem ;
+    h1{
+      @include fontFormat($fz:0.6rem,$fc:$white,$ta:center);
+      margin-bottom: 0.1rem;
+      font-weight: normal;
+    }
+    .border-white{
+      min-width: 4.6rem;
+      padding:0 0.1rem;
+      border-radius: 0.36rem;
+      border: 0.03rem solid $white;
+      line-height:0.52rem ;
+      @include fontFormat($fz:0.32rem,$fc:$white,$ta:center);
+      .icon-star-white-border{
+        height: 0.32rem;
+        width: 0.32rem;
+        background-color: $white;
+        vertical-align: middle;
+        margin: 0 0.15rem;
+      }
+    }
+  }
+  .sign-day7-tips{
+    position: relative;
+    .sign-bg-yellow{
+      padding: 0.1rem 0.32rem;
+      background-color: #fbf9e2;
+      position: absolute;
+      top:2.7rem;
+      left:0;
+      line-height: 0.36rem;
+      @include fontFormat($fz:0.24rem,$fc:$yellow);
+    }
+  }
+}
