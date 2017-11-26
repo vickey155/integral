@@ -1,0 +1,38 @@
+extends ../layout/layout
+
+block append headTitle
+  title 特权详情
+
+block content
+  section.privilegeDetail
+    .banner
+      .txt.bg-cake
+        h2 生日特权
+        p 生日当月均可领取
+
+    .cont-wrap
+      .row
+        h3
+          span.icon.icon-introduce
+          | 特权介绍
+        .txt-cont
+          p 会员生日专享礼券！念钱安激活用户生日当月，均享有平台送上的生日福利，会员等级越高，福利越多。
+      .row
+        h3
+          span.icon.icon-get
+          | 如何获得
+        .txt-cont
+          p 1. 会员生日以激活用户的身份证号码为准，生日当月1号起可领取；
+          p 2. 根据会员领取生日礼包时所处的会员等级，领取相应的生日福利；
+          p 3. 每个会员每年限领一次，过期未领视为主动放弃。
+
+    .btn-warp
+      a.a-btn-bg-yellow(href='javascript:void(0);') 领取礼包
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+extends ../layout/layout
+
+block append headTitle
+  title 抽奖记录
+
+block content
+  section.luckDrawRecord.red-bg
+    .sec-top
+      .title
+        span.icon-l.icon-eplises
+        span.txt 我的中奖记录
+        span.icon-r.icon-eplises
+
+    .record-list
+      .row
+        .col.img-wrap
+          img(src="")
+        .col.col-r
+          p.name 奖品：15元满减券
+          p.grey-font 请在
+            a(href="javascript:void(0);") 会员中心
+            |-
+            a(href="javascript:void(0);") 积分
+            |中查看
+          p.grey-font 2017-11-09 17:46:29
+      .row
+        .col.img-wrap
+          img(src="")
+        .col.col-r
+          p.name 奖品：15元满减券
+          p.grey-font 请在
+            a(href="javascript:void(0);") 会员中心
+            | -
+            a(href="javascript:void(0);") 积分
+            | 中查看
+          p.grey-font 2017-11-09 17:46:29
+
+      p.load-more 没有更多了/加载更多
+
+
+
+
+
+
+
+
+
+
+
+

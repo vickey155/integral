@@ -1,0 +1,191 @@
+extends ../layout/layout
+
+block append headTitle
+  title 管理收货地址
+
+block content
+  section.addressEdit
+
+    .el-form.address-edit-wrap
+      form
+        .form-row
+          label 收货人
+          input(type="text" placeholder="请填写收货人姓名" data-validate="name").input-text-large
+        .form-row
+          label 联系电话
+          input(type="text" placeholder="请填写联系电话" data-validate="telephone").input-text-large
+        .form-row
+          label 所在地区
+          .select-region-wrap
+            select(data-validate="province")
+              option(value="") 所在省
+              option(value="浙江省") 浙江省
+            select(data-validate="city")
+              option(value="") 所在市
+              option(value="杭州市") 杭州市
+            select(data-validate="district")
+              option(value="" ) 所在区/县
+              option(value="江干区" ) 江干区
+              option(value="上城区" ) 上城区
+        .form-row
+          label 街道
+          select.select-large( placeholder="请选择选择街道" data-validate="detailAddress").input-text-large
+            option(value="" ) 请选择选择街道
+        .form-row
+          label 详细地址
+          input(type="text" placeholder="请填写详细地址，不少于5个字" data-validate="detailAddress").input-text-large
+
+
+
+
+
+    .el-form
+      .form-row
+        label 设为默认
+        .el-switch.switch-checked
+          span.circle-l
+          span.circle-r
+
+    .btn-warp
+      a.a-btn-bg-grey(href="javascript:void(0);") 保存
+      a.a-btn-bg-red#saveBtn(href="javascript:void(0);") 保存
+
+
+  script.
+    $(function () {
+      //选择为默认地址
+      $(".rectangle-choose").onClick('click', 'span', function () {
+        var sel = $(this);
+        var inputCheckBox = sel.parent().find('input[type=checkbox]');
+        if (sel.hasClass('active')) {
+          sel.removeClass('active');
+          inputCheckBox.attr('checked', false);
+        }
+        else {
+          sel.addClass('active');
+          inputCheckBox.attr('checked', true);
+        }
+      });
+
+      //表单验证
+      var checkForm = function () {
+        var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        var zipCode = /^[1-9][0-9]{5}$/;
+        var showDialog = function (sel, dialogExist, errTip) {
+          sel.addClass("error-input");
+          if (dialogExist == 0) {
+            if (sel.is('input[type=text]')) {
+              errTip = '请输入' + errTip;
+            }
+            commonEvent.validataDialog(errTip);
+            return false;
+          }
+        }
+        var eleValidate = $("form").find("[data-validate]");
+        eleValidate.on('focus', function () {
+          var sel = $(this);
+          sel.removeClass("error-input");
+        });
+        eleValidate.each(function () {
+          var sel = $(this);
+          var selDataVal = $.trim(sel.data('validate'));
+          var dialogExist = $(".dialog-alert-pop").length;
+          if (selDataVal == 'name') {
+            var selVal = $.trim(sel.val());
+            if (selVal == '') {
+              var errTip = $.trim(sel.attr("placeholder"));
+              return showDialog(sel, dialogExist, errTip);
+            } else {
+              sel.removeClass("error-input");
+            }
+          }
+          else if (selDataVal == 'telephone') {
+            var selVal = $.trim(sel.val());
+            if (selVal == '') {
+              var errTip = $.trim(sel.attr("placeholder"));
+              return showDialog(sel, dialogExist, errTip);
+            } else {
+              if (!mobile.test(selVal)) {
+                var errTip = "正确的手机号";
+                return showDialog(sel, dialogExist, errTip);
+              }
+              else {
+                sel.removeClass("error-input");
+              }
+            }
+          }
+          else if (selDataVal == 'province') {
+            var selectedVal = $.trim(sel.find('option:selected').val());
+            if (selectedVal == '') {
+              var errTip = "请选择省份";
+              return showDialog(sel, dialogExist, errTip);
+            } else {
+              sel.removeClass("error-input");
+            }
+          }
+          else if (selDataVal == 'city') {
+            var selectedVal = $.trim(sel.find('option:selected').val());
+            if (selectedVal == '') {
+              var errTip = "请选择市区";
+              return showDialog(sel, dialogExist, errTip);
+            } else {
+              sel.removeClass("error-input");
+            }
+          }
+          else if (selDataVal == 'district') {
+            var selectedVal = $.trim(sel.find('option:selected').val());
+            if (selectedVal == '') {
+              var errTip = "请选择区/县";
+              return showDialog(sel, dialogExist, errTip);
+            } else {
+              sel.removeClass("error-input");
+            }
+          }
+          else if (selDataVal == 'detailAddress') {
+            var selVal = $.trim(sel.val());
+            if (selVal == '') {
+              var errTip = $.trim(sel.attr("placeholder"));
+              return showDialog(sel, dialogExist, errTip);
+            } else {
+              sel.removeClass("error-input");
+            }
+          }
+          else if (selDataVal == 'zipCode') {
+            var selVal = $.trim(sel.val());
+            if (selVal == '') {
+              var errTip = $.trim(sel.attr("placeholder"));
+              return showDialog(sel, dialogExist, errTip);
+            } else {
+              if (!zipCode.test(selVal)) {
+                var errTip = "正确的邮编";
+                return showDialog(sel, dialogExist, errTip);
+              }
+              else {
+                sel.removeClass("error-input");
+              }
+            }
+          }
+        });
+        if ($(".error-input").length > 0) {
+          return false
+        }
+        else {
+          return true;
+        }
+      }
+
+      $("#sure-btn").onClick('click', function () {
+        if (checkForm()) {
+          alert('ok');
+        }
+        else {
+          alert('fail');
+        }
+      });
+
+    });
+
+
+
+
+

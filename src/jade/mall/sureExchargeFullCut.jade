@@ -1,0 +1,38 @@
+extends ../layout/layout
+
+block append headTitle
+  title 确认兑换
+
+block content
+  section.sureExcharge
+    .order-one
+      .title 商品名称
+      .cont
+        .img-wrap
+          img(src="")
+        .txt
+          span.name 小米运动蓝牙耳机
+          span
+            i.red-font 5600积分
+            i.no ×1
+      .row-list
+        .row
+          label 运费
+          span 0.00
+        .row
+          label 使用积分
+          span 5600积分
+
+
+
+    .btn-warp
+      a.a-btn-bg-red#exChargeBtn(href='javascript:void(0);') 确认兑换
+
+
+
+
+
+
+
+
+

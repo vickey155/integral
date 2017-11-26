@@ -122,6 +122,34 @@ h1 {
 .fr {
   float: right; }
 
+.load-more {
+  line-height: 0.6rem;
+  color: #999;
+  text-align: center; }
+  @media screen and (max-width: 321px) {
+    .load-more {
+      font-size: 0.23rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .load-more {
+      font-size: 0.24rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .load-more {
+      font-size: 0.25rem; } }
+  @media screen and (min-width: 640px) {
+    .load-more {
+      font-size: 0.26rem; } }
+
+.plr32 {
+  padding-left: 0.32rem;
+  padding-right: 0.32rem; }
+
+.flexStyle, .luckDraw .banner .sec-top, .luckDraw .drawed-user .cont li, .luckDrawRecord .record-list .row {
+  display: flex;
+  display: -webkit-flex; }
+
+.border-bottom, .privilege .sec-li-center .row-cont .row, .upGrade .sec, .exchargeSuc .banner {
+  border-bottom: 0.01rem solid #dddddd; }
+
 .border-shadow {
   box-shadow: 0 0.01rem 0.03rem #bfbfbf; }
 
@@ -132,16 +160,16 @@ a.a-btn {
   text-align: center; }
   @media screen and (max-width: 321px) {
     a.a-btn {
-      font-size: 0.32rem; } }
+      font-size: 0.27rem; } }
   @media screen and (min-width: 321px) and (max-width: 400px) {
     a.a-btn {
-      font-size: 0.31rem; } }
+      font-size: 0.28rem; } }
   @media screen and (min-width: 400px) and (max-width: 640px) {
     a.a-btn {
-      font-size: 0.28rem; } }
+      font-size: 0.29rem; } }
   @media screen and (min-width: 640px) {
     a.a-btn {
-      font-size: 0.28rem; } }
+      font-size: 0.3rem; } }
 
 a.a-btn-border-white {
   color: #fff;
@@ -153,9 +181,93 @@ a.a-btn-border-red {
   border-radius: 0.28rem; }
 
 a.a-btn-border-blue {
-  color: #508bee;
-  border: 0.02rem solid #508bee;
+  color: #508cee;
+  border: 0.02rem solid #508cee;
   border-radius: 0.28rem; }
+
+.btn-a-wrap {
+  padding: 0.22rem 0.32rem; }
+
+.btn-warp {
+  padding: 0.22rem 0.32rem;
+  background-color: #fff;
+  border-top: 0.01rem solid #dddddd; }
+
+.a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+  width: 100%;
+  line-height: 0.92rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.14rem; }
+  @media screen and (max-width: 321px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.33rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.34rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.35rem; } }
+  @media screen and (min-width: 640px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.36rem; } }
+
+a.a-btn-bg-red {
+  background-color: #f7655e; }
+
+a.a-btn-bg-yellow {
+  background-color: #d1a665; }
+
+a.a-btn-bg-grey {
+  color: #999;
+  background-color: #dddddd; }
+
+.a-btn-border, a.a-btn-border-red {
+  background-color: #fff;
+  width: 100%;
+  line-height: 0.92rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.14rem;
+  border: 0.01rem solid #fff; }
+  @media screen and (max-width: 321px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.33rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.34rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.35rem; } }
+  @media screen and (min-width: 640px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.36rem; } }
+
+a.a-btn-border-red {
+  color: #f7655e;
+  border-color: #f7655e; }
+
+.ellipsis, .privilege .sec-li-center .row-cont .col p.name, .privilege .sec-li-center .row-cont .col p.grey-font, .mall .sec-list .price-wrap p.price-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space:nowrap;*/
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; }
+
+.ellipsis2, .order-one .cont .txt span.name, .addressList .address-one p, .luckDrawRecord .record-list p.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99; }
 
 .select-region {
   width: 100%;
@@ -163,87 +275,107 @@ a.a-btn-border-blue {
   .select-region select {
     float: left;
     width: 33%;
-    padding-top: 0.21rem;
-    padding-bottom: 0.21rem;
-    height: 1.46rem;
-    background: #fff;
-    border: 0.02rem solid #d9d9d9;
-    border-left: 0;
     appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    color: #979899;
-    text-align: center;
-    padding-left: 10%; }
-    @media screen and (max-width: 321px) {
-      .select-region select {
-        font-size: 0.52rem; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .select-region select {
-        font-size: 0.51rem; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .select-region select {
-        font-size: 0.48rem; } }
-    @media screen and (min-width: 640px) {
-      .select-region select {
-        font-size: 0.48rem; } }
+    -webkit-appearance: none; }
   .select-region select:last-child {
-    border-right: 0;
     width: 34%; }
 
-form .form-row {
-  background-color: #fff;
-  border: 0.02rem solid #d9d9d9;
-  border-bottom: 0;
-  width: 100%;
-  padding: 0.28rem 0;
-  border-radius: 0.04rem; }
-  form .form-row label {
-    width: 2.4rem;
-    height: 0.6rem;
+.el-form {
+  padding-left: 0.32rem;
+  background-color: #fff; }
+  .el-form .form-row {
+    border-bottom: 0.01rem solid #dddddd;
+    width: 100%;
+    padding: 0.25rem 0.32rem 0.25rem 0;
     line-height: 0.6rem;
-    font-size: 0.36rem;
-    color: #999;
-    border-right: 1px solid #d9d9d9; }
-    form .form-row label span {
-      width: 0.6rem;
-      height: 0.6rem;
-      color: #999;
-      text-align: center;
-      vertical-align: top;
-      margin: 0.01rem 0.1rem; }
+    overflow: hidden; }
+    .el-form .form-row:last-child {
+      border: 0; }
+    .el-form .form-row label {
+      color: #333;
+      text-align: left;
+      float: left; }
       @media screen and (max-width: 321px) {
-        form .form-row label span {
-          font-size: 0.54rem; } }
+        .el-form .form-row label {
+          font-size: 0.31rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
-        form .form-row label span {
-          font-size: 0.53rem; } }
+        .el-form .form-row label {
+          font-size: 0.32rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
-        form .form-row label span {
-          font-size: 0.5rem; } }
+        .el-form .form-row label {
+          font-size: 0.33rem; } }
       @media screen and (min-width: 640px) {
-        form .form-row label span {
-          font-size: 0.5rem; } }
-    form .form-row label .icon-lock {
-      margin-top: 0; }
-  form .form-row input[type=text] {
-    background: transparent;
-    width: 4.8rem;
-    height: 0.6rem;
-    line-height: 0.6rem;
-    font-size: 0.36rem;
-    color: #333;
-    padding-left: 0.2rem; }
-  form .form-row input[type=password] {
-    background: transparent;
-    width: 4.8rem;
-    height: 0.6rem;
-    line-height: 0.6rem;
-    font-size: 0.36rem;
-    color: #333;
-    padding-left: 0.2rem; }
-  form .form-row input.error-input {
-    border-color: #f7655e; }
+        .el-form .form-row label {
+          font-size: 0.34rem; } }
+    .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+      float: right;
+      min-width: 5.2rem;
+      background: transparent;
+      color: #333;
+      text-align: right;
+      line-height: 0.6rem;
+      padding: 0 0.06rem;
+      border: 0.01rem solid #fff; }
+      @media screen and (max-width: 321px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.34rem; } }
+    .el-form .form-row textarea {
+      resize: none; }
+    .el-form .form-row input.error-input {
+      border-color: #f7655e; }
+    .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+      background: #fff;
+      border: 0.01 solid #dddddd;
+      line-height: 0.6rem;
+      padding: 0 0.06rem;
+      margin-right: 1%;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      color: #333;
+      text-align: right;
+      direction: rtl; }
+      @media screen and (max-width: 321px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.34rem; } }
+      .el-form .form-row .selectClass option, .el-form .form-row select.select-large option, .el-form .form-row .select-region-wrap select option {
+        direction: rtl; }
+    .el-form .form-row select.select-large {
+      float: right;
+      min-width: 5.2rem;
+      background: #fff; }
+    .el-form .form-row input.error-input {
+      border-color: #f7655e; }
+    .el-form .form-row .select-region-wrap {
+      float: right;
+      min-width: 5.2rem; }
+      .el-form .form-row .select-region-wrap select {
+        float: left;
+        width: 32%; }
+      .el-form .form-row .select-region-wrap select:last-child {
+        width: 33%; }
+      .el-form .form-row .select-region-wrap select.selected {
+        color: #333; }
+      .el-form .form-row .select-region-wrap select.error-input {
+        border-color: #f7655e; }
 
 .icon-level-star {
   width: 1.6rem;
@@ -278,16 +410,16 @@ form .form-row {
     position: relative; }
     @media screen and (max-width: 321px) {
       .home .banner ul li {
-        font-size: 0.4rem; } }
+        font-size: 0.35rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .home .banner ul li {
-        font-size: 0.39rem; } }
+        font-size: 0.36rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .home .banner ul li {
-        font-size: 0.36rem; } }
+        font-size: 0.37rem; } }
     @media screen and (min-width: 640px) {
       .home .banner ul li {
-        font-size: 0.36rem; } }
+        font-size: 0.38rem; } }
     .home .banner ul li .bg-white {
       /*@include opacity_bg($col:$white);*/
       display: inline-block;
@@ -309,48 +441,48 @@ form .form-row {
       text-align: left; }
       @media screen and (max-width: 321px) {
         .home .banner ul li .integral-num {
-          font-size: 0.3rem; } }
+          font-size: 0.25rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .home .banner ul li .integral-num {
-          font-size: 0.29rem; } }
+          font-size: 0.26rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .home .banner ul li .integral-num {
-          font-size: 0.26rem; } }
+          font-size: 0.27rem; } }
       @media screen and (min-width: 640px) {
         .home .banner ul li .integral-num {
-          font-size: 0.26rem; } }
+          font-size: 0.28rem; } }
       .home .banner ul li .integral-num i {
         color: #fff;
         text-align: left;
         margin-right: 0.05rem; }
         @media screen and (max-width: 321px) {
           .home .banner ul li .integral-num i {
-            font-size: 0.32rem; } }
+            font-size: 0.27rem; } }
         @media screen and (min-width: 321px) and (max-width: 400px) {
           .home .banner ul li .integral-num i {
-            font-size: 0.31rem; } }
+            font-size: 0.28rem; } }
         @media screen and (min-width: 400px) and (max-width: 640px) {
           .home .banner ul li .integral-num i {
-            font-size: 0.28rem; } }
+            font-size: 0.29rem; } }
         @media screen and (min-width: 640px) {
           .home .banner ul li .integral-num i {
-            font-size: 0.28rem; } }
+            font-size: 0.3rem; } }
     .home .banner ul li p.txt {
       padding-top: 0.15rem;
       color: #fff;
       text-align: left; }
       @media screen and (max-width: 321px) {
         .home .banner ul li p.txt {
-          font-size: 0.32rem; } }
+          font-size: 0.27rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .home .banner ul li p.txt {
-          font-size: 0.31rem; } }
+          font-size: 0.28rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .home .banner ul li p.txt {
-          font-size: 0.28rem; } }
+          font-size: 0.29rem; } }
       @media screen and (min-width: 640px) {
         .home .banner ul li p.txt {
-          font-size: 0.28rem; } }
+          font-size: 0.3rem; } }
   .home .banner .col-r {
     width: 1.6rem; }
     .home .banner .col-r .a-btn {
@@ -358,6 +490,370 @@ form .form-row {
       width: 100%;
       height: 0.52rem;
       line-height: 0.48rem; }
+
+.card-wrap .card {
+  width: 6rem;
+  height: 3.1rem;
+  padding: 0.4rem 0.3rem 0.25rem;
+  text-align: center;
+  background-color: #d1a665; }
+  .card-wrap .card span.icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%; }
+  .card-wrap .card p.name {
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem;
+    margin-bottom: 0.2rem; }
+    @media screen and (max-width: 321px) {
+      .card-wrap .card p.name {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .card-wrap .card p.name {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .card-wrap .card p.name {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 640px) {
+      .card-wrap .card p.name {
+        font-size: 0.34rem; } }
+  .card-wrap .card .txt {
+    display: inline-block;
+    background-color: #d5a054;
+    color: #ffe9c3;
+    text-align: center;
+    padding: 0.08rem 0.2rem;
+    border-radius: 0.3rem;
+    line-height: 0.34rem; }
+    @media screen and (max-width: 321px) {
+      .card-wrap .card .txt {
+        font-size: 0.25rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .card-wrap .card .txt {
+        font-size: 0.26rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .card-wrap .card .txt {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 640px) {
+      .card-wrap .card .txt {
+        font-size: 0.28rem; } }
+
+.privilege .banner {
+  height: 3.2rem;
+  margin-bottom: 0.7rem; }
+
+.privilege .sec-li-center {
+  background-color: #fff; }
+  .privilege .sec-li-center .title {
+    color: #333;
+    text-align: center;
+    line-height: 0.6rem;
+    padding: 0.2rem 0;
+    border-bottom: 0.01rem solid #fafafc; }
+    @media screen and (max-width: 321px) {
+      .privilege .sec-li-center .title {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .privilege .sec-li-center .title {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .privilege .sec-li-center .title {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 640px) {
+      .privilege .sec-li-center .title {
+        font-size: 0.34rem; } }
+    .privilege .sec-li-center .title i {
+      height: 0.3rem;
+      width: 0.3rem;
+      background-color: red;
+      vertical-align: middle; }
+    .privilege .sec-li-center .title span {
+      margin: 0 0.2rem; }
+  .privilege .sec-li-center .row-cont {
+    padding: 0 0.5rem; }
+    .privilege .sec-li-center .row-cont .row {
+      display: flex;
+      display: -webkit-flex;
+      align-items: center;
+      padding: 0.3rem 0 0.3rem 0.7rem; }
+      .privilege .sec-li-center .row-cont .row:last-child {
+        border: 0; }
+    .privilege .sec-li-center .row-cont .col img {
+      height: 0.88rem;
+      width: 0.88rem;
+      border-radius: 50%;
+      background-color: #d1a665;
+      margin-right: 0.4rem;
+      overflow: hidden; }
+    .privilege .sec-li-center .row-cont .col p.name {
+      line-height: 0.5rem;
+      color: #333;
+      text-align: left;
+      height: 0.6rem;
+      width: 100%; }
+      @media screen and (max-width: 321px) {
+        .privilege .sec-li-center .row-cont .col p.name {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .privilege .sec-li-center .row-cont .col p.name {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .privilege .sec-li-center .row-cont .col p.name {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .privilege .sec-li-center .row-cont .col p.name {
+          font-size: 0.34rem; } }
+    .privilege .sec-li-center .row-cont .col p.grey-font {
+      line-height: 0.46rem;
+      height: 0.46rem;
+      color: #999;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 321px) {
+        .privilege .sec-li-center .row-cont .col p.grey-font {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .privilege .sec-li-center .row-cont .col p.grey-font {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .privilege .sec-li-center .row-cont .col p.grey-font {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .privilege .sec-li-center .row-cont .col p.grey-font {
+          font-size: 0.3rem; } }
+
+.privilegeDetail .banner {
+  height: 3rem;
+  width: 100%;
+  padding: 0.4rem 0.32rem 0;
+  background-color: black; }
+  .privilegeDetail .banner .txt {
+    padding: 0.15rem 0.2rem;
+    height: 1.9rem;
+    background-color: #fff;
+    border-radius: 0.2rem; }
+    .privilegeDetail .banner .txt h2 {
+      color: #393543;
+      text-align: left;
+      margin-bottom: 0.15rem;
+      margin-top: 0.2rem;
+      font-weight: normal; }
+      @media screen and (max-width: 321px) {
+        .privilegeDetail .banner .txt h2 {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .privilegeDetail .banner .txt h2 {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .privilegeDetail .banner .txt h2 {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 640px) {
+        .privilegeDetail .banner .txt h2 {
+          font-size: 0.42rem; } }
+    .privilegeDetail .banner .txt p {
+      color: #999;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .privilegeDetail .banner .txt p {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .privilegeDetail .banner .txt p {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .privilegeDetail .banner .txt p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .privilegeDetail .banner .txt p {
+          font-size: 0.3rem; } }
+
+.privilegeDetail .cont-wrap {
+  margin-bottom: 1.58rem; }
+
+.upGrade {
+  padding-bottom: 1.6rem; }
+  .upGrade .sec {
+    background-color: #fff;
+    padding: 0.3rem 0.32rem;
+    margin-bottom: 0.3rem; }
+    .upGrade .sec .title {
+      color: #333;
+      text-align: left;
+      line-height: 0.6rem;
+      margin-bottom: 0.14rem; }
+      @media screen and (max-width: 321px) {
+        .upGrade .sec .title {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .upGrade .sec .title {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .upGrade .sec .title {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .upGrade .sec .title {
+          font-size: 0.34rem; } }
+    .upGrade .sec .cont p {
+      color: #666;
+      text-align: left;
+      line-height: 0.46rem;
+      margin-bottom: 0.1rem; }
+      @media screen and (max-width: 321px) {
+        .upGrade .sec .cont p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .upGrade .sec .cont p {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .upGrade .sec .cont p {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .upGrade .sec .cont p {
+          font-size: 0.32rem; } }
+    .upGrade .sec .cont .p-cont {
+      margin-bottom: 0.2rem;
+      padding-left: 0.2rem; }
+
+.histogram-wrap .tag {
+  color: #999;
+  text-align: left;
+  line-height: 0.36rem; }
+  @media screen and (max-width: 321px) {
+    .histogram-wrap .tag {
+      font-size: 0.27rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .histogram-wrap .tag {
+      font-size: 0.28rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .histogram-wrap .tag {
+      font-size: 0.29rem; } }
+  @media screen and (min-width: 640px) {
+    .histogram-wrap .tag {
+      font-size: 0.3rem; } }
+
+.histogram-wrap .histogram-cont {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: nowrap;
+  height: 4.4rem; }
+  .histogram-wrap .histogram-cont .column {
+    flex: auto;
+    text-align: center;
+    align-self: flex-end; }
+    .histogram-wrap .histogram-cont .column .num {
+      padding-bottom: 0.18rem;
+      color: #333;
+      text-align: center;
+      line-height: 0.32rem;
+      height: 0.5rem; }
+      @media screen and (max-width: 321px) {
+        .histogram-wrap .histogram-cont .column .num {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .histogram-wrap .histogram-cont .column .num {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .histogram-wrap .histogram-cont .column .num {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .histogram-wrap .histogram-cont .column .num {
+          font-size: 0.3rem; } }
+      .histogram-wrap .histogram-cont .column .num i {
+        vertical-align: middle; }
+    .histogram-wrap .histogram-cont .column p.name {
+      padding-top: 0.16rem;
+      height: 0.5rem;
+      line-height: 0.34rem;
+      color: #333;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .histogram-wrap .histogram-cont .column p.name {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .histogram-wrap .histogram-cont .column p.name {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .histogram-wrap .histogram-cont .column p.name {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .histogram-wrap .histogram-cont .column p.name {
+          font-size: 0.3rem; } }
+    .histogram-wrap .histogram-cont .column .column-ocuppy {
+      height: 1rem;
+      background-color: #d1a665;
+      width: 0.23rem;
+      border-radius: 0.2rem; }
+
+.detail .cont-wrap {
+  padding: 0.6rem 0 0 0.32rem;
+  background-color: #fff;
+  border-bottom: 0.01rem solid #dddddd; }
+  .detail .cont-wrap .row {
+    margin-bottom: 0.2rem;
+    padding-right: 0.32rem;
+    border-bottom: 0.01rem solid #dddddd; }
+    .detail .cont-wrap .row:last-child {
+      border: 0; }
+    .detail .cont-wrap .row h3 {
+      color: #333;
+      text-align: left;
+      line-height: 0.5rem;
+      margin-bottom: 0.1rem;
+      font-weight: normal; }
+      @media screen and (max-width: 321px) {
+        .detail .cont-wrap .row h3 {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .detail .cont-wrap .row h3 {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .detail .cont-wrap .row h3 {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .detail .cont-wrap .row h3 {
+          font-size: 0.34rem; } }
+      .detail .cont-wrap .row h3 span.icon {
+        height: 0.32rem;
+        width: 0.32rem;
+        background-color: #d1a665;
+        margin-right: 0.3rem;
+        vertical-align: middle; }
+    .detail .cont-wrap .row h4 {
+      color: #333;
+      text-align: left;
+      line-height: 0.6rem;
+      font-weight: normal; }
+      @media screen and (max-width: 321px) {
+        .detail .cont-wrap .row h4 {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .detail .cont-wrap .row h4 {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .detail .cont-wrap .row h4 {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .detail .cont-wrap .row h4 {
+          font-size: 0.3rem; } }
+    .detail .cont-wrap .row .txt-cont {
+      padding-left: 0.62rem;
+      padding-bottom: 0.18rem; }
+      .detail .cont-wrap .row .txt-cont p {
+        line-height: 0.52rem;
+        color: #666;
+        text-align: left; }
+        @media screen and (max-width: 321px) {
+          .detail .cont-wrap .row .txt-cont p {
+            font-size: 0.26rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .detail .cont-wrap .row .txt-cont p {
+            font-size: 0.27rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .detail .cont-wrap .row .txt-cont p {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 640px) {
+          .detail .cont-wrap .row .txt-cont p {
+            font-size: 0.29rem; } }
 
 .sec-li4 {
   margin-bottom: 0.4rem;
@@ -380,16 +876,16 @@ form .form-row {
         text-align: center; }
         @media screen and (max-width: 321px) {
           .sec-li4 ul li p {
-            font-size: 0.3rem; } }
+            font-size: 0.25rem; } }
         @media screen and (min-width: 321px) and (max-width: 400px) {
           .sec-li4 ul li p {
-            font-size: 0.29rem; } }
+            font-size: 0.26rem; } }
         @media screen and (min-width: 400px) and (max-width: 640px) {
           .sec-li4 ul li p {
-            font-size: 0.26rem; } }
+            font-size: 0.27rem; } }
         @media screen and (min-width: 640px) {
           .sec-li4 ul li p {
-            font-size: 0.26rem; } }
+            font-size: 0.28rem; } }
 
 .border-top-radius {
   position: relative;
@@ -413,32 +909,32 @@ form .form-row {
     border-bottom: 0.01rem solid #dddddd; }
     @media screen and (max-width: 321px) {
       .sec-list .title {
-        font-size: 0.34rem; } }
+        font-size: 0.31rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .sec-list .title {
-        font-size: 0.33rem; } }
+        font-size: 0.32rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .sec-list .title {
-        font-size: 0.3rem; } }
+        font-size: 0.33rem; } }
     @media screen and (min-width: 640px) {
       .sec-list .title {
-        font-size: 0.3rem; } }
+        font-size: 0.34rem; } }
     .sec-list .title a {
       color: #666;
       text-align: left;
       float: right; }
       @media screen and (max-width: 321px) {
         .sec-list .title a {
-          font-size: 0.33rem; } }
+          font-size: 0.29rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
         .sec-list .title a {
-          font-size: 0.32rem; } }
+          font-size: 0.3rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
         .sec-list .title a {
-          font-size: 0.29rem; } }
+          font-size: 0.31rem; } }
       @media screen and (min-width: 640px) {
         .sec-list .title a {
-          font-size: 0.29rem; } }
+          font-size: 0.32rem; } }
       .sec-list .title a i {
         width: 0.26rem;
         height: 0.26rem;
@@ -469,32 +965,32 @@ form .form-row {
         overflow: hidden; }
         @media screen and (max-width: 321px) {
           .sec-list ul li .col-l p {
-            font-size: 0.32rem; } }
+            font-size: 0.27rem; } }
         @media screen and (min-width: 321px) and (max-width: 400px) {
           .sec-list ul li .col-l p {
-            font-size: 0.31rem; } }
+            font-size: 0.28rem; } }
         @media screen and (min-width: 400px) and (max-width: 640px) {
           .sec-list ul li .col-l p {
-            font-size: 0.28rem; } }
+            font-size: 0.29rem; } }
         @media screen and (min-width: 640px) {
           .sec-list ul li .col-l p {
-            font-size: 0.28rem; } }
+            font-size: 0.3rem; } }
         .sec-list ul li .col-l p:last-child {
           padding-top: 0.1rem;
           color: #999;
           text-align: left; }
           @media screen and (max-width: 321px) {
             .sec-list ul li .col-l p:last-child {
-              font-size: 0.31rem; } }
+              font-size: 0.26rem; } }
           @media screen and (min-width: 321px) and (max-width: 400px) {
             .sec-list ul li .col-l p:last-child {
-              font-size: 0.3rem; } }
+              font-size: 0.27rem; } }
           @media screen and (min-width: 400px) and (max-width: 640px) {
             .sec-list ul li .col-l p:last-child {
-              font-size: 0.27rem; } }
+              font-size: 0.28rem; } }
           @media screen and (min-width: 640px) {
             .sec-list ul li .col-l p:last-child {
-              font-size: 0.27rem; } }
+              font-size: 0.29rem; } }
       .sec-list ul li .col-l p.font-red {
         color: #f7655e; }
     .sec-list ul li .col-r {
@@ -524,16 +1020,16 @@ form .form-row {
     text-align: center; }
     @media screen and (max-width: 321px) {
       .sec-list .progress .tips {
-        font-size: 0.3rem; } }
+        font-size: 0.25rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .sec-list .progress .tips {
-        font-size: 0.29rem; } }
+        font-size: 0.26rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .sec-list .progress .tips {
-        font-size: 0.26rem; } }
+        font-size: 0.27rem; } }
     @media screen and (min-width: 640px) {
       .sec-list .progress .tips {
-        font-size: 0.26rem; } }
+        font-size: 0.28rem; } }
   .sec-list .icon-status {
     height: 1rem;
     width: 1rem;
@@ -564,16 +1060,16 @@ form .form-row {
           margin-bottom: 0.1rem; }
           @media screen and (max-width: 321px) {
             .sec-list .box-wrapper .box .cont-border h3 {
-              font-size: 0.44rem; } }
+              font-size: 0.39rem; } }
           @media screen and (min-width: 321px) and (max-width: 400px) {
             .sec-list .box-wrapper .box .cont-border h3 {
-              font-size: 0.43rem; } }
+              font-size: 0.4rem; } }
           @media screen and (min-width: 400px) and (max-width: 640px) {
             .sec-list .box-wrapper .box .cont-border h3 {
-              font-size: 0.4rem; } }
+              font-size: 0.41rem; } }
           @media screen and (min-width: 640px) {
             .sec-list .box-wrapper .box .cont-border h3 {
-              font-size: 0.4rem; } }
+              font-size: 0.42rem; } }
         .sec-list .box-wrapper .box .cont-border .txt {
           min-width: 2.82rem;
           line-height: 0.32rem;
@@ -584,16 +1080,106 @@ form .form-row {
           text-align: center; }
           @media screen and (max-width: 321px) {
             .sec-list .box-wrapper .box .cont-border .txt {
-              font-size: 0.28rem; } }
+              font-size: 0.23rem; } }
           @media screen and (min-width: 321px) and (max-width: 400px) {
             .sec-list .box-wrapper .box .cont-border .txt {
-              font-size: 0.27rem; } }
+              font-size: 0.24rem; } }
           @media screen and (min-width: 400px) and (max-width: 640px) {
             .sec-list .box-wrapper .box .cont-border .txt {
-              font-size: 0.24rem; } }
+              font-size: 0.25rem; } }
           @media screen and (min-width: 640px) {
             .sec-list .box-wrapper .box .cont-border .txt {
-              font-size: 0.24rem; } }
+              font-size: 0.26rem; } }
+
+.ulist {
+  padding-left: 0.32rem;
+  background-color: #fff; }
+  .ulist .title {
+    color: #333;
+    text-align: left;
+    line-height: 1rem; }
+    @media screen and (max-width: 321px) {
+      .ulist .title {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .ulist .title {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .ulist .title {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 640px) {
+      .ulist .title {
+        font-size: 0.32rem; } }
+  .ulist ul li {
+    border-top: 0.01rem solid #dddddd;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.2rem  0; }
+    .ulist ul li p.txt {
+      color: #333;
+      text-align: left;
+      line-height: 0.52rem;
+      margin-bottom: 0.08rem; }
+      @media screen and (max-width: 321px) {
+        .ulist ul li p.txt {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .ulist ul li p.txt {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .ulist ul li p.txt {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .ulist ul li p.txt {
+          font-size: 0.34rem; } }
+    .ulist ul li p.date-time {
+      color: #999;
+      text-align: left;
+      line-height: 0.32rem; }
+      @media screen and (max-width: 321px) {
+        .ulist ul li p.date-time {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .ulist ul li p.date-time {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .ulist ul li p.date-time {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .ulist ul li p.date-time {
+          font-size: 0.3rem; } }
+    .ulist ul li .col {
+      height: 100%; }
+      .ulist ul li .col img {
+        width: 0.73rem;
+        height: 0.73rem;
+        border-radiu: 50%;
+        background-color: red;
+        overflow: hidden;
+        margin-right: 0.35rem;
+        vertical-align: middle; }
+    .ulist ul li .center {
+      flex: 1; }
+    .ulist ul li .col-r {
+      padding-right: 0.3rem; }
+      .ulist ul li .col-r span {
+        color: #333;
+        text-align: left;
+        vertical-align: middle; }
+        @media screen and (max-width: 321px) {
+          .ulist ul li .col-r span {
+            font-size: 0.35rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .ulist ul li .col-r span {
+            font-size: 0.36rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .ulist ul li .col-r span {
+            font-size: 0.37rem; } }
+        @media screen and (min-width: 640px) {
+          .ulist ul li .col-r span {
+            font-size: 0.38rem; } }
 
 .task .banner {
   height: 2.8rem;
@@ -607,16 +1193,16 @@ form .form-row {
     font-weight: normal; }
     @media screen and (max-width: 321px) {
       .task .banner h1 {
-        font-size: 0.64rem; } }
+        font-size: 0.59rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .task .banner h1 {
-        font-size: 0.63rem; } }
+        font-size: 0.6rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .task .banner h1 {
-        font-size: 0.6rem; } }
+        font-size: 0.61rem; } }
     @media screen and (min-width: 640px) {
       .task .banner h1 {
-        font-size: 0.6rem; } }
+        font-size: 0.62rem; } }
   .task .banner .border-white {
     min-width: 4.6rem;
     padding: 0 0.1rem;
@@ -627,16 +1213,16 @@ form .form-row {
     text-align: center; }
     @media screen and (max-width: 321px) {
       .task .banner .border-white {
-        font-size: 0.36rem; } }
+        font-size: 0.31rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .task .banner .border-white {
-        font-size: 0.35rem; } }
+        font-size: 0.32rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .task .banner .border-white {
-        font-size: 0.32rem; } }
+        font-size: 0.33rem; } }
     @media screen and (min-width: 640px) {
       .task .banner .border-white {
-        font-size: 0.32rem; } }
+        font-size: 0.34rem; } }
     .task .banner .border-white .icon-star-white-border {
       height: 0.32rem;
       width: 0.32rem;
@@ -652,18 +1238,1326 @@ form .form-row {
     position: absolute;
     top: 2.7rem;
     left: 0;
-    line-height: 0.36rem;
-    color: #e3ac49;
+    line-height: 0.4rem;
+    color: #d1a665;
     text-align: left; }
     @media screen and (max-width: 321px) {
       .task .sign-day7-tips .sign-bg-yellow {
-        font-size: 0.28rem; } }
+        font-size: 0.23rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .task .sign-day7-tips .sign-bg-yellow {
-        font-size: 0.27rem; } }
+        font-size: 0.24rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .task .sign-day7-tips .sign-bg-yellow {
-        font-size: 0.24rem; } }
+        font-size: 0.25rem; } }
     @media screen and (min-width: 640px) {
       .task .sign-day7-tips .sign-bg-yellow {
+        font-size: 0.26rem; } }
+
+.red-notice-tips {
+  height: 0.9rem;
+  padding: 0.15rem 0.32rem;
+  background-color: #fff; }
+  .red-notice-tips ul li {
+    color: #666;
+    text-align: left;
+    line-height: 0.7rem; }
+    .red-notice-tips ul li .icon-horn {
+      height: 0.3rem;
+      width: 0.4rem;
+      background-color: red;
+      margin-right: 0.2rem;
+      vertical-align: middle; }
+    .red-notice-tips ul li .icon-red-font {
+      height: 0.3rem;
+      width: 1.35rem;
+      background-color: #fff;
+      border-right: 0.01rem solid #dddddd;
+      margin-right: 0.2rem;
+      vertical-align: middle; }
+    @media screen and (max-width: 321px) {
+      .red-notice-tips ul li {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .red-notice-tips ul li {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .red-notice-tips ul li {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .red-notice-tips ul li {
+        font-size: 0.3rem; } }
+    .red-notice-tips ul li .red-font {
+      color: #f7655e; }
+
+.integral-ticket img {
+  width: 3.12rem;
+  height: 1.44rem;
+  overflow: hidden; }
+
+.addCutWrap {
+  display: flex; }
+  .addCutWrap span {
+    color: #666;
+    text-align: center;
+    background-color: #dddddd;
+    line-height: 0.4rem;
+    width: 0.4rem;
+    height: 0.4rem; }
+    @media screen and (max-width: 321px) {
+      .addCutWrap span {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .addCutWrap span {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .addCutWrap span {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .addCutWrap span {
+        font-size: 0.3rem; } }
+  .addCutWrap input {
+    margin: 0 0.05rem;
+    background-color: #dddddd;
+    width: 1rem;
+    line-height: 0.4rem;
+    color: #333;
+    text-align: left;
+    vertical-align: top; }
+    @media screen and (max-width: 321px) {
+      .addCutWrap input {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .addCutWrap input {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .addCutWrap input {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 640px) {
+      .addCutWrap input {
+        font-size: 0.34rem; } }
+
+.risk-tip {
+  padding: 0 0 0.2rem; }
+  .risk-tip h3 {
+    color: #666;
+    text-align: center;
+    font-weight: normal;
+    line-height: 0.6rem; }
+    @media screen and (max-width: 321px) {
+      .risk-tip h3 {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .risk-tip h3 {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .risk-tip h3 {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .risk-tip h3 {
+        font-size: 0.3rem; } }
+  .risk-tip p {
+    color: #999;
+    text-align: center;
+    line-height: 0.42rem; }
+    @media screen and (max-width: 321px) {
+      .risk-tip p {
+        font-size: 0.23rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .risk-tip p {
         font-size: 0.24rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .risk-tip p {
+        font-size: 0.25rem; } }
+    @media screen and (min-width: 640px) {
+      .risk-tip p {
+        font-size: 0.26rem; } }
+
+.mall .banner {
+  height: 2.8rem;
+  background-color: orange; }
+
+.mall .sec-top {
+  margin-bottom: 0.2rem;
+  background-color: #fff; }
+  .mall .sec-top .row-b {
+    display: flex;
+    display: -webkit-flex;
+    border-top: 0.01rem solid #dddddd;
+    padding: 0.2rem 0.32rem; }
+    .mall .sec-top .row-b .col {
+      width: 50%;
+      padding-left: 0.45rem;
+      border-right: 0.01rem solid #dddddd; }
+      .mall .sec-top .row-b .col:last-child {
+        border: 0; }
+      .mall .sec-top .row-b .col .icon {
+        height: 0.78rem;
+        width: 0.78rem;
+        background-color: yellow;
+        margin-right: 0.05rem; }
+      .mall .sec-top .row-b .col .txt {
+        color: #333;
+        text-align: left;
+        line-height: 0.78rem; }
+        @media screen and (max-width: 321px) {
+          .mall .sec-top .row-b .col .txt {
+            font-size: 0.31rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .mall .sec-top .row-b .col .txt {
+            font-size: 0.32rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .mall .sec-top .row-b .col .txt {
+            font-size: 0.33rem; } }
+        @media screen and (min-width: 640px) {
+          .mall .sec-top .row-b .col .txt {
+            font-size: 0.34rem; } }
+
+.mall .sec-list {
+  padding: 0; }
+  .mall .sec-list .title {
+    padding: 0 0.32rem; }
+  .mall .sec-list .sec-cont {
+    padding: 0 0.32rem;
+    border-bottom: 0.01rem solid #dddddd; }
+  .mall .sec-list .sec-row {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    border-bottom: 0.01rem solid #dddddd; }
+    .mall .sec-list .sec-row:last-child {
+      border-bottom: 0; }
+    .mall .sec-list .sec-row .col {
+      width: 50%;
+      border-right: 0.01rem solid #dddddd;
+      padding-right: 0.3rem;
+      padding-bottom: 0.4rem; }
+      .mall .sec-list .sec-row .col:last-child {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0.3rem; }
+      .mall .sec-list .sec-row .col .ticket {
+        margin: 0.6rem 0;
+        padding: 0.28rem 0.45rem 0.2rem; }
+        .mall .sec-list .sec-row .col .ticket p {
+          color: #fff;
+          text-align: right; }
+          @media screen and (max-width: 321px) {
+            .mall .sec-list .sec-row .col .ticket p {
+              font-size: 0.27rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .mall .sec-list .sec-row .col .ticket p {
+              font-size: 0.28rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .mall .sec-list .sec-row .col .ticket p {
+              font-size: 0.29rem; } }
+          @media screen and (min-width: 640px) {
+            .mall .sec-list .sec-row .col .ticket p {
+              font-size: 0.3rem; } }
+        .mall .sec-list .sec-row .col .ticket p.num {
+          line-height: 0.52rem; }
+          .mall .sec-list .sec-row .col .ticket p.num span {
+            font-style: italic;
+            line-height: 0.46rem;
+            color: #fff;
+            text-align: right;
+            margin-right: 0.1rem; }
+            @media screen and (max-width: 321px) {
+              .mall .sec-list .sec-row .col .ticket p.num span {
+                font-size: 0.49rem; } }
+            @media screen and (min-width: 321px) and (max-width: 400px) {
+              .mall .sec-list .sec-row .col .ticket p.num span {
+                font-size: 0.5rem; } }
+            @media screen and (min-width: 400px) and (max-width: 640px) {
+              .mall .sec-list .sec-row .col .ticket p.num span {
+                font-size: 0.51rem; } }
+            @media screen and (min-width: 640px) {
+              .mall .sec-list .sec-row .col .ticket p.num span {
+                font-size: 0.52rem; } }
+      .mall .sec-list .sec-row .col .bg-red {
+        background-color: red; }
+      .mall .sec-list .sec-row .col .bg-blue {
+        background-color: blue; }
+  .mall .sec-list .price-wrap {
+    width: 100%; }
+    .mall .sec-list .price-wrap p.price-name {
+      color: #333;
+      text-align: left;
+      height: 0.4rem;
+      line-height: 0.4rem;
+      width: 100%;
+      margin-bottom: 0.15rem; }
+      @media screen and (max-width: 321px) {
+        .mall .sec-list .price-wrap p.price-name {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .mall .sec-list .price-wrap p.price-name {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .mall .sec-list .price-wrap p.price-name {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .mall .sec-list .price-wrap p.price-name {
+          font-size: 0.32rem; } }
+    .mall .sec-list .price-wrap p.price-num {
+      height: 0.4rem;
+      overflow: hidden;
+      text-align: left; }
+      .mall .sec-list .price-wrap p.price-num .icon-money-red {
+        width: 0.32rem;
+        height: 0.32rem;
+        background-color: red;
+        margin-right: 0.1rem; }
+      .mall .sec-list .price-wrap p.price-num .font-red {
+        color: #f7655e;
+        text-align: left;
+        line-height: 0.36rem;
+        margin-right: 0.1rem; }
+        @media screen and (max-width: 321px) {
+          .mall .sec-list .price-wrap p.price-num .font-red {
+            font-size: 0.27rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .mall .sec-list .price-wrap p.price-num .font-red {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .mall .sec-list .price-wrap p.price-num .font-red {
+            font-size: 0.29rem; } }
+        @media screen and (min-width: 640px) {
+          .mall .sec-list .price-wrap p.price-num .font-red {
+            font-size: 0.3rem; } }
+      .mall .sec-list .price-wrap p.price-num .font-grey {
+        color: #999;
+        text-align: left;
+        line-height: 0.38rem;
+        text-decoration: line-through; }
+        @media screen and (max-width: 321px) {
+          .mall .sec-list .price-wrap p.price-num .font-grey {
+            font-size: 0.23rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .mall .sec-list .price-wrap p.price-num .font-grey {
+            font-size: 0.24rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .mall .sec-list .price-wrap p.price-num .font-grey {
+            font-size: 0.25rem; } }
+        @media screen and (min-width: 640px) {
+          .mall .sec-list .price-wrap p.price-num .font-grey {
+            font-size: 0.26rem; } }
+  .mall .sec-list .sec-cont ul {
+    overflow: hidden; }
+    .mall .sec-list .sec-cont ul li {
+      width: 50%;
+      float: left;
+      border-right: 0.01rem solid #dddddd;
+      display: block;
+      padding-right: 0.08rem;
+      text-align: center; }
+      .mall .sec-list .sec-cont ul li:nth-child(even) {
+        padding-left: 0.28rem;
+        border-right: 0; }
+      .mall .sec-list .sec-cont ul li:nth-last-child(1) {
+        border-bottom: 0; }
+      .mall .sec-list .sec-cont ul li:nth-last-child(2) {
+        border-bottom: 0; }
+      .mall .sec-list .sec-cont ul li img {
+        width: 1.6rem;
+        height: 2.1rem;
+        box-shadow: 0.02rem 0.02rem 0.02rem #ccc;
+        overflow: hidden;
+        margin-bottom: 0.4rem; }
+
+.myIntegral .banner {
+  background-color: #d1a665;
+  height: 3rem;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center; }
+  .myIntegral .banner .icon-oclock {
+    width: 2.8rem;
+    height: 2.03rem;
+    padding-top: 0.7rem;
+    background-color: #fff; }
+    .myIntegral .banner .icon-oclock p.txt {
+      color: #ec6300;
+      text-align: center;
+      line-height: 0.36rem; }
+      @media screen and (max-width: 321px) {
+        .myIntegral .banner .icon-oclock p.txt {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .myIntegral .banner .icon-oclock p.txt {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .myIntegral .banner .icon-oclock p.txt {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .myIntegral .banner .icon-oclock p.txt {
+          font-size: 0.3rem; } }
+    .myIntegral .banner .icon-oclock p.num {
+      color: #ec6300;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .myIntegral .banner .icon-oclock p.num {
+          font-size: 0.59rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .myIntegral .banner .icon-oclock p.num {
+          font-size: 0.6rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .myIntegral .banner .icon-oclock p.num {
+          font-size: 0.61rem; } }
+      @media screen and (min-width: 640px) {
+        .myIntegral .banner .icon-oclock p.num {
+          font-size: 0.62rem; } }
+
+.productDetail .sec-top {
+  padding-top: 0.32rem;
+  margin-bottom: 0.3rem;
+  background-color: #fff;
+  padding-left: 0.32rem; }
+  .productDetail .sec-top .row {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0.32rem 0.3rem 0; }
+    .productDetail .sec-top .row .col {
+      width: 50%;
+      overflow: hidden;
+      line-height: 0.4rem; }
+      .productDetail .sec-top .row .col .addCutWrap {
+        float: right; }
+    .productDetail .sec-top .row label {
+      color: #333;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .productDetail .sec-top .row label {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .productDetail .sec-top .row label {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .productDetail .sec-top .row label {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .productDetail .sec-top .row label {
+          font-size: 0.3rem; } }
+    .productDetail .sec-top .row span.red-font {
+      color: #f7655e;
+      text-align: left;
+      line-height: 0.42rem; }
+      @media screen and (max-width: 321px) {
+        .productDetail .sec-top .row span.red-font {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .productDetail .sec-top .row span.red-font {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .productDetail .sec-top .row span.red-font {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .productDetail .sec-top .row span.red-font {
+          font-size: 0.34rem; } }
+    .productDetail .sec-top .row span.num {
+      color: #666;
+      text-align: left;
+      line-height: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .productDetail .sec-top .row span.num {
+          font-size: 0.25rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .productDetail .sec-top .row span.num {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .productDetail .sec-top .row span.num {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 640px) {
+        .productDetail .sec-top .row span.num {
+          font-size: 0.28rem; } }
+    .productDetail .sec-top .row span.grey-font {
+      margin-left: 0.1rem;
+      color: #666;
+      text-align: left;
+      text-decoration: line-through;
+      line-height: 0.44rem; }
+      @media screen and (max-width: 321px) {
+        .productDetail .sec-top .row span.grey-font {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .productDetail .sec-top .row span.grey-font {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .productDetail .sec-top .row span.grey-font {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 640px) {
+        .productDetail .sec-top .row span.grey-font {
+          font-size: 0.29rem; } }
+    .productDetail .sec-top .row span.icon-circle-star {
+      height: 0.38rem;
+      width: 0.38rem;
+      background-color: #d1a665; }
+  .productDetail .sec-top .sec01 {
+    border-radius: 0.18rem;
+    background-color: #f2f2f2;
+    padding: 0.6rem 0.2rem;
+    overflow: hidden;
+    width: 100%; }
+    .productDetail .sec-top .sec01 .col {
+      width: 50%;
+      float: left; }
+    .productDetail .sec-top .sec01 p {
+      color: #333;
+      text-align: left;
+      margin-bottom: 0.18rem; }
+      @media screen and (max-width: 321px) {
+        .productDetail .sec-top .sec01 p {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .productDetail .sec-top .sec01 p {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .productDetail .sec-top .sec01 p {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 640px) {
+        .productDetail .sec-top .sec01 p {
+          font-size: 0.42rem; } }
+    .productDetail .sec-top .sec01 .a-btn-bg-blue {
+      color: #fff;
+      text-align: center;
+      background-color: #508cee;
+      padding: 0.1rem 0.2rem;
+      line-height: 0.32rem;
+      border-radius: 0.26rem; }
+      @media screen and (max-width: 321px) {
+        .productDetail .sec-top .sec01 .a-btn-bg-blue {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .productDetail .sec-top .sec01 .a-btn-bg-blue {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .productDetail .sec-top .sec01 .a-btn-bg-blue {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .productDetail .sec-top .sec01 .a-btn-bg-blue {
+          font-size: 0.3rem; } }
+
+.productDetail .sec-m {
+  margin-bottom: 0.3rem; }
+
+.productDetail .risk-tip {
+  margin-top: 0.3rem;
+  margin-bottom: 1.3rem; }
+
+.productDetail .btn-warp a span.icon-star {
+  height: 0.38rem;
+  width: 0.38rem;
+  background-color: red;
+  vertical-align: middle;
+  margin-right: 0.2rem; }
+
+.order-one .title {
+  color: #333;
+  text-align: left;
+  line-height: 0.8rem;
+  padding: 0 0.32rem;
+  background-color: #fff; }
+  @media screen and (max-width: 321px) {
+    .order-one .title {
+      font-size: 0.29rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .order-one .title {
+      font-size: 0.3rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .order-one .title {
+      font-size: 0.31rem; } }
+  @media screen and (min-width: 640px) {
+    .order-one .title {
+      font-size: 0.32rem; } }
+
+.order-one .cont {
+  overflow: hidden;
+  padding: 0.1rem 0.32rem;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  background-color: #f5f5f5; }
+  .order-one .cont .img-wrap {
+    width: 1.6rem;
+    min-width: 1.6rem;
+    height: 1.6rem;
+    border: 0.01rem solid #dddddd;
+    background-color: #fff;
+    float: left; }
+    .order-one .cont .img-wrap img {
+      vertical-align: middle;
+      max-width: 100%;
+      width: 100%; }
+  .order-one .cont .txt {
+    background-color: #f5f5f5;
+    margin-left: 0.4rem; }
+    .order-one .cont .txt span.name {
+      color: #666;
+      text-align: left;
+      margin-bottom: 0.1rem;
+      min-height: 0.5rem; }
+      @media screen and (max-width: 321px) {
+        .order-one .cont .txt span.name {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .order-one .cont .txt span.name {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .order-one .cont .txt span.name {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .order-one .cont .txt span.name {
+          font-size: 0.3rem; } }
+    .order-one .cont .txt span {
+      overflow: hidden;
+      line-height: 0.36rem;
+      vertical-align: middle;
+      width: 100%; }
+    .order-one .cont .txt .red-font {
+      color: #f7655e;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .order-one .cont .txt .red-font {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .order-one .cont .txt .red-font {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .order-one .cont .txt .red-font {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 640px) {
+        .order-one .cont .txt .red-font {
+          font-size: 0.31rem; } }
+    .order-one .cont .txt .no {
+      float: right;
+      color: #666;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .order-one .cont .txt .no {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .order-one .cont .txt .no {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .order-one .cont .txt .no {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 640px) {
+        .order-one .cont .txt .no {
+          font-size: 0.31rem; } }
+
+.order-one .row-list {
+  padding-left: 0.32rem;
+  background-color: #fff; }
+
+.order-one .row {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  border-bottom: 0.01rem solid #dddddd;
+  line-height: 1rem;
+  padding-right: 0.32rem; }
+  .order-one .row:last-child {
+    border: 0; }
+  .order-one .row label {
+    color: #333;
+    text-align: left; }
+    @media screen and (max-width: 321px) {
+      .order-one .row label {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .order-one .row label {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .order-one .row label {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 640px) {
+      .order-one .row label {
+        font-size: 0.34rem; } }
+  .order-one .row span {
+    color: #f7655e;
+    text-align: left; }
+    @media screen and (max-width: 321px) {
+      .order-one .row span {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .order-one .row span {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .order-one .row span {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 640px) {
+      .order-one .row span {
+        font-size: 0.34rem; } }
+  .order-one .row span.black-font {
+    color: #333;
+    text-align: left;
+    font-weight: bold; }
+    @media screen and (max-width: 321px) {
+      .order-one .row span.black-font {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .order-one .row span.black-font {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .order-one .row span.black-font {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 640px) {
+      .order-one .row span.black-font {
+        font-size: 0.32rem; } }
+
+.address-wrap {
+  position: relative;
+  border-bottom: 0.05rem solid red;
+  border-top: 0.05rem solid red;
+  padding: 0.3rem 0.32rem;
+  overflow: hidden;
+  min-height: 2.1rem;
+  background-color: #fff; }
+  .address-wrap .address-border {
+    position: absolute;
+    left: 0;
+    height: 0.05rem;
+    background-color: green;
+    width: 100%; }
+  .address-wrap .border-top {
+    top: -0.05rem; }
+  .address-wrap .border-bottom, .address-wrap .privilege .sec-li-center .row-cont .row, .privilege .sec-li-center .row-cont .address-wrap .row, .address-wrap .upGrade .sec, .upGrade .address-wrap .sec, .address-wrap .exchargeSuc .banner, .exchargeSuc .address-wrap .banner {
+    bottom: -0.05rem; }
+  .address-wrap .address-exist {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center; }
+  .address-wrap .a-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; }
+  .address-wrap .icon-address {
+    height: 0.4rem;
+    width: 0.3rem;
+    background-color: red; }
+  .address-wrap .icon-arrow-right {
+    position: absolute;
+    top: 1rem;
+    right: 0.32rem;
+    height: 0.3rem;
+    width: 0.18rem;
+    background-color: grey; }
+  .address-wrap .adress-txt {
+    margin-left: 0.3rem; }
+    .address-wrap .adress-txt p.name {
+      color: #333;
+      text-align: left;
+      line-height: 0.5rem;
+      margin-bottom: 0.12rem;
+      padding: 0; }
+      @media screen and (max-width: 321px) {
+        .address-wrap .adress-txt p.name {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .address-wrap .adress-txt p.name {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .address-wrap .adress-txt p.name {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .address-wrap .adress-txt p.name {
+          font-size: 0.32rem; } }
+      .address-wrap .adress-txt p.name span {
+        color: #333;
+        text-align: left; }
+        @media screen and (max-width: 321px) {
+          .address-wrap .adress-txt p.name span {
+            font-size: 0.29rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .address-wrap .adress-txt p.name span {
+            font-size: 0.3rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .address-wrap .adress-txt p.name span {
+            font-size: 0.31rem; } }
+        @media screen and (min-width: 640px) {
+          .address-wrap .adress-txt p.name span {
+            font-size: 0.32rem; } }
+    .address-wrap .adress-txt p {
+      padding-right: 0.4rem;
+      color: #666;
+      text-align: left;
+      line-height: 0.48rem; }
+      @media screen and (max-width: 321px) {
+        .address-wrap .adress-txt p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .address-wrap .adress-txt p {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .address-wrap .adress-txt p {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .address-wrap .adress-txt p {
+          font-size: 0.32rem; } }
+  .address-wrap .address-null {
+    height: 100%;
+    width: 100%;
+    line-height: 2.1rem; }
+    .address-wrap .address-null .icon-add-btn {
+      width: 0.44rem;
+      height: 0.44rem;
+      border-radius: 50%;
+      border: 0.02rem solid #f7655e;
+      vertical-align: middle;
+      color: #f7655e;
+      text-align: center;
+      line-height: 0.4rem;
+      margin-right: 0.15rem; }
+      @media screen and (max-width: 321px) {
+        .address-wrap .address-null .icon-add-btn {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .address-wrap .address-null .icon-add-btn {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .address-wrap .address-null .icon-add-btn {
+          font-size: 0.37rem; } }
+      @media screen and (min-width: 640px) {
+        .address-wrap .address-null .icon-add-btn {
+          font-size: 0.38rem; } }
+    .address-wrap .address-null a {
+      height: 100%;
+      width: 100%;
+      color: #f7655e;
+      text-align: center;
+      vertical-align: middle; }
+      @media screen and (max-width: 321px) {
+        .address-wrap .address-null a {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .address-wrap .address-null a {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .address-wrap .address-null a {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .address-wrap .address-null a {
+          font-size: 0.32rem; } }
+
+.sureExcharge .address-wrap {
+  margin-bottom: 0.3rem; }
+
+.sureExcharge .btn-warp {
+  margin-top: 3rem; }
+
+.sureExcharge .order-one {
+  margin-bottom: 0.3rem; }
+
+.sureExcharge .el-form {
+  margin-bottom: 0.3rem; }
+
+.sureExcharge .detail .cont-wrap {
+  padding-top: 0.3rem;
+  border: 0; }
+  .sureExcharge .detail .cont-wrap .row h3 span.icon {
+    margin-right: 0.2rem; }
+  .sureExcharge .detail .cont-wrap .row .txt-cont {
+    padding-left: 0.02rem; }
+
+.exchargeSuc .banner {
+  background-color: #fff;
+  height: 3.86rem;
+  text-align: center;
+  padding-top: 0.4rem;
+  margin-bottom: 0.3rem; }
+  .exchargeSuc .banner .icon-suc {
+    width: 2.6rem;
+    height: 2.6rem;
+    background-color: red;
+    vertical-align: middle; }
+  .exchargeSuc .banner p {
+    margin-top: 0.1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center; }
+    @media screen and (max-width: 321px) {
+      .exchargeSuc .banner p {
+        font-size: 0.35rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .exchargeSuc .banner p {
+        font-size: 0.36rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .exchargeSuc .banner p {
+        font-size: 0.37rem; } }
+    @media screen and (min-width: 640px) {
+      .exchargeSuc .banner p {
+        font-size: 0.38rem; } }
+
+.exchargeSuc .order-one {
+  border-top: 0.01rem solid #dddddd; }
+  .exchargeSuc .order-one .row-list {
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem; }
+    .exchargeSuc .order-one .row-list .row {
+      line-height: 0.6rem;
+      border-bottom: 0; }
+
+.exchargeSuc .tips {
+  color: #999;
+  text-align: left;
+  padding: 0.3rem 0.32rem;
+  margin-bottom: 0.3rem; }
+  @media screen and (max-width: 321px) {
+    .exchargeSuc .tips {
+      font-size: 0.25rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .exchargeSuc .tips {
+      font-size: 0.26rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .exchargeSuc .tips {
+      font-size: 0.27rem; } }
+  @media screen and (min-width: 640px) {
+    .exchargeSuc .tips {
+      font-size: 0.28rem; } }
+  .exchargeSuc .tips .icon-tips {
+    width: 0.3rem;
+    height: 0.3rem;
+    background-color: red;
+    vertical-align: middle;
+    margin-right: 0.2rem; }
+
+.exchargeRecord {
+  padding-top: 0.3rem; }
+
+.addressList .address-one {
+  background-color: #fff;
+  padding: 0.26rem 0.32rem 0.15rem;
+  border-bottom: 0.01rem solid #dddddd;
+  overflow: hidden; }
+  .addressList .address-one p {
+    color: #333;
+    text-align: left;
+    line-height: 0.5rem;
+    margin-bottom: 0.08rem; }
+    @media screen and (max-width: 321px) {
+      .addressList .address-one p {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .addressList .address-one p {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .addressList .address-one p {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 640px) {
+      .addressList .address-one p {
+        font-size: 0.32rem; } }
+    .addressList .address-one p a {
+      color: #333;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .addressList .address-one p a {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .addressList .address-one p a {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .addressList .address-one p a {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .addressList .address-one p a {
+          font-size: 0.32rem; } }
+    .addressList .address-one p span.default-address {
+      color: #f7655e;
+      text-align: left;
+      margin-right: 0.1rem; }
+      @media screen and (max-width: 321px) {
+        .addressList .address-one p span.default-address {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .addressList .address-one p span.default-address {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .addressList .address-one p span.default-address {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .addressList .address-one p span.default-address {
+          font-size: 0.32rem; } }
+
+.addressList .opt-wrap {
+  background-color: #fff;
+  padding: 0.25rem 0.32rem;
+  margin-bottom: 0.3rem; }
+  .addressList .opt-wrap .set-default {
+    color: #333;
+    text-align: left;
+    line-height: 0.4rem; }
+    @media screen and (max-width: 321px) {
+      .addressList .opt-wrap .set-default {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .addressList .opt-wrap .set-default {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .addressList .opt-wrap .set-default {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 640px) {
+      .addressList .opt-wrap .set-default {
+        font-size: 0.32rem; } }
+    .addressList .opt-wrap .set-default i {
+      margin-right: 0.1rem;
+      height: 0.32rem;
+      width: 0.32rem;
+      border: 0.02rem solid #333;
+      border-radius: 50%;
+      margin-top: 0.03rem;
+      color: #fff;
+      text-align: center;
+      line-height: 0.34rem; }
+      @media screen and (max-width: 321px) {
+        .addressList .opt-wrap .set-default i {
+          font-size: 0.25rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .addressList .opt-wrap .set-default i {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .addressList .opt-wrap .set-default i {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 640px) {
+        .addressList .opt-wrap .set-default i {
+          font-size: 0.28rem; } }
+      .addressList .opt-wrap .set-default i:after {
+        content: '\2714'; }
+  .addressList .opt-wrap .choosed i {
+    border-color: #f7655e;
+    background-color: #f7655e; }
+  .addressList .opt-wrap a {
+    color: #333;
+    text-align: left;
+    line-height: 0.4rem; }
+    @media screen and (max-width: 321px) {
+      .addressList .opt-wrap a {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .addressList .opt-wrap a {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .addressList .opt-wrap a {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 640px) {
+      .addressList .opt-wrap a {
+        font-size: 0.32rem; } }
+    .addressList .opt-wrap a:last-child {
+      margin-left: 0.3rem; }
+    .addressList .opt-wrap a i {
+      width: 0.35rem;
+      height: 0.4rem;
+      background-color: #666;
+      margin-right: 0.05rem; }
+
+.addressEdit .el-form {
+  margin-bottom: 0.3rem;
+  border-top: 0.01rem solid #dddddd;
+  border-bottom: 0.01rem solid #dddddd; }
+
+.addressEdit .el-switch {
+  float: right;
+  height: 0.64rem;
+  width: 1.1rem;
+  border: 0.01rem solid #dddddd;
+  border-radius: 0.32rem;
+  background-color: #fff; }
+  .addressEdit .el-switch span {
+    background-color: #fff; }
+  .addressEdit .el-switch .circle-l {
+    height: 0.62rem;
+    width: 0.62rem;
+    border: 0.01rem solid #dddddd;
+    border-radius: 50%; }
+  .addressEdit .el-switch .circle-r {
+    margin-left: 0.1rem;
+    height: 0.2rem;
+    width: 0.2rem;
+    border: 0.01rem solid #999;
+    border-radius: 50%;
+    vertical-align: middle; }
+
+.addressEdit .switch-checked {
+  background-color: #508cee; }
+  .addressEdit .switch-checked .circle-l {
+    margin-left: 0.2rem;
+    height: 0.3rem;
+    width: 0.1rem;
+    border: 0.01rem solid #999;
+    border-radius: 0.2rem;
+    vertical-align: middle; }
+  .addressEdit .switch-checked .circle-r {
+    float: right;
+    height: 0.59rem;
+    width: 0.58rem;
+    border: 0.04rem solid #508cee;
+    border-radius: 50%;
+    vertical-align: top; }
+
+.luckDraw {
+  background-color: #3b1c53;
+  padding-bottom: 1.2rem; }
+  .luckDraw .btn, .luckDraw .banner .sec-top a.drawRecord, .luckDraw .banner .tip-time, .luckDraw .draw-rule a {
+    display: inline-block;
+    border: 0.03rem solid #cc8fee;
+    color: #fff;
+    text-align: center;
+    background-color: #8233b3;
+    line-height: 0.36rem; }
+    @media screen and (max-width: 321px) {
+      .luckDraw .btn, .luckDraw .banner .sec-top a.drawRecord, .luckDraw .banner .tip-time, .luckDraw .draw-rule a {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .luckDraw .btn, .luckDraw .banner .sec-top a.drawRecord, .luckDraw .banner .tip-time, .luckDraw .draw-rule a {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .luckDraw .btn, .luckDraw .banner .sec-top a.drawRecord, .luckDraw .banner .tip-time, .luckDraw .draw-rule a {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .luckDraw .btn, .luckDraw .banner .sec-top a.drawRecord, .luckDraw .banner .tip-time, .luckDraw .draw-rule a {
+        font-size: 0.3rem; } }
+  .luckDraw .banner {
+    height: 4.1rem;
+    background-color: black;
+    padding: 0.3rem 0.32rem;
+    position: relative; }
+    .luckDraw .banner .sec-top {
+      justify-content: space-between;
+      width: 100%; }
+      .luckDraw .banner .sec-top .integral-num {
+        color: #fff;
+        text-align: left; }
+        @media screen and (max-width: 321px) {
+          .luckDraw .banner .sec-top .integral-num {
+            font-size: 0.27rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .luckDraw .banner .sec-top .integral-num {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .luckDraw .banner .sec-top .integral-num {
+            font-size: 0.29rem; } }
+        @media screen and (min-width: 640px) {
+          .luckDraw .banner .sec-top .integral-num {
+            font-size: 0.3rem; } }
+        .luckDraw .banner .sec-top .integral-num span.icon-star-yellow {
+          height: 0.32rem;
+          width: 0.32rem;
+          background-color: red;
+          vertical-align: middle;
+          margin-right: 0.1rem; }
+      .luckDraw .banner .sec-top a.drawRecord {
+        padding: 0.03rem 0.2rem;
+        border-radius: 0.28rem; }
+    .luckDraw .banner .tip-time {
+      position: absolute;
+      bottom: 0.4rem;
+      left: 50%;
+      margin-left: -1.95rem;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.36rem;
+      width: 3.9rem; }
+      .luckDraw .banner .tip-time i {
+        font-style: italic;
+        padding: 0 0.1rem;
+        color: #ffd146;
+        text-align: left; }
+        @media screen and (max-width: 321px) {
+          .luckDraw .banner .tip-time i {
+            font-size: 0.35rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .luckDraw .banner .tip-time i {
+            font-size: 0.36rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .luckDraw .banner .tip-time i {
+            font-size: 0.37rem; } }
+        @media screen and (min-width: 640px) {
+          .luckDraw .banner .tip-time i {
+            font-size: 0.38rem; } }
+  .luckDraw .draw-rule {
+    text-align: center;
+    margin: 0.3rem 0 0.6rem; }
+    .luckDraw .draw-rule a {
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.28rem;
+      position: relative; }
+      .luckDraw .draw-rule a:after {
+        position: absolute;
+        right: 0.28rem;
+        top: 0.2rem;
+        content: '';
+        display: inline-block;
+        width: 0.14rem;
+        height: 0.14rem;
+        border-top: 0.023rem solid #fff;
+        border-right: 0.023rem solid #fff;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg); }
+  .luckDraw .drawed-user {
+    background-color: #fff;
+    padding: 0.28rem; }
+    .luckDraw .drawed-user .title {
+      color: #5e109a;
+      text-align: center;
+      position: relative;
+      line-height: 0.6rem;
+      margin-bottom: 0.2rem; }
+      @media screen and (max-width: 321px) {
+        .luckDraw .drawed-user .title {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .luckDraw .drawed-user .title {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .luckDraw .drawed-user .title {
+          font-size: 0.37rem; } }
+      @media screen and (min-width: 640px) {
+        .luckDraw .drawed-user .title {
+          font-size: 0.38rem; } }
+      .luckDraw .drawed-user .title:before {
+        content: '';
+        border-bottom: 0.02rem solid #5e109a;
+        width: 1.6rem;
+        height: 0.01rem;
+        position: absolute;
+        top: 0.3rem;
+        left: 0.6rem; }
+      .luckDraw .drawed-user .title:after {
+        content: '';
+        border-bottom: 0.02rem solid #5e109a;
+        width: 1.6rem;
+        height: 0.01rem;
+        position: absolute;
+        top: 0.3rem;
+        right: 0.6rem; }
+    .luckDraw .drawed-user .cont {
+      padding: 0.28rem 0.35rem; }
+      .luckDraw .drawed-user .cont li {
+        justify-content: space-between;
+        line-height: 0.5rem; }
+        .luckDraw .drawed-user .cont li span {
+          color: #333;
+          text-align: left; }
+          @media screen and (max-width: 321px) {
+            .luckDraw .drawed-user .cont li span {
+              font-size: 0.27rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .luckDraw .drawed-user .cont li span {
+              font-size: 0.28rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .luckDraw .drawed-user .cont li span {
+              font-size: 0.29rem; } }
+          @media screen and (min-width: 640px) {
+            .luckDraw .drawed-user .cont li span {
+              font-size: 0.3rem; } }
+
+.red-bg {
+  background-color: #f7655e; }
+  .red-bg .load-more {
+    color: #fff; }
+
+.luckDrawRecord .sec-top {
+  height: 1.68rem;
+  background-color: red;
+  padding: 0.5rem; }
+  .luckDrawRecord .sec-top .title {
+    color: #fff;
+    text-align: center;
+    line-height: 0.6rem; }
+    @media screen and (max-width: 321px) {
+      .luckDrawRecord .sec-top .title {
+        font-size: 0.39rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .luckDrawRecord .sec-top .title {
+        font-size: 0.4rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .luckDrawRecord .sec-top .title {
+        font-size: 0.41rem; } }
+    @media screen and (min-width: 640px) {
+      .luckDrawRecord .sec-top .title {
+        font-size: 0.42rem; } }
+    .luckDrawRecord .sec-top .title span.icon-eplises {
+      width: 0.9rem;
+      height: 0.1rem;
+      background-color: grey;
+      vertical-align: middle; }
+    .luckDrawRecord .sec-top .title span.txt {
+      padding: 0 0.18rem; }
+
+.luckDrawRecord .record-list {
+  padding: 0.3rem  0.2rem; }
+  .luckDrawRecord .record-list .row {
+    align-items: center;
+    padding: 0.1rem 0.2rem;
+    border-radius: 0.1rem;
+    background-color: #fff;
+    margin-bottom: 0.2rem; }
+    .luckDrawRecord .record-list .row .col-r {
+      flex: 1; }
+      .luckDrawRecord .record-list .row .col-r p {
+        width: 100%; }
+  .luckDrawRecord .record-list .img-wrap {
+    width: 1.6rem;
+    height: 1.6rem;
+    background-color: #f5f5f5;
+    padding: 0.1rem;
+    margin-right: 0.3rem; }
+    .luckDrawRecord .record-list .img-wrap img {
+      max-width: 100%;
+      vertical-align: middle; }
+  .luckDrawRecord .record-list p.name {
+    color: #333;
+    text-align: left;
+    line-height: 0.42rem;
+    min-height: 0.6rem;
+    max-height: 0.84rem;
+    margin-top: 0.05rem; }
+    @media screen and (max-width: 321px) {
+      .luckDrawRecord .record-list p.name {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .luckDrawRecord .record-list p.name {
+        font-size: 0.32rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .luckDrawRecord .record-list p.name {
+        font-size: 0.33rem; } }
+    @media screen and (min-width: 640px) {
+      .luckDrawRecord .record-list p.name {
+        font-size: 0.34rem; } }
+  .luckDrawRecord .record-list p.grey-font {
+    color: #999;
+    text-align: left;
+    line-height: 0.36rem; }
+    @media screen and (max-width: 321px) {
+      .luckDrawRecord .record-list p.grey-font {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .luckDrawRecord .record-list p.grey-font {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .luckDrawRecord .record-list p.grey-font {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .luckDrawRecord .record-list p.grey-font {
+        font-size: 0.3rem; } }
+    .luckDrawRecord .record-list p.grey-font a {
+      color: #999;
+      text-align: left;
+      line-height: 0.38rem;
+      padding: 0 0.05rem; }
+      @media screen and (max-width: 321px) {
+        .luckDrawRecord .record-list p.grey-font a {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .luckDrawRecord .record-list p.grey-font a {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .luckDrawRecord .record-list p.grey-font a {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .luckDrawRecord .record-list p.grey-font a {
+          font-size: 0.3rem; } }

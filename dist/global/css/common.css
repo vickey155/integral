@@ -122,6 +122,34 @@ h1 {
 .fr {
   float: right; }
 
+.load-more {
+  line-height: 0.6rem;
+  color: #999;
+  text-align: center; }
+  @media screen and (max-width: 321px) {
+    .load-more {
+      font-size: 0.23rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .load-more {
+      font-size: 0.24rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .load-more {
+      font-size: 0.25rem; } }
+  @media screen and (min-width: 640px) {
+    .load-more {
+      font-size: 0.26rem; } }
+
+.plr32 {
+  padding-left: 0.32rem;
+  padding-right: 0.32rem; }
+
+.flexStyle {
+  display: flex;
+  display: -webkit-flex; }
+
+.border-bottom {
+  border-bottom: 0.01rem solid #dddddd; }
+
 .border-shadow {
   box-shadow: 0 0.01rem 0.03rem #bfbfbf; }
 
@@ -132,16 +160,16 @@ a.a-btn {
   text-align: center; }
   @media screen and (max-width: 321px) {
     a.a-btn {
-      font-size: 0.32rem; } }
+      font-size: 0.27rem; } }
   @media screen and (min-width: 321px) and (max-width: 400px) {
     a.a-btn {
-      font-size: 0.31rem; } }
+      font-size: 0.28rem; } }
   @media screen and (min-width: 400px) and (max-width: 640px) {
     a.a-btn {
-      font-size: 0.28rem; } }
+      font-size: 0.29rem; } }
   @media screen and (min-width: 640px) {
     a.a-btn {
-      font-size: 0.28rem; } }
+      font-size: 0.3rem; } }
 
 a.a-btn-border-white {
   color: #fff;
@@ -153,9 +181,93 @@ a.a-btn-border-red {
   border-radius: 0.28rem; }
 
 a.a-btn-border-blue {
-  color: #508bee;
-  border: 0.02rem solid #508bee;
+  color: #508cee;
+  border: 0.02rem solid #508cee;
   border-radius: 0.28rem; }
+
+.btn-a-wrap {
+  padding: 0.22rem 0.32rem; }
+
+.btn-warp {
+  padding: 0.22rem 0.32rem;
+  background-color: #fff;
+  border-top: 0.01rem solid #dddddd; }
+
+.a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+  width: 100%;
+  line-height: 0.92rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.14rem; }
+  @media screen and (max-width: 321px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.33rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.34rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.35rem; } }
+  @media screen and (min-width: 640px) {
+    .a-btn-bg, a.a-btn-bg-red, a.a-btn-bg-yellow, a.a-btn-bg-grey {
+      font-size: 0.36rem; } }
+
+a.a-btn-bg-red {
+  background-color: #f7655e; }
+
+a.a-btn-bg-yellow {
+  background-color: #d1a665; }
+
+a.a-btn-bg-grey {
+  color: #999;
+  background-color: #dddddd; }
+
+.a-btn-border, a.a-btn-border-red {
+  background-color: #fff;
+  width: 100%;
+  line-height: 0.92rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.14rem;
+  border: 0.01rem solid #fff; }
+  @media screen and (max-width: 321px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.33rem; } }
+  @media screen and (min-width: 321px) and (max-width: 400px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.34rem; } }
+  @media screen and (min-width: 400px) and (max-width: 640px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.35rem; } }
+  @media screen and (min-width: 640px) {
+    .a-btn-border, a.a-btn-border-red {
+      font-size: 0.36rem; } }
+
+a.a-btn-border-red {
+  color: #f7655e;
+  border-color: #f7655e; }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space:nowrap;*/
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; }
+
+.ellipsis2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99; }
 
 .select-region {
   width: 100%;
@@ -163,87 +275,107 @@ a.a-btn-border-blue {
   .select-region select {
     float: left;
     width: 33%;
-    padding-top: 0.21rem;
-    padding-bottom: 0.21rem;
-    height: 1.46rem;
-    background: #fff;
-    border: 0.02rem solid #d9d9d9;
-    border-left: 0;
     appearance: none;
-    -webkit-appearance: none;
-    outline: none;
-    color: #979899;
-    text-align: center;
-    padding-left: 10%; }
-    @media screen and (max-width: 321px) {
-      .select-region select {
-        font-size: 0.52rem; } }
-    @media screen and (min-width: 321px) and (max-width: 400px) {
-      .select-region select {
-        font-size: 0.51rem; } }
-    @media screen and (min-width: 400px) and (max-width: 640px) {
-      .select-region select {
-        font-size: 0.48rem; } }
-    @media screen and (min-width: 640px) {
-      .select-region select {
-        font-size: 0.48rem; } }
+    -webkit-appearance: none; }
   .select-region select:last-child {
-    border-right: 0;
     width: 34%; }
 
-form .form-row {
-  background-color: #fff;
-  border: 0.02rem solid #d9d9d9;
-  border-bottom: 0;
-  width: 100%;
-  padding: 0.28rem 0;
-  border-radius: 0.04rem; }
-  form .form-row label {
-    width: 2.4rem;
-    height: 0.6rem;
+.el-form {
+  padding-left: 0.32rem;
+  background-color: #fff; }
+  .el-form .form-row {
+    border-bottom: 0.01rem solid #dddddd;
+    width: 100%;
+    padding: 0.25rem 0.32rem 0.25rem 0;
     line-height: 0.6rem;
-    font-size: 0.36rem;
-    color: #999;
-    border-right: 1px solid #d9d9d9; }
-    form .form-row label span {
-      width: 0.6rem;
-      height: 0.6rem;
-      color: #999;
-      text-align: center;
-      vertical-align: top;
-      margin: 0.01rem 0.1rem; }
+    overflow: hidden; }
+    .el-form .form-row:last-child {
+      border: 0; }
+    .el-form .form-row label {
+      color: #333;
+      text-align: left;
+      float: left; }
       @media screen and (max-width: 321px) {
-        form .form-row label span {
-          font-size: 0.54rem; } }
+        .el-form .form-row label {
+          font-size: 0.31rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
-        form .form-row label span {
-          font-size: 0.53rem; } }
+        .el-form .form-row label {
+          font-size: 0.32rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
-        form .form-row label span {
-          font-size: 0.5rem; } }
+        .el-form .form-row label {
+          font-size: 0.33rem; } }
       @media screen and (min-width: 640px) {
-        form .form-row label span {
-          font-size: 0.5rem; } }
-    form .form-row label .icon-lock {
-      margin-top: 0; }
-  form .form-row input[type=text] {
-    background: transparent;
-    width: 4.8rem;
-    height: 0.6rem;
-    line-height: 0.6rem;
-    font-size: 0.36rem;
-    color: #333;
-    padding-left: 0.2rem; }
-  form .form-row input[type=password] {
-    background: transparent;
-    width: 4.8rem;
-    height: 0.6rem;
-    line-height: 0.6rem;
-    font-size: 0.36rem;
-    color: #333;
-    padding-left: 0.2rem; }
-  form .form-row input.error-input {
-    border-color: #f7655e; }
+        .el-form .form-row label {
+          font-size: 0.34rem; } }
+    .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+      float: right;
+      min-width: 5.2rem;
+      background: transparent;
+      color: #333;
+      text-align: right;
+      line-height: 0.6rem;
+      padding: 0 0.06rem;
+      border: 0.01rem solid #fff; }
+      @media screen and (max-width: 321px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+          font-size: 0.34rem; } }
+    .el-form .form-row textarea {
+      resize: none; }
+    .el-form .form-row input.error-input {
+      border-color: #f7655e; }
+    .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+      background: #fff;
+      border: 0.01 solid #dddddd;
+      line-height: 0.6rem;
+      padding: 0 0.06rem;
+      margin-right: 1%;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      color: #333;
+      text-align: right;
+      direction: rtl; }
+      @media screen and (max-width: 321px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
+          font-size: 0.34rem; } }
+      .el-form .form-row .selectClass option, .el-form .form-row select.select-large option, .el-form .form-row .select-region-wrap select option {
+        direction: rtl; }
+    .el-form .form-row select.select-large {
+      float: right;
+      min-width: 5.2rem;
+      background: #fff; }
+    .el-form .form-row input.error-input {
+      border-color: #f7655e; }
+    .el-form .form-row .select-region-wrap {
+      float: right;
+      min-width: 5.2rem; }
+      .el-form .form-row .select-region-wrap select {
+        float: left;
+        width: 32%; }
+      .el-form .form-row .select-region-wrap select:last-child {
+        width: 33%; }
+      .el-form .form-row .select-region-wrap select.selected {
+        color: #333; }
+      .el-form .form-row .select-region-wrap select.error-input {
+        border-color: #f7655e; }
 
 .icon-level-star {
   width: 1.6rem;

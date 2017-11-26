@@ -1,0 +1,75 @@
+extends ../layout/layout
+
+block append headTitle
+  title 如何提升
+
+block content
+  section.upGrade
+    .sec
+      .title 等级会员介绍
+      .cont
+        p 会员成长体系包含6个会员等级，会员等级由在投年化金额决定。
+        .histogram-wrap
+          .tag 在投年化投资额 (元)
+          .histogram-cont
+            .column
+              .num
+                i 0
+                |万
+              span.column-ocuppy
+              p.name 青铜
+            .column
+              .num
+                i 1
+                | 万
+              span.column-ocuppy
+              p.name 白银
+            .column
+              .num
+                i 5
+                | 万
+              span.column-ocuppy
+              p.name 黄金
+            .column
+              .num
+                i 10
+                | 万
+              span.column-ocuppy
+              p.name 铂金
+            .column
+              .num
+                i 50
+                | 万
+              span.column-ocuppy
+              p.name 钻石
+            .column
+              .num
+                i 100
+                | 万
+              span.column-ocuppy
+              p.name 至尊
+
+
+    .sec
+      .title 说明
+      .cont
+        p 1. 年化投资额计算方式：
+        .p-cont
+          p （天标）年化投资额=投资金额*投资期限/365；
+          p （月标）年化投资额=投资金额*投资期限/12；
+        p 2. 会员有效期：
+        p 黄金会员到黑钻会员有效期30天，在贷金额有变动，系统会自动判断升降或保级。
+
+  .btn-warp.fixed-footer
+    a.a-btn-bg-red(href="javascript:void(0)") 立即投资
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+extends ../layout/layout
+
+block append headTitle
+  title 确认兑换
+
+block content
+  section.sureExcharge
+    .order-one
+      .title 商品名称
+      .cont
+        .img-wrap
+          img(src="")
+        .txt
+          span.name 小米运动蓝牙耳机
+          span
+            i.red-font 5600积分
+            i.no ×1
+      .row-list
+        .row
+          label 运费
+          span 0.00
+        .row
+          label 使用积分
+          span 5600积分
+
+
+
+
+    .el-form
+      form
+        .form-row
+          label 联系电话
+          input(type="text" placeholder="请填写联系电话" data-validate="telephone").input-text-large
+        .form-row
+          label 邮箱
+          input(type="email" placeholder="请填写邮箱" data-validate="email").input-text-large
+
+    .detail
+      .cont-wrap
+        .row
+          h3
+            span.icon.icon-get
+            | 免责声明
+          .txt-cont
+            p 请填写您本人的手机号和邮箱，如果因您本人的手机号或者邮箱填错，卡券发放到其他人的账户，本平台概不负责。
+
+
+    .btn-warp
+      a.a-btn-bg-red#exChargeBtn(href='javascript:void(0);') 确认兑换
+
+
+
+
+
+
+
+
+

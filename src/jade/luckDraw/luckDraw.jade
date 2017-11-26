@@ -1,0 +1,55 @@
+extends ../layout/layout
+
+block append headTitle
+  title 积分抽奖
+
+block content
+  section.luckDraw
+    .banner
+      .sec-top
+        .integral-num
+          span.icon-star-yellow
+          |我的积分：1460
+        a.drawRecord(href="") 抽奖记录
+      .tip-time
+        span.icon
+        |今天还有
+        i 2
+        |次机会哦
+
+    .luck-wrap
+
+    .draw-rule
+      a(href="javascript:void(0);") 抽奖规则
+
+    .plr32
+      .drawed-user
+        .title 中奖用户
+        .cont
+          ul
+            li
+              span 139****8907
+              span christing
+              span 抽中 20元红包
+            li
+              span 139****8907
+              span christing
+              span 抽中 20元红包
+            li
+              span 139****8907
+              span christing
+              span 抽中 20元红包
+            li
+              span 139****8907
+              span christing
+              span 抽中 20元红包
+
+
+
+
+
+
+
+
+
+

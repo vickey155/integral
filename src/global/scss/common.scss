@@ -16,11 +16,12 @@ $c9:#999;
 $d9:#d9d9d9;
 $dd:#dddddd;
 $cc:#ccc;
-$blue:#508bee;
+$blue:#508cee;
 $red:#f7655e;
-$yellow:#e3ac49;
+$yellow:#d1a665;
 $border-w:0.04rem;
 $borderRadius:0.1rem;
+$fc:#393543;
 @mixin opacity_bg($opa:0.8,$col:#000){
   background-color: $col;
   opacity: $opa;
@@ -49,16 +50,16 @@ $borderRadius:0.1rem;
   color:$fc;
   text-align: $ta;
   @media screen and (max-width: 321px) {
-    font-size:$fz+0.04rem;
+    font-size:$fz - 0.01rem;
   }
   @media screen and (min-width: 321px) and (max-width:400px) {
-    font-size:$fz + 0.03rem;
+    font-size:$fz + 0rem;
   }
   @media screen and (min-width: 400px) and(max-width:640px) {
-    font-size:$fz;
+    font-size:$fz + 0.01rem;
   }
   @media screen and (min-width: 640px) {
-    font-size:$fz ;
+    font-size:$fz +0.02rem;
   }
 }
 @mixin fontFormatS($fz:1rem,$fc:$c3,$ta:left){
@@ -74,8 +75,23 @@ $borderRadius:0.1rem;
     font-size:$fz + 0.04rem;
   }
   @media screen and (min-width: 640px) {
-    font-size:$fz + 0.02rem;;
+    font-size:$fz + 0.02rem;
   }
+}
+.load-more{
+  line-height: 0.6rem;
+  @include fontFormat($fz:0.24rem,$fc:$c9,$ta:center);
+}
+.plr32{
+  padding-left: 0.32rem;
+  padding-right: 0.32rem;
+}
+.flexStyle{
+  display: flex;
+  display:-webkit-flex;
+}
+.border-bottom{
+  border-bottom:0.01rem solid $dd;
 }
 .border-shadow{
   box-shadow:0 0.01rem 0.03rem #bfbfbf;
@@ -101,6 +117,70 @@ a.a-btn-border-blue{
   border:0.02rem solid $blue;
   border-radius: 0.28rem;
 }
+.btn-a-wrap{
+  padding:0.22rem 0.32rem ;
+}
+.btn-warp{
+  padding:0.22rem 0.32rem ;
+  background-color: $white;
+  border-top:0.01rem solid $dd;
+}
+.a-btn-bg{
+  width: 100%;
+  line-height: 0.92rem;
+  @include fontFormat($fz:0.34rem,$ta:center,$fc:$white);
+  border-radius: 0.14rem;
+}
+a.a-btn-bg-red{
+  @extend .a-btn-bg;
+  background-color: $red;
+}
+a.a-btn-bg-yellow{
+  @extend .a-btn-bg;
+  background-color: $yellow;
+}
+a.a-btn-bg-grey{
+  @extend .a-btn-bg;
+  color: $c9;
+  background-color: $dd;
+}
+.a-btn-border{
+  background-color: $white;
+  width: 100%;
+  line-height: 0.92rem;
+  @include fontFormat($fz:0.34rem,$ta:center,$fc:$white);
+  border-radius: 0.14rem;
+  border:0.01rem solid $white;
+}
+a.a-btn-border-red{
+  @extend .a-btn-border;
+  color: $red;
+  border-color:$red;
+}
+//省略号
+.ellipsis{
+  overflow : hidden;
+  text-overflow: ellipsis;
+ /* white-space:nowrap;*/
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.ellipsis2{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+//固定底部
+.fixed-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
 //省市区
 .select-region{
   width: 100%;
@@ -108,72 +188,97 @@ a.a-btn-border-blue{
   select{
     float: left;
     width: 33%;
-    padding-top:0.21rem;
-    padding-bottom:0.21rem;
-    height: 1.46rem;
-    background: $white;
-    border: 0.02rem solid $d9;
-    border-left: 0;
     appearance: none;
     -webkit-appearance: none;
-    outline: none;
-    @include fontFormat($fz:0.48rem,$fc:#979899,$ta:center);
-    padding-left: 10%;
   }
   select:last-child{
-    border-right:0;
     width: 34%;
   }
+  //select {
+  //  direction: rtl;
+  //}
+  //select option {
+  //  direction: ltr;
+  //}
 }
 
 
 //表单
-form {
+.el-form {
+  padding-left: 0.32rem;
+  background-color: $white;
   .form-row {
-    background-color: $white;
-    border: 0.02rem solid $d9;
-    border-bottom: 0;
+    border-bottom: 0.01rem solid $dd;
     width: 100%;
-    padding: 0.28rem 0;
-    border-radius: 0.04rem;
+    padding: 0.25rem 0.32rem 0.25rem 0;
+    line-height: 0.6rem;
+    overflow: hidden;
+    &:last-child{
+      border: 0;
+    }
     label {
-      width: 2.4rem;
-      height: 0.6rem;
-      line-height: 0.6rem;
-      font-size: 0.36rem;
-      color: $c9;
-      border-right: 1px solid #d9d9d9;
-      span {
-        width: 0.6rem;
-        height: 0.6rem;
-        @include fontFormat($fz: 0.5rem, $fc: $c9, $ta: center);
-        vertical-align: top;
-        margin: 0.01rem 0.1rem;
-      }
-      .icon-lock {
-        margin-top: 0;
-      }
+      @include fontFormat($fz: 0.32rem, $fc: $c3);
+      float: left;
     }
-    input[type=text] {
+    .inputClass{
+      float: right;
+      min-width: 5.2rem;
       background: transparent;
-      width: 4.8rem;
-      height: 0.6rem;
+      @include fontFormat($fz: 0.32rem, $fc: $c3,$ta:right);
       line-height: 0.6rem;
-      font-size: 0.36rem;
-      color: $c3;
-      padding-left: 0.2rem;
-    }
-    input[type=password] {
-      background: transparent;
-      width: 4.8rem;
-      height: 0.6rem;
-      line-height: 0.6rem;
-      font-size: 0.36rem;
-      color: $c3;
-      padding-left: 0.2rem;
+      padding:0 0.06rem;
+      border: 0.01rem solid $white;
+     }
+    textarea{
+      resize: none;
     }
     input.error-input {
       border-color: $red;
+    }
+    input.input-text-large{
+      @extend .inputClass;
+    }
+    .selectClass{
+      background: $white;
+      border: 0.01 solid $dd;
+      line-height: 0.6rem;
+      padding:0 0.06rem;
+      margin-right: 1%;
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      @include fontFormat($fz: 0.32rem, $fc: $c3,$ta:right);
+      direction: rtl;
+      option{
+        direction: rtl;
+      }
+    }
+    select.select-large{
+      float: right;
+      min-width: 5.2rem;
+      background: $white;
+      @extend .selectClass;
+    }
+    input.error-input{
+      border-color:$red;
+    }
+    .select-region-wrap{
+      float: right;
+      min-width: 5.2rem;
+      select{
+        float: left;
+        width: 32%;
+        @extend .selectClass;
+      }
+      select:last-child{
+        width: 33%;
+      }
+      select.selected{
+        color:$c3;
+      }
+      select.error-input{
+        border-color:$red;
+      }
     }
   }
 }

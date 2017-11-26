@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>管理收货地址</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../../global/css/global.css">
+    <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script>
+      $(function () {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+      });
+      
+    </script>
+  </head>
+  <body>
+    <section class="addressEdit">
+      <div class="el-form address-edit-wrap">
+        <form>
+          <div class="form-row">
+            <label>收货人</label>
+            <input type="text" placeholder="请填写收货人姓名" data-validate="name" class="input-text-large">
+          </div>
+          <div class="form-row">
+            <label>联系电话</label>
+            <input type="text" placeholder="请填写联系电话" data-validate="telephone" class="input-text-large">
+          </div>
+          <div class="form-row">
+            <label>所在地区</label>
+            <div class="select-region-wrap">
+              <select data-validate="province">
+                <option value="">所在省</option>
+                <option value="浙江省">浙江省</option>
+              </select>
+              <select data-validate="city">
+                <option value="">所在市</option>
+                <option value="杭州市">杭州市</option>
+              </select>
+              <select data-validate="district">
+                <option value="">所在区/县</option>
+                <option value="江干区">江干区</option>
+                <option value="上城区">上城区</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label>街道</label>
+            <select placeholder="请选择选择街道" data-validate="detailAddress" class="select-large input-text-large">
+              <option value="">请选择选择街道</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>详细地址</label>
+            <input type="text" placeholder="请填写详细地址，不少于5个字" data-validate="detailAddress" class="input-text-large">
+          </div>
+        </form>
+      </div>
+      <div class="el-form">
+        <div class="form-row">
+          <label>设为默认</label>
+          <div class="el-switch switch-checked"><span class="circle-l"></span><span class="circle-r"></span></div>
+        </div>
+      </div>
+      <div class="btn-warp"><a href="javascript:void(0);" class="a-btn-bg-grey">保存</a><a id="saveBtn" href="javascript:void(0);" class="a-btn-bg-red">保存</a></div>
+    </section>
+    <script>
+      $(function () {
+        //选择为默认地址
+        $(".rectangle-choose").onClick('click', 'span', function () {
+          var sel = $(this);
+          var inputCheckBox = sel.parent().find('input[type=checkbox]');
+          if (sel.hasClass('active')) {
+            sel.removeClass('active');
+            inputCheckBox.attr('checked', false);
+          }
+          else {
+            sel.addClass('active');
+            inputCheckBox.attr('checked', true);
+          }
+        });
+      
+        //表单验证
+        var checkForm = function () {
+          var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+          var zipCode = /^[1-9][0-9]{5}$/;
+          var showDialog = function (sel, dialogExist, errTip) {
+            sel.addClass("error-input");
+            if (dialogExist == 0) {
+              if (sel.is('input[type=text]')) {
+                errTip = '请输入' + errTip;
+              }
+              commonEvent.validataDialog(errTip);
+              return false;
+            }
+          }
+          var eleValidate = $("form").find("[data-validate]");
+          eleValidate.on('focus', function () {
+            var sel = $(this);
+            sel.removeClass("error-input");
+          });
+          eleValidate.each(function () {
+            var sel = $(this);
+            var selDataVal = $.trim(sel.data('validate'));
+            var dialogExist = $(".dialog-alert-pop").length;
+            if (selDataVal == 'name') {
+              var selVal = $.trim(sel.val());
+              if (selVal == '') {
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, dialogExist, errTip);
+              } else {
+                sel.removeClass("error-input");
+              }
+            }
+            else if (selDataVal == 'telephone') {
+              var selVal = $.trim(sel.val());
+              if (selVal == '') {
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, dialogExist, errTip);
+              } else {
+                if (!mobile.test(selVal)) {
+                  var errTip = "正确的手机号";
+                  return showDialog(sel, dialogExist, errTip);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+            }
+            else if (selDataVal == 'province') {
+              var selectedVal = $.trim(sel.find('option:selected').val());
+              if (selectedVal == '') {
+                var errTip = "请选择省份";
+                return showDialog(sel, dialogExist, errTip);
+              } else {
+                sel.removeClass("error-input");
+              }
+            }
+            else if (selDataVal == 'city') {
+              var selectedVal = $.trim(sel.find('option:selected').val());
+              if (selectedVal == '') {
+                var errTip = "请选择市区";
+                return showDialog(sel, dialogExist, errTip);
+              } else {
+                sel.removeClass("error-input");
+              }
+            }
+            else if (selDataVal == 'district') {
+              var selectedVal = $.trim(sel.find('option:selected').val());
+              if (selectedVal == '') {
+                var errTip = "请选择区/县";
+                return showDialog(sel, dialogExist, errTip);
+              } else {
+                sel.removeClass("error-input");
+              }
+            }
+            else if (selDataVal == 'detailAddress') {
+              var selVal = $.trim(sel.val());
+              if (selVal == '') {
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, dialogExist, errTip);
+              } else {
+                sel.removeClass("error-input");
+              }
+            }
+            else if (selDataVal == 'zipCode') {
+              var selVal = $.trim(sel.val());
+              if (selVal == '') {
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, dialogExist, errTip);
+              } else {
+                if (!zipCode.test(selVal)) {
+                  var errTip = "正确的邮编";
+                  return showDialog(sel, dialogExist, errTip);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+            }
+          });
+          if ($(".error-input").length > 0) {
+            return false
+          }
+          else {
+            return true;
+          }
+        }
+      
+        $("#sure-btn").onClick('click', function () {
+          if (checkForm()) {
+            alert('ok');
+          }
+          else {
+            alert('fail');
+          }
+        });
+      
+      });
+    </script>
+  </body>
+</html>

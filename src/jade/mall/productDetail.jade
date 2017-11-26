@@ -1,0 +1,95 @@
+extends ../layout/layout
+
+block append headTitle
+  title 商品详情
+
+block content
+  section.detail.productDetail
+    .sec-top
+      .row
+        .sec01
+          .col
+            p 10元红包兑换券
+            span.a-btn-bg-blue 1万起投
+          .col.integral-ticket
+            img(src="")
+      .row.border-bottom
+        .col
+          label 兑换数量
+        .col
+          .addCutWrap
+            span.cutBtn -
+            input(type='text')
+            span.addBtn +
+      .row
+        .col
+          label 积分：
+          span.red-font  1500
+          span.grey-font 2000
+        .col
+          .fr
+            span.icon-circle-star
+            label 可用积分:2350
+
+    .sec-m
+      .red-notice-tips
+        ul
+          li
+            span.icon-red-font
+            | 章先生兑换了200元满减券
+
+    .cont-wrap
+      .row
+        h3
+          span.icon.icon-introduce
+          | 商品简介
+        .txt-cont
+          p 仅支持部分投资项目，成功使用满减券后，投资应付总额中将减去使用满减券抵扣的金
+
+      .row
+        h3
+          span.icon.icon-get
+          | 商品介绍
+        .txt-cont
+          h4 商品说明
+          p 满减券是 念钱安 理财推出的一种优惠券，可在投资适用满减券的项目时选用。成功使用满减券后，投资应付款总额中将减去使用满减券抵扣的金额。另外，投资金额和投资期限需满足满减券的起投金额、起投期限等参数条件。
+        .txt-cont
+          h4 商品参数
+          p 1. 10000元起投：
+          p  （1）满减券面值80元；
+          p  （2）起投金额10000元；
+          p  （3）起投期限≥180天；
+          p （4）使用有限期7天。
+        .txt-cont
+          h4 兑换说明
+          p 兑换成功后，满减券将在1小时内自动发放至用户账户，请前往APP端“我”-“优惠券”查看。
+      .row
+        h3
+          span.icon.icon-get
+          | 免责声明
+        .txt-cont
+          p 请在兑换前仔细参照商品简介及兑换说明。
+          p 1. 除商品异常导致不能正常兑换外，一经兑换，一律不退还积分。
+          p 2. 抢购商品需先扣积分，如抢购失败，将会原路退回。
+    .sec-bottom.risk-tip
+      h3 出借有风险，选择需谨慎
+      p 本活动规则解释权归 念钱安 所有
+      p 如有疑问，请联系在线客服或拨打400-8269-227
+
+
+    .btn-warp
+      a.a-btn-bg-yellow#exChargeBtn(href='javascript:void(0);')
+        span.icon-star.icon-star-white
+        | 2000 积分兑换
+    .btn-warp
+      a.a-btn-bg-grey(href='javascript:void(0);')
+        span.icon-star.icon-star-grey
+        | 积分不足
+
+
+
+
+
+
+
+

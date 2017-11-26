@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <title>确认兑换</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../../global/css/global.css">
+    <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script>
+      $(function () {
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+      });
+      
+    </script>
+  </head>
+  <body>
+    <section class="sureExcharge">
+      <div class="sec-top">
+        <div class="address-wrap">
+          <div class="border-top address-border"></div>
+          <div style="display:none" class="address-exist"><a href="javascript:void(0);" class="a-link"></a><span class="icon-address"></span>
+            <div class="adress-txt">
+              <p class="name">收货人：墨小刀<span class="fr">13958466616</span></p>
+              <p>收货地址：浙江省 杭州市 江干区 四季青街道印象城18楼</p>
+            </div><span class="icon-arrow-right"></span>
+          </div>
+          <div class="address-null"><a href="javascript:void(0);"><span class="icon-add-btn">+</span>添加收货人信息</a></div>
+          <div class="border-bottom address-border"></div>
+        </div>
+      </div>
+      <div class="order-one">
+        <div class="title">商品名称</div>
+        <div class="cont">
+          <div class="img-wrap"><img src=""></div>
+          <div class="txt"><span class="name">小米运动蓝牙耳机</span><span><i class="red-font">5600积分</i><i class="no">×1</i></span></div>
+        </div>
+        <div class="row-list">
+          <div class="row">
+            <label>运费</label><span>0.00</span>
+          </div>
+          <div class="row">
+            <label>使用积分</label><span>5600积分</span>
+          </div>
+        </div>
+      </div>
+      <div class="btn-warp"><a id="exChargeBtn" href="javascript:void(0);" class="a-btn-bg-red">确认兑换</a></div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+extends ../layout/layout
+
+block append headTitle
+  title 管理收货地址
+
+block content
+  section.addressList
+    .address-list
+      .row
+        .address-one
+          p 墨小刀
+            a(href="tel:13958466616").fr 13958466616
+          p
+            span.default-address [默认地址]
+            |浙江省 杭州市 江干区 四季青街道印象城18楼
+        .opt-wrap
+          span.set-default.choosed
+            i
+            | 默认地址
+          .fr
+            a(href="javascript:void(0);")
+              i.icon-edit
+              | 编辑
+            a(href="javascript:void(0);")
+              i.icon-delete
+              | 删除
+      .row
+        .address-one
+          p 墨小刀
+            a(href="tel:13958466616").fr 13958466616
+          p 浙江省 杭州市 江干区 四季青街道印象城18楼
+        .address-one
+          p 墨小刀
+            a(href="tel:13958466616").fr 13958466616
+          p 浙江省 杭州市 江干区 四季青街道印象城18楼
+        .opt-wrap
+          span.set-default
+            i
+            | 默认地址
+          .fr
+            a(href="javascript:void(0);")
+              i.icon-edit
+              | 编辑
+            a(href="javascript:void(0);")
+              i.icon-delete
+              | 删除
+
+
+
+
+
+
+
+

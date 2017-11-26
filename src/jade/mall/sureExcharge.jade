@@ -1,0 +1,57 @@
+extends ../layout/layout
+
+block append headTitle
+  title 确认兑换
+
+block content
+  section.sureExcharge
+    .sec-top
+      .address-wrap
+        .border-top.address-border
+        .address-exist(style="display:none")
+          a.a-link(href="javascript:void(0);")
+          span.icon-address
+          .adress-txt
+            p.name 收货人：墨小刀
+              span.fr 13958466616
+            p 收货地址：浙江省 杭州市 江干区 四季青街道印象城18楼
+          span.icon-arrow-right
+        .address-null
+          a(href="javascript:void(0);")
+            span.icon-add-btn +
+            |添加收货人信息
+
+        .border-bottom.address-border
+
+
+    .order-one
+      .title 商品名称
+      .cont
+        .img-wrap
+          img(src="")
+        .txt
+          span.name 小米运动蓝牙耳机
+          span
+            i.red-font 5600积分
+            i.no ×1
+      .row-list
+        .row
+          label 运费
+          span 0.00
+        .row
+          label 使用积分
+          span 5600积分
+
+
+
+    .btn-warp
+      a.a-btn-bg-red#exChargeBtn(href='javascript:void(0);') 确认兑换
+
+
+
+
+
+
+
+
+

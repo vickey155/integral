@@ -1,0 +1,36 @@
+extends ../layout/layout
+
+block append headTitle
+  title 兑换成功
+
+block content
+  section.exchargeSuc
+    .banner
+      span.icon-suc
+      p 兑换成功
+
+    .order-one
+      .row-list
+        .row
+          label 兑换商品
+          span.black-font 10元红包兑换券
+        .row
+          label 使用积分
+          span 5600积分
+
+    p.tips
+      i.icon-tips
+      |商品最长10个工作日内发货
+
+    .btn-a-wrap
+      a.a-btn-bg-red(href='javascript:void(0);') 继续兑换
+
+    .btn-a-wrap
+      a.a-btn-border-red(href='javascript:void(0);') 查看兑换记录
+
+
+
+
+
+
+
