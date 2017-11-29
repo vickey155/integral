@@ -87,3 +87,19 @@ input:-moz-placeholder {
 input:-ms-input-placeholder {
   color: #999 !important;
   /*/ Internet Explorer 10+ *!*/ }
+
+textarea::-webkit-input-placeholder {
+  color: #999 !important;
+  /* WebKit browsers */ }
+
+textarea::-moz-placeholder {
+  color: #999 !important;
+  /* Mozilla Firefox 4 to 18 */ }
+
+textarea:-moz-placeholder {
+  color: #999 !important;
+  /* / Mozilla Firefox 19+ /*/ }
+
+textarea:-ms-input-placeholder {
+  color: #999 !important;
+  /*/ Internet Explorer 10+ *!*/ }

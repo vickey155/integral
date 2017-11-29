@@ -1,15 +1,172 @@
 @import 'common';
 
+//列表排序
+.sec-list{
+  margin-bottom: 0.4rem;
+  background-color: $white;
+  padding: 0 0 0 0.32rem;
+  .title{
+    padding-right: 0.32rem;
+    @include fontFormat($fz:0.32rem,$fc:$c3);
+    line-height: 1rem;
+    border-bottom: 0.01rem solid $dd;
+    a{
+      @include fontFormat($fz:0.3rem,$fc:$c6);
+      float: right;
+      i{
+        width: 0.26rem;
+        height: 0.26rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  ul{
+    li{
+      border-bottom: 0.01rem solid $dd;
+      display: flex;
+      display: -webkit-flex;
+      justify-content: space-between;
+      padding: 0.4rem 0.32rem 0.4rem 0;
+      &:last-child{
+        border: 0;
+      }
+      .col-l{
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        align-items: center;
+        span{
+          min-width: 0.8rem;
+          height: 0.8rem;
+          width: 0.8rem;
+          margin-right: 0.25rem;
+        }
+        p{
+          @include fontFormat($fz:0.28rem,$fc:$c3);
+          max-height: 0.9rem;
+          overflow: hidden;
+          &:last-child{
+            padding-top: 0.1rem;
+            @include fontFormat($fz:0.27rem,$fc:$c9);
+          }
+        }
+        p.font-red{
+          color: $red;
+        }
+      }
+      .col-r{
+        padding-left: 0.1rem;
+        min-width: 1.7rem;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        justify-content: center;
+        .a-btn{
+          width: 100%;
+          height: 0.52rem;
+          line-height: 0.48rem;
+          border-radius: 0.28rem;
+        }
+        a.a-btn-border-red{
+          color: $red;
+          border:0.02rem solid $red;
+        }
+        a.a-btn-border-blue{
+          color: $blue;
+          border:0.02rem solid $blue;
+        }
+      }
+    }
+  }
+  .progress{
+    width: 1.6rem;
+    flex-direction:column;
+    .progress-bar{
+      background-color: #eee;
+      width: 1.6rem;
+      height: 0.2rem;
+      border-radius: 0.24rem;
+      .progress-ocuppy{
+        border-radius: 0.24rem;
+        width: 1rem;
+        height: 0.2rem;
+        background-color: $red;
+      }
+    }
+    .tips{
+      padding: 0.05rem 0.12rem;
+      line-height: 0.42rem;
+      border-radius: 0.1rem;
+      border: 0.01rem solid $red;
+      margin-bottom: 0.2rem;
+      @include fontFormat($fz:0.26rem,$fc:$red,$ta:center);
+      position: relative;
+      &:after{
+        position: absolute;
+        left: 0.28rem;
+        bottom: -0.09rem;
+        content: '';
+        display: inline-block;
+        width: 0.14rem;
+        height: 0.14rem;
+        background-color: $white;
+        border-top: 0.01rem solid $red;
+        border-right: 0.01rem solid $red;
+        border-radius: 0.01rem;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+    }
+  }
+  .icon-status{
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .box-wrapper{
+    padding: 0.32rem 0.32rem 0 0;
+    .box{
+      height: 2.2rem;
+      width: 100%;
+      border-radius: 0.2rem;
+      margin-bottom: 0.55rem;
+      img{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      .cont-border{
+        height: 100%;
+        border: 0.03rem solid $white;
+        border-radius:0.2rem;
+        text-align: center;
+        h3{
+          font-weight: normal;
+          @include fontFormat($fz:0.4rem,$fc:$white,$ta:center);
+          margin-bottom: 0.1rem;
+        }
+        .txt{
+          min-width: 2.82rem;
+          line-height: 0.32rem;
+          border-radius: 0.24rem;
+          background-color: $white;
+          padding: 0.02rem 0.1rem;
+          @include fontFormat($fz:0.24rem,$fc:$red,$ta:center);
+        }
+      }
+    }
+  }
+}
 
 .home{
   .banner{
     height: 2.9rem;
-    background-color: red;
     padding: 0 0.32rem;
     overflow: hidden;
     display: flex;
     display:-webkit-flex;
     justify-content: space-between;
+    background: url(/global/image/home/bg_top.png) no-repeat 0 0/cover;
     .col-l{
       display: flex;
       display:-webkit-flex;
@@ -20,6 +177,7 @@
         width: 1.2rem;
         border:0.04rem solid #ffa599;
         margin-right: 0.2rem;
+        overflow: hidden;
       }
     }
     ul{
@@ -37,12 +195,12 @@
           line-height: 0.42rem;
         }
         .icon-star-yellow{
-          background-color: yellow;
           border-radius: 50%;
           height: 0.36rem;
           width: 0.36rem;
           margin-top: 0.03rem;
           margin-left: 0.01rem;
+          background: url(/global/image/home/icon_home_points.png) no-repeat 0 0/cover;
         }
         .integral-num{
           margin-left: 0.1rem;
@@ -56,53 +214,256 @@
           padding-top: 0.15rem;
           @include fontFormat($fz:0.28rem,$fc:$white);
         }
+
       }
     }
     .col-r{
-      width:1.6rem;
+      width: 1.6rem;
+      .icon-level-star{
+        width: 1.6rem;
+        height: 1.6rem;
+        padding: 0.1rem 0 0;
+        img{
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+      }
       .a-btn{
         margin-top: 0.25rem;
         width: 100%;
         height: 0.52rem;
         line-height: 0.48rem;
+        border-radius: 0.28rem;
+        border-width: 0.02rem;
+      }
+    }
+  }
+  .sec-li4{
+    margin-bottom: 0.4rem;
+    background-color: #fff;
+    padding: 0.36rem 0 0.1rem;
+    ul{
+      overflow: hidden;
+      li{
+        float: left;
+        width: 25%;
+        a{
+          width: 100%;
+          text-align: center;
+        }
+        span.icon{
+          height: 0.8rem;
+          width: 0.8rem;
+        }
+        p{
+          padding: 0.16rem 0;
+          @include fontFormat($fz:0.26rem,$fc:$c6,$ta:center);
+        }
       }
     }
   }
 
-}
-//特权详情
-.card-wrap{
-  .card{
-    //height: 2.5rem;
-    width: 6rem;
-    height: 3.1rem;
-    padding: 0.4rem 0.3rem 0.25rem;
-    text-align: center;
-    background-color: $yellow;
-    span.icon{
-      width: 1.1rem;
-      height: 1.1rem;
-      border-radius: 50%;
+  .border-top-radius{
+    position: relative;
+    z-index: 2;
+    margin-top: -0.18rem;
+    border-top-left-radius: 0.22rem;
+    border-top-right-radius: 0.22rem;
+    ul{
+      li{
+        span.icon{
+          height: 0.5rem;
+          width: 0.5rem;
+        }
+      }
     }
-    p.name{
-      @include fontFormat($fz:0.32rem,$ta:center,$fc:$white);
-      line-height: 0.6rem;
-      margin-bottom: 0.2rem;
-    }
-    .txt{
-      display: inline-block;
-      background-color: #d5a054;
-      @include fontFormat($fz:0.26rem,$ta:center,$fc:#ffe9c3);
-      padding: 0.08rem 0.2rem;
-      border-radius: 0.3rem;
-      line-height: 0.34rem;
-    }
+
+  }
+  .icon-king{
+    background: url(/global/image/home/icon_exchange_VIP.png) no-repeat 0 0/cover;
+  }
+  .icon-cake{
+    background: url(/global/image/home/icon_birthday.png) no-repeat 0 0/cover;
+  }
+  .icon-package{
+    background: url(/global/image/home/icon_gift.png) no-repeat 0 0/cover;
+  }
+  .icon-more{
+    background: url(/global/image/home/icon_more.png) no-repeat 0 0/cover;
   }
 }
+//特权详情
+
 .privilege{
   .banner{
-    height: 3.2rem;
-    margin-bottom: 0.7rem;
+    width: 100%;
+    height: 4.3rem;
+    padding: 0.2rem 0;
+    background: url(/global/image/privilege/bg_top.png) no-repeat 0 0/cover;
+    .icon-wrap{
+      position: absolute;
+      top:0;
+      left:-1rem;
+      z-index:3;
+      min-width: 5rem;
+      span.icon{
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+      }
+      p.name{
+        @include fontFormat($fz:0.32rem,$ta:center,$fc:$white);
+        line-height: 0.6rem;
+        margin-bottom: 0.1rem;
+      }
+      .txt{
+        display: inline-block;
+        background-color: #d5a054;
+        @include fontFormat($fz:0.26rem,$ta:center,$fc:$white);
+        padding: 0.08rem 0.2rem;
+        border-radius: 0.3rem;
+        line-height: 0.4rem;
+      }
+    }
+    .swiper-container {
+      padding: 0.5rem 0 0.1rem;
+      width: 100%;
+      height: 4rem;
+    }
+    .swiper-slide {
+      width:4.4rem;
+      height: 2.5rem;
+      text-align: center;
+      background: #ccc;
+      border-radius: 0.1rem;
+      position: relative;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      .icon-wrap{
+        display: none;
+      }
+      a{
+        padding: 0.4rem 0.3rem 0.25rem;
+        text-align: center;
+        border-radius: 0.1rem;
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 2;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .swiper-slide-active{
+      .icon-wrap{
+        display: block;
+      }
+      a{
+        -webkit-transform: scale(2,1.3);
+        -moz-transform: scale(2,1.3);
+        -ms-transform: scale(2,1.3);
+        -o-transform: scale(2,1.3);
+        transform: scale(2,1.3);
+      }
+    }
+
+    .swiper-pagination{
+      padding-top: 0.3rem;
+      bottom:0.1rem;
+      background: url(/global/image/privilege/bg_light_bottom.png) no-repeat -0.1rem 0/cover;
+      .swiper-pagination-bullet{
+        width: 0.3rem;
+        border-radius:0.2rem;
+        height: 0.05rem;
+        background-color: $white;
+        margin-top: 0.35rem;
+      }
+      .swiper-pagination-bullet-active{
+        background-color: $red;
+      }
+    }
+    $d:45deg;
+    .qingtong{
+      a{
+        @include lineGradient($deg:$d,$cS:#669999,$cE:#a8cccc);
+      }
+      .txt{
+        background-color: #669999;
+      }
+      .icon{
+        background: url(/global/image/privilege/icon_member_bronze.png) no-repeat 0 0/cover;
+      }
+    }
+    .baiyin {
+      a{
+        @include lineGradient($deg:$d,$cS:#99aabb,$cE:#c2cfdb);
+      }
+      .txt{
+        background-color: #99aabb;
+      }
+      .icon{
+        background: url(/global/image/privilege/icon_member_silver.png) no-repeat 0 0/cover;
+      }
+    }
+    .huangjin{
+      a{
+        @include lineGradient($deg:$d,$cS:#e7ab52,$cE:#ffd494);
+      }
+      .txt{
+        background-color: #e7ab52;
+      }
+      .icon{
+        background: url(/global/image/privilege/icon_member_gold.png) no-repeat 0 0/cover;
+      }
+    }
+    .bojin{
+      a{
+        @include lineGradient($deg:$d,$cS:#6e7087,$cE:#a9b5d5);
+      }
+      .txt{
+        background-color: #6e7087;
+      }
+      .icon{
+        background: url(/global/image/privilege/icon_member_platinum.png) no-repeat 0 0/cover;
+      }
+    }
+    .zhuanshi{
+      a{
+        @include lineGradient($deg:$d,$cS:#23459f,$cE:#4f7bbc);
+      }
+      .txt{
+        background-color: #23459f;
+      }
+      .icon{
+        background: url(/global/image/privilege/icon_member_diamond.png) no-repeat 0 0/cover;
+      }
+    }
+    .zhizhun {
+      a{
+        @include lineGradient($deg:$d,$cS:#dd212b,$cE:#ff4350);
+      }
+      .txt{
+        background-color: #dd212b;
+      }
+      .icon{
+        background: url(/global/image/privilege/icon_member_extreme.png) no-repeat 0 0/cover;
+      }
+    }
+
   }
   .sec-li-center{
     background-color: $white;
@@ -116,6 +477,9 @@
         width: 0.3rem;
         background-color: red;
         vertical-align: middle;
+      }
+      .icon-title-left{
+        background: url(/global/image/privilege/bg_top.png) no-repeat 0 0/cover;
       }
       span{
         margin: 0 0.2rem;
@@ -134,13 +498,38 @@
         }
       }
       .col{
-        img {
+        span{
           height: 0.88rem;
           width: 0.88rem;
           border-radius:50%;
-          background-color: $yellow;
           margin-right: 0.4rem;
           overflow: hidden;
+          text-align: center;
+          line-height: 0.88rem;
+          background-color: $yellow;
+          i{
+            height: 0.5rem;
+            width: 0.5rem;
+            vertical-align: middle;
+          }
+          .icon01{
+            background: url(/global/image/privilege/icon_privilege_1.png) no-repeat 0 0/cover;
+          }
+          .icon02{
+            background: url(/global/image/privilege/icon_privilege_2.png) no-repeat 0 0/cover;
+          }
+          .icon03{
+            background: url(/global/image/privilege/icon_privilege_3.png) no-repeat 0 0/cover;
+          }
+          .icon04{
+            background: url(/global/image/privilege/icon_privilege_4.png) no-repeat 0 0/cover;
+          }
+          .icon05{
+            background: url(/global/image/privilege/icon_privilege_5.png) no-repeat 0 0/cover;
+          }
+          .icon06{
+            background: url(/global/image/privilege/icon_privilege_5.png) no-repeat 0 0/cover;
+          }
         }
         p.name{
           line-height: 0.5rem;
@@ -156,6 +545,49 @@
           width: 100%;
           @extend .ellipsis;
         }
+
+      }
+    }
+    .qingtong{
+      .col{
+        span{
+          background-color: #669999;
+        }
+      }
+    }
+    .baiyin{
+      .col{
+        span{
+          background-color: #99aabb;
+        }
+      }
+    }
+    .huangjin{
+      .col{
+        span{
+          background-color: #e7ab52;
+        }
+      }
+    }
+    .bojin{
+      .col{
+        span{
+          background-color: #6e7087;
+        }
+      }
+    }
+    .zhuanshi{
+      .col{
+        span{
+          background-color: #23459f;
+        }
+      }
+    }
+    .zhizhun{
+      .col{
+        span{
+          background-color: #dd212b;
+        }
       }
     }
   }
@@ -164,13 +596,15 @@
   .banner{
     height: 3rem;
     width: 100%;
-    padding:0.4rem 0.32rem 0;
-    background-color: black;
+    padding:0.55rem 0.32rem 0;
+    background: url(/global/image/privilege/icon_privilege_bg.png) no-repeat black 0 0/cover;
     .txt{
-      padding: 0.15rem 0.2rem;
+      flex: 1;
+      padding: 0.15rem 2rem 0.15rem 0.2rem;
       height: 1.9rem;
       background-color: $white;
       border-radius:0.2rem;
+      position: relative;
       h2{
         @include fontFormat($fz:0.4rem,$fc:$fc);
         margin-bottom: 0.15rem;
@@ -180,7 +614,31 @@
       p{
         @include fontFormat($fz:0.28rem,$fc:$c9);
       }
+      .rightPic{
+        position: absolute;
+        right: 0.1rem;
+        top: 0.05rem;
+        width: 1.8rem;
+        height: 1.8rem;
+
+      }
+      .rightPic1{
+        background: url(/global/image/privilege/icon_detail_1.png) no-repeat 0 0/cover;
+      }
+      .rightPic2{
+        background: url(/global/image/privilege/icon_detail_2.png) no-repeat 0 0/cover;
+      }
+      .rightPic3{
+        background: url(/global/image/privilege/icon_detail_3.png) no-repeat 0 0/cover;
+      }
+      .rightPic4{
+        background: url(/global/image/privilege/icon_detail_4.png) no-repeat 0 0/cover;
+      }
+      .rightPic5{
+        background: url(/global/image/privilege/icon_detail_5.png) no-repeat 0 0/cover;
+      }
     }
+
   }
   .cont-wrap{
     margin-bottom:1.58rem;
@@ -224,9 +682,16 @@
     height: 4.4rem;
     .column{
       flex: auto;
-      text-align: center;
       align-self: flex-end;
+      @extend .flexStyle;
+      align-items: center;
+      justify-content: center;
+      flex-direction:column;
+      overflow: hidden;
       .num{
+        width: 100%;
+        display: inline-block;
+        vertical-align: bottom;
         padding-bottom: 0.18rem;
         @include fontFormat($fz:0.28rem,$fc:$c3,$ta:center);
         line-height: 0.32rem;
@@ -242,10 +707,17 @@
         @include fontFormat($fz:0.28rem,$fc:$c3,$ta:center);
       }
       .column-ocuppy{
+        vertical-align: bottom;
+        $redC:#ff5055;
+        $yellowC:#ffbd67;
+        $deg:0deg;
         height: 1rem;
-        background-color: $yellow;
         width: 0.23rem;
         border-radius: 0.2rem;
+        background: -webkit-linear-gradient($deg, $redC, $yellowC); /* Safari 5.1 - 6.0 */
+        background: -o-linear-gradient($deg, $redC, $yellowC); /* Opera 11.1 - 12.0 */
+        background: -moz-linear-gradient($deg, $redC, $yellowC); /* Firefox 3.6 - 15 */
+        background: linear-gradient($deg, $redC, $yellowC); /* 标准的语法（必须放在最后） */
       }
     }
   }
@@ -274,9 +746,21 @@
         span.icon{
           height: 0.32rem;
           width: 0.32rem;
-          background-color: $yellow;
           margin-right: 0.3rem;
           vertical-align: middle;
+          margin-top: -0.05rem;
+        }
+        .icon-introduce{
+          background: url(/global/image/privilege/icon_introduce.png) no-repeat 0 0/cover;
+        }
+        .icon-get{
+          background: url(/global/image/privilege/icon_get.png) no-repeat 0 0/cover;
+        }
+        .icon01{
+          background: url(/global/image/mall/icon_profile.png) no-repeat 0 0/cover;
+        }
+        .icon02{
+          background: url(/global/image/mall/icon_declaration.png) no-repeat 0 0/cover;
         }
       }
       h4 {
@@ -295,176 +779,6 @@
     }
   }
 }
-.sec-li4{
-  margin-bottom: 0.4rem;
-  background-color: #fff;
-  padding: 0.36rem 0 0.1rem;
-  ul{
-    overflow: hidden;
-    li{
-      float: left;
-      width: 25%;
-      a{
-        width: 100%;
-        text-align: center;
-      }
-      span.icon{
-        height: 0.8rem;
-        width: 0.8rem;
-      }
-      p{
-        padding: 0.2rem 0;
-        @include fontFormat($fz:0.26rem,$fc:$c6,$ta:center);
-      }
-    }
-  }
-}
-
-.border-top-radius{
-  position: relative;
-  z-index: 2;
-  margin-top: -0.18rem;
-  border-top-left-radius: 0.22rem;
-  border-top-right-radius: 0.22rem;
-  ul{
-    li{
-      span.icon{
-        height: 0.46rem;
-        width: 0.46rem;
-      }
-    }
-  }
-
-}
-//列表排序
-.sec-list{
-  margin-bottom: 0.4rem;
-  background-color: $white;
-  padding: 0 0 0 0.32rem;
-  .title{
-    padding-right: 0.32rem;
-    @include fontFormat($fz:0.32rem,$fc:$c3);
-    line-height: 1rem;
-    border-bottom: 0.01rem solid $dd;
-    a{
-      @include fontFormat($fz:0.3rem,$fc:$c6);
-      float: right;
-      i{
-        width: 0.26rem;
-        height: 0.26rem;
-        vertical-align: middle;
-      }
-    }
-  }
-  ul{
-    li{
-      border-bottom: 0.01rem solid $dd;
-      display: flex;
-      display: -webkit-flex;
-      justify-content: space-between;
-      padding: 0.4rem 0.32rem 0.4rem 0;
-      &:last-child{
-        border: 0;
-      }
-      .col-l{
-        display: flex;
-        display: -webkit-flex;
-        justify-content: space-between;
-        align-items: center;
-        span{
-          min-width: 0.8rem;
-          height: 0.8rem;
-          width: 0.8rem;
-          background-color: red;
-          margin-right: 0.25rem;
-        }
-        p{
-          @include fontFormat($fz:0.28rem,$fc:$c3);
-          max-height: 0.9rem;
-          overflow: hidden;
-          &:last-child{
-            padding-top: 0.1rem;
-            @include fontFormat($fz:0.27rem,$fc:$c9);
-          }
-        }
-        p.font-red{
-          color: $red;
-        }
-      }
-      .col-r{
-        padding-left: 0.1rem;
-        min-width: 1.7rem;
-        display: flex;
-        display: -webkit-flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
-  .progress{
-    .progress-bar{
-      background-color: #eee;
-      width: 1.6rem;
-      height: 0.2rem;
-      border-radius: 0.24rem;
-      .progress-ocuppy{
-        border-radius: 0.24rem;
-        width: 1rem;
-        height: 0.2rem;
-        background-color: $red;
-      }
-    }
-    .tips{
-      height: 0.5rem;
-      line-height: 0.5rem;
-      border-radius: 0.1rem;
-      border: 0.01rem solid $red;
-      margin-bottom: 0.2rem;
-      @include fontFormat($fz:0.26rem,$fc:$red,$ta:center);
-    }
-  }
-  .icon-status{
-    height: 1rem;
-    width: 1rem;
-    background-color: red;
-  }
-  .a-btn{
-    height: 0.6rem;
-    line-height: 0.56rem;
-    padding: 0 0.4rem;
-    vertical-align: middle;
-  }
-  .box-wrapper{
-    padding: 0.32rem 0.32rem 0 0;
-    .box{
-      height: 2rem;
-      width: 100%;
-      border-radius: 0.2rem;
-      background-color: #00a4ee;
-      margin-bottom: 0.55rem;
-      padding: 0.32rem 1.1rem;
-      .cont-border{
-        height: 100%;
-        border: 0.03rem solid $white;
-        border-radius:0.2rem;
-        text-align: center;
-        h3{
-          font-weight: normal;
-          @include fontFormat($fz:0.4rem,$fc:$white,$ta:center);
-          margin-bottom: 0.1rem;
-        }
-        .txt{
-          min-width: 2.82rem;
-          line-height: 0.32rem;
-          border-radius: 0.24rem;
-          background-color: $white;
-          padding: 0.02rem 0.1rem;
-          @include fontFormat($fz:0.24rem,$fc:$red,$ta:center);
-        }
-      }
-    }
-  }
-}
 
 .ulist{
   padding-left: 0.32rem;
@@ -478,7 +792,7 @@
       border-top: 0.01rem solid $dd;
       display: flex;
       display: -webkit-flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       padding: 0.2rem  0;
       p.txt{
@@ -516,14 +830,233 @@
   }
 }
 
+//签到
+.sign{
+  margin-top: 0.2rem;
+  text-align: center;
+  .card{
+    width:7.1rem;
+    height:2.1rem;
+    border-top-left-radius:0.28rem;
+    border-top-right-radius:0.28rem;
+    margin: 0 auto;
+    @extend .flexStyle;
+    justify-content: space-between;
+    align-items: center;
+    background: url(/global/image/sign/bg_score.png) no-repeat 0 0/cover;
+    .bg_title{
+      width:1rem;
+      height:1.1rem;
+    }
+    .titleLeft{
+      margin: 0.3rem;
+      background: url(/global/image/sign/icon_total_score.png) no-repeat 0 0/cover;
+    }
+    .titleRight{
+      align-self: flex-end;
+      margin-right: 0.2rem;
+    }
+    .inner{
+      flex:1;
+      min-width:3rem;
+      div{
+        @include fontFormat($fz:0.28rem,$fc:$white);
+        .num{
+          margin-right: 0.2rem;
+          @include fontFormat($fz:0.4rem,$fc:$white);
+        }
+        .day{
+          margin: 0 0.1rem;
+          vertical-align: middle;
+          @include fontFormat($fz:0.36rem,$fc:yellow);
+        }
+      }
+      .topDiv{
+        margin-bottom: 0.1rem;
+        @include fontFormat($fz:0.36rem,$fc:$white);
+      }
 
+    }
+  }
+  .main{
+    background: #fff;
+    padding-top:0.02rem;
+    padding-bottom: 2rem;
+    .tips{
+      @include fontFormat($fz:0.28rem,$fc:$c3);
+      margin: 0 auto;
+      padding: 0.2rem 0.3rem 0.1rem;
+      span{
+        @include fontFormat($fz:0.28rem,$fc:$red);
+      }
+    }
+    #scheduleBox{
+      border: 1px solid #fff1d1;
+      border-radius: 0.28rem;
+      box-shadow:0rem 0.1rem 0.05rem #fff1d1;
+      //width: 7rem;
+      padding: 0 0 0.2rem;
+      @include fontFormat($fz:0.28rem);
+      .schedule-hd{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.15rem;
+        background: #fff6de;
+        height:0.8rem;
+        width:100%;
+        border-top-left-radius:0.28rem;
+        border-top-right-radius:0.28rem;
+        @include fontFormat($fz:0.28rem,$fc:#ffa10e);
+        .today{
+          line-height: 0.8rem;
+        }
+        #prevMonth{
+          margin-top: 0.25rem;
+          width:0.3rem;
+          height:0.3rem;
+          margin-left: 0.4rem;
+          background: url(/global/image/sign/icon_title_before.png) no-repeat 0 0/cover;
+        }
+        #nextMonth{
+          margin-top: 0.25rem;
+          width:0.3rem;
+          height:0.3rem;
+          margin-right: 0.4rem;
+          background: url(/global/image/sign/icon_title_after.png) no-repeat 0 0/cover;
+        }
+        .arrow{
+          cursor: pointer;
+        }
+      }
+      .ul-box{
+        overflow: hidden;
+        padding: 0.1rem 0.2rem 0.2rem;
+      }
+      .ul-box > li{
+        float: left;
+        width: 14.28%;
+        text-align: center;
+      }
+      .week-ul{
+        @include fontFormat($fz:0.28rem,$fc:#999);
+      }
+      .schedule-bd{
+        padding-top: 0.1rem;
+        li{
+          position: relative;
+          padding:0 0 0.32rem;
+        }
+        .selected-style {
+          background: #f7655e;
+          color: #ffffff;
+        }
+        .current-month{
+          color: $c3;
+        }
+        .dayStyle{
+          display: inline-block;
+          background-color: $white;
+          width: 0.56rem;
+          height:0.56rem;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 0.54rem;
+          border: 0.02rem solid transparent;
+        }
+        .today-style{
+          border-radius: 50%;
+          background: $red;
+          border-color:$red;
+        }
+        // 补卡样式
+        .signed{
+          position: relative;
+          .currentDate{
+            border-color:$red;
+          }
+          span.icon-duihao{
+            position: absolute;
+            left: 50%;
+            margin-left: -0.11rem;
+            bottom:0.08rem;
+            height: 0.22rem;
+            width: 0.22rem;
+            background: url(/global/image/sign/icon_selected.png) no-repeat 0 0/cover;
+          }
+        }
+        .unSign {
+          .currentDate{
+            background: $cc;
+            border-color:$cc;
+            color: #ffffff;
+          }
+          span.txt{
+            width: 100%;
+            position: absolute;
+            left:0;
+            bottom:0.04rem;
+            @include fontFormat($fz:0.2rem,$fc:$c9,$ta:center);
+          }
+        }
+         .today-flag{
+           background: $red;
+           color: #fff;
+         }
+        .other-month{
+          //color: #999999;
+          color:$white;
+          .dayStyle{
+            display: none;
+          }
+        }
+      }
+
+    }
+    .signBox{
+      position: relative;
+      padding: 0.2rem;
+      .page-tb{
+        position: absolute;
+        right: 0.2rem;
+        bottom:0.2rem;
+        height: 0.68rem;
+        width: 0.68rem;
+        background: url(/global/image/sign/icon_form_bottom.png) no-repeat 0 0/cover;
+      }
+    }
+    .tips-b{
+      @include fontFormat($fz:0.28rem,$fc:$c3);
+      margin: 0.4rem auto 0;
+      padding: 0.1rem 0.3rem;
+      text-align: center
+    }
+  }
+}
+//签到记录
+.signRecord{
+  .ulist{
+    ul{
+      li{
+        .col{
+          span.icon{
+            width: 0.72rem;
+            height: 0.72rem;
+            vertical-align: middle;
+            margin-right: 0.36rem;
+            background: url(/global/image/sign/icon_reward.png) no-repeat 0 0/cover;
+          }
+        }
+      }
+    }
+  }
+}
 //任务中心
 .task{
   .banner{
     height: 2.8rem;
-    background-color: #00a4ee;
     text-align: center;
     padding-top:0.66rem ;
+    background: url(/global/image/task/icon_mission_banner.png) no-repeat 0 0/cover;
     h1{
       @include fontFormat($fz:0.6rem,$fc:$white,$ta:center);
       margin-bottom: 0.1rem;
@@ -557,6 +1090,18 @@
       @include fontFormat($fz:0.24rem,$fc:$yellow);
     }
   }
+  .icon-login-first{
+    background: url(/global/image/task/icon_task_first.png) no-repeat 0 0/cover;
+  }
+  .icon-invest-first{
+    background: url(/global/image/task/icon_task_invest_1.png) no-repeat 0 0/cover;
+  }
+  .icon-invest-day58{
+    background: url(/global/image/task/icon_task_invest_2.png) no-repeat 0 0/cover;
+  }
+  .icon-invest-day88{
+    background: url(/global/image/task/icon_task_invest_3.png) no-repeat 0 0/cover;
+  }
 }
 
 
@@ -564,24 +1109,28 @@
 //积分商城
 .red-notice-tips{
   height: 0.9rem;
-  padding: 0.15rem 0.32rem;
+  overflow: hidden;
   background-color: $white;
   ul{
     li{
+      padding: 0.2rem 0.32rem;
       .icon-horn{
-        height: 0.3rem;
+        height: 0.4rem;
         width: 0.4rem;
-        background-color: red;
         margin-right: 0.2rem;
-        vertical-align: middle;
+        margin-top: 0.15rem;
+        background: url(/global/image/mall/icon_publicity.png) no-repeat 0 0/cover;
       }
       .icon-red-font{
         height: 0.3rem;
-        width: 1.35rem;
-        background-color: $white;
-        border-right:0.01rem solid $dd;
-        margin-right: 0.2rem;
+        width: 1.16rem;
         vertical-align: middle;
+        background: url(/global/image/mall/icon_change.png) no-repeat 0 0/cover;
+      }
+      .border-l{
+        border-right:0.01rem solid $dd;
+        margin:0.1rem 0.2rem;
+        height: 0.5rem;
       }
       @include fontFormat($fz:0.28rem,$fc:$c6);
       line-height: 0.7rem;
@@ -603,16 +1152,17 @@
   span{
     @include fontFormat($fz:0.28rem,$fc:$c6,$ta:center);
     background-color: $dd;
-    line-height: 0.4rem;
-    width: 0.4rem;
+    line-height: 0.36rem;
+    width: 0.6rem;
     height: 0.4rem;
+    border-radius:0.1rem;
   }
   input{
     margin: 0 0.05rem;
     background-color: $dd;
     width: 1rem;
     line-height: 0.4rem;
-    @include fontFormat($fz:0.32rem,$fc:$c3);
+    @include fontFormat($fz:0.3rem,$fc:$c3,$ta:center);
     vertical-align: top;
   }
 }
@@ -631,7 +1181,7 @@
 .mall{
   .banner{
     height: 2.8rem;
-    background-color: orange;
+    background: url(/global/image/mall/icon_banner.png) no-repeat 0 0/cover;
   }
   .sec-top{
     margin-bottom: 0.2rem;
@@ -652,8 +1202,13 @@
         .icon{
           height: 0.78rem;
           width: 0.78rem;
-          background-color: yellow;
           margin-right: 0.05rem;
+        }
+        .icon-money-yellow{
+          background: url(/global/image/mall/icon_record.png) no-repeat 0 0/cover;
+        }
+        .icon-excharge-record{
+          background: url(/global/image/mall/icon_record.png) no-repeat 0 0/cover;
         }
         .txt{
           @include fontFormat($fz:0.32rem,$fc:$c3);
@@ -690,8 +1245,14 @@
           padding-left: 0.3rem;
         }
         .ticket{
-          margin: 0.6rem 0;
-          padding:0.28rem 0.45rem 0.2rem;
+          min-height: 2.4rem;
+          padding-top: 0.5rem;
+          @extend .flexStyle;
+          align-items: center;
+          img{
+            max-height: 1.8rem;
+            overflow: hidden;
+          }
           p {
             @include fontFormat($fz: 0.28rem, $fc: $white, $ta: right);
           }
@@ -731,8 +1292,8 @@
         .icon-money-red{
           width: 0.32rem;
           height: 0.32rem;
-          background-color: red;
           margin-right: 0.1rem;
+          background: url(/global/image/mall/icon_integral.png) no-repeat 0 0/cover;
         }
         .font-red{
           @include fontFormat($fz:0.28rem,$fc:$red);
@@ -781,17 +1342,17 @@
 //我的积分
 .myIntegral{
   .banner{
-    background-color: $yellow;
     height: 3rem;
     display: flex;
     display: -webkit-flex;
     align-items: center;
     justify-content: center;
+    background: url(/global/image/mall/icon_myintegral_banner.png) no-repeat 0 0/cover;
     .icon-oclock{
       width: 2.8rem;
-      height: 2.03rem;
-      padding-top: 0.7rem;
-      background-color: $white;
+      height: 2.8rem;
+      padding-top: 1.4rem;
+      background: url(/global/image/mall/icon_circle.png) no-repeat 0 0/cover;
       p.txt{
         @include fontFormat($fz:0.28rem,$fc:#ec6300,$ta:center);
         line-height: 0.36rem;
@@ -843,13 +1404,13 @@
       span.icon-circle-star{
         height: 0.38rem;
         width: 0.38rem;
-        background-color: $yellow;
+        background: url(/global/image/mall/icon_integral_3.png) no-repeat 0 0/cover;
       }
     }
     .sec01{
       border-radius: 0.18rem;
       background-color: #f2f2f2;
-      padding: 0.6rem 0.2rem;
+      padding: 0.6rem 0.2rem 0.3rem;
       overflow: hidden;
       width: 100%;
       .col{
@@ -876,14 +1437,30 @@
     margin-top: 0.3rem;
     margin-bottom: 1.3rem;
   }
+  .cont-wrap{
+    .row{
+
+      .icon-introduce{
+        background: url(/global/image/mall/icon_change.png) no-repeat 0 0/cover;
+      }
+    }
+  }
   .btn-warp{
     a{
       span.icon-star{
         height: 0.38rem;
         width: 0.38rem;
-        background-color: red;
         vertical-align: middle;
         margin-right: 0.2rem;
+      }
+      .icon-star-white{
+        background: url(/global/image/mall/icon_integral_1.png) no-repeat 0 0/cover;
+      }
+      .icon-star-grey{
+        background: url(/global/image/mall/icon_integral_2.png) no-repeat 0 0/cover;
+      }
+      i#integralNumSum{
+        margin-right: 0.1rem;
       }
     }
 
@@ -970,25 +1547,25 @@
 
 //确认兑换
 .address-wrap{
- position: relative;
-  border-bottom: 0.05rem solid red;
-  border-top: 0.05rem solid red;
+  position: relative;
   padding: 0.3rem 0.32rem;
   overflow: hidden;
-  min-height: 2.1rem;
+  min-height: 2.4rem;
   background-color: $white;
+  overflow: hidden;
   .address-border{
     position: absolute;
     left: 0;
-    height: 0.05rem;
-    background-color: green;
+    z-index: 1;
+    height: 0.04rem;
     width: 100%;
+    background: url(/global/image/mall/icon_address_bg.png) no-repeat 0 0/cover;
   }
   .border-top{
-    top:-0.05rem;
+    top:0;
   }
   .border-bottom{
-    bottom:-0.05rem;
+    bottom:0;
   };
   .address-exist{
     display: flex;
@@ -1005,16 +1582,16 @@
   }
   .icon-address{
     height: 0.4rem;
-    width: 0.3rem;
-    background-color: red;
+    width: 0.4rem;
+    background: url(/global/image/mall/icon_address.png) no-repeat 0 0/cover;
   }
   .icon-arrow-right{
     position: absolute;
     top:1rem;
     right: 0.32rem;
     height: 0.3rem;
-    width: 0.18rem;
-    background-color: grey;
+    width: 0.3rem;
+    background: url(/global/image/mall/icon_select_next.png) no-repeat 0 0/cover;
   }
   .adress-txt{
     margin-left: 0.3rem;
@@ -1098,8 +1675,8 @@
     .icon-suc{
       width: 2.6rem;
       height: 2.6rem;
-      background-color: red;
       vertical-align: middle;
+      background: url(/global/image/mall/icon_succeed.png) no-repeat 0 0/cover;
     }
     p{
       margin-top: 0.1rem;
@@ -1125,15 +1702,41 @@
     .icon-tips{
       width: 0.3rem;
       height: 0.3rem;
-      background-color: red;
       vertical-align: middle;
       margin-right: 0.2rem;
+      //background: url(/global/image/mall/icon_task_21days.png) no-repeat 0 0/cover;
     }
   }
 }
 //兑换记录
 .exchargeRecord{
   padding-top: 0.3rem;
+  .ulist{
+    ul{
+      li{
+        .col{
+          span.icon{
+            width: 0.72rem;
+            height: 0.72rem;
+            vertical-align: middle;
+            margin-right: 0.36rem;
+          }
+          .icon-full-cut{
+            background: url(/global/image/mall/icon_record_1.png) no-repeat 0 0/cover;
+          }
+          .icon-rate{
+            background: url(/global/image/mall/icon_record_2.png) no-repeat 0 0/cover;
+          }
+          .icon-obj{
+            background: url(/global/image/mall/icon_record_3.png) no-repeat 0 0/cover;
+          }
+          .icon-oil{
+            background: url(/global/image/mall/icon_record_4.png) no-repeat 0 0/cover;
+          }
+        }
+      }
+    }
+  }
 }
 
 //收货地址
@@ -1166,35 +1769,32 @@
       line-height: 0.4rem;
       i{
         margin-right: 0.1rem;
-        height: 0.32rem;
-        width: 0.32rem;
-        border: 0.02rem solid $c3;
-        border-radius:50%;
-        margin-top: 0.03rem;
-        @include fontFormat($fz:0.26rem,$fc:$white,$ta:center);
-        line-height: 0.34rem;
-        &:after{
-          content:'\2714';
-        }
+        height: 0.36rem;
+        width: 0.36rem;
+        background: url(/global/image/mall/icon_selected_2.png) no-repeat 0 0/cover;
       }
     }
     .choosed{
       i{
-        border-color:$red;
-        background-color: $red;
+        background: url(/global/image/mall/icon_selected_1.png) no-repeat 0 0/cover;
       }
     }
     a{
       @include fontFormat($fz:0.3rem,$fc:$c3);
-      line-height: 0.4rem;
+      line-height: 0.44rem;
       &:last-child{
         margin-left: 0.3rem;
       }
       i{
-        width:0.35rem;
+        width:0.4rem;
         height: 0.4rem;
-        background-color: $c6;
         margin-right: 0.05rem;
+      }
+      .icon-edit{
+        background: url(/global/image/mall/icon_edit.png) no-repeat 0 0/cover;
+      }
+      .icon-delete{
+        background: url(/global/image/mall/icon_delete.png) no-repeat 0 0/cover;
       }
     }
   }
@@ -1214,6 +1814,13 @@
     border: 0.01rem solid $dd;
     border-radius: 0.32rem;
     background-color: $white;
+    overflow: hidden;
+    @extend .flexStyle;
+    justify-content: space-between;
+    align-items: center;
+    input{
+      display: none;
+    }
     span{
       background-color: $white;
     }
@@ -1224,7 +1831,7 @@
       border-radius: 50%;
     }
     .circle-r{
-      margin-left: 0.1rem;
+      margin-right: 0.1rem;
       height: 0.2rem;
       width: 0.2rem;
       border:0.01rem solid $c9;
@@ -1237,16 +1844,16 @@
     .circle-l{
       margin-left: 0.2rem;
       height: 0.3rem;
-      width: 0.1rem;
+      width: 0.2rem;
       border:0.01rem solid $c9;
       border-radius: 0.2rem;
       vertical-align: middle;
     }
     .circle-r{
-      float: right;
+      margin-right:0;
       height: 0.59rem;
       width: 0.58rem;
-      border:0.04rem solid $blue;
+      border:0.03rem solid $blue;
       border-radius: 50%;
       vertical-align: top;
     }
@@ -1256,6 +1863,48 @@
 
 //抽奖
 .luck-wrap{
+  padding:0.3rem 0.32rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  .shanDeng{
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    border-radius:0.2rem;
+  }
+  .shanDeng{
+    background: url(../image/luck/shandeng1.png) no-repeat 0 0 #fe4236/cover;
+  }
+  .shanDeng2{
+    background: url(../image/luck/shandeng2.png) no-repeat 0 0 #fe4236/cover;
+  }
+  #luck{
+    width: 100%;
+    height: 100%;
+    background:#d80017;
+    border-radius:0.16rem;
+    table{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .shanDeng{
+    td {
+      width: 33%;
+      height: 33%;
+      text-align: center;
+      background: url(../image/luck/proBj.png) no-repeat 0 0/cover;
+      &.active{
+        background: url(../image/luck/active.png) no-repeat 0 0/cover;
+      }
+      &.cjBtn{
+        background: url(../image/luck/buttonUp.png) no-repeat 0 0/cover;
+      }
+      &.cjBtnDom{
+        background: url(../image/luck/buttonDown.png)  no-repeat 0 0/cover;
+      }
+    }
+  }
 
 }
 .luckDraw{

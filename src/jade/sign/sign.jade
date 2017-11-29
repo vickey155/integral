@@ -1,0 +1,78 @@
+extends ../layout/layout
+
+block append headTitle
+  title 每日签到
+
+block content
+    section.sign
+        .card
+            span.bg_title.titleLeft
+            .inner
+                div.topDiv
+                    span.num 2586
+                    | 积分
+                div 已连续签到
+                    span.day 10
+                    | 天
+            span.bg_title.titleRight
+        .main
+            .tips 每连续签到7天即可获得
+                span 30元投资现金券1张
+            .signBox
+              #scheduleBox
+              span.page-tb
+
+            .tips-b 今日签到将获得5积分
+
+    .btn-warp.fixed-footer
+      a.a-btn-bg-red 立即签到
+      a.a-btn-bg-grey 今日已签到
+
+
+    .bg-pic-pop
+    .dia-pic
+      .dialog-cont
+        .dia-close
+        .signSuc
+        p.big-font
+          span.red-font +5
+          |积分
+      .dialog-btn
+        a.close-btn(href='javascript:void(0);') 我知道了
+        a.a-link(href='javascript:void(0);') 去商城抽奖
+
+
+block append footer
+    script(type="text/javascript" src="../../global/js/schedule.js")
+    script.
+        $(function(){
+          var signData = {
+            signDays: [10, 29],//签到
+            unSignDays: [1, 2, 3, 4, 5, 6, 7] // 未签到
+          }
+          var mySchedule = new Schedule({
+            el: '#scheduleBox',
+            sign: signData
+          });
+          $("#scheduleBox").onClick('click', '.unSign', function () {
+            var tip = '您目前没有补签卡，立即去任务中心做任务获取补签卡。'
+            var url='';
+             var urlTxt='去做任务';
+            commonEvent.urlGoDialog(tip,url,urlTxt);
+            //var tip = '您目前一共有<span class="red-font">1</span>张补签卡，确认补签蒋消耗掉1张。'
+            //var url = '';
+           // var urlTxt = '确认补签';
+            //commonEvent.urlGoDialog(tip, url, urlTxt);
+            //commonEvent.urlGoDialog(tip, url, urlTxt);
+          });
+          $(".dia-pic").onClick('click','.close-btn,.dia-close',function () {
+            $(".bg-pic-pop").hide();
+            $(".dia-pic").hide();
+          })
+        });
+        $(".btn-warp").onClick('click','.a-btn-bg-red',function () {
+          $(".bg-pic-pop").show();
+          $(".dia-pic").show();
+        });
+
+

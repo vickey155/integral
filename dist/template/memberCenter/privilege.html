@@ -12,9 +12,10 @@
     <meta name="x5-fullscreen" content="true">
     <title>会员中心</title>
     <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../../global/css/swiper.min.css">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/common.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
@@ -25,44 +26,99 @@
   <body>
     <section class="privilege">
       <div class="banner">
-        <div class="card-wrap">
-          <div class="card gold">
-            <div class="icon-wrap"><span class="icon icon-gold"></span>
-              <p class="name">黄金会员</p>
-              <p class="txt">5万元>在投年化投资额<10万元</p>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide qingtong"><a href="javascript:void(0)"><span></span></a>
+              <div class="icon-wrap"><span class="icon"></span>
+                <p class="name">青铜  会员</p>
+                <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
+              </div>
+            </div>
+            <div class="swiper-slide baiyin"><a><span></span></a>
+              <div class="icon-wrap"><span class="icon"></span>
+                <p class="name">白银  会员</p>
+                <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
+              </div>
+            </div>
+            <div class="swiper-slide huangjin"><a><span></span></a>
+              <div class="icon-wrap"><span class="icon"></span>
+                <p class="name">黄金 会员</p>
+                <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
+              </div>
+            </div>
+            <div class="swiper-slide bojin"><a><span></span></a>
+              <div class="icon-wrap"><span class="icon"></span>
+                <p class="name">铂金会员</p>
+                <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
+              </div>
+            </div>
+            <div class="swiper-slide zhuanshi"><a><span></span></a>
+              <div class="icon-wrap"><span class="icon"></span>
+                <p class="name">砖石会员</p>
+                <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
+              </div>
+            </div>
+            <div class="swiper-slide zhizhun"><a><span></span></a>
+              <div class="icon-wrap"><span class="icon"></span>
+                <p class="name">至尊会员</p>
+                <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
+              </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
       <div class="sec-li-center">
         <div class="title"><i class="icon-title-left"></i><span>特权礼包内容</span><i class="icon-title-right"></i></div>
-        <div class="row-cont"><a href="javascript:void(0);" class="row">
-            <div class="col"><img src=""></div>
+        <div class="row-cont qingtong"><a href="javascript:void(0);" class="row">
+            <div class="col"><span><i class="icon01"></i></span></div>
             <div class="col">
               <p class="name">生日特权</p>
               <p class="grey-font">生日积分双倍</p>
             </div></a><a href="javascript:void(0);" class="row">
-            <div class="col"><img src=""></div>
+            <div class="col"><span><i class="icon02"></i></span></div>
             <div class="col">
               <p class="name">兑换特权</p>
               <p class="grey-font">商城礼品积分95折兑</p>
             </div></a><a href="javascript:void(0);" class="row">
-            <div class="col"><img src=""></div>
+            <div class="col"><span><i class="icon03"></i></span></div>
             <div class="col">
               <p class="name">首次升级特权</p>
               <p class="grey-font">0.5%加息券</p>
             </div></a><a href="javascript:void(0);" class="row">
-            <div class="col"><img src=""></div>
+            <div class="col"><span><i class="icon04"></i></span></div>
             <div class="col">
               <p class="name">服务特权</p>
               <p class="grey-font">在线客服为您服务</p>
             </div></a><a href="javascript:void(0);" class="row">
-            <div class="col"><img src=""></div>
+            <div class="col"><span><i class="icon05"></i></span></div>
             <div class="col">
               <p class="name">投资特权</p>
               <p class="grey-font">约标</p>
             </div></a></div>
       </div>
     </section>
+    <script type="text/javascript" src="../../global/js/swiper.min.js"></script>
+    <script>
+      var mySwiper = new Swiper('.swiper-container', {
+        //autoplay:true,
+        slidesPerView: 2,
+        spaceBetween:86,
+        loop: true,
+        centeredSlides: true,
+        speed:300,
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        on: {
+          transitionEnd: function (swiper) {
+           console.log(this.activeIndex-1)
+          },
+        },
+      });
+      if(mySwiper.slides.length <= 3){
+        mySwiper.destroy();
+      }
+    </script>
   </body>
 </html>

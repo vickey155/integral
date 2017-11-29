@@ -67,47 +67,24 @@ var commonEvent = function () {
             return false;
         });
     };
+
     var dialogErrTip = function (errTip) {
-        var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-title"> 温馨提示</div><div class="dialog-cont">' + '<p>' + errTip + '</p></div>' + '<div class="dialog-btn"><a class="a-btn-redbg close-btn">确认</a>' + '</div> </div>';
+        var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-cont"><p>' + errTip + '</p></div>' + '<div class="dialog-btn"><a href="javascript:void(0);" class="close-btn">确定</a>' + '</div> </div>';
         $('body').append(temp);
     };
-    var dialogFillNone = function (errTip) {
-        var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-title"> 温馨提示</div><div class="dialog-cont">' + '<p>对不起，' + errTip + '</span></p></div>' + '<div class="dialog-btn"><a class="a-btn-redbg close-btn">确认</a>' + '</div> </div>';
+    var dialogConfirm = function (tip, fun) {
+        var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-cont"><p>' + tip + '</p></div>' + '<div class="dialog-btn"><a class="close-btn">关闭</a><a class="sure-btn">确定</a>' + '</div> </div>';
         $('body').append(temp);
-    };
-    var dialogInput = function (formObj, errTip) {
-        var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-title"> 温馨提示</div><div class="dialog-cont">' + '<input type="text" placeholder="' + errTip + '"/></div>' + '<div class="dialog-btn a-2"><a class="a-btn-graybg close-btn">取消</a><a class="a-btn-redbg sure-btn">确认</a>' + '</div> </div>';
-        $('body').append(temp);
-        $('.dialog-alert-pop .sure-btn').onClick('click', function () {
-            var inputObj = $(".dialog-alert-pop input");
-            var inputVal = $.trim(inputObj.val());
-            if (inputVal == '') {
-                inputObj.addClass("input-error");
-            } else {
-                var temp = '<div class="checkbox-wrap"><span class="a-tab">' + inputVal + '<i class="icon-close"></i></span><input type="checkbox" name="' + inputVal + '"/></div>';
-                inputObj.removeClass("input-error");
-                formObj.before(temp);
-                $(".bg-alert-pop").remove();
-                $(".dialog-alert-pop").remove();
-                $(".a-tab-wrap .icon-close").onClick('click', function (e) {
-                    var sel = $(this);
-                    //sel.closest('.checkbox-wrap').find('input[type=checkbox]').prop("checked", false);
-                    sel.closest('.checkbox-wrap').remove();
-                    stopDefault(e);
-                });
-            }
-        });
-    };
-    var dialogConfirm = function (errTip, fun) {
-        var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-title"> 温馨提示</div><div class="dialog-cont">' + '<p>' + errTip + '</p></div>' + '<div class="dialog-btn a-2"><a class="a-btn-graybg close-btn">取消</a><a class="a-btn-redbg sure-btn">确认</a>' + '</div> </div>';
-        $('body').append(temp);
-        // closeDialog();
         $('.dialog-alert-pop .sure-btn').onClick('click', function () {
             $(".bg-alert-pop").remove();
             $(".dialog-alert-pop").remove();
             fun();
             return false;
         });
+    };
+    var dialogConfirmUrl = function (tip, url, urlTxt) {
+        var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' + '<div class="dialog-cont"><p>' + tip + '</p></div>' + '<div class="dialog-btn"><a href="javascript:void(0);" class="close-btn">关闭</a><a class="a-link" href="' + url + '">' + urlTxt + '</a>' + '</div> </div>';
+        $('body').append(temp);
     };
 
     return {
@@ -118,17 +95,13 @@ var commonEvent = function () {
             dialogErrTip(errTip);
             closeDialog();
         },
-        inputTextNone: function (errTip) {
-            dialogFillNone(errTip);
-            closeDialog();
-        },
         confirmDialog: function (tip, fun) {
             //fun为确认时执行的函数方法
             dialogConfirm(tip, fun);
             closeDialog();
         },
-        customizeDialog: function (obj, errTip) {
-            dialogInput(obj, errTip);
+        urlGoDialog: function (tip, url, urlTxt) {
+            dialogConfirmUrl(tip, url, urlTxt);
             closeDialog();
         },
         alertDialog: function (tip) {
@@ -139,4 +112,52 @@ var commonEvent = function () {
     };
 }();
 
-$(function () {});
+//进度条
+var progress = function () {
+    var signDay = function () {
+        //签到进度条
+        var wrap = $('.progress');
+        var allDays = 7;
+        var lastDays = wrap.find('#prossNum').text();
+        // var allProgerssW = wrap.find('.progress-bar').width();
+        var allProgerssW = 1.6;
+        var cuppy = wrap.find('.progress-ocuppy');
+        var signDays = allDays - Number(lastDays);
+        //var rate = signDays/allDays;
+        var rate = 0.23;
+        //var ocuppyW =rate * allProgerssW;
+        var ocuppyW = rate * signDays;
+        cuppy.width(ocuppyW + 'rem');
+    };
+    var gradProgress = function () {
+        //等级进度条
+        var wrap = $('.histogram-wrap .histogram-cont');
+        var allNum = 100;
+        var h0 = 1;
+        //var barH = Number(wrap.height()) - 1;
+        var barH = 4.4 - h0;
+        var column = wrap.find('.column');
+        column.each(function () {
+            var num0 = '0';
+            var self = $(this);
+            var selfOcuppyNum = Number($(this).find('.num i').text());
+            var selfOcuppyH = $(this).find('.column-ocuppy');
+            var rate = selfOcuppyNum / allNum;
+            selfOcuppyH.height(rate * barH + 'rem');
+        });
+    };
+
+    return {
+        signDayInit: function () {
+            signDay();
+        },
+        gradProgressInit: function () {
+            gradProgress();
+        }
+    };
+}();
+
+$(function () {
+    progress.signDayInit();
+    progress.gradProgressInit();
+});

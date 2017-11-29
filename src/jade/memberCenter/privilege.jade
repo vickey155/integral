@@ -2,55 +2,122 @@ extends ../layout/layout
 
 block append headTitle
   title 会员中心
+block append headCss
+  link(rel="stylesheet" href="../../global/css/swiper.min.css")
 
 block content
   section.privilege
     .banner
-      .card-wrap
-        .card.gold
-          .icon-wrap
-            span.icon.icon-gold
-            p.name 黄金会员
-            p.txt 5万元>在投年化投资额<10万元
-
+      .swiper-container
+        .swiper-wrapper
+          .swiper-slide.qingtong
+            a(href="javascript:void(0)")
+              span
+            .icon-wrap
+              span.icon
+              p.name 青铜  会员
+              p.txt 5万元 > 在投年化投资额 < 10万元
+          .swiper-slide.baiyin
+            a
+              span
+            .icon-wrap
+              span.icon
+              p.name 白银  会员
+              p.txt 5万元 > 在投年化投资额 < 10万元
+          .swiper-slide.huangjin
+            a
+              span
+            .icon-wrap
+              span.icon
+              p.name 黄金 会员
+              p.txt 5万元 > 在投年化投资额 < 10万元
+          .swiper-slide.bojin
+            a
+              span
+            .icon-wrap
+              span.icon
+              p.name 铂金会员
+              p.txt 5万元 > 在投年化投资额 < 10万元
+          .swiper-slide.zhuanshi
+            a
+              span
+            .icon-wrap
+              span.icon
+              p.name 砖石会员
+              p.txt 5万元 > 在投年化投资额 < 10万元
+          .swiper-slide.zhizhun
+            a
+              span
+            .icon-wrap
+              span.icon
+              p.name 至尊会员
+              p.txt 5万元 > 在投年化投资额 < 10万元
+        .swiper-pagination
     .sec-li-center
       .title
         i.icon-title-left
         span 特权礼包内容
         i.icon-title-right
-      .row-cont
+      .row-cont.qingtong
         a(href="javascript:void(0);").row
           .col
-            img(src="")
+            span
+              i.icon01
           .col
             p.name 生日特权
             p.grey-font 生日积分双倍
         a(href="javascript:void(0);").row
           .col
-            img(src="")
+            span
+              i.icon02
           .col
             p.name 兑换特权
             p.grey-font 商城礼品积分95折兑
 
         a(href="javascript:void(0);").row
           .col
-            img(src="")
+            span
+              i.icon03
           .col
             p.name 首次升级特权
             p.grey-font 0.5%加息券
         a(href="javascript:void(0);").row
           .col
-            img(src="")
+            span
+              i.icon04
           .col
             p.name 服务特权
             p.grey-font 在线客服为您服务
         a(href="javascript:void(0);").row
           .col
-            img(src="")
+            span
+              i.icon05
           .col
             p.name 投资特权
             p.grey-font 约标
 
+block append footer
+  script(type="text/javascript" src="../../global/js/swiper.min.js")
+  script.
+    var mySwiper = new Swiper('.swiper-container', {
+      //autoplay:true,
+      slidesPerView: 2,
+      spaceBetween:86,
+      loop: true,
+      centeredSlides: true,
+      speed:300,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      on: {
+        transitionEnd: function (swiper) {
+         console.log(this.activeIndex-1)
+        },
+      },
+    });
+    if(mySwiper.slides.length <= 3){
+      mySwiper.destroy();
+    }
 
 
 

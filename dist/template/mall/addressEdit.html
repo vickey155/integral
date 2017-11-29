@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/common.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
@@ -35,55 +35,53 @@
             <input type="text" placeholder="请填写联系电话" data-validate="telephone" class="input-text-large">
           </div>
           <div class="form-row">
-            <label>所在地区</label>
-            <div class="select-region-wrap">
-              <select data-validate="province">
-                <option value="">所在省</option>
-                <option value="浙江省">浙江省</option>
-              </select>
-              <select data-validate="city">
-                <option value="">所在市</option>
-                <option value="杭州市">杭州市</option>
-              </select>
-              <select data-validate="district">
-                <option value="">所在区/县</option>
-                <option value="江干区">江干区</option>
-                <option value="上城区">上城区</option>
-              </select>
-            </div>
+            <label>所在省</label>
+            <select placeholder="请选择所在省" data-validate="province" class="select-large input-text-large">
+              <option value="">请选择所在省</option>
+            </select>
           </div>
           <div class="form-row">
-            <label>街道</label>
-            <select placeholder="请选择选择街道" data-validate="detailAddress" class="select-large input-text-large">
-              <option value="">请选择选择街道</option>
+            <label>所在市</label>
+            <select placeholder="请选择所在市" data-validate="city" class="select-large input-text-large">
+              <option value="">请选择所在市</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>所在区/县</label>
+            <select placeholder="请选择所在区/县" data-validate="district" class="select-large input-text-large">
+              <option value="">请选择所在区/县</option>
             </select>
           </div>
           <div class="form-row">
             <label>详细地址</label>
-            <input type="text" placeholder="请填写详细地址，不少于5个字" data-validate="detailAddress" class="input-text-large">
+            <textarea type="text" placeholder="请填写详细地址，不少于5个字" data-validate="detailAddress" class="input-text-large height2"></textarea>
           </div>
         </form>
       </div>
       <div class="el-form">
         <div class="form-row">
           <label>设为默认</label>
-          <div class="el-switch switch-checked"><span class="circle-l"></span><span class="circle-r"></span></div>
+          <div class="el-switch switch-checked">
+            <input type="checkbox"><span class="circle-l"></span><span class="circle-r"></span>
+          </div>
         </div>
       </div>
-      <div class="btn-warp"><a href="javascript:void(0);" class="a-btn-bg-grey">保存</a><a id="saveBtn" href="javascript:void(0);" class="a-btn-bg-red">保存</a></div>
+      <div class="btn-a-wrap">
+        <!--a.a-btn-bg-grey(href="javascript:void(0);") 保存--><a id="saveBtn" href="javascript:void(0);" class="a-btn-bg-red">保存</a>
+      </div>
     </section>
     <script>
       $(function () {
         //选择为默认地址
-        $(".rectangle-choose").onClick('click', 'span', function () {
+        $(".el-switch").onClick('click',  function () {
           var sel = $(this);
-          var inputCheckBox = sel.parent().find('input[type=checkbox]');
-          if (sel.hasClass('active')) {
-            sel.removeClass('active');
+          var inputCheckBox = sel.find('input[type=checkbox]');
+          if (sel.hasClass('switch-checked')) {
+            sel.removeClass('switch-checked');
             inputCheckBox.attr('checked', false);
           }
           else {
-            sel.addClass('active');
+            sel.addClass('switch-checked');
             inputCheckBox.attr('checked', true);
           }
         });
@@ -92,12 +90,10 @@
         var checkForm = function () {
           var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
           var zipCode = /^[1-9][0-9]{5}$/;
-          var showDialog = function (sel, dialogExist, errTip) {
+          var showDialog = function (sel, errTip) {
             sel.addClass("error-input");
+            var dialogExist = $(".dialog-alert-pop").length;
             if (dialogExist == 0) {
-              if (sel.is('input[type=text]')) {
-                errTip = '请输入' + errTip;
-              }
               commonEvent.validataDialog(errTip);
               return false;
             }
@@ -110,80 +106,64 @@
           eleValidate.each(function () {
             var sel = $(this);
             var selDataVal = $.trim(sel.data('validate'));
-            var dialogExist = $(".dialog-alert-pop").length;
-            if (selDataVal == 'name') {
+            if (selDataVal === 'name') {
               var selVal = $.trim(sel.val());
               if (selVal == '') {
                 var errTip = $.trim(sel.attr("placeholder"));
-                return showDialog(sel, dialogExist, errTip);
+                return showDialog(sel, errTip);
               } else {
                 sel.removeClass("error-input");
               }
             }
-            else if (selDataVal == 'telephone') {
+            else if (selDataVal === 'telephone') {
               var selVal = $.trim(sel.val());
               if (selVal == '') {
                 var errTip = $.trim(sel.attr("placeholder"));
-                return showDialog(sel, dialogExist, errTip);
+                return showDialog(sel, errTip);
               } else {
                 if (!mobile.test(selVal)) {
-                  var errTip = "正确的手机号";
-                  return showDialog(sel, dialogExist, errTip);
+                  var errTip = "请填写正确的手机号";
+                  return showDialog(sel, errTip);
                 }
                 else {
                   sel.removeClass("error-input");
                 }
               }
             }
-            else if (selDataVal == 'province') {
+            else if (selDataVal === 'province') {
               var selectedVal = $.trim(sel.find('option:selected').val());
               if (selectedVal == '') {
-                var errTip = "请选择省份";
-                return showDialog(sel, dialogExist, errTip);
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, errTip);
               } else {
                 sel.removeClass("error-input");
               }
             }
-            else if (selDataVal == 'city') {
+            else if (selDataVal === 'city') {
               var selectedVal = $.trim(sel.find('option:selected').val());
               if (selectedVal == '') {
-                var errTip = "请选择市区";
-                return showDialog(sel, dialogExist, errTip);
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, errTip);
               } else {
                 sel.removeClass("error-input");
               }
             }
-            else if (selDataVal == 'district') {
+            else if (selDataVal === 'district') {
               var selectedVal = $.trim(sel.find('option:selected').val());
               if (selectedVal == '') {
-                var errTip = "请选择区/县";
-                return showDialog(sel, dialogExist, errTip);
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, errTip);
               } else {
                 sel.removeClass("error-input");
               }
             }
-            else if (selDataVal == 'detailAddress') {
+            else if (selDataVal === 'detailAddress') {
               var selVal = $.trim(sel.val());
               if (selVal == '') {
                 var errTip = $.trim(sel.attr("placeholder"));
-                return showDialog(sel, dialogExist, errTip);
+                return showDialog(sel, errTip);
               } else {
                 sel.removeClass("error-input");
-              }
-            }
-            else if (selDataVal == 'zipCode') {
-              var selVal = $.trim(sel.val());
-              if (selVal == '') {
-                var errTip = $.trim(sel.attr("placeholder"));
-                return showDialog(sel, dialogExist, errTip);
-              } else {
-                if (!zipCode.test(selVal)) {
-                  var errTip = "正确的邮编";
-                  return showDialog(sel, dialogExist, errTip);
-                }
-                else {
-                  sel.removeClass("error-input");
-                }
               }
             }
           });
@@ -195,7 +175,7 @@
           }
         }
       
-        $("#sure-btn").onClick('click', function () {
+        $("#saveBtn").onClick('click', function () {
           if (checkForm()) {
             alert('ok');
           }

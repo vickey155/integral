@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/common.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
@@ -24,8 +24,8 @@
   </head>
   <body>
     <section class="addressList">
-      <div class="address-list">
-        <div class="row">
+      <div id="adressList" class="address-list">
+        <div data-id="1" class="row">
           <div class="address-one">
             <p>墨小刀<a href="tel:13958466616" class="fr">13958466616</a></p>
             <p><span class="default-address">[默认地址]</span>浙江省 杭州市 江干区 四季青街道印象城18楼</p>
@@ -34,14 +34,19 @@
             <div class="fr"><a href="javascript:void(0);"><i class="icon-edit"></i>编辑</a><a href="javascript:void(0);"><i class="icon-delete"></i>删除</a></div>
           </div>
         </div>
-        <div class="row">
+        <div data-id="3" class="row">
           <div class="address-one">
             <p>墨小刀<a href="tel:13958466616" class="fr">13958466616</a></p>
-            <p>浙江省 杭州市 江干区 四季青街道印象城18楼</p>
+            <p><span class="default-address"></span>浙江省 杭州市 江干区 四季青街道印象城18楼</p>
           </div>
+          <div class="opt-wrap"><span class="set-default"><i></i>默认地址</span>
+            <div class="fr"><a href="javascript:void(0);"><i class="icon-edit"></i>编辑</a><a href="javascript:void(0);"><i class="icon-delete"></i>删除</a></div>
+          </div>
+        </div>
+        <div data-id="2" class="row">
           <div class="address-one">
             <p>墨小刀<a href="tel:13958466616" class="fr">13958466616</a></p>
-            <p>浙江省 杭州市 江干区 四季青街道印象城18楼</p>
+            <p><span class="default-address"></span>浙江省 杭州市 江干区 四季青街道印象城18楼</p>
           </div>
           <div class="opt-wrap"><span class="set-default"><i></i>默认地址</span>
             <div class="fr"><a href="javascript:void(0);"><i class="icon-edit"></i>编辑</a><a href="javascript:void(0);"><i class="icon-delete"></i>删除</a></div>
@@ -49,5 +54,33 @@
         </div>
       </div>
     </section>
+    <script>
+      //默认地址选择
+      $("#adressList").onClick('click','.set-default',function () {
+        var redFont = '[默认地址]';
+        var self = $(this).find('i');
+        var selfRow = self.closest('.row');
+        var selfRowId = selfRow.data('id');
+        alert(selfRowId)
+        //回调
+        var selfParent = $(this).parent();
+        var allParent = selfParent.closest('#adressList');
+        allParent.find('.set-default').removeClass('choosed');
+        allParent.find('.default-address').html('');
+        selfParent.addClass('choosed');
+        selfRow.closest('.row').find('.default-address').html(redFont);
+      
+      });
+      //删除
+      $("#adressList").onClick('click', '.icon-delete', function () {
+        var self = $(this);
+        var selfRow = self.closest('.row');
+        var selfRowId = selfRow.data('id');
+        alert(selfRowId)
+        //回调
+        self.closest('.row').remove();
+      
+      });
+    </script>
   </body>
 </html>

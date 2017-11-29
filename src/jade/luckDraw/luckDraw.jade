@@ -18,7 +18,21 @@ block content
         |次机会哦
 
     .luck-wrap
-
+      .shanDeng#deng
+        #luck
+          table
+            tr
+              td.luck-unit.luck-unit-0
+              td.luck-unit.luck-unit-1
+              td.luck-unit.luck-unit-2
+            tr
+              td.luck-unit.luck-unit-7
+              td.cjBtn#btn
+              td.luck-unit.luck-unit-3
+            tr
+              td.luck-unit.luck-unit-6
+              td.luck-unit.luck-unit-5
+              td.luck-unit.luck-unit-4
     .draw-rule
       a(href="javascript:void(0);") 抽奖规则
 
@@ -45,7 +59,8 @@ block content
               span 抽中 20元红包
 
 
-
+block append footer
+  script(type="text/javascript" src="../../global/js/luckDraw.js")
 
 
 

@@ -88,6 +88,22 @@ input:-ms-input-placeholder {
   color: #999 !important;
   /*/ Internet Explorer 10+ *!*/ }
 
+textarea::-webkit-input-placeholder {
+  color: #999 !important;
+  /* WebKit browsers */ }
+
+textarea::-moz-placeholder {
+  color: #999 !important;
+  /* Mozilla Firefox 4 to 18 */ }
+
+textarea:-moz-placeholder {
+  color: #999 !important;
+  /* / Mozilla Firefox 19+ /*/ }
+
+textarea:-ms-input-placeholder {
+  color: #999 !important;
+  /*/ Internet Explorer 10+ *!*/ }
+
 html, body {
   width: 100%;
   height: auto;
@@ -143,7 +159,7 @@ h1 {
   padding-left: 0.32rem;
   padding-right: 0.32rem; }
 
-.flexStyle {
+.flexStyle, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn {
   display: flex;
   display: -webkit-flex; }
 
@@ -186,6 +202,7 @@ a.a-btn-border-blue {
   border-radius: 0.28rem; }
 
 .btn-a-wrap {
+  margin-top: 0.5rem;
   padding: 0.22rem 0.32rem; }
 
 .btn-warp {
@@ -307,7 +324,7 @@ a.a-btn-border-red {
       @media screen and (min-width: 640px) {
         .el-form .form-row label {
           font-size: 0.34rem; } }
-    .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+    .el-form .form-row .inputClass, .el-form .form-row input.input-text-large, .el-form .form-row textarea {
       float: right;
       min-width: 5.2rem;
       background: transparent;
@@ -315,33 +332,36 @@ a.a-btn-border-red {
       text-align: right;
       line-height: 0.6rem;
       padding: 0 0.06rem;
-      border: 0.01rem solid #fff; }
+      border: 0.01rem solid #fff;
+      outline: none; }
       @media screen and (max-width: 321px) {
-        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large, .el-form .form-row textarea {
           font-size: 0.31rem; } }
       @media screen and (min-width: 321px) and (max-width: 400px) {
-        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large, .el-form .form-row textarea {
           font-size: 0.32rem; } }
       @media screen and (min-width: 400px) and (max-width: 640px) {
-        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large, .el-form .form-row textarea {
           font-size: 0.33rem; } }
       @media screen and (min-width: 640px) {
-        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large {
+        .el-form .form-row .inputClass, .el-form .form-row input.input-text-large, .el-form .form-row textarea {
           font-size: 0.34rem; } }
+    .el-form .form-row input.error-input {
+      border-color: #f7655e; }
     .el-form .form-row textarea {
       resize: none; }
-    .el-form .form-row input.error-input {
+    .el-form .form-row textarea.error-input {
       border-color: #f7655e; }
     .el-form .form-row .selectClass, .el-form .form-row select.select-large, .el-form .form-row .select-region-wrap select {
       background: #fff;
-      border: 0.01 solid #dddddd;
+      border: 0.01rem solid #fff;
       line-height: 0.6rem;
       padding: 0 0.06rem;
       margin-right: 1%;
       appearance: none;
       -webkit-appearance: none;
       outline: none;
-      color: #333;
+      color: #999;
       text-align: right;
       direction: rtl; }
       @media screen and (max-width: 321px) {
@@ -362,8 +382,13 @@ a.a-btn-border-red {
       float: right;
       min-width: 5.2rem;
       background: #fff; }
+    .el-form .form-row select.selected {
+      color: #333; }
     .el-form .form-row input.error-input {
       border-color: #f7655e; }
+    .el-form .form-row select.error-input {
+      border: 0.01rem solid #f7655e;
+      padding: 0 0.06rem; }
     .el-form .form-row .select-region-wrap {
       float: right;
       min-width: 5.2rem; }
@@ -377,10 +402,180 @@ a.a-btn-border-red {
       .el-form .form-row .select-region-wrap select.error-input {
         border-color: #f7655e; }
 
-.icon-level-star {
-  width: 1.6rem;
-  height: 1.6rem;
-  background-color: blue; }
+.bg-alert-pop, .bg-pic-pop {
+  background-color: #000000;
+  opacity: 0.7;
+  filter: alpha(opacity=60);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  height: 100%;
+  width: 100%; }
+
+.dialog-alert-pop, .dia-pic {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  width: 6.1rem;
+  transform: translate(-50%, -70%);
+  background-color: #fff;
+  border-radius: 0.2rem; }
+  .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
+    padding: 0.4rem  0.8rem;
+    min-height: 1.8rem;
+    color: #333;
+    text-align: center;
+    line-height: 0.5rem;
+    border-bottom: 0.01rem solid #dddddd; }
+    @media screen and (max-width: 321px) {
+      .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
+        font-size: 0.3rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
+        font-size: 0.31rem; } }
+    @media screen and (min-width: 640px) {
+      .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
+        font-size: 0.32rem; } }
+    .dialog-alert-pop .dialog-cont p, .dia-pic .dialog-cont p {
+      color: #333;
+      text-align: center;
+      line-height: 0.5rem; }
+      @media screen and (max-width: 321px) {
+        .dialog-alert-pop .dialog-cont p, .dia-pic .dialog-cont p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dialog-alert-pop .dialog-cont p, .dia-pic .dialog-cont p {
+          font-size: 0.3rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dialog-alert-pop .dialog-cont p, .dia-pic .dialog-cont p {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 640px) {
+        .dialog-alert-pop .dialog-cont p, .dia-pic .dialog-cont p {
+          font-size: 0.32rem; } }
+      .dialog-alert-pop .dialog-cont p span, .dia-pic .dialog-cont p span {
+        vertical-align: middle; }
+    .dialog-alert-pop .dialog-cont .red-font, .dia-pic .dialog-cont .red-font {
+      color: #f7655e; }
+  .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn {
+    justify-content: space-between; }
+    .dialog-alert-pop .dialog-btn a, .dia-pic .dialog-btn a {
+      flex: 1;
+      border-right: 0.01rem solid #dddddd;
+      line-height: 1rem;
+      color: #333;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .dialog-alert-pop .dialog-btn a, .dia-pic .dialog-btn a {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dialog-alert-pop .dialog-btn a, .dia-pic .dialog-btn a {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dialog-alert-pop .dialog-btn a, .dia-pic .dialog-btn a {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .dialog-alert-pop .dialog-btn a, .dia-pic .dialog-btn a {
+          font-size: 0.34rem; } }
+      .dialog-alert-pop .dialog-btn a:last-child, .dia-pic .dialog-btn a:last-child {
+        border-right: 0; }
+    .dialog-alert-pop .dialog-btn a.a-link, .dia-pic .dialog-btn a.a-link {
+      color: #508cee; }
+
+.bg-pic-pop {
+  display: none; }
+
+.dia-pic {
+  display: none; }
+  .dia-pic .dia-close {
+    position: absolute;
+    right: 0rem;
+    top: -1rem;
+    width: 0.52rem;
+    height: 0.52rem;
+    background: url(/global/image/sign/icon_close.png) no-repeat 0 0/cover; }
+  .dia-pic .dialog-cont {
+    position: relative;
+    padding-top: 1.6rem; }
+    .dia-pic .dialog-cont .signSuc {
+      position: absolute;
+      left: 50%;
+      margin-left: -1.65rem;
+      top: -1.8rem;
+      width: 3.4rem;
+      height: 3.4rem;
+      background: url(/global/image/sign/icon_signin_successfully.png) no-repeat 0 0/cover; }
+    .dia-pic .dialog-cont p.big-font {
+      color: #333;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .dia-pic .dialog-cont p.big-font {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dia-pic .dialog-cont p.big-font {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dia-pic .dialog-cont p.big-font {
+          font-size: 0.37rem; } }
+      @media screen and (min-width: 640px) {
+        .dia-pic .dialog-cont p.big-font {
+          font-size: 0.38rem; } }
+      .dia-pic .dialog-cont p.big-font span.red-font {
+        color: #f7655e;
+        text-align: center;
+        vertical-align: top;
+        margin-right: 0.03rem; }
+        @media screen and (max-width: 321px) {
+          .dia-pic .dialog-cont p.big-font span.red-font {
+            font-size: 0.41rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .dia-pic .dialog-cont p.big-font span.red-font {
+            font-size: 0.42rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .dia-pic .dialog-cont p.big-font span.red-font {
+            font-size: 0.43rem; } }
+        @media screen and (min-width: 640px) {
+          .dia-pic .dialog-cont p.big-font span.red-font {
+            font-size: 0.44rem; } }
+
+.icon-arrow-right {
+  background: url(/global/image/home/icon_next.png) no-repeat 0 0/cover;
+  margin-left: 0.05rem;
+  vertical-align: middle; }
 
 .icon {
   background-color: red; }
+
+.icon-sign-duihao {
+  background: url(/global/image/home/icon_sign_in.png) no-repeat 0 0/cover; }
+
+.icon-luck-draw {
+  background: url(/global/image/home/icon_points_draw.png) no-repeat 0 0/cover; }
+
+.icon-integral-mall {
+  background: url(/global/image/home/icon_points_mall.png) no-repeat 0 0/cover; }
+
+.icon-invitation {
+  background: url(/global/image/home/icon_invite_friends.png) no-repeat 0 0/cover; }
+
+.icon-sign-day7 {
+  background: url(/global/image/home/icon_task_sign_in.png) no-repeat 0 0/cover; }
+
+.icon-task-sign {
+  background: url(/global/image/home/icon_task_sign_in.png) no-repeat 0 0/cover; }
+
+.icon-task-invite {
+  background: url(/global/image/home/icon_task_invite_friends.png) no-repeat 0 0/cover; }
+
+.icon-task-invest {
+  background: url(/global/image/home/icon_task_investment.png) no-repeat 0 0/cover; }
+
+.icon-status-finished {
+  background: url(/global/image/home/icon_completed.png) no-repeat 0 0/cover; }
+
+.icon-sign-days {
+  background: url(/global/image/task/icon_task_21days.png) no-repeat 0 0/cover; }

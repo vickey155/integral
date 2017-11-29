@@ -12,43 +12,53 @@ block content
             p 10元红包兑换券
             span.a-btn-bg-blue 1万起投
           .col.integral-ticket
-            img(src="")
+            img(src="/global/image/mall/icon_img_1.png")
       .row.border-bottom
         .col
           label 兑换数量
         .col
           .addCutWrap
             span.cutBtn -
-            input(type='text')
+            input(type='number' value='1')
             span.addBtn +
       .row
         .col
           label 积分：
-          span.red-font  1500
+          span.red-font#integralNum  1500
           span.grey-font 2000
         .col
           .fr
             span.icon-circle-star
-            label 可用积分:2350
+            label 可用积分:
+              i#integralAbled 2350
 
     .sec-m
-      .red-notice-tips
-        ul
-          li
+      .red-notice-tips.swiper-container
+        ul.swiper-wrapper
+          li.swiper-slide
             span.icon-red-font
+            span.border-l
             | 章先生兑换了200元满减券
+          li.swiper-slide
+            span.icon-red-font
+            span.border-l
+            | 章先生兑换了1220元满减券
+          li.swiper-slide
+            span.icon-red-font
+            span.border-l
+            | 章先生兑换了90000元满减券
 
     .cont-wrap
       .row
         h3
-          span.icon.icon-introduce
+          span.icon.icon01
           | 商品简介
         .txt-cont
           p 仅支持部分投资项目，成功使用满减券后，投资应付总额中将减去使用满减券抵扣的金
 
       .row
         h3
-          span.icon.icon-get
+          span.icon.icon-introduce
           | 商品介绍
         .txt-cont
           h4 商品说明
@@ -65,7 +75,7 @@ block content
           p 兑换成功后，满减券将在1小时内自动发放至用户账户，请前往APP端“我”-“优惠券”查看。
       .row
         h3
-          span.icon.icon-get
+          span.icon.icon02
           | 免责声明
         .txt-cont
           p 请在兑换前仔细参照商品简介及兑换说明。
@@ -77,15 +87,64 @@ block content
       p 如有疑问，请联系在线客服或拨打400-8269-227
 
 
-    .btn-warp
+    .btn-warp.fixed-footer
       a.a-btn-bg-yellow#exChargeBtn(href='javascript:void(0);')
         span.icon-star.icon-star-white
-        | 2000 积分兑换
-    .btn-warp
+        i#integralNumSum 2000
+        |积分兑换
       a.a-btn-bg-grey(href='javascript:void(0);')
         span.icon-star.icon-star-grey
         | 积分不足
 
+
+block append footer
+  script(type="text/javascript" src="../../global/js/swiper.min.js")
+  script.
+    $(function () {
+      var mySwiper = new Swiper('.swiper-container', {
+        direction : 'vertical',
+        autoplay : true,
+        delay: 2000,
+        loop: true,
+        speed: 400
+      });
+      if (mySwiper.slides.length <= 3) {
+        mySwiper.destroy();
+      }
+
+      var num = 1;
+      var dealWithIntegral = function () {
+        var integralNumSum = Number($("#integralNum").text()) * num;
+        var integralAbled = Number($("#integralAbled").text());
+        if (integralNumSum <= integralAbled) {
+          $("#integralNumSum").html(integralNumSum);
+          $('.a-btn-bg-yellow').show();
+          $('.a-btn-bg-grey').hide();
+        }
+        else {
+          $('.a-btn-bg-yellow').hide();
+          $('.a-btn-bg-grey').show();
+        }
+      }
+      dealWithIntegral();
+      $('.addCutWrap').onClick('click', 'span', function () {
+        var self = $(this);
+        var inputVal = self.closest('.addCutWrap').find('input');
+        if (self.hasClass('cutBtn')) {
+          if (num === 1) {
+            return false;
+          }
+          num--;
+          inputVal.val(num);
+          dealWithIntegral();
+        }
+        else if (self.hasClass('addBtn')) {
+          num++;
+          inputVal.val(num);
+          dealWithIntegral();
+        }
+      });
+    })
 
 
 

@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/common.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
@@ -54,14 +54,88 @@
       <div class="detail">
         <div class="cont-wrap">
           <div class="row">
-            <h3><span class="icon icon-get"></span>免责声明</h3>
+            <h3><span class="icon icon02"></span>免责声明</h3>
             <div class="txt-cont">
               <p>请填写您本人的手机号和邮箱，如果因您本人的手机号或者邮箱填错，卡券发放到其他人的账户，本平台概不负责。</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="btn-warp"><a id="exChargeBtn" href="javascript:void(0);" class="a-btn-bg-red">确认兑换</a></div>
+      <div class="btn-warp fixed-footer"><a id="exChargeBtn" href="javascript:void(0);" class="a-btn-bg-red">确认兑换</a></div>
     </section>
+    <script>
+      $(function () {
+      
+        //表单验证
+        var checkForm = function () {
+          var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+          var email =/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+$/ ;
+          var showDialog = function (sel, errTip) {
+            sel.addClass("error-input");
+            var dialogExist = $(".dialog-alert-pop").length;
+            if (dialogExist == 0) {
+              commonEvent.validataDialog(errTip);
+              return false;
+            }
+          }
+          var eleValidate = $("form").find("[data-validate]");
+          eleValidate.on('focus', function () {
+            var sel = $(this);
+            sel.removeClass("error-input");
+          });
+          eleValidate.each(function () {
+            var sel = $(this);
+            var selDataVal = $.trim(sel.data('validate'));
+            if (selDataVal === 'telephone') {
+              var selVal = $.trim(sel.val());
+              if (selVal == '') {
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, errTip);
+              } else {
+                if (!mobile.test(selVal)) {
+                  var errTip = "请填写正确的手机号";
+                  return showDialog(sel, errTip);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+            }
+            else if (selDataVal == 'email') {
+              var selVal = $.trim(sel.val());
+              if (selVal == '') {
+                var errTip = $.trim(sel.attr("placeholder"));
+                return showDialog(sel, errTip);
+              } else {
+                if (!email.test(selVal)) {
+                  var errTip = "请填写正确的邮箱";
+                  return showDialog(sel, errTip);
+                }
+                else {
+                  sel.removeClass("error-input");
+                }
+              }
+            }
+          });
+          if ($(".error-input").length > 0) {
+            return false
+          }
+          else {
+            return true;
+          }
+        }
+      
+        $("#exChargeBtn").onClick('click', function () {
+          if (checkForm()) {
+            alert('ok');
+          }
+          else {
+            alert('fail');
+          }
+        });
+      
+      
+      });
+    </script>
   </body>
 </html>

@@ -15,25 +15,20 @@ block content
           label 联系电话
           input(type="text" placeholder="请填写联系电话" data-validate="telephone").input-text-large
         .form-row
-          label 所在地区
-          .select-region-wrap
-            select(data-validate="province")
-              option(value="") 所在省
-              option(value="浙江省") 浙江省
-            select(data-validate="city")
-              option(value="") 所在市
-              option(value="杭州市") 杭州市
-            select(data-validate="district")
-              option(value="" ) 所在区/县
-              option(value="江干区" ) 江干区
-              option(value="上城区" ) 上城区
+          label 所在省
+          select.select-large( placeholder="请选择所在省" data-validate="province").input-text-large
+            option(value="" ) 请选择所在省
         .form-row
-          label 街道
-          select.select-large( placeholder="请选择选择街道" data-validate="detailAddress").input-text-large
-            option(value="" ) 请选择选择街道
+          label 所在市
+          select.select-large( placeholder="请选择所在市" data-validate="city").input-text-large
+            option(value="" ) 请选择所在市
+        .form-row
+          label 所在区/县
+          select.select-large( placeholder="请选择所在区/县" data-validate="district").input-text-large
+            option(value="" ) 请选择所在区/县
         .form-row
           label 详细地址
-          input(type="text" placeholder="请填写详细地址，不少于5个字" data-validate="detailAddress").input-text-large
+          textarea(type="text" placeholder="请填写详细地址，不少于5个字" data-validate="detailAddress").input-text-large.height2
 
 
 
@@ -43,26 +38,27 @@ block content
       .form-row
         label 设为默认
         .el-switch.switch-checked
+          input(type='checkbox')
           span.circle-l
           span.circle-r
 
-    .btn-warp
-      a.a-btn-bg-grey(href="javascript:void(0);") 保存
+    .btn-a-wrap
+      //a.a-btn-bg-grey(href="javascript:void(0);") 保存
       a.a-btn-bg-red#saveBtn(href="javascript:void(0);") 保存
 
 
   script.
     $(function () {
       //选择为默认地址
-      $(".rectangle-choose").onClick('click', 'span', function () {
+      $(".el-switch").onClick('click',  function () {
         var sel = $(this);
-        var inputCheckBox = sel.parent().find('input[type=checkbox]');
-        if (sel.hasClass('active')) {
-          sel.removeClass('active');
+        var inputCheckBox = sel.find('input[type=checkbox]');
+        if (sel.hasClass('switch-checked')) {
+          sel.removeClass('switch-checked');
           inputCheckBox.attr('checked', false);
         }
         else {
-          sel.addClass('active');
+          sel.addClass('switch-checked');
           inputCheckBox.attr('checked', true);
         }
       });
@@ -71,12 +67,10 @@ block content
       var checkForm = function () {
         var mobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
         var zipCode = /^[1-9][0-9]{5}$/;
-        var showDialog = function (sel, dialogExist, errTip) {
+        var showDialog = function (sel, errTip) {
           sel.addClass("error-input");
+          var dialogExist = $(".dialog-alert-pop").length;
           if (dialogExist == 0) {
-            if (sel.is('input[type=text]')) {
-              errTip = '请输入' + errTip;
-            }
             commonEvent.validataDialog(errTip);
             return false;
           }
@@ -89,80 +83,64 @@ block content
         eleValidate.each(function () {
           var sel = $(this);
           var selDataVal = $.trim(sel.data('validate'));
-          var dialogExist = $(".dialog-alert-pop").length;
-          if (selDataVal == 'name') {
+          if (selDataVal === 'name') {
             var selVal = $.trim(sel.val());
             if (selVal == '') {
               var errTip = $.trim(sel.attr("placeholder"));
-              return showDialog(sel, dialogExist, errTip);
+              return showDialog(sel, errTip);
             } else {
               sel.removeClass("error-input");
             }
           }
-          else if (selDataVal == 'telephone') {
+          else if (selDataVal === 'telephone') {
             var selVal = $.trim(sel.val());
             if (selVal == '') {
               var errTip = $.trim(sel.attr("placeholder"));
-              return showDialog(sel, dialogExist, errTip);
+              return showDialog(sel, errTip);
             } else {
               if (!mobile.test(selVal)) {
-                var errTip = "正确的手机号";
-                return showDialog(sel, dialogExist, errTip);
+                var errTip = "请填写正确的手机号";
+                return showDialog(sel, errTip);
               }
               else {
                 sel.removeClass("error-input");
               }
             }
           }
-          else if (selDataVal == 'province') {
+          else if (selDataVal === 'province') {
             var selectedVal = $.trim(sel.find('option:selected').val());
             if (selectedVal == '') {
-              var errTip = "请选择省份";
-              return showDialog(sel, dialogExist, errTip);
+              var errTip = $.trim(sel.attr("placeholder"));
+              return showDialog(sel, errTip);
             } else {
               sel.removeClass("error-input");
             }
           }
-          else if (selDataVal == 'city') {
+          else if (selDataVal === 'city') {
             var selectedVal = $.trim(sel.find('option:selected').val());
             if (selectedVal == '') {
-              var errTip = "请选择市区";
-              return showDialog(sel, dialogExist, errTip);
+              var errTip = $.trim(sel.attr("placeholder"));
+              return showDialog(sel, errTip);
             } else {
               sel.removeClass("error-input");
             }
           }
-          else if (selDataVal == 'district') {
+          else if (selDataVal === 'district') {
             var selectedVal = $.trim(sel.find('option:selected').val());
             if (selectedVal == '') {
-              var errTip = "请选择区/县";
-              return showDialog(sel, dialogExist, errTip);
+              var errTip = $.trim(sel.attr("placeholder"));
+              return showDialog(sel, errTip);
             } else {
               sel.removeClass("error-input");
             }
           }
-          else if (selDataVal == 'detailAddress') {
+          else if (selDataVal === 'detailAddress') {
             var selVal = $.trim(sel.val());
             if (selVal == '') {
               var errTip = $.trim(sel.attr("placeholder"));
-              return showDialog(sel, dialogExist, errTip);
+              return showDialog(sel, errTip);
             } else {
               sel.removeClass("error-input");
-            }
-          }
-          else if (selDataVal == 'zipCode') {
-            var selVal = $.trim(sel.val());
-            if (selVal == '') {
-              var errTip = $.trim(sel.attr("placeholder"));
-              return showDialog(sel, dialogExist, errTip);
-            } else {
-              if (!zipCode.test(selVal)) {
-                var errTip = "正确的邮编";
-                return showDialog(sel, dialogExist, errTip);
-              }
-              else {
-                sel.removeClass("error-input");
-              }
             }
           }
         });
@@ -174,7 +152,7 @@ block content
         }
       }
 
-      $("#sure-btn").onClick('click', function () {
+      $("#saveBtn").onClick('click', function () {
         if (checkForm()) {
           alert('ok');
         }

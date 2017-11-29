@@ -13,9 +13,9 @@ html
     block headTitle
     link(rel='shortcut icon',href='/favicon.ico')
     block headCss
-      link(rel="stylesheet" href="../../global/css/global.css")
-      script(type="text/javascript" src="../../global/js/jquery.min.js")
-      script(type="text/javascript" src="../global/js/common.js")
+    link(rel="stylesheet" href="../../global/css/global.css")
+    script(type="text/javascript" src="../../global/js/jquery.min.js")
+    script(type="text/javascript" src="../../global/js/common.js")
     script.
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
@@ -23,3 +23,5 @@ html
 
   body
     block content
+
+    block footer

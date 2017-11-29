@@ -31,6 +31,12 @@ $fc:#393543;
   top:0;
   z-index: 2;
 }
+@mixin lineGradient($deg:0deg,$cS:$red,$cE:$yellow){
+  background: -webkit-linear-gradient($deg, $cS, $cE); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient($deg, $cS, $cE); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient($deg, $cS, $cE); /* Firefox 3.6 - 15 */
+  background: linear-gradient($deg, $cS, $cE); /* 标准的语法（必须放在最后） */
+}
 @mixin fontSize($val:1rem){
   @media screen and (max-width: 321px) {
     font-size:$val;
@@ -118,6 +124,7 @@ a.a-btn-border-blue{
   border-radius: 0.28rem;
 }
 .btn-a-wrap{
+  margin-top: 0.5rem;
   padding:0.22rem 0.32rem ;
 }
 .btn-warp{
@@ -157,6 +164,7 @@ a.a-btn-border-red{
   color: $red;
   border-color:$red;
 }
+
 //省略号
 .ellipsis{
   overflow : hidden;
@@ -228,26 +236,32 @@ a.a-btn-border-red{
       line-height: 0.6rem;
       padding:0 0.06rem;
       border: 0.01rem solid $white;
+      outline: none;
      }
-    textarea{
-      resize: none;
-    }
     input.error-input {
       border-color: $red;
     }
     input.input-text-large{
       @extend .inputClass;
     }
+    textarea{
+      @extend .inputClass;
+      resize: none;
+    }
+    textarea.error-input {
+      border-color: $red;
+    }
     .selectClass{
       background: $white;
-      border: 0.01 solid $dd;
+      border: 0.01rem solid $white;
+      //border:0;
       line-height: 0.6rem;
       padding:0 0.06rem;
       margin-right: 1%;
       appearance: none;
       -webkit-appearance: none;
       outline: none;
-      @include fontFormat($fz: 0.32rem, $fc: $c3,$ta:right);
+      @include fontFormat($fz: 0.32rem, $fc: $c9,$ta:right);
       direction: rtl;
       option{
         direction: rtl;
@@ -259,8 +273,15 @@ a.a-btn-border-red{
       background: $white;
       @extend .selectClass;
     }
+    select.selected{
+      color:$c3;
+    }
     input.error-input{
       border-color:$red;
+    }
+    select.error-input{
+      border: 0.01rem solid $red;
+      padding:0 0.06rem;
     }
     .select-region-wrap{
       float: right;
@@ -283,55 +304,142 @@ a.a-btn-border-red{
   }
 }
 
+//tanc
+.bg-alert-pop{
+  background-color:#000000;
+  opacity:0.7;
+  filter:alpha(opacity=60);
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 99;
+  height:100%;
+  width:100%;
+}
+.dialog-alert-pop{
+  position: fixed;
+  left:50%;
+  top:50%;
+  z-index: 100;
+  width: 6.1rem;
+  transform: translate(-50%, -70%);
+  background-color: $white;
+  border-radius:0.2rem;
+  .dialog-cont{
+    padding: 0.4rem  0.8rem;
+    min-height: 1.8rem;
+    @include fontFormat($fz:0.3rem,$fc:$c3,$ta:center);
+    line-height: 0.5rem;
+    border-bottom: 0.01rem solid $dd;
+    p{
+      @include fontFormat($fz:0.3rem,$fc:$c3,$ta:center);
+      line-height: 0.5rem;
+      span{
+        vertical-align: middle;
+      }
+    }
+    .red-font{
+      color:$red;
+    }
 
+  }
+  .dialog-btn{
+    @extend .flexStyle;
+    justify-content: space-between;
+    a{
+      flex: 1;
+      border-right: 0.01rem solid $dd;
+      line-height: 1rem;
+      @include fontFormat($fz:0.32rem,$fc:$c3,$ta:center);
+      &:last-child{
+        border-right: 0;
+      }
+    }
+    a.a-link{
+      color:$blue;
+    }
+  }
+}
+//带图片弹层
+.bg-pic-pop{
+  @extend .bg-alert-pop;
+  display: none;
+}
+.dia-pic{
+  @extend .dialog-alert-pop;
+  display: none;
+  .dia-close{
+    position: absolute;
+    right: 0rem;
+    top:-1rem;
+    width: 0.52rem;
+    height: 0.52rem;
+    background: url(/global/image/sign/icon_close.png) no-repeat 0 0/cover;
+  }
+  .dialog-cont{
+    position: relative;
+    padding-top: 1.6rem;
+    .signSuc{
+      position: absolute;
+      left: 50%;
+      margin-left: -1.65rem;
+      top:-1.8rem;
+      width: 3.4rem;
+      height: 3.4rem;
+      background: url(/global/image/sign/icon_signin_successfully.png) no-repeat 0 0/cover;
+    }
+    p.big-font{
+      @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center);
+      span.red-font{
+        @include fontFormat($fz:0.42rem,$fc:$red,$ta:center);
+        vertical-align: top;
+        margin-right: 0.03rem;
+      }
+    }
+  }
+
+}
 //icon
 .icon-arrow-right{
-
+  background: url(/global/image/home/icon_next.png) no-repeat 0 0/cover;
+  margin-left: 0.05rem;
+  vertical-align: middle;
 }
 .icon-star-yellow{
 
 }
-.icon-level-star{
-  width: 1.6rem;
-  height: 1.6rem;
-  background-color: blue;
-}
+
 .icon{
   background-color: red;
 }
-.icon-king{
 
-}
-.icon-cake{
-
-}
-.icon-package{
-
-}
-.icon-more{
-
-}
 .icon-sign-duihao{
-
+  background: url(/global/image/home/icon_sign_in.png) no-repeat 0 0/cover;
 }
 .icon-luck-draw{
-
+  background: url(/global/image/home/icon_points_draw.png) no-repeat 0 0/cover;
 }
 .icon-integral-mall{
-
+  background: url(/global/image/home/icon_points_mall.png) no-repeat 0 0/cover;
 }
 .icon-invitation{
-
+  background: url(/global/image/home/icon_invite_friends.png) no-repeat 0 0/cover;
+}
+.icon-sign-day7{
+  background: url(/global/image/home/icon_task_sign_in.png) no-repeat 0 0/cover;
 }
 .icon-task-sign{
-
+  background: url(/global/image/home/icon_task_sign_in.png) no-repeat 0 0/cover;
 }
 .icon-task-invite{
-
+  background: url(/global/image/home/icon_task_invite_friends.png) no-repeat 0 0/cover;
 }
 .icon-task-invest{
-
+  background: url(/global/image/home/icon_task_investment.png) no-repeat 0 0/cover;
 }
 .icon-status-finished{
-
+  background: url(/global/image/home/icon_completed.png) no-repeat 0 0/cover;
+}
+.icon-sign-days{
+  background: url(/global/image/task/icon_task_21days.png) no-repeat 0 0/cover;
 }

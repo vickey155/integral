@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/common.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
@@ -30,7 +30,7 @@
             <div class="col">
               <p>10元红包兑换券</p><span class="a-btn-bg-blue">1万起投</span>
             </div>
-            <div class="col integral-ticket"><img src=""></div>
+            <div class="col integral-ticket"><img src="/global/image/mall/icon_img_1.png"></div>
           </div>
         </div>
         <div class="row border-bottom">
@@ -39,37 +39,39 @@
           </div>
           <div class="col">
             <div class="addCutWrap"><span class="cutBtn">-</span>
-              <input type="text"><span class="addBtn">+</span>
+              <input type="number" value="1"><span class="addBtn">+</span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <label>积分：</label><span class="red-font"> 1500</span><span class="grey-font">2000</span>
+            <label>积分：</label><span id="integralNum" class="red-font"> 1500</span><span class="grey-font">2000</span>
           </div>
           <div class="col">
             <div class="fr"><span class="icon-circle-star"></span>
-              <label>可用积分:2350</label>
+              <label>可用积分:<i id="integralAbled">2350</i></label>
             </div>
           </div>
         </div>
       </div>
       <div class="sec-m">
-        <div class="red-notice-tips">
-          <ul>
-            <li><span class="icon-red-font"></span>章先生兑换了200元满减券</li>
+        <div class="red-notice-tips swiper-container">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><span class="icon-red-font"></span><span class="border-l"></span>章先生兑换了200元满减券</li>
+            <li class="swiper-slide"><span class="icon-red-font"></span><span class="border-l"></span>章先生兑换了1220元满减券</li>
+            <li class="swiper-slide"><span class="icon-red-font"></span><span class="border-l"></span>章先生兑换了90000元满减券</li>
           </ul>
         </div>
       </div>
       <div class="cont-wrap">
         <div class="row">
-          <h3><span class="icon icon-introduce"></span>商品简介</h3>
+          <h3><span class="icon icon01"></span>商品简介</h3>
           <div class="txt-cont">
             <p>仅支持部分投资项目，成功使用满减券后，投资应付总额中将减去使用满减券抵扣的金</p>
           </div>
         </div>
         <div class="row">
-          <h3><span class="icon icon-get"></span>商品介绍</h3>
+          <h3><span class="icon icon-introduce"></span>商品介绍</h3>
           <div class="txt-cont">
             <h4>商品说明</h4>
             <p>满减券是 念钱安 理财推出的一种优惠券，可在投资适用满减券的项目时选用。成功使用满减券后，投资应付款总额中将减去使用满减券抵扣的金额。另外，投资金额和投资期限需满足满减券的起投金额、起投期限等参数条件。</p>
@@ -88,7 +90,7 @@
           </div>
         </div>
         <div class="row">
-          <h3><span class="icon icon-get"></span>免责声明</h3>
+          <h3><span class="icon icon02"></span>免责声明</h3>
           <div class="txt-cont">
             <p>请在兑换前仔细参照商品简介及兑换说明。</p>
             <p>1. 除商品异常导致不能正常兑换外，一经兑换，一律不退还积分。</p>
@@ -101,8 +103,55 @@
         <p>本活动规则解释权归 念钱安 所有</p>
         <p>如有疑问，请联系在线客服或拨打400-8269-227</p>
       </div>
-      <div class="btn-warp"><a id="exChargeBtn" href="javascript:void(0);" class="a-btn-bg-yellow"><span class="icon-star icon-star-white"></span>2000 积分兑换</a></div>
-      <div class="btn-warp"><a href="javascript:void(0);" class="a-btn-bg-grey"><span class="icon-star icon-star-grey"></span>积分不足</a></div>
+      <div class="btn-warp fixed-footer"><a id="exChargeBtn" href="javascript:void(0);" class="a-btn-bg-yellow"><span class="icon-star icon-star-white"></span><i id="integralNumSum">2000</i>积分兑换</a><a href="javascript:void(0);" class="a-btn-bg-grey"><span class="icon-star icon-star-grey"></span>积分不足</a></div>
     </section>
+    <script type="text/javascript" src="../../global/js/swiper.min.js"></script>
+    <script>
+      $(function () {
+        var mySwiper = new Swiper('.swiper-container', {
+          direction : 'vertical',
+          autoplay : true,
+          delay: 2000,
+          loop: true,
+          speed: 400
+        });
+        if (mySwiper.slides.length <= 3) {
+          mySwiper.destroy();
+        }
+      
+        var num = 1;
+        var dealWithIntegral = function () {
+          var integralNumSum = Number($("#integralNum").text()) * num;
+          var integralAbled = Number($("#integralAbled").text());
+          if (integralNumSum <= integralAbled) {
+            $("#integralNumSum").html(integralNumSum);
+            $('.a-btn-bg-yellow').show();
+            $('.a-btn-bg-grey').hide();
+          }
+          else {
+            $('.a-btn-bg-yellow').hide();
+            $('.a-btn-bg-grey').show();
+          }
+        }
+        dealWithIntegral();
+        $('.addCutWrap').onClick('click', 'span', function () {
+          var self = $(this);
+          var inputVal = self.closest('.addCutWrap').find('input');
+          if (self.hasClass('cutBtn')) {
+            if (num === 1) {
+              return false;
+            }
+            num--;
+            inputVal.val(num);
+            dealWithIntegral();
+          }
+          else if (self.hasClass('addBtn')) {
+            num++;
+            inputVal.val(num);
+            dealWithIntegral();
+          }
+        });
+      })
+    </script>
   </body>
 </html>

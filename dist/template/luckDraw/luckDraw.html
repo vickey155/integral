@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="../../global/css/global.css">
     <script type="text/javascript" src="../../global/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../global/js/common.js"></script>
+    <script type="text/javascript" src="../../global/js/common.js"></script>
     <script>
       $(function () {
         document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
@@ -30,7 +30,29 @@
         </div>
         <div class="tip-time"><span class="icon"></span>今天还有<i>2</i>次机会哦</div>
       </div>
-      <div class="luck-wrap"></div>
+      <div class="luck-wrap">
+        <div id="deng" class="shanDeng">
+          <div id="luck">
+            <table>
+              <tr>
+                <td class="luck-unit luck-unit-0"></td>
+                <td class="luck-unit luck-unit-1"></td>
+                <td class="luck-unit luck-unit-2"></td>
+              </tr>
+              <tr>
+                <td class="luck-unit luck-unit-7"></td>
+                <td id="btn" class="cjBtn"></td>
+                <td class="luck-unit luck-unit-3"></td>
+              </tr>
+              <tr>
+                <td class="luck-unit luck-unit-6"></td>
+                <td class="luck-unit luck-unit-5"></td>
+                <td class="luck-unit luck-unit-4"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
       <div class="draw-rule"><a href="javascript:void(0);">抽奖规则</a></div>
       <div class="plr32">
         <div class="drawed-user">
@@ -46,5 +68,6 @@
         </div>
       </div>
     </section>
+    <script type="text/javascript" src="../../global/js/luckDraw.js"></script>
   </body>
 </html>
