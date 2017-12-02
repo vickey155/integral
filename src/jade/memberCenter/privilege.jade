@@ -36,37 +36,37 @@ block content
               span
             .icon-wrap
               span.icon
-              p.name 铂金会员
+              p.name 铂金 会员
               p.txt 5万元 > 在投年化投资额 < 10万元
           .swiper-slide.zhuanshi
             a
               span
             .icon-wrap
               span.icon
-              p.name 砖石会员
+              p.name 砖石 会员
               p.txt 5万元 > 在投年化投资额 < 10万元
           .swiper-slide.zhizhun
             a
               span
             .icon-wrap
               span.icon
-              p.name 至尊会员
+              p.name 至尊 会员
               p.txt 5万元 > 在投年化投资额 < 10万元
         .swiper-pagination
-    .sec-li-center
+    .sec-li-center#list
       .title
         i.icon-title-left
         span 特权礼包内容
         i.icon-title-right
       .row-cont.qingtong
-        a(href="javascript:void(0);").row
+        a(href='/template/memberCenter/privilegeDetail.html?type=birthday').row
           .col
             span
               i.icon01
           .col
             p.name 生日特权
             p.grey-font 生日积分双倍
-        a(href="javascript:void(0);").row
+        a(href='/template/memberCenter/privilegeDetail.html?type=excharge').row
           .col
             span
               i.icon02
@@ -74,21 +74,21 @@ block content
             p.name 兑换特权
             p.grey-font 商城礼品积分95折兑
 
-        a(href="javascript:void(0);").row
+        a(href='/template/memberCenter/privilegeDetail.html?type=first').row
           .col
             span
               i.icon03
           .col
             p.name 首次升级特权
             p.grey-font 0.5%加息券
-        a(href="javascript:void(0);").row
+        a(href='/template/memberCenter/privilegeDetail.html?type=service').row
           .col
             span
               i.icon04
           .col
             p.name 服务特权
             p.grey-font 在线客服为您服务
-        a(href="javascript:void(0);").row
+        a(href='/template/memberCenter/privilegeDetail.html?type=invest').row
           .col
             span
               i.icon05
@@ -111,11 +111,20 @@ block append footer
       },
       on: {
         transitionEnd: function (swiper) {
-         console.log(this.activeIndex-1)
+         console.log(this.activeIndex-2)
+          var selfIndex = this.activeIndex;
+          var selfClass = $('.swiper-container').find('.swiper-slide').eq(selfIndex).attr('class').split(' ');
+          var levelClass = selfClass[1];
+          $("#list").find('.row-cont').attr('class','row-cont '+levelClass);
+          $("#list").find('a').each(function () {
+            var self = $(this)
+            var selfHref = self.attr('href');
+            self.attr('href',selfHref+'&&cat='+levelClass);
+          });
         },
       },
     });
-    if(mySwiper.slides.length <= 3){
+    if(mySwiper.slides.length <= 1){
       mySwiper.destroy();
     }
 

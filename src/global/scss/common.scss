@@ -26,10 +26,6 @@ $fc:#393543;
   background-color: $col;
   opacity: $opa;
   filter:alpha(opacity=$opa*100);
-  position: absolute;
-  left:0;
-  top:0;
-  z-index: 2;
 }
 @mixin lineGradient($deg:0deg,$cS:$red,$cE:$yellow){
   background: -webkit-linear-gradient($deg, $cS, $cE); /* Safari 5.1 - 6.0 */
@@ -303,7 +299,24 @@ a.a-btn-border-red{
     }
   }
 }
+//白色右箭头 小
 
+a.arrow-r-white{
+  position: relative;
+  &:after{
+    position: absolute;
+    right: 0.28rem;
+    top:0.2rem;
+    content: '';
+    display: inline-block;
+    width: 0.14rem;
+    height: 0.14rem;
+    border-top: 0.023rem solid $white;
+    border-right: 0.023rem solid $white;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+}
 //tanc
 .bg-alert-pop{
   background-color:#000000;
@@ -326,11 +339,15 @@ a.a-btn-border-red{
   background-color: $white;
   border-radius:0.2rem;
   .dialog-cont{
-    padding: 0.4rem  0.8rem;
+    padding: 0.4rem  0.6rem;
     min-height: 1.8rem;
     @include fontFormat($fz:0.3rem,$fc:$c3,$ta:center);
     line-height: 0.5rem;
     border-bottom: 0.01rem solid $dd;
+    @extend .flexStyle;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     p{
       @include fontFormat($fz:0.3rem,$fc:$c3,$ta:center);
       line-height: 0.5rem;
@@ -358,8 +375,12 @@ a.a-btn-border-red{
     a.a-link{
       color:$blue;
     }
+    a.sure-btn{
+      color:$red;
+    }
   }
 }
+
 //带图片弹层
 .bg-pic-pop{
   @extend .bg-alert-pop;
@@ -370,8 +391,8 @@ a.a-btn-border-red{
   display: none;
   .dia-close{
     position: absolute;
-    right: 0rem;
-    top:-1rem;
+    right: -0.05rem;
+    top:-1.3rem;
     width: 0.52rem;
     height: 0.52rem;
     background: url(/global/image/sign/icon_close.png) no-repeat 0 0/cover;
@@ -388,6 +409,14 @@ a.a-btn-border-red{
       height: 3.4rem;
       background: url(/global/image/sign/icon_signin_successfully.png) no-repeat 0 0/cover;
     }
+    .title{
+      width:100%;
+      @include fontFormat($fz:0.36rem,$fc:$red,$ta:center);
+    }
+    p{
+      width: 100%;
+      @include fontFormat($fz: 0.32rem, $fc: $c3,$ta:center);
+    }
     p.big-font{
       @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center);
       span.red-font{
@@ -399,20 +428,201 @@ a.a-btn-border-red{
   }
 
 }
+//抽奖弹层
+.luck-pop{
+  .dialog-cont{
+    padding:0.4rem 0.6rem;
+    height: 3.8rem;
+    .title{
+      margin: 0.2rem 0;
+    }
+    .luckPic{
+      height: 2.6rem;
+      width: 2.6rem;
+      position: absolute;
+      left: 50%;
+      margin-left: -1.3rem;
+      top:-1.3rem;
+      z-index: 2;
+      border-radius: 50%;
+      background-color: $white;
+    }
+    .imgBg{
+      width: 2.6rem;
+      height: 1.8rem;
+      background: url(/global/image/luck/icon_rule.png) no-repeat 0 0/cover;
+    }
+    .cont{
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top:0.3rem;
+      z-index: 3;
+    }
+    .a-btn-bg-yellow{
+      margin-top: 0.2rem;
+      border-radius: 0.6rem;
+      line-height: 0.8rem;
+    }
+  }
+}
+.rule-pop{
+  .cont{
+    p{
+      padding-left: 0.8rem;
+      text-align: left;
+    }
+  }
+}
+.integral-null{
+  .dialog-cont{
+    height: 3.5rem;
+    .luckPic{
+      height: 2.2rem;
+      width: 2.2rem;
+      margin-left: -1.1rem;
+    }
+    .imgBg{
+      margin-left: 0rem;
+      margin-top: -0.2rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      background: url(/global/image/luck/icon_notenough.png) no-repeat 0 0/cover;
+    }
+    .cont{
+      p{
+        margin-top: 0.8rem;
+      }
+    }
+    .a-btn-bg-yellow {
+      margin-top: 1.4rem;
+    }
+  }
+
+
+}
+.drawed-pop{
+  background: url(/global/image/luck/icon_congratulations.png) no-repeat 0 0/cover;
+  width:6.4rem;
+  height: 5rem;
+  text-align: center;
+  padding-top: 1.1rem;
+  .dia-close{
+    right:0;
+    top: -0.5rem;
+  }
+  .cont{
+    .title{
+      @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center);
+      line-height: 0.5rem;
+    }
+    .big-font{
+      @include fontFormat($fz:0.4rem,$fc:$c3,$ta:center);
+      line-height: 0.6rem;
+      span{
+        vertical-align: top;
+        margin: 0;
+        @include fontFormat($fz:0.4rem,$fc:$red,$ta:center);
+      }
+    }
+    .red-font{
+      margin-top: 0.5rem;
+      @include fontFormat($fz:0.26rem,$fc:#ff3156,$ta:center);
+    }
+  }
+  .a-btn-bg-yellow{
+    margin-top: 0.7rem;
+    border-radius: 0.6rem;
+    line-height: 0.6rem;
+    background-color: #ffd34c;
+    width: 3.24rem;
+    @include fontFormat($fz:0.28rem,$fc:$c3,$ta:center);
+  }
+}
+//首页弹层
+.home-pop-invest{
+  .dialog-cont{
+    padding-top: 1.2rem;
+  }
+  .pic-wrap{
+    position: absolute;
+    top:-1.25rem;
+    left: 50%;
+    margin-left: -1.4rem;
+    .imgBg{
+      width: 2.8rem;
+      height: 2.4rem;
+      background: url(/global/image/home/icon_expired.png) no-repeat 0 0/cover;
+    }
+  }
+  .a-btn-bg-red{
+    margin-top: 0.5rem;
+    border-radius: 0.6rem;
+    line-height: 0.8rem;
+  }
+}
+.home-pop-grade{
+  width: 5.5rem;
+  height: 6.73rem;
+  padding-top: 2.4rem;
+  background: url(/global/image/home/icon_up_bg.png) no-repeat 0 0/cover;
+  .dialog-head{
+    margin-left: -0.42rem;
+    width: 6.4rem;
+    height: 1.41rem;
+    background: url(/global/image/home/icon_up_title.png) no-repeat 0 0/cover;
+    position: relative;
+    .pic-wrap{
+      position: absolute;
+      top:-1.4rem;
+      left: 50%;
+      margin-left: -1.11rem;
+      width: 2.22rem;
+      height:2.22rem;
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .dialog-cont{
+    $redC:#fc473c;
+    padding: 0 0.8rem 0.4rem;
+    border:0;
+    p{
+      @include fontFormat($fz:0.28rem,$fc:$c3,$ta:center);
+      span.red-font{
+        @include fontFormat($fz:0.28rem,$fc:$redC,$ta:center);
+      }
+    }
+    p.title{
+      @include fontFormat($fz:0.42rem,$fc:$redC,$ta:center);
+      line-height: 0.6rem;
+      font-weight: bold;
+    }
+    .a-btn-bg-red{
+      margin-top: 0.5rem;
+      border-radius: 0.6rem;
+      line-height: 0.8rem;
+      background-color: $redC;
+      .arrow-right-white{
+        margin-top: 0.26rem;
+        margin-left: 0.06rem;
+      }
+    }
+  }
+}
 //icon
 .icon-arrow-right{
   background: url(/global/image/home/icon_next.png) no-repeat 0 0/cover;
   margin-left: 0.05rem;
   vertical-align: middle;
 }
-.icon-star-yellow{
-
+.arrow-right-white{
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(/global/image/luck/icon_next.png) no-repeat 0 0/cover;
 }
-
-.icon{
-  background-color: red;
-}
-
 .icon-sign-duihao{
   background: url(/global/image/home/icon_sign_in.png) no-repeat 0 0/cover;
 }

@@ -159,7 +159,7 @@ h1 {
   padding-left: 0.32rem;
   padding-right: 0.32rem; }
 
-.flexStyle, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn {
+.flexStyle, .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn {
   display: flex;
   display: -webkit-flex; }
 
@@ -402,6 +402,21 @@ a.a-btn-border-red {
       .el-form .form-row .select-region-wrap select.error-input {
         border-color: #f7655e; }
 
+a.arrow-r-white {
+  position: relative; }
+  a.arrow-r-white:after {
+    position: absolute;
+    right: 0.28rem;
+    top: 0.2rem;
+    content: '';
+    display: inline-block;
+    width: 0.14rem;
+    height: 0.14rem;
+    border-top: 0.023rem solid #fff;
+    border-right: 0.023rem solid #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); }
+
 .bg-alert-pop, .bg-pic-pop {
   background-color: #000000;
   opacity: 0.7;
@@ -423,12 +438,15 @@ a.a-btn-border-red {
   background-color: #fff;
   border-radius: 0.2rem; }
   .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
-    padding: 0.4rem  0.8rem;
+    padding: 0.4rem  0.6rem;
     min-height: 1.8rem;
     color: #333;
     text-align: center;
     line-height: 0.5rem;
-    border-bottom: 0.01rem solid #dddddd; }
+    border-bottom: 0.01rem solid #dddddd;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
     @media screen and (max-width: 321px) {
       .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
         font-size: 0.29rem; } }
@@ -485,6 +503,8 @@ a.a-btn-border-red {
         border-right: 0; }
     .dialog-alert-pop .dialog-btn a.a-link, .dia-pic .dialog-btn a.a-link {
       color: #508cee; }
+    .dialog-alert-pop .dialog-btn a.sure-btn, .dia-pic .dialog-btn a.sure-btn {
+      color: #f7655e; }
 
 .bg-pic-pop {
   display: none; }
@@ -493,8 +513,8 @@ a.a-btn-border-red {
   display: none; }
   .dia-pic .dia-close {
     position: absolute;
-    right: 0rem;
-    top: -1rem;
+    right: -0.05rem;
+    top: -1.3rem;
     width: 0.52rem;
     height: 0.52rem;
     background: url(/global/image/sign/icon_close.png) no-repeat 0 0/cover; }
@@ -509,6 +529,38 @@ a.a-btn-border-red {
       width: 3.4rem;
       height: 3.4rem;
       background: url(/global/image/sign/icon_signin_successfully.png) no-repeat 0 0/cover; }
+    .dia-pic .dialog-cont .title {
+      width: 100%;
+      color: #f7655e;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.37rem; } }
+      @media screen and (min-width: 640px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.38rem; } }
+    .dia-pic .dialog-cont p {
+      width: 100%;
+      color: #333;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.34rem; } }
     .dia-pic .dialog-cont p.big-font {
       color: #333;
       text-align: center; }
@@ -542,13 +594,259 @@ a.a-btn-border-red {
           .dia-pic .dialog-cont p.big-font span.red-font {
             font-size: 0.44rem; } }
 
+.luck-pop .dialog-cont {
+  padding: 0.4rem 0.6rem;
+  height: 3.8rem; }
+  .luck-pop .dialog-cont .title {
+    margin: 0.2rem 0; }
+  .luck-pop .dialog-cont .luckPic {
+    height: 2.6rem;
+    width: 2.6rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -1.3rem;
+    top: -1.3rem;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: #fff; }
+  .luck-pop .dialog-cont .imgBg {
+    width: 2.6rem;
+    height: 1.8rem;
+    background: url(/global/image/luck/icon_rule.png) no-repeat 0 0/cover; }
+  .luck-pop .dialog-cont .cont {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    z-index: 3; }
+  .luck-pop .dialog-cont .a-btn-bg-yellow {
+    margin-top: 0.2rem;
+    border-radius: 0.6rem;
+    line-height: 0.8rem; }
+
+.rule-pop .cont p {
+  padding-left: 0.8rem;
+  text-align: left; }
+
+.integral-null .dialog-cont {
+  height: 3.5rem; }
+  .integral-null .dialog-cont .luckPic {
+    height: 2.2rem;
+    width: 2.2rem;
+    margin-left: -1.1rem; }
+  .integral-null .dialog-cont .imgBg {
+    margin-left: 0rem;
+    margin-top: -0.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: url(/global/image/luck/icon_notenough.png) no-repeat 0 0/cover; }
+  .integral-null .dialog-cont .cont p {
+    margin-top: 0.8rem; }
+  .integral-null .dialog-cont .a-btn-bg-yellow {
+    margin-top: 1.4rem; }
+
+.drawed-pop {
+  background: url(/global/image/luck/icon_congratulations.png) no-repeat 0 0/cover;
+  width: 6.4rem;
+  height: 5rem;
+  text-align: center;
+  padding-top: 1.1rem; }
+  .drawed-pop .dia-close {
+    right: 0;
+    top: -0.5rem; }
+  .drawed-pop .cont .title {
+    color: #333;
+    text-align: center;
+    line-height: 0.5rem; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .cont .title {
+        font-size: 0.35rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .cont .title {
+        font-size: 0.36rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .cont .title {
+        font-size: 0.37rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .cont .title {
+        font-size: 0.38rem; } }
+  .drawed-pop .cont .big-font {
+    color: #333;
+    text-align: center;
+    line-height: 0.6rem; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.39rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.4rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.41rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.42rem; } }
+    .drawed-pop .cont .big-font span {
+      vertical-align: top;
+      margin: 0;
+      color: #f7655e;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 640px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.42rem; } }
+  .drawed-pop .cont .red-font {
+    margin-top: 0.5rem;
+    color: #ff3156;
+    text-align: center; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.25rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.26rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.28rem; } }
+  .drawed-pop .a-btn-bg-yellow {
+    margin-top: 0.7rem;
+    border-radius: 0.6rem;
+    line-height: 0.6rem;
+    background-color: #ffd34c;
+    width: 3.24rem;
+    color: #333;
+    text-align: center; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.3rem; } }
+
+.home-pop-invest .dialog-cont {
+  padding-top: 1.2rem; }
+
+.home-pop-invest .pic-wrap {
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  margin-left: -1.4rem; }
+  .home-pop-invest .pic-wrap .imgBg {
+    width: 2.8rem;
+    height: 2.4rem;
+    background: url(/global/image/home/icon_expired.png) no-repeat 0 0/cover; }
+
+.home-pop-invest .a-btn-bg-red {
+  margin-top: 0.5rem;
+  border-radius: 0.6rem;
+  line-height: 0.8rem; }
+
+.home-pop-grade {
+  width: 5.5rem;
+  height: 6.73rem;
+  padding-top: 2.4rem;
+  background: url(/global/image/home/icon_up_bg.png) no-repeat 0 0/cover; }
+  .home-pop-grade .dialog-head {
+    margin-left: -0.42rem;
+    width: 6.4rem;
+    height: 1.41rem;
+    background: url(/global/image/home/icon_up_title.png) no-repeat 0 0/cover;
+    position: relative; }
+    .home-pop-grade .dialog-head .pic-wrap {
+      position: absolute;
+      top: -1.4rem;
+      left: 50%;
+      margin-left: -1.11rem;
+      width: 2.22rem;
+      height: 2.22rem; }
+      .home-pop-grade .dialog-head .pic-wrap img {
+        height: 100%;
+        width: 100%; }
+  .home-pop-grade .dialog-cont {
+    padding: 0 0.8rem 0.4rem;
+    border: 0; }
+    .home-pop-grade .dialog-cont p {
+      color: #333;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.3rem; } }
+      .home-pop-grade .dialog-cont p span.red-font {
+        color: #fc473c;
+        text-align: center; }
+        @media screen and (max-width: 321px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.27rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.29rem; } }
+        @media screen and (min-width: 640px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.3rem; } }
+    .home-pop-grade .dialog-cont p.title {
+      color: #fc473c;
+      text-align: center;
+      line-height: 0.6rem;
+      font-weight: bold; }
+      @media screen and (max-width: 321px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.42rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.43rem; } }
+      @media screen and (min-width: 640px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.44rem; } }
+    .home-pop-grade .dialog-cont .a-btn-bg-red {
+      margin-top: 0.5rem;
+      border-radius: 0.6rem;
+      line-height: 0.8rem;
+      background-color: #fc473c; }
+      .home-pop-grade .dialog-cont .a-btn-bg-red .arrow-right-white {
+        margin-top: 0.26rem;
+        margin-left: 0.06rem; }
+
 .icon-arrow-right {
   background: url(/global/image/home/icon_next.png) no-repeat 0 0/cover;
   margin-left: 0.05rem;
   vertical-align: middle; }
 
-.icon {
-  background-color: red; }
+.arrow-right-white {
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(/global/image/luck/icon_next.png) no-repeat 0 0/cover; }
 
 .icon-sign-duihao {
   background: url(/global/image/home/icon_sign_in.png) no-repeat 0 0/cover; }

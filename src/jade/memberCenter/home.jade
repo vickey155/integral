@@ -6,22 +6,33 @@ block append headTitle
 block content
   section.home
     .banner
-      .col-l
-         img.avater(src="")
-         ul
+      .wrap.logined
+        .col-l
+           img.avater(src="/global/image/home/advater.png")
+           ul
+              li 张艳玲
+              li.integral-star
+                .bg-white
+                  span.icon.icon-star-yellow
+                  span.integral-num
+                    i.num 30
+                    |积分
+              li
+                p.txt 在投年化资产 3000元
+        .col-r
+           span.icon-level-star
+            img(src='/global/image/home/icon_grade_bronze.png')
+           a.a-btn.a-btn-border-white(href="") 会员提升
+
+      .wrap.unlogin(style="display:none")
+        .col-l
+          img.avater(src="/global/image/home/advater.png")
+          ul
             li 张艳玲
-            li.integral-star
-              .bg-white
-                span.icon.icon-star-yellow
-                span.integral-num
-                  i.num 30
-                  |积分
             li
-              p.txt 在投年化资产 3000元
-       div.col-r
-         span.icon-level-star
-          img(src='/global/image/home/icon_grade_bronze.png')
-         a.a-btn.a-btn-border-white(href="") 会员提升
+              a(href="javascript:void(0)") 请登录
+        .col-r
+          a.a-btn.a-btn-border-white(href="javascript:void(0)") 马上登录
 
     .sec-li4.border-top-radius
       ul
@@ -106,8 +117,45 @@ block content
         .box
           img(src='/global/image/home/icon_activity_2.png')
 
-  .script
 
+
+    .bg-pic-pop
+    .dia-pic.home-pop-invest
+      .dialog-cont
+        .dia-close
+        .pic-wrap
+          .imgBg
+        .cont
+          p 您的黄金会员身份已到期
+          p 根据您的年华在投金额重新评级为
+            span.red-font 白银会员
+        a(href="javascript:void(0)").a-btn-bg-red 立即投资升级
+    .dia-pic.home-pop-grade
+      .dialog-head
+        .dia-close
+        .pic-wrap
+          img(src='/global/image/home/icon_grade_bronze.png')
+      .dialog-cont
+        p.title  升级啦！
+        p 恭喜您升级为
+          span.red-font 白银会员
+        a(href="javascript:void(0)").a-btn-bg-red 查看白银会员特权
+          i.arrow-right-white
+  script.
+    $(function(){
+      //关闭弹层
+      commonEvent.closePicDia();
+
+      $(".bg-pic-pop").show();
+      $(".home-pop-invest").show();
+      //$(".home-pop-grade").show();
+
+      //关闭弹层
+      //$(".bg-pic-pop").hide();
+      // $(".home-pop-invest").hide();
+      //$(".home-pop-grade").hide();
+
+    });
 
 
 

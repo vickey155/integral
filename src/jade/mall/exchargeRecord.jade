@@ -5,7 +5,9 @@ block append headTitle
 
 block content
   section.exchargeRecord
-    .ulist
+    .list-null(style='display:none')
+      span.pic-bg
+    .ulist#temp-list
       ul
         li
           .col
@@ -47,3 +49,84 @@ block content
             p.date-time 2017-11-12  17:15
           .col.col-r
             span.integral-num -800
+
+  script.
+    $(function () {
+      var htmlList = function () {
+        var loading = true;
+        var showLoadingTxt = function (txt) {
+          var listWrap = $("#temp-list");
+          listWrap.find('.load-more').remove();
+          var temp = '<p class="load-more">' + txt + '</p>';
+          listWrap.append(temp);
+        }
+        var showList = function () {
+          var listWrap = $("#temp-list");
+          listWrap.html("");
+          $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+              //type: listType
+            },
+            beforeSend: function () {
+              showLoadingTxt('正在努力加载中,请耐心等待片刻……');
+            },
+            success: function (result) {
+              // var dataNum = data.tatol;
+              var dataNum = 12;
+              var perPageNum = $("#temp-list li").length;
+              listWrap.find('.loading').remove();
+              var html = '';
+              if (dataNum > perPageNum) {
+                for (var i = 0; i < 6; i++) {
+                  html += '<li> <div class="col"><span class="icon icon-obj"></span></div>' +
+                    '<div class="col center"> <p class="txt">100元加油卡</p><p class="date-time">2017-11-12  17:15</p></div>' +
+                    '<div class="col col-r"><span class="integral-num ">-800</span></div></li>';
+                }
+                listWrap.append(html);
+                showLoadingTxt('加载更多');
+              }
+              else if (dataNum <= perPageNum) {
+                showLoadingTxt('没有更多了');
+              }
+              loading = true;
+            },
+            error: function () {
+              showLoadingTxt('系统繁忙，请稍后再试');
+            }
+          });
+        }
+
+        var initList = function () {
+          $("#temp-list ul").html("");
+          showList();
+        }
+        //加载更多
+        var loadMore = function () {
+          $(window).scroll(function () {
+            var docHei = $(document).height();
+            var scrollT = $(window).scrollTop();
+            if (scrollT + $(window).height() > docHei - 20) {
+              if (loading) {
+                loading = false;
+                showList();
+              }
+            }
+          });
+        };
+        return {
+          initalList: function () {
+            $("#temp-list ul").html("");
+            initList();
+          },
+          scrollList: function () {
+            loadMore();
+          }
+        }
+
+      }();
+
+      // htmlList.initalList();//初始化页面
+      htmlList.scrollList();
+    })

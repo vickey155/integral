@@ -160,7 +160,7 @@ h1 {
   padding-left: 0.32rem;
   padding-right: 0.32rem; }
 
-.flexStyle, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn, .histogram-wrap .histogram-cont .column, .sign .card, .mall .sec-list .sec-row .col .ticket, .addressEdit .el-switch, .luckDraw .banner .sec-top, .luckDraw .drawed-user .cont li, .luckDrawRecord .record-list .row {
+.flexStyle, .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn, .histogram-wrap .histogram-cont .column, .sign .card, .mall .sec-list .sec-row .col .ticket, .addressEdit .el-switch, .luck-wrap .shanDeng .row, .luckDraw .banner .sec-top, .luckDraw .drawed-user .cont .swiper-container li, .luckDrawRecord .record-list .row {
   display: flex;
   display: -webkit-flex; }
 
@@ -403,6 +403,21 @@ a.a-btn-border-red {
       .el-form .form-row .select-region-wrap select.error-input {
         border-color: #f7655e; }
 
+a.arrow-r-white {
+  position: relative; }
+  a.arrow-r-white:after {
+    position: absolute;
+    right: 0.28rem;
+    top: 0.2rem;
+    content: '';
+    display: inline-block;
+    width: 0.14rem;
+    height: 0.14rem;
+    border-top: 0.023rem solid #fff;
+    border-right: 0.023rem solid #fff;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); }
+
 .bg-alert-pop, .bg-pic-pop {
   background-color: #000000;
   opacity: 0.7;
@@ -424,12 +439,15 @@ a.a-btn-border-red {
   background-color: #fff;
   border-radius: 0.2rem; }
   .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
-    padding: 0.4rem  0.8rem;
+    padding: 0.4rem  0.6rem;
     min-height: 1.8rem;
     color: #333;
     text-align: center;
     line-height: 0.5rem;
-    border-bottom: 0.01rem solid #dddddd; }
+    border-bottom: 0.01rem solid #dddddd;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
     @media screen and (max-width: 321px) {
       .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont {
         font-size: 0.29rem; } }
@@ -486,6 +504,8 @@ a.a-btn-border-red {
         border-right: 0; }
     .dialog-alert-pop .dialog-btn a.a-link, .dia-pic .dialog-btn a.a-link {
       color: #508cee; }
+    .dialog-alert-pop .dialog-btn a.sure-btn, .dia-pic .dialog-btn a.sure-btn {
+      color: #f7655e; }
 
 .bg-pic-pop {
   display: none; }
@@ -494,8 +514,8 @@ a.a-btn-border-red {
   display: none; }
   .dia-pic .dia-close {
     position: absolute;
-    right: 0rem;
-    top: -1rem;
+    right: -0.05rem;
+    top: -1.3rem;
     width: 0.52rem;
     height: 0.52rem;
     background: url(/global/image/sign/icon_close.png) no-repeat 0 0/cover; }
@@ -510,6 +530,38 @@ a.a-btn-border-red {
       width: 3.4rem;
       height: 3.4rem;
       background: url(/global/image/sign/icon_signin_successfully.png) no-repeat 0 0/cover; }
+    .dia-pic .dialog-cont .title {
+      width: 100%;
+      color: #f7655e;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.35rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.36rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.37rem; } }
+      @media screen and (min-width: 640px) {
+        .dia-pic .dialog-cont .title {
+          font-size: 0.38rem; } }
+    .dia-pic .dialog-cont p {
+      width: 100%;
+      color: #333;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .dia-pic .dialog-cont p {
+          font-size: 0.34rem; } }
     .dia-pic .dialog-cont p.big-font {
       color: #333;
       text-align: center; }
@@ -543,13 +595,259 @@ a.a-btn-border-red {
           .dia-pic .dialog-cont p.big-font span.red-font {
             font-size: 0.44rem; } }
 
+.luck-pop .dialog-cont {
+  padding: 0.4rem 0.6rem;
+  height: 3.8rem; }
+  .luck-pop .dialog-cont .title {
+    margin: 0.2rem 0; }
+  .luck-pop .dialog-cont .luckPic {
+    height: 2.6rem;
+    width: 2.6rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -1.3rem;
+    top: -1.3rem;
+    z-index: 2;
+    border-radius: 50%;
+    background-color: #fff; }
+  .luck-pop .dialog-cont .imgBg {
+    width: 2.6rem;
+    height: 1.8rem;
+    background: url(/global/image/luck/icon_rule.png) no-repeat 0 0/cover; }
+  .luck-pop .dialog-cont .cont {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    z-index: 3; }
+  .luck-pop .dialog-cont .a-btn-bg-yellow {
+    margin-top: 0.2rem;
+    border-radius: 0.6rem;
+    line-height: 0.8rem; }
+
+.rule-pop .cont p {
+  padding-left: 0.8rem;
+  text-align: left; }
+
+.integral-null .dialog-cont {
+  height: 3.5rem; }
+  .integral-null .dialog-cont .luckPic {
+    height: 2.2rem;
+    width: 2.2rem;
+    margin-left: -1.1rem; }
+  .integral-null .dialog-cont .imgBg {
+    margin-left: 0rem;
+    margin-top: -0.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: url(/global/image/luck/icon_notenough.png) no-repeat 0 0/cover; }
+  .integral-null .dialog-cont .cont p {
+    margin-top: 0.8rem; }
+  .integral-null .dialog-cont .a-btn-bg-yellow {
+    margin-top: 1.4rem; }
+
+.drawed-pop {
+  background: url(/global/image/luck/icon_congratulations.png) no-repeat 0 0/cover;
+  width: 6.4rem;
+  height: 5rem;
+  text-align: center;
+  padding-top: 1.1rem; }
+  .drawed-pop .dia-close {
+    right: 0;
+    top: -0.5rem; }
+  .drawed-pop .cont .title {
+    color: #333;
+    text-align: center;
+    line-height: 0.5rem; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .cont .title {
+        font-size: 0.35rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .cont .title {
+        font-size: 0.36rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .cont .title {
+        font-size: 0.37rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .cont .title {
+        font-size: 0.38rem; } }
+  .drawed-pop .cont .big-font {
+    color: #333;
+    text-align: center;
+    line-height: 0.6rem; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.39rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.4rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.41rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .cont .big-font {
+        font-size: 0.42rem; } }
+    .drawed-pop .cont .big-font span {
+      vertical-align: top;
+      margin: 0;
+      color: #f7655e;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 640px) {
+        .drawed-pop .cont .big-font span {
+          font-size: 0.42rem; } }
+  .drawed-pop .cont .red-font {
+    margin-top: 0.5rem;
+    color: #ff3156;
+    text-align: center; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.25rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.26rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .cont .red-font {
+        font-size: 0.28rem; } }
+  .drawed-pop .a-btn-bg-yellow {
+    margin-top: 0.7rem;
+    border-radius: 0.6rem;
+    line-height: 0.6rem;
+    background-color: #ffd34c;
+    width: 3.24rem;
+    color: #333;
+    text-align: center; }
+    @media screen and (max-width: 321px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.27rem; } }
+    @media screen and (min-width: 321px) and (max-width: 400px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.28rem; } }
+    @media screen and (min-width: 400px) and (max-width: 640px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.29rem; } }
+    @media screen and (min-width: 640px) {
+      .drawed-pop .a-btn-bg-yellow {
+        font-size: 0.3rem; } }
+
+.home-pop-invest .dialog-cont {
+  padding-top: 1.2rem; }
+
+.home-pop-invest .pic-wrap {
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  margin-left: -1.4rem; }
+  .home-pop-invest .pic-wrap .imgBg {
+    width: 2.8rem;
+    height: 2.4rem;
+    background: url(/global/image/home/icon_expired.png) no-repeat 0 0/cover; }
+
+.home-pop-invest .a-btn-bg-red {
+  margin-top: 0.5rem;
+  border-radius: 0.6rem;
+  line-height: 0.8rem; }
+
+.home-pop-grade {
+  width: 5.5rem;
+  height: 6.73rem;
+  padding-top: 2.4rem;
+  background: url(/global/image/home/icon_up_bg.png) no-repeat 0 0/cover; }
+  .home-pop-grade .dialog-head {
+    margin-left: -0.42rem;
+    width: 6.4rem;
+    height: 1.41rem;
+    background: url(/global/image/home/icon_up_title.png) no-repeat 0 0/cover;
+    position: relative; }
+    .home-pop-grade .dialog-head .pic-wrap {
+      position: absolute;
+      top: -1.4rem;
+      left: 50%;
+      margin-left: -1.11rem;
+      width: 2.22rem;
+      height: 2.22rem; }
+      .home-pop-grade .dialog-head .pic-wrap img {
+        height: 100%;
+        width: 100%; }
+  .home-pop-grade .dialog-cont {
+    padding: 0 0.8rem 0.4rem;
+    border: 0; }
+    .home-pop-grade .dialog-cont p {
+      color: #333;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .home-pop-grade .dialog-cont p {
+          font-size: 0.3rem; } }
+      .home-pop-grade .dialog-cont p span.red-font {
+        color: #fc473c;
+        text-align: center; }
+        @media screen and (max-width: 321px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.27rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.28rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.29rem; } }
+        @media screen and (min-width: 640px) {
+          .home-pop-grade .dialog-cont p span.red-font {
+            font-size: 0.3rem; } }
+    .home-pop-grade .dialog-cont p.title {
+      color: #fc473c;
+      text-align: center;
+      line-height: 0.6rem;
+      font-weight: bold; }
+      @media screen and (max-width: 321px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.42rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.43rem; } }
+      @media screen and (min-width: 640px) {
+        .home-pop-grade .dialog-cont p.title {
+          font-size: 0.44rem; } }
+    .home-pop-grade .dialog-cont .a-btn-bg-red {
+      margin-top: 0.5rem;
+      border-radius: 0.6rem;
+      line-height: 0.8rem;
+      background-color: #fc473c; }
+      .home-pop-grade .dialog-cont .a-btn-bg-red .arrow-right-white {
+        margin-top: 0.26rem;
+        margin-left: 0.06rem; }
+
 .icon-arrow-right {
   background: url(/global/image/home/icon_next.png) no-repeat 0 0/cover;
   margin-left: 0.05rem;
   vertical-align: middle; }
 
-.icon {
-  background-color: red; }
+.arrow-right-white {
+  width: 0.24rem;
+  height: 0.24rem;
+  background: url(/global/image/luck/icon_next.png) no-repeat 0 0/cover; }
 
 .icon-sign-duihao {
   background: url(/global/image/home/icon_sign_in.png) no-repeat 0 0/cover; }
@@ -746,7 +1044,7 @@ a.a-btn-border-red {
     height: 1rem;
     width: 1rem; }
   .sec-list .box-wrapper {
-    padding: 0.32rem 0.32rem 0 0; }
+    padding: 0.32rem 0.32rem 0.01rem 0; }
     .sec-list .box-wrapper .box {
       height: 2.2rem;
       width: 100%;
@@ -800,24 +1098,29 @@ a.a-btn-border-red {
               font-size: 0.26rem; } }
 
 .home .banner {
-  height: 2.9rem;
+  height: 4.3rem;
   padding: 0 0.32rem;
   overflow: hidden;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
   background: url(/global/image/home/bg_top.png) no-repeat 0 0/cover; }
+  .home .banner .wrap {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%; }
   .home .banner .col-l {
     display: flex;
     display: -webkit-flex;
-    align-items: center; }
+    align-items: center;
+    padding-top: 0.4rem; }
     .home .banner .col-l img {
-      vertical-align: middle;
       height: 1.2rem;
       width: 1.2rem;
       border: 0.04rem solid #ffa599;
       margin-right: 0.2rem;
-      overflow: hidden; }
+      overflow: hidden;
+      border-radius: 50%;
+      margin-top: -0.1rem; }
   .home .banner ul li {
     color: #fff;
     text-align: left;
@@ -883,7 +1186,7 @@ a.a-btn-border-red {
           .home .banner ul li .integral-num i {
             font-size: 0.3rem; } }
     .home .banner ul li p.txt {
-      padding-top: 0.15rem;
+      padding-top: 0.12rem;
       color: #fff;
       text-align: left; }
       @media screen and (max-width: 321px) {
@@ -909,12 +1212,52 @@ a.a-btn-border-red {
         height: 100%;
         overflow: hidden; }
     .home .banner .col-r .a-btn {
-      margin-top: 0.25rem;
+      margin-top: 0.22rem;
       width: 100%;
       height: 0.52rem;
       line-height: 0.48rem;
       border-radius: 0.28rem;
       border-width: 0.02rem; }
+  .home .banner .unlogin .col-l {
+    padding-top: 0.84rem; }
+    .home .banner .unlogin .col-l ul li a {
+      color: #fff;
+      text-align: left; }
+      @media screen and (max-width: 321px) {
+        .home .banner .unlogin .col-l ul li a {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home .banner .unlogin .col-l ul li a {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home .banner .unlogin .col-l ul li a {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .home .banner .unlogin .col-l ul li a {
+          font-size: 0.3rem; } }
+  .home .banner .unlogin .col-r {
+    width: 2.1rem;
+    padding-top: 0.8rem; }
+    .home .banner .unlogin .col-r .a-btn {
+      margin-top: 0.22rem;
+      width: 100%;
+      height: 0.84rem;
+      line-height: 0.84rem;
+      border-radius: 0.1rem;
+      color: #fff;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .home .banner .unlogin .col-r .a-btn {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .home .banner .unlogin .col-r .a-btn {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .home .banner .unlogin .col-r .a-btn {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .home .banner .unlogin .col-r .a-btn {
+          font-size: 0.34rem; } }
 
 .home .sec-li4 {
   margin-bottom: 0.4rem;
@@ -951,9 +1294,12 @@ a.a-btn-border-red {
 .home .border-top-radius {
   position: relative;
   z-index: 2;
-  margin-top: -0.18rem;
+  margin-top: -1.62rem;
   border-top-left-radius: 0.22rem;
-  border-top-right-radius: 0.22rem; }
+  border-top-right-radius: 0.22rem;
+  background-color: #fff;
+  opacity: 0.9;
+  filter: alpha(opacity=90); }
   .home .border-top-radius ul li span.icon {
     height: 0.5rem;
     width: 0.5rem; }
@@ -972,7 +1318,7 @@ a.a-btn-border-red {
 
 .privilege .banner {
   width: 100%;
-  height: 4.3rem;
+  height: 4.2rem;
   padding: 0.2rem 0;
   background: url(/global/image/privilege/bg_top.png) no-repeat 0 0/cover; }
   .privilege .banner .icon-wrap {
@@ -1059,6 +1405,14 @@ a.a-btn-border-red {
       display: inline-block;
       width: 100%;
       height: 100%; }
+      .privilege .banner .swiper-slide a span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/global/image/privilege/icon_card_light.png) no-repeat 0 0;
+        background-size: 100% 100%; }
   .privilege .banner .swiper-slide-active .icon-wrap {
     display: block; }
   .privilege .banner .swiper-slide-active a {
@@ -1068,15 +1422,16 @@ a.a-btn-border-red {
     -o-transform: scale(2, 1.3);
     transform: scale(2, 1.3); }
   .privilege .banner .swiper-pagination {
-    padding-top: 0.3rem;
+    padding-top: 0.46rem;
     bottom: 0.1rem;
-    background: url(/global/image/privilege/bg_light_bottom.png) no-repeat -0.1rem 0/cover; }
+    background: url(/global/image/privilege/bg_light_bottom.png) no-repeat 0 0;
+    background-size: 100% 100%; }
     .privilege .banner .swiper-pagination .swiper-pagination-bullet {
-      width: 0.3rem;
+      width: 0.2rem;
       border-radius: 0.2rem;
       height: 0.05rem;
       background-color: #fff;
-      margin-top: 0.35rem; }
+      margin-top: 0.2rem; }
     .privilege .banner .swiper-pagination .swiper-pagination-bullet-active {
       background-color: #f7655e; }
   .privilege .banner .qingtong a {
@@ -1179,14 +1534,14 @@ a.a-btn-border-red {
       .privilege .sec-li-center .title {
         font-size: 0.34rem; } }
     .privilege .sec-li-center .title i {
-      height: 0.3rem;
-      width: 0.3rem;
+      height: 0.36rem;
+      width: 0.6rem;
       background-color: red;
       vertical-align: middle; }
     .privilege .sec-li-center .title .icon-title-left {
-      background: url(/global/image/privilege/bg_top.png) no-repeat 0 0/cover; }
-    .privilege .sec-li-center .title span {
-      margin: 0 0.2rem; }
+      background: url(/global/image/privilege/icon_title_left.png) no-repeat 0 0/cover; }
+    .privilege .sec-li-center .title .icon-title-right {
+      background: url(/global/image/privilege/icon_title_right.png) no-repeat 0 0/cover; }
   .privilege .sec-li-center .row-cont {
     padding: 0 0.5rem; }
     .privilege .sec-li-center .row-cont .row {
@@ -1321,15 +1676,15 @@ a.a-btn-border-red {
       top: 0.05rem;
       width: 1.8rem;
       height: 1.8rem; }
-    .privilegeDetail .banner .txt .rightPic1 {
+    .privilegeDetail .banner .txt .birthday {
       background: url(/global/image/privilege/icon_detail_1.png) no-repeat 0 0/cover; }
-    .privilegeDetail .banner .txt .rightPic2 {
+    .privilegeDetail .banner .txt .excharge {
       background: url(/global/image/privilege/icon_detail_2.png) no-repeat 0 0/cover; }
-    .privilegeDetail .banner .txt .rightPic3 {
+    .privilegeDetail .banner .txt .first {
       background: url(/global/image/privilege/icon_detail_3.png) no-repeat 0 0/cover; }
-    .privilegeDetail .banner .txt .rightPic4 {
+    .privilegeDetail .banner .txt .service {
       background: url(/global/image/privilege/icon_detail_4.png) no-repeat 0 0/cover; }
-    .privilegeDetail .banner .txt .rightPic5 {
+    .privilegeDetail .banner .txt .invest {
       background: url(/global/image/privilege/icon_detail_5.png) no-repeat 0 0/cover; }
 
 .privilegeDetail .cont-wrap {
@@ -2030,22 +2385,22 @@ a.a-btn-border-red {
     padding: 0.2rem 0.32rem;
     color: #666;
     text-align: left;
-    line-height: 0.7rem; }
+    line-height: 0.6rem; }
     .red-notice-tips ul li .icon-horn {
       height: 0.4rem;
       width: 0.4rem;
       margin-right: 0.2rem;
-      margin-top: 0.15rem;
+      margin-top: 0.1rem;
       background: url(/global/image/mall/icon_publicity.png) no-repeat 0 0/cover; }
     .red-notice-tips ul li .icon-red-font {
       height: 0.3rem;
       width: 1.16rem;
-      vertical-align: middle;
+      margin-top: 0.12rem;
       background: url(/global/image/mall/icon_change.png) no-repeat 0 0/cover; }
     .red-notice-tips ul li .border-l {
       border-right: 0.01rem solid #dddddd;
-      margin: 0.1rem 0.2rem;
-      height: 0.5rem; }
+      margin: 0.11rem 0.2rem 0;
+      height: 0.4rem; }
     @media screen and (max-width: 321px) {
       .red-notice-tips ul li {
         font-size: 0.27rem; } }
@@ -2343,6 +2698,14 @@ a.a-btn-border-red {
         box-shadow: 0.02rem 0.02rem 0.02rem #ccc;
         overflow: hidden;
         margin-bottom: 0.4rem; }
+
+.myIntegral .list-null {
+  padding-top: 40%;
+  text-align: center; }
+  .myIntegral .list-null .pic-bg {
+    height: 2rem;
+    width: 2rem;
+    background: url(/global/image/mall/my_integral_null.png) no-repeat 0 0/cover; }
 
 .myIntegral .banner {
   height: 3rem;
@@ -2911,13 +3274,21 @@ a.a-btn-border-red {
     .exchargeSuc .tips {
       font-size: 0.28rem; } }
   .exchargeSuc .tips .icon-tips {
-    width: 0.3rem;
-    height: 0.3rem;
-    vertical-align: middle;
-    margin-right: 0.2rem; }
+    width: 0.32rem;
+    height: 0.32rem;
+    margin-top: 0.02rem;
+    margin-right: 0.1rem;
+    background: url(/global/image/mall/tip.png) no-repeat 0 0/cover; }
 
 .exchargeRecord {
   padding-top: 0.3rem; }
+  .exchargeRecord .list-null {
+    padding-top: 40%;
+    text-align: center; }
+    .exchargeRecord .list-null .pic-bg {
+      height: 2rem;
+      width: 2rem;
+      background: url(/global/image/mall/excharge_record_null.png) no-repeat 0 0/cover; }
   .exchargeRecord .ulist ul li .col span.icon {
     width: 0.72rem;
     height: 0.72rem;
@@ -3090,44 +3461,95 @@ a.a-btn-border-red {
     vertical-align: top; }
 
 .luck-wrap {
-  padding: 0.3rem 0.32rem;
-  width: 7.5rem;
-  height: 7.5rem; }
+  padding: 0 0.3rem;
+  width: 100%; }
   .luck-wrap .shanDeng {
     width: 100%;
-    height: 100%;
-    padding: 0.5rem;
+    padding: 0.28rem;
     border-radius: 0.2rem; }
   .luck-wrap .shanDeng {
-    background: url(../image/luck/shandeng1.png) no-repeat 0 0 #fe4236/cover; }
+    background: url(../image/luck/shandeng1.png) no-repeat 0.02rem 0 #fe3020;
+    background-size: 100% 100%; }
   .luck-wrap .shanDeng2 {
-    background: url(../image/luck/shandeng2.png) no-repeat 0 0 #fe4236/cover; }
+    background: url(../image/luck/shandeng2.png) no-repeat 0.01rem 0 #fe3020;
+    background-size: 100% 100%; }
   .luck-wrap #luck {
     width: 100%;
     height: 100%;
-    background: #d80017;
-    border-radius: 0.16rem; }
-    .luck-wrap #luck table {
-      width: 100%;
-      height: 100%; }
-  .luck-wrap .shanDeng td {
-    width: 33%;
-    height: 33%;
+    background: #c8190b;
+    border-radius: 0.16rem;
+    padding: 0.05rem;
+    overflow: hidden; }
+  .luck-wrap .shanDeng .row:last-child div {
+    margin-bottom: 0; }
+  .luck-wrap .shanDeng .row div {
+    flex: 1;
+    height: 1.7rem;
+    padding: 0.15rem 0.01rem 0.2rem;
     text-align: center;
-    background: url(../image/luck/proBj.png) no-repeat 0 0/cover; }
-    .luck-wrap .shanDeng td.active {
-      background: url(../image/luck/active.png) no-repeat 0 0/cover; }
-    .luck-wrap .shanDeng td.cjBtn {
-      background: url(../image/luck/buttonUp.png) no-repeat 0 0/cover; }
-    .luck-wrap .shanDeng td.cjBtnDom {
-      background: url(../image/luck/buttonDown.png) no-repeat 0 0/cover; }
+    background: url(../image/luck/proBj.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    margin-right: 0.08rem;
+    margin-bottom: 0.08rem;
+    position: relative; }
+    .luck-wrap .shanDeng .row div span.bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 1.7rem;
+      border-radius: 0.2rem;
+      background-color: #000;
+      opacity: 0.5;
+      filter: alpha(opacity=50);
+      display: none; }
+    .luck-wrap .shanDeng .row div:last-child {
+      margin-right: 0.03rem; }
+    .luck-wrap .shanDeng .row div.active {
+      background: url(../image/luck/active.png) no-repeat 0 0;
+      background-size: 100% 100%; }
+      .luck-wrap .shanDeng .row div.active span.bg {
+        display: block; }
+    .luck-wrap .shanDeng .row div.cjBtn {
+      background: url(../image/luck/btn_raffle_normal.png) no-repeat 0 0;
+      background-size: 100% 100%; }
+      .luck-wrap .shanDeng .row div.cjBtn p {
+        margin-top: 1rem; }
+    .luck-wrap .shanDeng .row div.cjBtnDom {
+      background: url(../image/luck/btn_raffle_press.png) no-repeat 0 0;
+      background-size: 100% 100%; }
+    .luck-wrap .shanDeng .row div.disabledBtn {
+      background: url(../image/luck/btn_raffle_unuse.png) no-repeat 0 0;
+      background-size: 100% 100%; }
+    .luck-wrap .shanDeng .row div img {
+      max-height: 0.86rem;
+      max-width: 1.7rem;
+      overflow: hidden; }
+    .luck-wrap .shanDeng .row div p {
+      width: 100%;
+      margin: 0.1rem 0;
+      line-height: 0.3rem;
+      color: #783e00;
+      text-align: center; }
+      @media screen and (max-width: 321px) {
+        .luck-wrap .shanDeng .row div p {
+          font-size: 0.25rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .luck-wrap .shanDeng .row div p {
+          font-size: 0.26rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .luck-wrap .shanDeng .row div p {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 640px) {
+        .luck-wrap .shanDeng .row div p {
+          font-size: 0.28rem; } }
 
 .luckDraw {
-  background-color: #3b1c53;
-  padding-bottom: 1.2rem; }
+  background-color: #3b1c53; }
   .luckDraw .btn, .luckDraw .banner .sec-top a.drawRecord, .luckDraw .banner .tip-time, .luckDraw .draw-rule a {
     display: inline-block;
-    border: 0.03rem solid #cc8fee;
+    border: 0.02rem solid #cc8fee;
     color: #fff;
     text-align: center;
     background-color: #8233b3;
@@ -3145,13 +3567,17 @@ a.a-btn-border-red {
       .luckDraw .btn, .luckDraw .banner .sec-top a.drawRecord, .luckDraw .banner .tip-time, .luckDraw .draw-rule a {
         font-size: 0.3rem; } }
   .luckDraw .banner {
-    height: 4.1rem;
-    background-color: black;
-    padding: 0.3rem 0.32rem;
-    position: relative; }
+    height: 4.65rem;
+    position: relative;
+    background: #711bb4; }
     .luckDraw .banner .sec-top {
       justify-content: space-between;
-      width: 100%; }
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 0.3rem 0.32rem 0;
+      z-index: 2; }
       .luckDraw .banner .sec-top .integral-num {
         color: #fff;
         text-align: left; }
@@ -3168,22 +3594,37 @@ a.a-btn-border-red {
           .luckDraw .banner .sec-top .integral-num {
             font-size: 0.3rem; } }
         .luckDraw .banner .sec-top .integral-num span.icon-star-yellow {
-          height: 0.32rem;
-          width: 0.32rem;
-          background-color: red;
+          height: 0.44rem;
+          width: 0.44rem;
           vertical-align: middle;
-          margin-right: 0.1rem; }
+          margin-right: 0.1rem;
+          background: url(/global/image/luck/icon_gold.png) no-repeat 0 0/cover; }
       .luckDraw .banner .sec-top a.drawRecord {
         padding: 0.03rem 0.2rem;
         border-radius: 0.28rem; }
+    .luckDraw .banner .bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+      height: 4.3rem;
+      background: url(/global/image/luck/icon_lottery_bg.png) no-repeat #711bb4 0 0/cover; }
     .luckDraw .banner .tip-time {
       position: absolute;
-      bottom: 0.4rem;
+      bottom: 0.34rem;
       left: 50%;
+      z-index: 2;
       margin-left: -1.95rem;
-      padding: 0.1rem 0.3rem;
+      padding: 0 0.3rem;
       border-radius: 0.36rem;
-      width: 3.9rem; }
+      width: 4rem;
+      line-height: 0.56rem; }
+      .luckDraw .banner .tip-time span {
+        width: 0.56rem;
+        height: 0.56rem;
+        background: url(/global/image/luck/icon_giftbox.png) no-repeat 0 0/cover;
+        margin-right: 0.1rem; }
       .luckDraw .banner .tip-time i {
         font-style: italic;
         padding: 0 0.1rem;
@@ -3206,28 +3647,18 @@ a.a-btn-border-red {
     margin: 0.3rem 0 0.6rem; }
     .luckDraw .draw-rule a {
       padding: 0.1rem 0.5rem;
-      border-radius: 0.28rem;
-      position: relative; }
-      .luckDraw .draw-rule a:after {
-        position: absolute;
-        right: 0.28rem;
-        top: 0.2rem;
-        content: '';
-        display: inline-block;
-        width: 0.14rem;
-        height: 0.14rem;
-        border-top: 0.023rem solid #fff;
-        border-right: 0.023rem solid #fff;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg); }
+      border-radius: 0.28rem; }
+      .luckDraw .draw-rule a i.arrow-right-white {
+        margin-top: 0.07rem;
+        margin-left: 0.07rem; }
   .luckDraw .drawed-user {
-    background-color: #fff;
+    background: url(/global/image/luck/userBg.png) no-repeat 0 0/cover;
     padding: 0.28rem; }
     .luckDraw .drawed-user .title {
       color: #5e109a;
       text-align: center;
       position: relative;
-      line-height: 0.6rem;
+      line-height: 0.5rem;
       margin-bottom: 0.2rem; }
       @media screen and (max-width: 321px) {
         .luckDraw .drawed-user .title {
@@ -3258,25 +3689,39 @@ a.a-btn-border-red {
         top: 0.3rem;
         right: 0.6rem; }
     .luckDraw .drawed-user .cont {
-      padding: 0.28rem 0.35rem; }
-      .luckDraw .drawed-user .cont li {
-        justify-content: space-between;
-        line-height: 0.5rem; }
-        .luckDraw .drawed-user .cont li span {
-          color: #333;
-          text-align: left; }
-          @media screen and (max-width: 321px) {
-            .luckDraw .drawed-user .cont li span {
-              font-size: 0.27rem; } }
-          @media screen and (min-width: 321px) and (max-width: 400px) {
-            .luckDraw .drawed-user .cont li span {
-              font-size: 0.28rem; } }
-          @media screen and (min-width: 400px) and (max-width: 640px) {
-            .luckDraw .drawed-user .cont li span {
-              font-size: 0.29rem; } }
-          @media screen and (min-width: 640px) {
-            .luckDraw .drawed-user .cont li span {
-              font-size: 0.3rem; } }
+      background-color: #fff;
+      padding: 0.22rem 0.35rem;
+      border-radius: 0.2rem;
+      height: 2.54rem;
+      overflow: hidden; }
+      .luckDraw .drawed-user .cont .swiper-container {
+        height: 100%;
+        overflow: hidden; }
+        .luckDraw .drawed-user .cont .swiper-container li {
+          justify-content: space-between;
+          line-height: 0.6rem;
+          height: 0.5rem;
+          overflow: hidden; }
+          .luckDraw .drawed-user .cont .swiper-container li span {
+            color: #333;
+            text-align: left; }
+            @media screen and (max-width: 321px) {
+              .luckDraw .drawed-user .cont .swiper-container li span {
+                font-size: 0.27rem; } }
+            @media screen and (min-width: 321px) and (max-width: 400px) {
+              .luckDraw .drawed-user .cont .swiper-container li span {
+                font-size: 0.28rem; } }
+            @media screen and (min-width: 400px) and (max-width: 640px) {
+              .luckDraw .drawed-user .cont .swiper-container li span {
+                font-size: 0.29rem; } }
+            @media screen and (min-width: 640px) {
+              .luckDraw .drawed-user .cont .swiper-container li span {
+                font-size: 0.3rem; } }
+  .luckDraw .footer {
+    margin-top: 0.2rem;
+    height: 1rem;
+    width: 100%;
+    background: url(/global/image/luck/icon_bottom_bg.png) no-repeat 0 0/cover; }
 
 .red-bg {
   background-color: #f7655e; }
@@ -3284,32 +3729,31 @@ a.a-btn-border-red {
     color: #fff; }
 
 .luckDrawRecord .sec-top {
-  height: 1.68rem;
-  background-color: red;
-  padding: 0.5rem; }
+  height: 1.8rem;
+  background: url(/global/image/luck/icon_record_bg.png) no-repeat 0 0/cover;
+  padding: 0.5rem;
+  text-align: center; }
   .luckDrawRecord .sec-top .title {
+    width: 5rem;
+    height: 0.36rem;
+    line-height: 0.33rem;
+    margin-top: 0.3rem;
     color: #fff;
     text-align: center;
-    line-height: 0.6rem; }
+    background: url(/global/image/luck/icon_record_title.png) no-repeat 0 0;
+    background-size: 100% 100%; }
     @media screen and (max-width: 321px) {
       .luckDrawRecord .sec-top .title {
-        font-size: 0.39rem; } }
+        font-size: 0.35rem; } }
     @media screen and (min-width: 321px) and (max-width: 400px) {
       .luckDrawRecord .sec-top .title {
-        font-size: 0.4rem; } }
+        font-size: 0.36rem; } }
     @media screen and (min-width: 400px) and (max-width: 640px) {
       .luckDrawRecord .sec-top .title {
-        font-size: 0.41rem; } }
+        font-size: 0.37rem; } }
     @media screen and (min-width: 640px) {
       .luckDrawRecord .sec-top .title {
-        font-size: 0.42rem; } }
-    .luckDrawRecord .sec-top .title span.icon-eplises {
-      width: 0.9rem;
-      height: 0.1rem;
-      background-color: grey;
-      vertical-align: middle; }
-    .luckDrawRecord .sec-top .title span.txt {
-      padding: 0 0.18rem; }
+        font-size: 0.38rem; } }
 
 .luckDrawRecord .record-list {
   padding: 0.3rem  0.2rem; }

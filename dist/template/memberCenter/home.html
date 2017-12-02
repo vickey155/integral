@@ -25,18 +25,29 @@
   <body>
     <section class="home">
       <div class="banner">
-        <div class="col-l"><img src="" class="avater">
-          <ul>
-            <li>张艳玲</li>
-            <li class="integral-star">
-              <div class="bg-white"><span class="icon icon-star-yellow"></span><span class="integral-num"><i class="num">30</i>积分</span></div>
-            </li>
-            <li>
-              <p class="txt">在投年化资产 3000元</p>
-            </li>
-          </ul>
+        <div class="wrap logined">
+          <div class="col-l"><img src="/global/image/home/advater.png" class="avater">
+            <ul>
+              <li>张艳玲</li>
+              <li class="integral-star">
+                <div class="bg-white"><span class="icon icon-star-yellow"></span><span class="integral-num"><i class="num">30</i>积分</span></div>
+              </li>
+              <li>
+                <p class="txt">在投年化资产 3000元</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-r"><span class="icon-level-star"><img src="/global/image/home/icon_grade_bronze.png"></span><a href="" class="a-btn a-btn-border-white">会员提升</a></div>
         </div>
-        <div class="col-r"><span class="icon-level-star"><img src="/global/image/home/icon_grade_bronze.png"></span><a href="" class="a-btn a-btn-border-white">会员提升</a></div>
+        <div style="display:none" class="wrap unlogin">
+          <div class="col-l"><img src="/global/image/home/advater.png" class="avater">
+            <ul>
+              <li>张艳玲</li>
+              <li><a href="javascript:void(0)">请登录</a></li>
+            </ul>
+          </div>
+          <div class="col-r"><a href="javascript:void(0)" class="a-btn a-btn-border-white">马上登录</a></div>
+        </div>
       </div>
       <div class="sec-li4 border-top-radius">
         <ul>
@@ -106,7 +117,45 @@
           <div class="box"><img src="/global/image/home/icon_activity_2.png"></div>
         </div>
       </div>
+      <div class="bg-pic-pop"></div>
+      <div class="dia-pic home-pop-invest">
+        <div class="dialog-cont">
+          <div class="dia-close"></div>
+          <div class="pic-wrap">
+            <div class="imgBg"></div>
+          </div>
+          <div class="cont">
+            <p>您的黄金会员身份已到期</p>
+            <p>根据您的年华在投金额重新评级为<span class="red-font">白银会员</span></p>
+          </div><a href="javascript:void(0)" class="a-btn-bg-red">立即投资升级</a>
+        </div>
+      </div>
+      <div class="dia-pic home-pop-grade">
+        <div class="dialog-head">
+          <div class="dia-close"></div>
+          <div class="pic-wrap"><img src="/global/image/home/icon_grade_bronze.png"></div>
+        </div>
+        <div class="dialog-cont">
+          <p class="title"> 升级啦！</p>
+          <p>恭喜您升级为<span class="red-font">白银会员</span></p><a href="javascript:void(0)" class="a-btn-bg-red">查看白银会员特权<i class="arrow-right-white"></i></a>
+        </div>
+      </div>
     </section>
-    <div class="script"></div>
+    <script>
+      $(function(){
+        //关闭弹层
+        commonEvent.closePicDia();
+      
+        $(".bg-pic-pop").show();
+        $(".home-pop-invest").show();
+        //$(".home-pop-grade").show();
+      
+        //关闭弹层
+        //$(".bg-pic-pop").hide();
+        // $(".home-pop-invest").hide();
+        //$(".home-pop-grade").hide();
+      
+      });
+    </script>
   </body>
 </html>

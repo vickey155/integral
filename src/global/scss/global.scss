@@ -124,7 +124,7 @@
   }
 
   .box-wrapper{
-    padding: 0.32rem 0.32rem 0 0;
+    padding: 0.32rem 0.32rem 0.01rem 0;
     .box{
       height: 2.2rem;
       width: 100%;
@@ -160,24 +160,30 @@
 
 .home{
   .banner{
-    height: 2.9rem;
+    height: 4.3rem;
     padding: 0 0.32rem;
     overflow: hidden;
-    display: flex;
-    display:-webkit-flex;
-    justify-content: space-between;
     background: url(/global/image/home/bg_top.png) no-repeat 0 0/cover;
+    .wrap{
+      display: flex;
+      display:-webkit-flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 100%;
+    }
     .col-l{
       display: flex;
       display:-webkit-flex;
       align-items: center;
+      padding-top: 0.4rem;
       img{
-        vertical-align: middle;
         height: 1.2rem;
         width: 1.2rem;
         border:0.04rem solid #ffa599;
         margin-right: 0.2rem;
         overflow: hidden;
+        border-radius: 50%;
+        margin-top: -0.1rem;
       }
     }
     ul{
@@ -211,7 +217,7 @@
           }
         }
         p.txt{
-          padding-top: 0.15rem;
+          padding-top: 0.12rem;
           @include fontFormat($fz:0.28rem,$fc:$white);
         }
 
@@ -230,12 +236,36 @@
         }
       }
       .a-btn{
-        margin-top: 0.25rem;
+        margin-top: 0.22rem;
         width: 100%;
         height: 0.52rem;
         line-height: 0.48rem;
         border-radius: 0.28rem;
         border-width: 0.02rem;
+      }
+    }
+    .unlogin{
+      .col-l{
+        padding-top: 0.84rem;
+        ul{
+          li{
+            a{
+              @include fontFormat($fz:0.28rem,$fc:$white);
+            }
+          }
+        }
+      }
+      .col-r{
+        width: 2.1rem;
+        padding-top: 0.8rem;
+        .a-btn{
+          margin-top: 0.22rem;
+          width: 100%;
+          height: 0.84rem;
+          line-height: 0.84rem;
+          border-radius: 0.1rem;
+          @include fontFormat($fz:0.32rem,$fc:$white,$ta:center);
+        }
       }
     }
   }
@@ -267,9 +297,10 @@
   .border-top-radius{
     position: relative;
     z-index: 2;
-    margin-top: -0.18rem;
+    margin-top: -1.62rem;
     border-top-left-radius: 0.22rem;
     border-top-right-radius: 0.22rem;
+    @include opacity_bg($opa:0.9,$col:$white);
     ul{
       li{
         span.icon{
@@ -298,7 +329,7 @@
 .privilege{
   .banner{
     width: 100%;
-    height: 4.3rem;
+    height: 4.2rem;
     padding: 0.2rem 0;
     background: url(/global/image/privilege/bg_top.png) no-repeat 0 0/cover;
     .icon-wrap{
@@ -366,6 +397,16 @@
         display: inline-block;
         width: 100%;
         height: 100%;
+        span{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: url(/global/image/privilege/icon_card_light.png) no-repeat 0 0;
+          background-size: 100% 100%;
+        }
+
       }
     }
     .swiper-slide-active{
@@ -382,15 +423,16 @@
     }
 
     .swiper-pagination{
-      padding-top: 0.3rem;
+      padding-top: 0.46rem;
       bottom:0.1rem;
-      background: url(/global/image/privilege/bg_light_bottom.png) no-repeat -0.1rem 0/cover;
+      background: url(/global/image/privilege/bg_light_bottom.png) no-repeat 0 0;
+      background-size: 100% 100%;
       .swiper-pagination-bullet{
-        width: 0.3rem;
+        width: 0.2rem;
         border-radius:0.2rem;
         height: 0.05rem;
         background-color: $white;
-        margin-top: 0.35rem;
+        margin-top: 0.2rem;
       }
       .swiper-pagination-bullet-active{
         background-color: $red;
@@ -473,16 +515,19 @@
       padding: 0.2rem 0;
       border-bottom: 0.01rem solid #fafafc;
       i{
-        height: 0.3rem;
-        width: 0.3rem;
+        height: 0.36rem;
+        width: 0.6rem;
         background-color: red;
         vertical-align: middle;
       }
       .icon-title-left{
-        background: url(/global/image/privilege/bg_top.png) no-repeat 0 0/cover;
+        background: url(/global/image/privilege/icon_title_left.png) no-repeat 0 0/cover;
+      }
+      .icon-title-right{
+        background: url(/global/image/privilege/icon_title_right.png) no-repeat 0 0/cover;
       }
       span{
-        margin: 0 0.2rem;
+       // margin: 0 0.2rem;
       }
     }
     .row-cont{
@@ -622,19 +667,19 @@
         height: 1.8rem;
 
       }
-      .rightPic1{
+      .birthday{
         background: url(/global/image/privilege/icon_detail_1.png) no-repeat 0 0/cover;
       }
-      .rightPic2{
+      .excharge{
         background: url(/global/image/privilege/icon_detail_2.png) no-repeat 0 0/cover;
       }
-      .rightPic3{
+      .first{
         background: url(/global/image/privilege/icon_detail_3.png) no-repeat 0 0/cover;
       }
-      .rightPic4{
+      .service{
         background: url(/global/image/privilege/icon_detail_4.png) no-repeat 0 0/cover;
       }
-      .rightPic5{
+      .invest{
         background: url(/global/image/privilege/icon_detail_5.png) no-repeat 0 0/cover;
       }
     }
@@ -721,7 +766,6 @@
       }
     }
   }
-
 
 }
 //
@@ -1118,22 +1162,22 @@
         height: 0.4rem;
         width: 0.4rem;
         margin-right: 0.2rem;
-        margin-top: 0.15rem;
+        margin-top: 0.1rem;
         background: url(/global/image/mall/icon_publicity.png) no-repeat 0 0/cover;
       }
       .icon-red-font{
         height: 0.3rem;
         width: 1.16rem;
-        vertical-align: middle;
+        margin-top: 0.12rem;
         background: url(/global/image/mall/icon_change.png) no-repeat 0 0/cover;
       }
       .border-l{
         border-right:0.01rem solid $dd;
-        margin:0.1rem 0.2rem;
-        height: 0.5rem;
+        margin:0.11rem 0.2rem 0;
+        height: 0.4rem;
       }
       @include fontFormat($fz:0.28rem,$fc:$c6);
-      line-height: 0.7rem;
+      line-height: 0.6rem;
       .red-font{
         color: $red;
       }
@@ -1341,6 +1385,17 @@
 }
 //我的积分
 .myIntegral{
+
+  .list-null{
+    padding-top: 40%;
+    text-align: center;
+    .pic-bg{
+      height: 2rem;
+      width: 2rem;
+      background: url(/global/image/mall/my_integral_null.png) no-repeat 0 0/cover;
+    }
+  }
+
   .banner{
     height: 3rem;
     display: flex;
@@ -1700,17 +1755,26 @@
     padding: 0.3rem 0.32rem;
     margin-bottom: 0.3rem;
     .icon-tips{
-      width: 0.3rem;
-      height: 0.3rem;
-      vertical-align: middle;
-      margin-right: 0.2rem;
-      //background: url(/global/image/mall/icon_task_21days.png) no-repeat 0 0/cover;
+      width: 0.32rem;
+      height: 0.32rem;
+      margin-top: 0.02rem;
+      margin-right: 0.1rem;
+      background: url(/global/image/mall/tip.png) no-repeat 0 0/cover;
     }
   }
 }
 //兑换记录
 .exchargeRecord{
   padding-top: 0.3rem;
+  .list-null{
+    padding-top: 40%;
+    text-align: center;
+    .pic-bg{
+      height: 2rem;
+      width: 2rem;
+      background: url(/global/image/mall/excharge_record_null.png) no-repeat 0 0/cover;
+    }
+  }
   .ulist{
     ul{
       li{
@@ -1863,77 +1927,133 @@
 
 //抽奖
 .luck-wrap{
-  padding:0.3rem 0.32rem;
-  width: 7.5rem;
-  height: 7.5rem;
+  padding:0 0.3rem;
+  width: 100%;
+  //height: 5.9rem;
   .shanDeng{
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
+    width:100%;
+    padding: 0.28rem;
     border-radius:0.2rem;
   }
   .shanDeng{
-    background: url(../image/luck/shandeng1.png) no-repeat 0 0 #fe4236/cover;
+    background: url(../image/luck/shandeng1.png) no-repeat 0.02rem 0 #fe3020;
+    background-size: 100% 100%;
   }
   .shanDeng2{
-    background: url(../image/luck/shandeng2.png) no-repeat 0 0 #fe4236/cover;
+    background: url(../image/luck/shandeng2.png) no-repeat 0.01rem 0 #fe3020;
+    background-size: 100% 100%;
   }
   #luck{
-    width: 100%;
-    height: 100%;
-    background:#d80017;
+    width:100%;
+    height:100%;
+    background:#c8190b;
     border-radius:0.16rem;
-    table{
-      width: 100%;
-      height: 100%;
-    }
+    padding: 0.05rem;
+    overflow: hidden;
   }
   .shanDeng{
-    td {
-      width: 33%;
-      height: 33%;
-      text-align: center;
-      background: url(../image/luck/proBj.png) no-repeat 0 0/cover;
-      &.active{
-        background: url(../image/luck/active.png) no-repeat 0 0/cover;
+    .row{
+      @extend .flexStyle;
+      &:last-child{
+        div{
+          margin-bottom: 0;
+        }
       }
-      &.cjBtn{
-        background: url(../image/luck/buttonUp.png) no-repeat 0 0/cover;
-      }
-      &.cjBtnDom{
-        background: url(../image/luck/buttonDown.png)  no-repeat 0 0/cover;
+      div{
+        flex:1;
+        height: 1.7rem;
+        padding: 0.15rem 0.01rem 0.2rem;
+        text-align: center;
+        background: url(../image/luck/proBj.png) no-repeat 0 0;
+        background-size: 100% 100%;
+        margin-right: 0.08rem;
+        margin-bottom: 0.08rem;
+        position: relative;
+        span.bg{
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 2;
+          width: 100%;
+          height: 1.7rem;
+          border-radius: 0.2rem;
+          @include opacity_bg($opa:0.5,$col:#000);
+          display: none;
+        }
+        &:last-child{
+          margin-right: 0.03rem;
+        }
+        &.active{
+          background: url(../image/luck/active.png) no-repeat 0 0;
+          background-size: 100% 100%;
+          span.bg{
+            display: block;
+          }
+        }
+
+        &.cjBtn{
+          background: url(../image/luck/btn_raffle_normal.png) no-repeat 0 0;
+          background-size: 100% 100%;
+          p{
+            margin-top:1rem;
+          }
+        }
+        &.cjBtnDom{
+          background: url(../image/luck/btn_raffle_press.png)  no-repeat 0 0;
+          background-size: 100% 100%;
+        }
+        &.disabledBtn{
+          background: url(../image/luck/btn_raffle_unuse.png) no-repeat 0 0;
+          background-size: 100% 100%;
+        }
+        img{
+          max-height: 0.86rem;
+          max-width:1.7rem;
+          overflow: hidden;
+        }
+        p{
+          width:100%;
+          margin: 0.1rem 0;
+          line-height: 0.3rem;
+          @include fontFormat($fz:0.26rem,$fc:#783e00,$ta:center);
+        }
       }
     }
+
   }
 
 }
 .luckDraw{
   background-color: #3b1c53;
-  padding-bottom: 1.2rem;
   .btn{
     display: inline-block;
-    border:0.03rem solid #cc8fee;
+    border:0.02rem solid #cc8fee;
     @include fontFormat($fz:0.28rem,$fc:$white,$ta:center);
     background-color: #8233b3;
     line-height: 0.36rem;
   }
   .banner{
-    height: 4.1rem;
-    background-color: black;
-    padding: 0.3rem 0.32rem;
+    height: 4.65rem;
     position: relative;
+    background: #711bb4;
+
     .sec-top{
       @extend .flexStyle;
       justify-content: space-between;
       width: 100%;
+      position: absolute;
+      left:0;
+      top:0;
+      padding: 0.3rem 0.32rem 0;
+      z-index: 2;
       .integral-num{
         @include fontFormat($fz:0.28rem,$fc:$white);
         span.icon-star-yellow{
-          height: 0.32rem;
-          width: 0.32rem;
-          background-color: red;
+          height: 0.44rem;
+          width: 0.44rem;
           vertical-align: middle;
           margin-right: 0.1rem;
+          background: url(/global/image/luck/icon_gold.png) no-repeat 0 0/cover;
         }
       }
       a.drawRecord{
@@ -1942,15 +2062,32 @@
         border-radius: 0.28rem;
       }
     }
+    .bg{
+      position: absolute;
+      left:0;
+      top:0;
+      z-index: 1;
+      width: 100%;
+      height: 4.3rem;
+      background: url(/global/image/luck/icon_lottery_bg.png) no-repeat #711bb4 0 0/cover;
+    }
     .tip-time{
       position: absolute;
-      bottom: 0.4rem;
+      bottom: 0.34rem;
       left: 50%;
+      z-index: 2;
       margin-left: -1.95rem;
-      padding: 0.1rem 0.3rem;
+      padding: 0 0.3rem;
       @extend .btn;
       border-radius: 0.36rem;
-      width: 3.9rem;
+      width: 4rem;
+      line-height: 0.56rem;
+      span{
+        width:0.56rem;
+        height:0.56rem;
+        background: url(/global/image/luck/icon_giftbox.png) no-repeat 0 0/cover;
+        margin-right: 0.1rem;
+      }
       i{
         font-style: italic;
         padding: 0 0.1rem;
@@ -1965,30 +2102,21 @@
       padding: 0.1rem 0.5rem;
       border-radius:0.28rem;
       @extend .btn;
-      position: relative;
-      &:after{
-        position: absolute;
-        right: 0.28rem;
-        top:0.2rem;
-        content: '';
-        display: inline-block;
-        width: 0.14rem;
-        height: 0.14rem;
-        border-top: 0.023rem solid $white;
-        border-right: 0.023rem solid $white;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
+      i.arrow-right-white{
+        margin-top: 0.07rem;
+        margin-left: 0.07rem;
       }
+
     }
 
   }
   .drawed-user{
-    background-color: $white;
+    background: url(/global/image/luck/userBg.png) no-repeat 0 0/cover;
     padding: 0.28rem;
     .title{
       @include fontFormat($fz:0.36rem,$fc:#5e109a,$ta:center);
       position: relative;
-      line-height: 0.6rem;
+      line-height: 0.5rem;
       margin-bottom: 0.2rem;
       &:before{
         content:'';
@@ -2010,19 +2138,34 @@
       }
     }
     .cont{
-      padding:0.28rem 0.35rem;
-      li{
-        @extend .flexStyle;
-        justify-content: space-between;
-        line-height: 0.5rem;
-        span{
-          @include fontFormat($fz:0.28rem,$fc:$c3);
+      background-color: $white;
+      padding:0.22rem 0.35rem;
+      border-radius: 0.2rem;
+      height: 2.54rem;
+      overflow: hidden;
+      .swiper-container{
+        height:100%;
+        overflow: hidden;
+        li{
+          @extend .flexStyle;
+          justify-content: space-between;
+          line-height: 0.6rem;
+          height: 0.5rem;
+          overflow: hidden;
+          span{
+            @include fontFormat($fz:0.28rem,$fc:$c3);
+          }
         }
       }
     }
 
   }
-
+  .footer{
+    margin-top: 0.2rem;
+    height:1rem;
+    width: 100%;
+    background: url(/global/image/luck/icon_bottom_bg.png) no-repeat 0 0/cover;
+  }
 }
 //抽奖记录
 .red-bg{
@@ -2033,21 +2176,18 @@
 }
 .luckDrawRecord{
   .sec-top{
-    height: 1.68rem;
-    background-color: red;
+    height: 1.8rem;
+    background: url(/global/image/luck/icon_record_bg.png) no-repeat 0 0/cover;
     padding: 0.5rem;
+    text-align: center;
     .title{
-      @include fontFormat($fz:0.4rem,$fc:$white,$ta:center);
-      line-height: 0.6rem;
-      span.icon-eplises{
-        width: 0.9rem;
-        height: 0.1rem;
-        background-color: grey;
-        vertical-align: middle;
-      }
-      span.txt{
-        padding:0 0.18rem;
-      }
+      width: 5rem;
+      height: 0.36rem;
+      line-height: 0.33rem;
+      margin-top: 0.3rem;
+      @include fontFormat($fz:0.36rem,$fc:$white,$ta:center);
+      background: url(/global/image/luck/icon_record_title.png) no-repeat 0 0;
+      background-size: 100% 100%;
     }
   }
   .record-list{

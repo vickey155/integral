@@ -9,7 +9,7 @@ block content
       .txt
         h2 生日特权
         p 生日当月均可领取
-        .rightPic.rightPic1
+        .rightPic
 
     .cont-wrap
       .row
@@ -30,6 +30,13 @@ block content
     .btn-warp.fixed-footer
       a.a-btn-bg-yellow(href='javascript:void(0);') 领取礼包
 
+  script.
+    $(function () {
+      var className = commonEvent.getUrlPram('type');
+      var catName = commonEvent.getUrlPram('cat');
+      console.log(catName)
+      $(".banner .rightPic").addClass(className);
+    });
 
 
 

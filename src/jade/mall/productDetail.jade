@@ -108,10 +108,18 @@ block append footer
         loop: true,
         speed: 400
       });
-      if (mySwiper.slides.length <= 3) {
+      if (mySwiper.slides.length <= 1) {
         mySwiper.destroy();
       }
-
+      var exChargeCallBack = function () {
+        alert('对换了')
+      }
+      //兑换
+      $("#exChargeBtn").onClick('click',function () {
+        var tip = '确定要兑换该权益吗？' ;
+        commonEvent.confirmDialog(tip,exChargeCallBack);
+      });
+      //对换数量加减
       var num = 1;
       var dealWithIntegral = function () {
         var integralNumSum = Number($("#integralNum").text()) * num;

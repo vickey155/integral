@@ -7,13 +7,18 @@ block content
   section.mall
     .banner
     .sec-top
-      .red-notice-tips
-        ul
-          li
+      .red-notice-tips.swiper-container
+        ul.swiper-wrapper
+          li.swiper-slide
             span.icon-horn
             |章先生兑换了
             i.red-font 200
             |元满减券
+          li.swiper-slide
+            span.icon-horn
+            | 章先生兑换了
+            i.red-font 600
+            | 元满减券
       .row-b
         .col
           span.icon.icon-money-yellow
@@ -108,6 +113,22 @@ block content
       p 本活动规则解释权归 念钱安 所有
       p 如有疑问，请联系在线客服或拨打400-8269-227
 
+block append footer
+  script(type="text/javascript" src="../../global/js/swiper.min.js")
+  script.
+    $(function () {
+      var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        autoplay: true,
+        delay: 2000,
+        loop: true,
+        speed: 400
+      });
+      if (mySwiper.slides.length <= 1) {
+        mySwiper.destroy();
+      }
+
+    });
 
 
 

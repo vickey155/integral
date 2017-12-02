@@ -68,24 +68,29 @@ block content
       var self = $(this).find('i');
       var selfRow = self.closest('.row');
       var selfRowId = selfRow.data('id');
-      alert(selfRowId)
+      //alert(selfRowId)
       //回调
       var selfParent = $(this).parent();
       var allParent = selfParent.closest('#adressList');
       allParent.find('.set-default').removeClass('choosed');
       allParent.find('.default-address').html('');
-      selfParent.addClass('choosed');
+      $(this).addClass('choosed');
       selfRow.closest('.row').find('.default-address').html(redFont);
 
     });
+    //回调
+    var callBackDeleteFn = function (self) {
+      var selfRow = self.closest('.row');
+      var selfRowId = selfRow.data('id');
+      self.closest('.row').remove();
+    }
     //删除
     $("#adressList").onClick('click', '.icon-delete', function () {
       var self = $(this);
-      var selfRow = self.closest('.row');
-      var selfRowId = selfRow.data('id');
-      alert(selfRowId)
-      //回调
-      self.closest('.row').remove();
+      var tip = '你确定要删除此条地址吗？';
+      commonEvent.confirmDialog(tip,function () {
+        callBackDeleteFn(self);
+      });
 
     });
 

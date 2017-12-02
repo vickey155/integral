@@ -1,5 +1,8 @@
 var luckDraw = function () {
   var click = false;
+  var that = this;
+  that.prizeIndex = null;
+  that.prizeName = null;
   var luck = {
     index: -1, //当前转动到哪个位置，起点位置
     count: 0, //总共有多少个位置
@@ -36,10 +39,22 @@ var luckDraw = function () {
     }
   };
 
-  function roll() {
+  function roll(fn) {
     luck.times += 1;
-    luck.roll();
+    luck.roll(); //转动过程调用的是luck的roll方法，这里是第一次调用初始化
     if (luck.times > luck.cycle + 10 && luck.prize == luck.index) {
+      $("#drawBtn").removeClass("disabledBtn");
+      if (!that.prizeName) {} else if (that.prizeName !== 'null') {
+        fn();
+      } else {
+
+        commonEvent.alertDialog('很遗憾，这次没有中奖，继续加油！', function () {
+          $("#luck").find(".luck-unit-" + luck.index).removeClass("active");
+          console.log('index');
+          console.log(luck.index);
+        });
+      }
+
       clearTimeout(luck.timer);
       luck.prize = -1;
       luck.times = 0;
@@ -48,11 +63,12 @@ var luckDraw = function () {
       if (luck.times < luck.cycle) {
         luck.speed -= 10;
       } else if (luck.times == luck.cycle) {
-        var index = Math.random() * luck.count | 0;
+        //var index = Math.random()*(luck.count)|0; //静态演示，随机产生一个奖品序号，实际需请求接口产生
+        var index = that.prizeIndex; //静态演示，随机产生一个奖品序号，实际需请求接口产生
         luck.prize = index;
       } else {
         if (luck.times > luck.cycle + 10 && (luck.prize == 0 && luck.index == 7 || luck.prize == luck.index + 1)) {
-          luck.speed += 110;
+          luck.speed += 60;
         } else {
           luck.speed += 20;
         }
@@ -61,7 +77,9 @@ var luckDraw = function () {
         luck.speed = 40;
       };
 
-      luck.timer = setTimeout(roll, luck.speed);
+      luck.timer = setTimeout(function () {
+        roll(fn);
+      }, luck.speed);
     }
     return false;
   }
@@ -86,25 +104,25 @@ var luckDraw = function () {
     init: function () {
       lampShining();
       luck.init('luck');
-      $("#luck").onClick('click', '#btn', function () {
-        //按下弹起效果
-        $("#btn").addClass("cjBtnDom");
-        setTimeout(function () {
-          $("#btn").removeClass("cjBtnDom");
-        }, 200);
-        if (click) {
-          return false;
-        } else {
-          luck.speed = 100;
-          roll();
-          click = true;
-          return false;
-        }
-      });
+    },
+    setPrizeId: function (index, prizeName) {
+      that.prizeIndex = index;
+      that.prizeName = prizeName;
+    },
+    clickFn: function (callBack) {
+      //按下弹起效果
+      $("#drawBtn").addClass("cjBtnDom");
+      setTimeout(function () {
+        $("#drawBtn").removeClass("cjBtnDom");
+      }, 200);
+      if (click) {
+        //return false;
+      } else {
+        luck.speed = 100;
+        roll(callBack);
+        click = true;
+        //return false;
+      }
     }
   };
 }();
-$(function () {
-
-  luckDraw.init();
-});

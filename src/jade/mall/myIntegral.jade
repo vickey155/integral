@@ -5,45 +5,125 @@ block append headTitle
 
 block content
   section.myIntegral
-    .banner
-     .icon-oclock
-       p.txt  当前积分
-       p.num 168
+    .list-null
+      span.pic-bg
+    .list(style='display:none')
+      .banner
+       .icon-oclock
+         p.txt  当前积分
+         p.num 168
 
-    .ulist
-      .title 积分明细
-      ul
-        li
-          .col
-            p.txt 签到
-            p.date-time 2017-11-12  17:15
-          .col.col-r
-            span.integral-num +8
-        li
-          .col
-            p.txt 每日结算
-            p.date-time 2017-11-12  17:15
-          .col.col-r
-            span.integral-num +8
-        li
-          .col
-            p.txt 邀请好友
-            p.date-time 2017-11-12  17:15
-          .col.col-r
-            span.integral-num +8
-        li
-          .col
-            p.txt 积分兑换
-            p.date-time 2017-11-12  17:15
-          .col.col-r
-            span.integral-num +8
-        li
-          .col
-            p.txt 抽奖
-            p.date-time 2017-11-12  17:15
-          .col.col-r
-            span.integral-num +8
+      .ulist#temp-list
+        .title 积分明细
+        ul
+          li
+            .col
+              p.txt 签到
+              p.date-time 2017-11-12  17:15
+            .col.col-r
+              span.integral-num +8
+          li
+            .col
+              p.txt 每日结算
+              p.date-time 2017-11-12  17:15
+            .col.col-r
+              span.integral-num +8
+          li
+            .col
+              p.txt 邀请好友
+              p.date-time 2017-11-12  17:15
+            .col.col-r
+              span.integral-num +8
+          li
+            .col
+              p.txt 积分兑换
+              p.date-time 2017-11-12  17:15
+            .col.col-r
+              span.integral-num +8
+          li
+            .col
+              p.txt 抽奖
+              p.date-time 2017-11-12  17:15
+            .col.col-r
+              span.integral-num +8
+  script.
+    script.$(function () {
+      var htmlList = function () {
+        var loading = true;
+        var showLoadingTxt = function (txt) {
+          var listWrap = $("#temp-list");
+          listWrap.find('.load-more').remove();
+          var temp = '<p class="load-more">' + txt + '</p>';
+          listWrap.append(temp);
+        }
+        var showList = function () {
+          var listWrap = $("#temp-list");
+          listWrap.html("");
+          $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+              //type: listType
+            },
+            beforeSend: function () {
+              showLoadingTxt('正在努力加载中,请耐心等待片刻……');
+            },
+            success: function (result) {
+              // var dataNum = data.tatol;
+              var dataNum = 12;
+              var perPageNum = $("#temp-list li").length;
+              listWrap.find('.loading').remove();
+              var html = '';
+              if (dataNum > perPageNum) {
+                for (var i = 0; i < 6; i++) {
+                  html += '自己粘贴复制';
+                }
+                listWrap.append(html);
+                showLoadingTxt('加载更多');
+              }
+              else if (dataNum <= perPageNum) {
+                showLoadingTxt('没有更多了');
+              }
+              loading = true;
+            },
+            error: function () {
+              showLoadingTxt('系统繁忙，请稍后再试');
+            }
+          });
+        }
 
+        var initList = function () {
+          $("#temp-list ul").html("");
+          showList();
+        }
+        //加载更多
+        var loadMore = function () {
+          $(window).scroll(function () {
+            var docHei = $(document).height();
+            var scrollT = $(window).scrollTop();
+            if (scrollT + $(window).height() > docHei - 20) {
+              if (loading) {
+                loading = false;
+                showList();
+              }
+            }
+          });
+        };
+        return {
+          initalList: function () {
+            $("#temp-list ul").html("");
+            initList();
+          },
+          scrollList: function () {
+            loadMore();
+          }
+        }
+
+      }();
+
+      // htmlList.initalList();//初始化页面
+      htmlList.scrollList();
+    })
 
 
 

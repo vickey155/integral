@@ -11,57 +11,193 @@ block content
           span.icon-star-yellow
           |我的积分：1460
         a.drawRecord(href="") 抽奖记录
+      .bg
       .tip-time
         span.icon
         |今天还有
-        i 2
+        i#drawTimes 3
         |次机会哦
 
     .luck-wrap
       .shanDeng#deng
         #luck
-          table
-            tr
-              td.luck-unit.luck-unit-0
-              td.luck-unit.luck-unit-1
-              td.luck-unit.luck-unit-2
-            tr
-              td.luck-unit.luck-unit-7
-              td.cjBtn#btn
-              td.luck-unit.luck-unit-3
-            tr
-              td.luck-unit.luck-unit-6
-              td.luck-unit.luck-unit-5
-              td.luck-unit.luck-unit-4
+          .wrap
+            .row
+              .luck-unit.luck-unit-0(data-id='1' data-index='0' data-status='20元红包')
+                span.bg
+                img(src="/global/image/luck/icon_gift_1.png")
+                p 10元红包
+              .luck-unit.luck-unit-1(data-id='2' data-index='1' data-status='20积分')
+                span.bg
+                img(src="/global/image/luck/icon_gift_2.png")
+                p 20积分
+              .luck-unit.luck-unit-2(data-id='3' data-index='2' data-status='扫地机器人')
+                span.bg
+                img(src="/global/image/luck/icon_gift_2.png")
+                p 扫地机器人
+            .row
+              .luck-unit.luck-unit-7(data-id='4' data-index='7' data-status='iphone8')
+                span.bg
+                img(src="/global/image/luck/icon_gift_5.png")
+                p iphone8 256G
+              .cjBtn#drawBtn
+                p -50积分
+              .luck-unit.luck-unit-3(data-id='5' data-index='3' data-status='15元满')
+                span.bg
+                img(src="/global/image/luck/icon_gift_5.png")
+                p 15元满减券
+            .row
+              .luck-unit.luck-unit-6(data-id='6' data-index='6' data-status='80积分')
+                span.bg
+                img(src="/global/image/luck/icon_gift_1.png")
+                p 80积分
+              .luck-unit.luck-unit-5(data-id='7' data-index='5' data-status='0.3%加息券')
+                span.bg
+                img(src="/global/image/luck/icon_gift_4.png")
+                p 0.3%加息券
+              .luck-unit.luck-unit-4(data-id='8' data-index='4' data-status='null')
+                span.bg
+                img(src="/global/image/luck/icon_gift_1.png")
+                p 20元红包
     .draw-rule
-      a(href="javascript:void(0);") 抽奖规则
+      a(href="javascript:void(0);")#ruleBtn 抽奖规则
+        i.arrow-right-white
 
     .plr32
       .drawed-user
         .title 中奖用户
         .cont
-          ul
-            li
-              span 139****8907
-              span christing
-              span 抽中 20元红包
-            li
-              span 139****8907
-              span christing
-              span 抽中 20元红包
-            li
-              span 139****8907
-              span christing
-              span 抽中 20元红包
-            li
-              span 139****8907
-              span christing
-              span 抽中 20元红包
+          .swiper-container
+            ul.swiper-wrapper
+              li.swiper-slide
+                span 139****8907
+                span christing
+                span 抽中 20元红包
+              li.swiper-slide
+                span 139****8907
+                span christing
+                span 抽中 20元红包
+              li.swiper-slide
+                span 139****8907
+                span christing
+                span 抽中 20元红包
+              li.swiper-slide
+                span 139****8907
+                span christing
+                span 抽中 20元红包
+    .footer
+
+  .bg-pic-pop
+  .dia-pic.luck-pop.rule-pop
+    .dialog-cont
+      .dia-close
+      .luckPic
+        .imgBg
+      .cont
+        .title 抽奖规则
+        p 1. 每次抽奖消耗10积分；
+        p 2. 每天仅限3次；
+        p 3. 积分不够则不能参与抽奖；
+        p 4. 可在抽奖记录查看抽奖详情。
+  .dia-pic.luck-pop.integral-null
+    .dialog-cont
+      .dia-close
+      .luckPic
+        .imgBg
+      .cont
+        p 亲，您的积分不够了！
+      a(href="javascript:void(0);").a-btn-bg-yellow 去赚积分
+  .dia-pic.luck-pop.drawed-pop
+    .dia-close
+    .cont
+      p.title 恭喜您！
+      p.big-font 中了
+        span.red-font#prizeName 20积分
+      p.red-font 已放到您的积分账户中
+    a(href="javascript:void(0);").a-btn-bg-yellow 了解奖品使用详情
+
+
+
 
 
 block append footer
   script(type="text/javascript" src="../../global/js/luckDraw.js")
+  script(type="text/javascript" src="../../global/js/swiper.min.js")
+  script.
+    $(function () {
+      var len = $('.swiper-container .swiper-slide').length;
+      var mySwiper = new Swiper('.swiper-container', {
+        direction: 'vertical',
+        autoplay: true,
+        delay: 800,
+        speed: 400,
+        loop: true,
+        slidesPerView: 'auto',
+        loopedSlides: len
+      });
+      if (mySwiper.slides.length <= 4) {
+        mySwiper.destroy();
+      }
+      //抽奖规则
+      $('#ruleBtn').onClick('click',function () {
+        $(".bg-pic-pop").show()
+        $(".rule-pop").show()
+      });
+      //关闭弹层
+      commonEvent.closePicDia();
 
+      if (Number($("#drawTimes").text()) <= 0) {
+        $('#drawBtn').addClass('disabledBtn');
+      }
+
+      luckDraw.init();//背景灯闪烁
+      var prizeName = '';
+      $("#luck").onClick('click','#drawBtn',function () {
+        var self = $(this);
+        if (self.hasClass('disabledBtn')) {
+          return false;
+        }
+        var times = Number($("#drawTimes").text());
+        self.addClass('disabledBtn');
+        if (times <= 0) {
+          var tip = '今天的抽奖次数已用完了，明天再来试试吧~';
+          commonEvent.alertDialog(tip);
+          $("#drawBtn").removeClass("disabledBtn");
+          return false;
+        }
+        else{
+          times--;
+          $("#drawTimes").text(times);
+        }
+
+        //积分不够
+        //lessIntegral();
+        //抽奖成功 当转盘有多个无奖励时  data-status == 'null',
+        luckDraw.clickFn(callBackSuc);
+        setTimeout(function () {
+          var prizeId = 8; // data-id='6' data-status='80积分'
+          if($("#luck").find('[data-id = "'+prizeId+'"]')[0]){
+            prizeName = $("#luck").find('[data-id = "' + prizeId + '"]').eq(0).attr('data-status');
+            var prizeIndex = $("#luck").find('[data-id = "' + prizeId + '"]').eq(0).attr('data-index');
+            luckDraw.setPrizeId(prizeIndex,prizeName);
+          }
+          else{
+            commonEvent.alertDialog('没有找到中奖id');
+           }
+
+        },600);
+      });
+      //抽奖按钮
+      var lessIntegral = function () { //积分不够
+        $(".bg-pic-pop").show()
+        $(".integral-null").show()
+      }
+      var callBackSuc = function () { //抽中了
+        $("#prizeName").html(prizeName);
+        $(".bg-pic-pop").show()
+        $(".drawed-pop").show()
+      }
+    });
 
 
 

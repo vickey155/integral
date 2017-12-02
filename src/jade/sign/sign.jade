@@ -25,7 +25,7 @@ block content
             .tips-b 今日签到将获得5积分
 
     .btn-warp.fixed-footer
-      a.a-btn-bg-red 立即签到
+      a.a-btn-bg-red#signBtn 立即签到
       a.a-btn-bg-grey 今日已签到
 
 
@@ -45,7 +45,8 @@ block content
 block append footer
     script(type="text/javascript" src="../../global/js/schedule.js")
     script.
-        $(function(){
+        $(function() {
+          //签到
           var signData = {
             signDays: [10, 29],//签到
             unSignDays: [1, 2, 3, 4, 5, 6, 7] // 未签到
@@ -54,25 +55,30 @@ block append footer
             el: '#scheduleBox',
             sign: signData
           });
+          //未签到 两种判断
           $("#scheduleBox").onClick('click', '.unSign', function () {
             var tip = '您目前没有补签卡，立即去任务中心做任务获取补签卡。'
-            var url='';
-             var urlTxt='去做任务';
-            commonEvent.urlGoDialog(tip,url,urlTxt);
-            //var tip = '您目前一共有<span class="red-font">1</span>张补签卡，确认补签蒋消耗掉1张。'
-            //var url = '';
-           // var urlTxt = '确认补签';
-            //commonEvent.urlGoDialog(tip, url, urlTxt);
-            //commonEvent.urlGoDialog(tip, url, urlTxt);
+            var url = '';
+            var urlTxt = '去做任务';
+            commonEvent.urlGoDialog(tip, url, urlTxt);
+            //确认补签
+            var tip = '您目前一共有<span class="red-font">1</span>张补签卡，确认补签蒋消耗掉1张。'
+            var makeSignCallBack = function () {
+
+            }
+           //commonEvent.confirmDialog(tip, makeSignCallBack);
           });
-          $(".dia-pic").onClick('click','.close-btn,.dia-close',function () {
-            $(".bg-pic-pop").hide();
-            $(".dia-pic").hide();
-          })
-        });
-        $(".btn-warp").onClick('click','.a-btn-bg-red',function () {
-          $(".bg-pic-pop").show();
-          $(".dia-pic").show();
-        });
+          //签到
+          var myDate = new Date();
+          $("#signBtn").onClick('click', function () {
+              var curDay = myDate.getDate();;
+              signData.signDays.push(curDay);
+              var mySchedule = new Schedule({
+                el: '#scheduleBox',
+                sign: signData
+              });
+          });
+        })
+
 
 

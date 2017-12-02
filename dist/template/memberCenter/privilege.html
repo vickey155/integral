@@ -48,19 +48,19 @@
             </div>
             <div class="swiper-slide bojin"><a><span></span></a>
               <div class="icon-wrap"><span class="icon"></span>
-                <p class="name">铂金会员</p>
+                <p class="name">铂金 会员</p>
                 <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
               </div>
             </div>
             <div class="swiper-slide zhuanshi"><a><span></span></a>
               <div class="icon-wrap"><span class="icon"></span>
-                <p class="name">砖石会员</p>
+                <p class="name">砖石 会员</p>
                 <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
               </div>
             </div>
             <div class="swiper-slide zhizhun"><a><span></span></a>
               <div class="icon-wrap"><span class="icon"></span>
-                <p class="name">至尊会员</p>
+                <p class="name">至尊 会员</p>
                 <p class="txt">5万元 > 在投年化投资额 < 10万元</p>
               </div>
             </div>
@@ -68,29 +68,29 @@
           <div class="swiper-pagination"></div>
         </div>
       </div>
-      <div class="sec-li-center">
+      <div id="list" class="sec-li-center">
         <div class="title"><i class="icon-title-left"></i><span>特权礼包内容</span><i class="icon-title-right"></i></div>
-        <div class="row-cont qingtong"><a href="javascript:void(0);" class="row">
+        <div class="row-cont qingtong"><a href="/template/memberCenter/privilegeDetail.html?type=birthday" class="row">
             <div class="col"><span><i class="icon01"></i></span></div>
             <div class="col">
               <p class="name">生日特权</p>
               <p class="grey-font">生日积分双倍</p>
-            </div></a><a href="javascript:void(0);" class="row">
+            </div></a><a href="/template/memberCenter/privilegeDetail.html?type=excharge" class="row">
             <div class="col"><span><i class="icon02"></i></span></div>
             <div class="col">
               <p class="name">兑换特权</p>
               <p class="grey-font">商城礼品积分95折兑</p>
-            </div></a><a href="javascript:void(0);" class="row">
+            </div></a><a href="/template/memberCenter/privilegeDetail.html?type=first" class="row">
             <div class="col"><span><i class="icon03"></i></span></div>
             <div class="col">
               <p class="name">首次升级特权</p>
               <p class="grey-font">0.5%加息券</p>
-            </div></a><a href="javascript:void(0);" class="row">
+            </div></a><a href="/template/memberCenter/privilegeDetail.html?type=service" class="row">
             <div class="col"><span><i class="icon04"></i></span></div>
             <div class="col">
               <p class="name">服务特权</p>
               <p class="grey-font">在线客服为您服务</p>
-            </div></a><a href="javascript:void(0);" class="row">
+            </div></a><a href="/template/memberCenter/privilegeDetail.html?type=invest" class="row">
             <div class="col"><span><i class="icon05"></i></span></div>
             <div class="col">
               <p class="name">投资特权</p>
@@ -112,11 +112,20 @@
         },
         on: {
           transitionEnd: function (swiper) {
-           console.log(this.activeIndex-1)
+           console.log(this.activeIndex-2)
+            var selfIndex = this.activeIndex;
+            var selfClass = $('.swiper-container').find('.swiper-slide').eq(selfIndex).attr('class').split(' ');
+            var levelClass = selfClass[1];
+            $("#list").find('.row-cont').attr('class','row-cont '+levelClass);
+            $("#list").find('a').each(function () {
+              var self = $(this)
+              var selfHref = self.attr('href');
+              self.attr('href',selfHref+'&&cat='+levelClass);
+            });
           },
         },
       });
-      if(mySwiper.slides.length <= 3){
+      if(mySwiper.slides.length <= 1){
         mySwiper.destroy();
       }
     </script>

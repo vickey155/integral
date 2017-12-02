@@ -1,7 +1,18 @@
 
 ;(function($){
-    var isTouch = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click', _on = $.fn.on;
-    if(!$.fn.onClick) {
+  //阻止浏览器的默认行为
+  function stopDefault( e ) {
+    //阻止默认浏览器动作(W3C)
+    if ( e && e.preventDefault )
+      e.preventDefault();
+    //IE中阻止函数器默认动作的方式
+    else
+      window.event.returnValue = false;
+    return false;
+  }
+
+    var isTouch = ('ontouchstart' in document.documentElement) ? 'touchend' : 'click', _on = $.fn.on;
+    if(!$.fn.onClick){
         $.fn.onClick = function () {
             arguments[0] = (arguments[0] === 'click') ? isTouch : arguments[0];
             return _on.apply(this, arguments);
@@ -17,20 +28,30 @@
             self.addClass('selected');
         }
     });
+    var isTouchStar = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click', _onT = $.fn.on;
+    if(!$.fn.onTouch){
+      $.fn.onTouch = function () {
+        arguments[0] = (arguments[0] === 'click') ? isTouchStar : arguments[0];
+        return _onT.apply(this, arguments);
+      };
+    }
+    $(document).onTouch('click','.bg-pic-pop,.dialog-alert-pop', function () {
+      stopDefault()
+    });
 })(jQuery);
 
-//阻止浏览器的默认行为
-function stopDefault( e ) {
-    //阻止默认浏览器动作(W3C)
-    if ( e && e.preventDefault )
-        e.preventDefault();
-    //IE中阻止函数器默认动作的方式
-    else
-        window.event.returnValue = false;
-    return false;
-}
+
 
 var commonEvent = function() {
+  //获取url上的参数
+   var getetQueryString =function (name) {
+     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+     var r = window.location.search.substr(1).match(reg);
+     if (r != null) {
+       return unescape(r[2]);
+     }
+     return null;
+   };
     var valTurnTwoNum = function(val){
         var returnVal = '0.00';
         if(val == null){
@@ -70,24 +91,33 @@ var commonEvent = function() {
             return false;
         });
     };
-
-    var dialogErrTip = function (errTip) {
+    var dialogErrTip = function (errTip,fun) {
         var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' +
             '<div class="dialog-cont"><p>' + errTip + '</p></div>' +
-            '<div class="dialog-btn"><a href="javascript:void(0);" class="close-btn">确定</a>' +
+            '<div class="dialog-btn"><a href="javascript:void(0);" class="close-btn callBtn">确定</a>' +
             '</div> </div>';
         $('body').append(temp);
+      $('.dialog-alert-pop .callBtn').onClick('click',function(){
+        $(".bg-alert-pop").remove();
+        $(".dialog-alert-pop").remove();
+        if(fun){
+          fun();
+        }
+        return false;
+      });
     };
     var dialogConfirm = function (tip,fun) {
       var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' +
         '<div class="dialog-cont"><p>' + tip + '</p></div>' +
-        '<div class="dialog-btn"><a class="close-btn">关闭</a><a class="sure-btn">确定</a>' +
+        '<div class="dialog-btn"><a href="javascript:void(0);"class="close-btn">取消</a><a href="javascript:void(0);" class="sure-btn">确定</a>' +
         '</div> </div>';
       $('body').append(temp);
       $('.dialog-alert-pop .sure-btn').onClick('click',function(){
         $(".bg-alert-pop").remove();
         $(".dialog-alert-pop").remove();
-        fun();
+        if(fun){
+          fun();
+        }
         return false;
       });
     };
@@ -98,10 +128,21 @@ var commonEvent = function() {
             '</div> </div>';
         $('body').append(temp);
     };
-
+    //关闭带图片的弹层
+    var closePicDiaFn = function () {
+      $(document).onClick('click', '.dia-pic .close-btn,.dia-pic .dia-close', function () {
+        setTimeout(function () {
+          $(".bg-pic-pop").hide();
+          $(".dia-pic").hide();
+        },200);
+      });
+    };
 
 
     return{
+        getUrlPram:function (name) {
+          return getetQueryString(name);
+        },
         valPointTwoNum:function(val){
             return valTurnTwoNum(val);
         },
@@ -117,9 +158,12 @@ var commonEvent = function() {
             dialogConfirmUrl(tip,url,urlTxt);
             closeDialog();
         },
-        alertDialog:function(tip){ //alert提示框
-            dialogErrTip(tip);
+        alertDialog:function(tip,fun){ //alert提示框
+            dialogErrTip(tip,fun);
             closeDialog();
+        },
+        closePicDia:function () {
+          closePicDiaFn();
         },
     }
 }();

@@ -28,7 +28,7 @@
         <div class="txt">
           <h2>生日特权</h2>
           <p>生日当月均可领取</p>
-          <div class="rightPic rightPic1"></div>
+          <div class="rightPic"></div>
         </div>
       </div>
       <div class="cont-wrap">
@@ -49,5 +49,13 @@
       </div>
       <div class="btn-warp fixed-footer"><a href="javascript:void(0);" class="a-btn-bg-yellow">领取礼包</a></div>
     </section>
+    <script>
+      $(function () {
+        var className = commonEvent.getUrlPram('type');
+        var catName = commonEvent.getUrlPram('cat');
+        console.log(catName)
+        $(".banner .rightPic").addClass(className);
+      });
+    </script>
   </body>
 </html>

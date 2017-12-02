@@ -26,9 +26,10 @@
     <section class="mall">
       <div class="banner"></div>
       <div class="sec-top">
-        <div class="red-notice-tips">
-          <ul>
-            <li><span class="icon-horn"></span>章先生兑换了<i class="red-font">200</i>元满减券</li>
+        <div class="red-notice-tips swiper-container">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide"><span class="icon-horn"></span>章先生兑换了<i class="red-font">200</i>元满减券</li>
+            <li class="swiper-slide"><span class="icon-horn"></span>章先生兑换了<i class="red-font">600</i>元满减券</li>
           </ul>
         </div>
         <div class="row-b">
@@ -110,5 +111,21 @@
         <p>如有疑问，请联系在线客服或拨打400-8269-227</p>
       </div>
     </section>
+    <script type="text/javascript" src="../../global/js/swiper.min.js"></script>
+    <script>
+      $(function () {
+        var mySwiper = new Swiper('.swiper-container', {
+          direction: 'vertical',
+          autoplay: true,
+          delay: 2000,
+          loop: true,
+          speed: 400
+        });
+        if (mySwiper.slides.length <= 1) {
+          mySwiper.destroy();
+        }
+      
+      });
+    </script>
   </body>
 </html>
