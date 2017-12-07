@@ -91,20 +91,12 @@ var commonEvent = function() {
             return false;
         });
     };
-    var dialogErrTip = function (errTip,fun) {
+    var dialogErrTip = function (errTip) {
         var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' +
             '<div class="dialog-cont"><p>' + errTip + '</p></div>' +
-            '<div class="dialog-btn"><a href="javascript:void(0);" class="close-btn callBtn">确定</a>' +
+            '<div class="dialog-btn"><a href="javascript:void(0);" class="close-btn">确定</a>' +
             '</div> </div>';
         $('body').append(temp);
-      $('.dialog-alert-pop .callBtn').onClick('click',function(){
-        $(".bg-alert-pop").remove();
-        $(".dialog-alert-pop").remove();
-        if(fun){
-          fun();
-        }
-        return false;
-      });
     };
     var dialogConfirm = function (tip,fun) {
       var temp = '<div class="bg-alert-pop"></div><div class="dialog-alert-pop">' +
@@ -115,9 +107,7 @@ var commonEvent = function() {
       $('.dialog-alert-pop .sure-btn').onClick('click',function(){
         $(".bg-alert-pop").remove();
         $(".dialog-alert-pop").remove();
-        if(fun){
-          fun();
-        }
+        fun();
         return false;
       });
     };
@@ -158,8 +148,8 @@ var commonEvent = function() {
             dialogConfirmUrl(tip,url,urlTxt);
             closeDialog();
         },
-        alertDialog:function(tip,fun){ //alert提示框
-            dialogErrTip(tip,fun);
+        alertDialog:function(tip){ //alert提示框
+            dialogErrTip(tip);
             closeDialog();
         },
         closePicDia:function () {

@@ -15,7 +15,7 @@ block content
       .tip-time
         span.icon
         |今天还有
-        i#drawTimes 3
+        i 2
         |次机会哦
 
     .luck-wrap
@@ -23,39 +23,39 @@ block content
         #luck
           .wrap
             .row
-              .luck-unit.luck-unit-0(data-id='1' data-index='0' data-status='20元红包')
+              .luck-unit.luck-unit-0
                 span.bg
                 img(src="/global/image/luck/icon_gift_1.png")
                 p 10元红包
-              .luck-unit.luck-unit-1(data-id='2' data-index='1' data-status='20积分')
+              .luck-unit.luck-unit-1
                 span.bg
                 img(src="/global/image/luck/icon_gift_2.png")
                 p 20积分
-              .luck-unit.luck-unit-2(data-id='3' data-index='2' data-status='扫地机器人')
+              .luck-unit.luck-unit-2
                 span.bg
                 img(src="/global/image/luck/icon_gift_2.png")
                 p 扫地机器人
             .row
-              .luck-unit.luck-unit-7(data-id='4' data-index='7' data-status='iphone8')
+              .luck-unit.luck-unit-7
                 span.bg
                 img(src="/global/image/luck/icon_gift_5.png")
                 p iphone8 256G
               .cjBtn#drawBtn
                 p -50积分
-              .luck-unit.luck-unit-3(data-id='5' data-index='3' data-status='15元满')
+              .luck-unit.luck-unit-3
                 span.bg
                 img(src="/global/image/luck/icon_gift_5.png")
                 p 15元满减券
             .row
-              .luck-unit.luck-unit-6(data-id='6' data-index='6' data-status='80积分')
+              .luck-unit.luck-unit-6
                 span.bg
                 img(src="/global/image/luck/icon_gift_1.png")
                 p 80积分
-              .luck-unit.luck-unit-5(data-id='7' data-index='5' data-status='0.3%加息券')
+              .luck-unit.luck-unit-5
                 span.bg
                 img(src="/global/image/luck/icon_gift_4.png")
                 p 0.3%加息券
-              .luck-unit.luck-unit-4(data-id='8' data-index='4' data-status='null')
+              .luck-unit.luck-unit-4
                 span.bg
                 img(src="/global/image/luck/icon_gift_1.png")
                 p 20元红包
@@ -112,7 +112,7 @@ block content
     .cont
       p.title 恭喜您！
       p.big-font 中了
-        span.red-font#prizeName 20积分
+        span.red-font 20积分
       p.red-font 已放到您的积分账户中
     a(href="javascript:void(0);").a-btn-bg-yellow 了解奖品使用详情
 
@@ -129,7 +129,7 @@ block append footer
       var mySwiper = new Swiper('.swiper-container', {
         direction: 'vertical',
         autoplay: true,
-        delay: 800,
+        delay: 1000,
         speed: 400,
         loop: true,
         slidesPerView: 'auto',
@@ -145,58 +145,34 @@ block append footer
       });
       //关闭弹层
       commonEvent.closePicDia();
-
-      if (Number($("#drawTimes").text()) <= 0) {
-        $('#drawBtn').addClass('disabledBtn');
-      }
-
-      luckDraw.init();//背景灯闪烁
-      var prizeName = '';
-      $("#luck").onClick('click','#drawBtn',function () {
-        var self = $(this);
-        if (self.hasClass('disabledBtn')) {
-          return false;
-        }
-        var times = Number($("#drawTimes").text());
-        self.addClass('disabledBtn');
-        if (times <= 0) {
-          var tip = '今天的抽奖次数已用完了，明天再来试试吧~';
-          commonEvent.alertDialog(tip);
-          $("#drawBtn").removeClass("disabledBtn");
-          return false;
-        }
-        else{
-          times--;
-          $("#drawTimes").text(times);
-        }
-
-        //积分不够
-        //lessIntegral();
-        //抽奖成功 当转盘有多个无奖励时  data-status == 'null',
-        luckDraw.clickFn(callBackSuc);
-        setTimeout(function () {
-          var prizeId = 8; // data-id='6' data-status='80积分'
-          if($("#luck").find('[data-id = "'+prizeId+'"]')[0]){
-            prizeName = $("#luck").find('[data-id = "' + prizeId + '"]').eq(0).attr('data-status');
-            var prizeIndex = $("#luck").find('[data-id = "' + prizeId + '"]').eq(0).attr('data-index');
-            luckDraw.setPrizeId(prizeIndex,prizeName);
-          }
-          else{
-            commonEvent.alertDialog('没有找到中奖id');
-           }
-
-        },600);
-      });
       //抽奖按钮
       var lessIntegral = function () { //积分不够
         $(".bg-pic-pop").show()
         $(".integral-null").show()
       }
-      var callBackSuc = function () { //抽中了
-        $("#prizeName").html(prizeName);
+      var drawSuc = function () { //抽中了
         $(".bg-pic-pop").show()
         $(".drawed-pop").show()
       }
+      $("#luck").onClick('click','#drawBtn',function () {
+        var self = $(this);
+        if(self.hasClass('disabledBtn')){
+          var tip = '今天的抽奖次数已用完了，明天再来试试吧~';
+          commonEvent.alertDialog(tip);
+        }
+        else{
+          //状态一
+          //lessIntegral();
+          //状态二
+          var callBackFn = function () {
+            drawSuc();
+            self.addClass('disabledBtn');
+          }
+          luckDraw.clickFn(callBackFn);
+        }
+
+      });
+
     });
 
 

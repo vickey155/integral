@@ -29,42 +29,42 @@
           <div class="integral-num"><span class="icon-star-yellow"></span>我的积分：1460</div><a href="" class="drawRecord">抽奖记录</a>
         </div>
         <div class="bg"></div>
-        <div class="tip-time"><span class="icon"></span>今天还有<i id="drawTimes">3</i>次机会哦</div>
+        <div class="tip-time"><span class="icon"></span>今天还有<i>2</i>次机会哦</div>
       </div>
       <div class="luck-wrap">
         <div id="deng" class="shanDeng">
           <div id="luck">
             <div class="wrap">
               <div class="row">
-                <div data-id="1" data-index="0" data-status="20元红包" class="luck-unit luck-unit-0"><span class="bg"></span><img src="/global/image/luck/icon_gift_1.png">
+                <div class="luck-unit luck-unit-0"><span class="bg"></span><img src="/global/image/luck/icon_gift_1.png">
                   <p>10元红包</p>
                 </div>
-                <div data-id="2" data-index="1" data-status="20积分" class="luck-unit luck-unit-1"><span class="bg"></span><img src="/global/image/luck/icon_gift_2.png">
+                <div class="luck-unit luck-unit-1"><span class="bg"></span><img src="/global/image/luck/icon_gift_2.png">
                   <p>20积分</p>
                 </div>
-                <div data-id="3" data-index="2" data-status="扫地机器人" class="luck-unit luck-unit-2"><span class="bg"></span><img src="/global/image/luck/icon_gift_2.png">
+                <div class="luck-unit luck-unit-2"><span class="bg"></span><img src="/global/image/luck/icon_gift_2.png">
                   <p>扫地机器人</p>
                 </div>
               </div>
               <div class="row">
-                <div data-id="4" data-index="7" data-status="iphone8" class="luck-unit luck-unit-7"><span class="bg"></span><img src="/global/image/luck/icon_gift_5.png">
+                <div class="luck-unit luck-unit-7"><span class="bg"></span><img src="/global/image/luck/icon_gift_5.png">
                   <p>iphone8 256G</p>
                 </div>
                 <div id="drawBtn" class="cjBtn">
                   <p>-50积分</p>
                 </div>
-                <div data-id="5" data-index="3" data-status="15元满" class="luck-unit luck-unit-3"><span class="bg"></span><img src="/global/image/luck/icon_gift_5.png">
+                <div class="luck-unit luck-unit-3"><span class="bg"></span><img src="/global/image/luck/icon_gift_5.png">
                   <p>15元满减券</p>
                 </div>
               </div>
               <div class="row">
-                <div data-id="6" data-index="6" data-status="80积分" class="luck-unit luck-unit-6"><span class="bg"></span><img src="/global/image/luck/icon_gift_1.png">
+                <div class="luck-unit luck-unit-6"><span class="bg"></span><img src="/global/image/luck/icon_gift_1.png">
                   <p>80积分</p>
                 </div>
-                <div data-id="7" data-index="5" data-status="0.3%加息券" class="luck-unit luck-unit-5"><span class="bg"></span><img src="/global/image/luck/icon_gift_4.png">
+                <div class="luck-unit luck-unit-5"><span class="bg"></span><img src="/global/image/luck/icon_gift_4.png">
                   <p>0.3%加息券</p>
                 </div>
-                <div data-id="8" data-index="4" data-status="null" class="luck-unit luck-unit-4"><span class="bg"></span><img src="/global/image/luck/icon_gift_1.png">
+                <div class="luck-unit luck-unit-4"><span class="bg"></span><img src="/global/image/luck/icon_gift_1.png">
                   <p>20元红包</p>
                 </div>
               </div>
@@ -121,7 +121,7 @@
       <div class="dia-close"></div>
       <div class="cont">
         <p class="title">恭喜您！</p>
-        <p class="big-font">中了<span id="prizeName" class="red-font">20积分</span></p>
+        <p class="big-font">中了<span class="red-font">20积分</span></p>
         <p class="red-font">已放到您的积分账户中</p>
       </div><a href="javascript:void(0);" class="a-btn-bg-yellow">了解奖品使用详情</a>
     </div>
@@ -133,7 +133,7 @@
         var mySwiper = new Swiper('.swiper-container', {
           direction: 'vertical',
           autoplay: true,
-          delay: 800,
+          delay: 1000,
           speed: 400,
           loop: true,
           slidesPerView: 'auto',
@@ -149,58 +149,34 @@
         });
         //关闭弹层
         commonEvent.closePicDia();
-      
-        if (Number($("#drawTimes").text()) <= 0) {
-          $('#drawBtn').addClass('disabledBtn');
-        }
-      
-        luckDraw.init();//背景灯闪烁
-        var prizeName = '';
-        $("#luck").onClick('click','#drawBtn',function () {
-          var self = $(this);
-          if (self.hasClass('disabledBtn')) {
-            return false;
-          }
-          var times = Number($("#drawTimes").text());
-          self.addClass('disabledBtn');
-          if (times <= 0) {
-            var tip = '今天的抽奖次数已用完了，明天再来试试吧~';
-            commonEvent.alertDialog(tip);
-            $("#drawBtn").removeClass("disabledBtn");
-            return false;
-          }
-          else{
-            times--;
-            $("#drawTimes").text(times);
-          }
-      
-          //积分不够
-          //lessIntegral();
-          //抽奖成功 当转盘有多个无奖励时  data-status == 'null',
-          luckDraw.clickFn(callBackSuc);
-          setTimeout(function () {
-            var prizeId = 8; // data-id='6' data-status='80积分'
-            if($("#luck").find('[data-id = "'+prizeId+'"]')[0]){
-              prizeName = $("#luck").find('[data-id = "' + prizeId + '"]').eq(0).attr('data-status');
-              var prizeIndex = $("#luck").find('[data-id = "' + prizeId + '"]').eq(0).attr('data-index');
-              luckDraw.setPrizeId(prizeIndex,prizeName);
-            }
-            else{
-              commonEvent.alertDialog('没有找到中奖id');
-             }
-      
-          },600);
-        });
         //抽奖按钮
         var lessIntegral = function () { //积分不够
           $(".bg-pic-pop").show()
           $(".integral-null").show()
         }
-        var callBackSuc = function () { //抽中了
-          $("#prizeName").html(prizeName);
+        var drawSuc = function () { //抽中了
           $(".bg-pic-pop").show()
           $(".drawed-pop").show()
         }
+        $("#luck").onClick('click','#drawBtn',function () {
+          var self = $(this);
+          if(self.hasClass('disabledBtn')){
+            var tip = '今天的抽奖次数已用完了，明天再来试试吧~';
+            commonEvent.alertDialog(tip);
+          }
+          else{
+            //状态一
+            //lessIntegral();
+            //状态二
+            var callBackFn = function () {
+              drawSuc();
+              self.addClass('disabledBtn');
+            }
+            luckDraw.clickFn(callBackFn);
+          }
+      
+        });
+      
       });
     </script>
   </body>
