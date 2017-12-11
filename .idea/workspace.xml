@@ -2,68 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="906e46a7-4549-4920-b6ff-2f71235b1636" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/4f244a0f4fea28fd9f8d13ee830e10ec.rar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/css/washCar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/addres-border.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/address_default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/arr-up.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/buyer-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/collect_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/address_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/arrowd_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/arrowl_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/arrowr_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/book_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/books_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/camera_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/close_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/collect_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/delete_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/edit_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/eye_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/fire_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/heart_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/hometop_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/infomation_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/loading_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/lock_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/new_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/ok_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/package_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/person_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/personbg_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/search_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/seller-icon01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/seller-icon02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/seller-icon03.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/seller-icon04.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/setting_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/shopcar_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/sort_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/icons/trangle_icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/log_pic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/seller-bg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/images/yuesong_log.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/js/TouchSlide.1.1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/js/additional-methods.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/js/index-buyer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/js/jquery.cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/js/jsrender.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/js/wash.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/global/js/washCar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/template/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/template/task/home.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/global/js/common.js" afterPath="$PROJECT_DIR$/dist/global/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/global/js/luckDraw.js" afterPath="$PROJECT_DIR$/dist/global/js/luckDraw.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/template/luckDraw/luckDraw.html" afterPath="$PROJECT_DIR$/dist/template/luckDraw/luckDraw.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/template/memberCenter/home.html" afterPath="$PROJECT_DIR$/dist/template/memberCenter/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/template/memberCenter/privilege.html" afterPath="$PROJECT_DIR$/dist/template/memberCenter/privilege.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/global/js/common.js" afterPath="$PROJECT_DIR$/src/global/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/global/js/luckDraw.js" afterPath="$PROJECT_DIR$/src/global/js/luckDraw.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/luckDraw/luckDraw.jade" afterPath="$PROJECT_DIR$/src/jade/luckDraw/luckDraw.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/memberCenter/home.jade" afterPath="$PROJECT_DIR$/src/jade/memberCenter/home.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/memberCenter/privilege.jade" afterPath="$PROJECT_DIR$/src/jade/memberCenter/privilege.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/global/css/global.css" afterPath="$PROJECT_DIR$/dist/global/css/global.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/template/index.html" afterPath="$PROJECT_DIR$/dist/template/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/global/scss/global.scss" afterPath="$PROJECT_DIR$/src/global/scss/global.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/index.jade" afterPath="$PROJECT_DIR$/src/jade/index.jade" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -81,120 +25,52 @@
       <file leaf-file-name="index.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jade/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+            <state relative-caret-position="690">
+              <caret line="49" column="55" lean-forward="false" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/memberCenter/home.jade">
+      <file leaf-file-name="invitation.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jade/invitation/invitation.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="129" column="27" lean-forward="false" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/template/memberCenter/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4038">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/global/js/common.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+            <state relative-caret-position="199">
+              <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="13" />
               <folding>
-                <marker date="1512047856912" expanded="true" signature="1383:5336" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="5216:5334" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="5289:5327" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="5374:6534" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="5404:5864" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="5898:6400" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="6135:6393" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="6410:6532" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="6440:6464" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="6499:6528" ph="{...}" />
-                <marker date="1512047856912" expanded="true" signature="6552:6613" ph="{...}" />
+                <element signature="n#div#0;n#div#1;n#div#1;n#section#0;n#block#1;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="privilege.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/memberCenter/privilege.jade">
+      <file leaf-file-name="global.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/global/scss/global.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="126" column="34" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
+            <state relative-caret-position="570">
+              <caret line="2318" column="32" lean-forward="true" selection-start-line="2318" selection-start-column="32" selection-end-line="2318" selection-end-column="32" />
               <folding>
-                <marker date="1512023555245" expanded="true" signature="153:945" ph="..." />
-                <marker date="1512023555245" expanded="true" signature="171:945" ph="..." />
-                <marker date="1512023555245" expanded="true" signature="193:945" ph="..." />
-                <marker date="1512023555245" expanded="true" signature="217:945" ph="..." />
-                <marker date="1512023555245" expanded="true" signature="241:945" ph="..." />
-                <marker date="1512023555245" expanded="true" signature="835:945" ph="..." />
-                <marker date="1512023555245" expanded="true" signature="897:945" ph="..." />
-                <marker date="1512023555245" expanded="true" signature="3516:3550" ph="..." />
+                <element signature="e#447#1806#0" expanded="false" />
+                <element signature="e#1818#2820#0" expanded="false" />
+                <element signature="e#26119#27545#0" expanded="false" />
+                <element signature="e#27572#28342#0" expanded="false" />
+                <element signature="e#28448#28841#0" expanded="false" />
+                <element signature="e#29090#32970#0" expanded="false" />
+                <element signature="e#32989#33795#0" expanded="false" />
+                <element signature="e#33817#36163#0" expanded="false" />
+                <element signature="e#36179#37810#0" expanded="false" />
+                <element signature="e#37832#39653#0" expanded="false" />
+                <element signature="e#39667#40098#0" expanded="false" />
+                <element signature="e#40118#41100#0" expanded="false" />
+                <element signature="e#41123#42076#0" expanded="false" />
+                <element signature="e#42097#43531#0" expanded="false" />
+                <element signature="e#43552#44741#0" expanded="false" />
+                <element signature="e#44759#47055#0" expanded="false" />
+                <element signature="e#47065#50398#0" expanded="false" />
+                <element signature="e#50413#50482#0" expanded="false" />
+                <element signature="e#50498#51916#0" expanded="false" />
+                <element signature="e#50510#50949#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="luckDraw.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/luckDraw/luckDraw.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3555">
-              <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/activity/activity.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/global/scss/common.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="326" column="8" lean-forward="false" selection-start-line="326" selection-start-column="8" selection-end-line="326" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sign.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/sign/sign.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
-              <caret line="67" column="13" lean-forward="false" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addressListEdit.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/mall/addressListEdit.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -240,15 +116,17 @@
         <option value="$PROJECT_DIR$/src/jade/mall/sureExchargeBill.jade" />
         <option value="$PROJECT_DIR$/src/jade/mall/myIntegral.jade" />
         <option value="$PROJECT_DIR$/src/jade/mall/exchargeRecord.jade" />
-        <option value="$PROJECT_DIR$/src/jade/index.jade" />
         <option value="$PROJECT_DIR$/src/jade/mall/sureExcharge.jade" />
         <option value="$PROJECT_DIR$/src/jade/sign/signRecord.jade" />
-        <option value="$PROJECT_DIR$/src/global/scss/global.scss" />
         <option value="$PROJECT_DIR$/src/jade/sign/sign.jade" />
         <option value="$PROJECT_DIR$/src/global/scss/common.scss" />
         <option value="$PROJECT_DIR$/src/jade/memberCenter/home.jade" />
         <option value="$PROJECT_DIR$/src/jade/memberCenter/privilege.jade" />
         <option value="$PROJECT_DIR$/src/jade/luckDraw/luckDraw.jade" />
+        <option value="$PROJECT_DIR$/dist/template/memberCenter/home.html" />
+        <option value="$PROJECT_DIR$/src/jade/index.jade" />
+        <option value="$PROJECT_DIR$/src/jade/invitation/invitation.jade" />
+        <option value="$PROJECT_DIR$/src/global/scss/global.scss" />
       </list>
     </option>
   </component>
@@ -269,8 +147,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-282" />
-    <option name="y" value="154" />
+    <option name="x" value="765" />
+    <option name="y" value="86" />
     <option name="width" value="1845" />
     <option name="height" value="1088" />
   </component>
@@ -289,6 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -337,73 +217,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="task" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="memberCenter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="luckDraw" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activity" />
+              <option name="myItemId" value="invitation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,93 +260,16 @@
               <option name="myItemId" value="global" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="global" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="memberCenter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="integralMall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../src_yuerongshoe" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="D:/work/workTools/nodejs/node/node" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -626,24 +363,25 @@
       <updated>1511628555545</updated>
       <workItem from="1511628556737" duration="34193000" />
       <workItem from="1511953630797" duration="15928000" />
-      <workItem from="1512188301216" duration="2823000" />
+      <workItem from="1512188301216" duration="3799000" />
+      <workItem from="1512976752094" duration="5970000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52944000" />
+    <option name="totallyTimeSpent" value="59890000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-282" y="154" width="1845" height="1088" extended-state="1" />
+    <frame x="765" y="86" width="1845" height="1088" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20346563" sideWeight="0.9189189" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02627166" sideWeight="0.911036" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20346563" sideWeight="0.08108108" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02627166" sideWeight="0.08896396" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -656,6 +394,26 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.02627166" sideWeight="0.08896396" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.02627166" sideWeight="0.911036" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -668,6 +426,70 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/jade/memberCenter/home.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3870">
+          <caret line="129" column="27" lean-forward="false" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/template/task/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/global/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/memberCenter/privilege.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3780">
+          <caret line="126" column="34" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/luckDraw/luckDraw.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/activity/activity.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/global/scss/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9780">
+          <caret line="326" column="8" lean-forward="false" selection-start-line="326" selection-start-column="8" selection-end-line="326" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/template/memberCenter/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -691,6 +513,22 @@
           <folding>
             <element signature="e#447#1806#0" expanded="false" />
             <element signature="e#1818#2820#0" expanded="false" />
+            <element signature="e#26119#27545#0" expanded="false" />
+            <element signature="e#27572#28342#0" expanded="false" />
+            <element signature="e#28448#28841#0" expanded="false" />
+            <element signature="e#29090#32970#0" expanded="false" />
+            <element signature="e#32989#33795#0" expanded="false" />
+            <element signature="e#33817#36163#0" expanded="false" />
+            <element signature="e#36179#37810#0" expanded="false" />
+            <element signature="e#37832#39653#0" expanded="false" />
+            <element signature="e#39667#40098#0" expanded="false" />
+            <element signature="e#40118#41100#0" expanded="false" />
+            <element signature="e#41123#42076#0" expanded="false" />
+            <element signature="e#42097#43531#0" expanded="false" />
+            <element signature="e#43552#44741#0" expanded="false" />
+            <element signature="e#44759#47055#0" expanded="false" />
+            <element signature="e#47065#50398#0" expanded="false" />
+            <element signature="e#50413#50482#0" expanded="false" />
             <element signature="e#50498#51916#0" expanded="false" />
             <element signature="e#50510#50949#0" expanded="false" />
           </folding>
@@ -701,7 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1950">
           <caret line="65" column="14" lean-forward="false" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,24 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/global/scss/global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29040">
-          <caret line="1064" column="18" lean-forward="false" selection-start-line="1064" selection-start-column="18" selection-end-line="1064" selection-end-column="18" />
-          <folding>
-            <element signature="e#447#1806#0" expanded="false" />
-            <element signature="e#1818#2820#0" expanded="false" />
-            <element signature="e#50498#51916#0" expanded="false" />
-            <element signature="e#50510#50949#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/sign/sign.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2010">
           <caret line="67" column="13" lean-forward="false" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,66 +724,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="24" column="27" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/global/scss/common.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="326" column="8" lean-forward="false" selection-start-line="326" selection-start-column="8" selection-end-line="326" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/global/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
-          <folding>
-            <marker date="1512047856912" expanded="true" signature="1383:5336" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="5216:5334" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="5289:5327" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="5374:6534" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="5404:5864" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="5898:6400" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="6135:6393" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="6410:6532" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="6440:6464" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="6499:6528" ph="{...}" />
-            <marker date="1512047856912" expanded="true" signature="6552:6613" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/memberCenter/privilege.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="126" column="34" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
-          <folding>
-            <marker date="1512023555245" expanded="true" signature="153:945" ph="..." />
-            <marker date="1512023555245" expanded="true" signature="171:945" ph="..." />
-            <marker date="1512023555245" expanded="true" signature="193:945" ph="..." />
-            <marker date="1512023555245" expanded="true" signature="217:945" ph="..." />
-            <marker date="1512023555245" expanded="true" signature="241:945" ph="..." />
-            <marker date="1512023555245" expanded="true" signature="835:945" ph="..." />
-            <marker date="1512023555245" expanded="true" signature="897:945" ph="..." />
-            <marker date="1512023555245" expanded="true" signature="3516:3550" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/luckDraw/luckDraw.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3555">
+        <state relative-caret-position="1230">
           <caret line="41" column="13" lean-forward="false" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
           <folding />
         </state>
@@ -974,19 +743,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/template/task/task.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/template/task/home.html" />
+    <entry file="file://$PROJECT_DIR$/dist/template/memberCenter/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/global/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/memberCenter/privilege.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="126" column="34" lean-forward="false" selection-start-line="126" selection-start-column="34" selection-end-line="126" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/memberCenter/home.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
+        <state relative-caret-position="795">
           <caret line="129" column="27" lean-forward="false" selection-start-line="129" selection-start-column="27" selection-end-line="129" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/template/memberCenter/home.html">
+    <entry file="file://$PROJECT_DIR$/src/jade/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4038">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="690">
+          <caret line="49" column="55" lean-forward="false" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/global/scss/common.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/invitation/invitation.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="n#div#0;n#div#1;n#div#1;n#section#0;n#block#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/global/image/invitation/invite_title_2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/global/scss/global.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="2318" column="32" lean-forward="true" selection-start-line="2318" selection-start-column="32" selection-end-line="2318" selection-end-column="32" />
+          <folding>
+            <element signature="e#447#1806#0" expanded="false" />
+            <element signature="e#1818#2820#0" expanded="false" />
+            <element signature="e#26119#27545#0" expanded="false" />
+            <element signature="e#27572#28342#0" expanded="false" />
+            <element signature="e#28448#28841#0" expanded="false" />
+            <element signature="e#29090#32970#0" expanded="false" />
+            <element signature="e#32989#33795#0" expanded="false" />
+            <element signature="e#33817#36163#0" expanded="false" />
+            <element signature="e#36179#37810#0" expanded="false" />
+            <element signature="e#37832#39653#0" expanded="false" />
+            <element signature="e#39667#40098#0" expanded="false" />
+            <element signature="e#40118#41100#0" expanded="false" />
+            <element signature="e#41123#42076#0" expanded="false" />
+            <element signature="e#42097#43531#0" expanded="false" />
+            <element signature="e#43552#44741#0" expanded="false" />
+            <element signature="e#44759#47055#0" expanded="false" />
+            <element signature="e#47065#50398#0" expanded="false" />
+            <element signature="e#50413#50482#0" expanded="false" />
+            <element signature="e#50498#51916#0" expanded="false" />
+            <element signature="e#50510#50949#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

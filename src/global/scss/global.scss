@@ -2237,3 +2237,132 @@
     }
   }
 }
+
+
+//邀请好友
+.invitation{
+  background-color: #e2220d;
+  .banner{
+    height: 5.5rem;
+    width:100%;
+    background: url(../image/invitation/invite_top_bg.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+    .txt-bg{
+      height: 3.39rem;
+      width:100%;
+      background: url(../image/invitation/icon_content_font.png) no-repeat 0 0;
+      background-size: 100% 100%;
+    }
+  }
+  .sec{
+    padding: 0 0.3rem 0.35rem;
+    .btn-wrap{
+      text-align: center;
+      padding-top: 0.3rem;
+    }
+  }
+  .sec-get{
+    height: 5.1rem;
+    background: url(../image/invitation/invite_bg_1.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    .cont{
+      padding: 0.6rem 0.4rem;
+     // background-color: #fff2e7;
+      text-align: center;
+    }
+    span.h2{
+      @include fontFormat($fz:0.4rem,$fc:$c3,$ta:center);
+      height: 0.64rem;
+      width: 4.5rem;
+      line-height: 0.64rem;
+      margin-bottom: 0.5rem;
+      background: url(../image/invitation/invite_title_1.png) no-repeat 0 0;
+      background-size: 100% 100%;
+    }
+    p{
+      @include fontFormat($fz:0.32rem,$fc:$c3,$ta:center);
+      line-height: 0.6rem;
+      margin-bottom: 0.4rem;
+      .red-font{
+        @include fontFormat($fz:0.32rem,$fc:$red,$ta:center);
+        i{
+          @include fontFormat($fz:0.36rem,$fc:$red);
+        }
+      }
+    }
+    a.btn-yellow{
+      @include fontFormat($fz:0.32rem,$fc:#ed4800,$ta:center);
+      width: 5.04rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      background-color: #ffc706;
+      border-radius: 0.4rem;
+    }
+  }
+  .sec-my{
+    position: relative;
+    border: 0.04rem solid #bd1414;
+    border-radius: 0.1rem;
+    background-color: #fff2e7;
+    padding:0.35rem 0.4rem 0.5rem;
+    margin-top: 1.3rem;
+    h2{
+      @include fontFormat($fz:0.4rem,$fc:$white,$ta:center);
+      height: 0.64rem;
+      line-height: 0.64rem;
+      width: 3.62rem;
+      position: absolute;
+      top:-0.64rem;
+      left:50%;
+      margin-left: -1.81rem;
+      background: url(../image/invitation/invite_title_2.png) no-repeat 0 0;
+      background-size: 100% 100%;
+    }
+    .row{
+      @extend .flexStyle;
+      justify-content: space-around;
+      margin-bottom: 0.4rem;
+      .col{
+        padding: 0.2rem  0.3rem;
+        width: 2.6rem;
+        background-color: #f9e4d2;
+        border-radius: 0.1rem;
+      }
+      p{
+        @include fontFormat($fz:0.32rem,$fc:$c3,$ta:center);
+        line-height: 0.5rem;
+      }
+      p.red-font{
+        @include fontFormat($fz:0.36rem,$fc:#f93824,$ta:center);
+        line-height: 0.6rem;
+      }
+
+    }
+
+    .img-wrap{
+      text-align: center;
+        img{
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 0.2rem;
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+    }
+    p{
+      @include fontFormat($fz:0.32rem,$fc:$c6,$ta:center);
+      line-height: 0.6rem;
+    }
+    a.a-btn-bg-red{
+      @include fontFormat($fz:0.32rem,$fc:$white,$ta:center);
+      width: 5.04rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      background-color: #f93824;
+      border-radius: 0.4rem;
+    }
+  }
+}

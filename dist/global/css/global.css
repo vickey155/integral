@@ -160,7 +160,7 @@ h1 {
   padding-left: 0.32rem;
   padding-right: 0.32rem; }
 
-.flexStyle, .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn, .histogram-wrap .histogram-cont .column, .sign .card, .mall .sec-list .sec-row .col .ticket, .addressEdit .el-switch, .luck-wrap .shanDeng .row, .luckDraw .banner .sec-top, .luckDraw .drawed-user .cont .swiper-container li, .luckDrawRecord .record-list .row {
+.flexStyle, .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn, .histogram-wrap .histogram-cont .column, .sign .card, .mall .sec-list .sec-row .col .ticket, .addressEdit .el-switch, .luck-wrap .shanDeng .row, .luckDraw .banner .sec-top, .luckDraw .drawed-user .cont .swiper-container li, .luckDrawRecord .record-list .row, .invitation .sec-my .row {
   display: flex;
   display: -webkit-flex; }
 
@@ -3828,3 +3828,233 @@ a.arrow-r-white {
       @media screen and (min-width: 640px) {
         .luckDrawRecord .record-list p.grey-font a {
           font-size: 0.3rem; } }
+
+.invitation {
+  background-color: #e2220d; }
+  .invitation .banner {
+    height: 5.5rem;
+    width: 100%;
+    background: url(../image/invitation/invite_top_bg.jpg) no-repeat 0 0;
+    background-size: 100% 100%; }
+    .invitation .banner .txt-bg {
+      height: 3.39rem;
+      width: 100%;
+      background: url(../image/invitation/icon_content_font.png) no-repeat 0 0;
+      background-size: 100% 100%; }
+  .invitation .sec {
+    padding: 0 0.3rem 0.35rem; }
+    .invitation .sec .btn-wrap {
+      text-align: center;
+      padding-top: 0.3rem; }
+  .invitation .sec-get {
+    height: 5.1rem;
+    background: url(../image/invitation/invite_bg_1.png) no-repeat 0 0;
+    background-size: 100% 100%; }
+    .invitation .sec-get .cont {
+      padding: 0.6rem 0.4rem;
+      text-align: center; }
+    .invitation .sec-get span.h2 {
+      color: #333;
+      text-align: center;
+      height: 0.64rem;
+      width: 4.5rem;
+      line-height: 0.64rem;
+      margin-bottom: 0.5rem;
+      background: url(../image/invitation/invite_title_1.png) no-repeat 0 0;
+      background-size: 100% 100%; }
+      @media screen and (max-width: 321px) {
+        .invitation .sec-get span.h2 {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation .sec-get span.h2 {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation .sec-get span.h2 {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation .sec-get span.h2 {
+          font-size: 0.42rem; } }
+    .invitation .sec-get p {
+      color: #333;
+      text-align: center;
+      line-height: 0.6rem;
+      margin-bottom: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .invitation .sec-get p {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation .sec-get p {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation .sec-get p {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation .sec-get p {
+          font-size: 0.34rem; } }
+      .invitation .sec-get p .red-font {
+        color: #f7655e;
+        text-align: center; }
+        @media screen and (max-width: 321px) {
+          .invitation .sec-get p .red-font {
+            font-size: 0.31rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .invitation .sec-get p .red-font {
+            font-size: 0.32rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .invitation .sec-get p .red-font {
+            font-size: 0.33rem; } }
+        @media screen and (min-width: 640px) {
+          .invitation .sec-get p .red-font {
+            font-size: 0.34rem; } }
+        .invitation .sec-get p .red-font i {
+          color: #f7655e;
+          text-align: left; }
+          @media screen and (max-width: 321px) {
+            .invitation .sec-get p .red-font i {
+              font-size: 0.35rem; } }
+          @media screen and (min-width: 321px) and (max-width: 400px) {
+            .invitation .sec-get p .red-font i {
+              font-size: 0.36rem; } }
+          @media screen and (min-width: 400px) and (max-width: 640px) {
+            .invitation .sec-get p .red-font i {
+              font-size: 0.37rem; } }
+          @media screen and (min-width: 640px) {
+            .invitation .sec-get p .red-font i {
+              font-size: 0.38rem; } }
+    .invitation .sec-get a.btn-yellow {
+      color: #ed4800;
+      text-align: center;
+      width: 5.04rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      background-color: #ffc706;
+      border-radius: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .invitation .sec-get a.btn-yellow {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation .sec-get a.btn-yellow {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation .sec-get a.btn-yellow {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation .sec-get a.btn-yellow {
+          font-size: 0.34rem; } }
+  .invitation .sec-my {
+    position: relative;
+    border: 0.04rem solid #bd1414;
+    border-radius: 0.1rem;
+    background-color: #fff2e7;
+    padding: 0.35rem 0.4rem 0.5rem;
+    margin-top: 1.3rem; }
+    .invitation .sec-my h2 {
+      color: #fff;
+      text-align: center;
+      height: 0.64rem;
+      line-height: 0.64rem;
+      width: 3.62rem;
+      position: absolute;
+      top: -0.64rem;
+      left: 50%;
+      margin-left: -1.81rem;
+      background: url(../image/invitation/invite_title_2.png) no-repeat 0 0;
+      background-size: 100% 100%; }
+      @media screen and (max-width: 321px) {
+        .invitation .sec-my h2 {
+          font-size: 0.39rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation .sec-my h2 {
+          font-size: 0.4rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation .sec-my h2 {
+          font-size: 0.41rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation .sec-my h2 {
+          font-size: 0.42rem; } }
+    .invitation .sec-my .row {
+      justify-content: space-around;
+      margin-bottom: 0.4rem; }
+      .invitation .sec-my .row .col {
+        padding: 0.2rem  0.3rem;
+        width: 2.6rem;
+        background-color: #f9e4d2;
+        border-radius: 0.1rem; }
+      .invitation .sec-my .row p {
+        color: #333;
+        text-align: center;
+        line-height: 0.5rem; }
+        @media screen and (max-width: 321px) {
+          .invitation .sec-my .row p {
+            font-size: 0.31rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .invitation .sec-my .row p {
+            font-size: 0.32rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .invitation .sec-my .row p {
+            font-size: 0.33rem; } }
+        @media screen and (min-width: 640px) {
+          .invitation .sec-my .row p {
+            font-size: 0.34rem; } }
+      .invitation .sec-my .row p.red-font {
+        color: #f93824;
+        text-align: center;
+        line-height: 0.6rem; }
+        @media screen and (max-width: 321px) {
+          .invitation .sec-my .row p.red-font {
+            font-size: 0.35rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .invitation .sec-my .row p.red-font {
+            font-size: 0.36rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .invitation .sec-my .row p.red-font {
+            font-size: 0.37rem; } }
+        @media screen and (min-width: 640px) {
+          .invitation .sec-my .row p.red-font {
+            font-size: 0.38rem; } }
+    .invitation .sec-my .img-wrap {
+      text-align: center; }
+      .invitation .sec-my .img-wrap img {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 0.2rem; }
+        .invitation .sec-my .img-wrap img:last-child {
+          margin-right: 0; }
+    .invitation .sec-my p {
+      color: #666;
+      text-align: center;
+      line-height: 0.6rem; }
+      @media screen and (max-width: 321px) {
+        .invitation .sec-my p {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation .sec-my p {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation .sec-my p {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation .sec-my p {
+          font-size: 0.34rem; } }
+    .invitation .sec-my a.a-btn-bg-red {
+      color: #fff;
+      text-align: center;
+      width: 5.04rem;
+      height: 0.8rem;
+      line-height: 0.8rem;
+      background-color: #f93824;
+      border-radius: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .invitation .sec-my a.a-btn-bg-red {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation .sec-my a.a-btn-bg-red {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation .sec-my a.a-btn-bg-red {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation .sec-my a.a-btn-bg-red {
+          font-size: 0.34rem; } }
