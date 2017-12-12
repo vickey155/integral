@@ -1,0 +1,134 @@
+extends ../layout/layout
+
+block append headTitle
+  title 我的邀请
+
+block content
+  section.invitation-record
+    .sec-top
+      .col
+        p 4
+        p 共邀请好友
+      .col
+        p.red-font 300
+        p 奖励积分
+
+    .sec-list#temp-list
+      .row
+        img(src="")
+        .col.flex
+          p.name 张大千502
+          p.grey-font 2017-11-21
+        .col
+          p.red-font +100
+          p.grey-font 邀请成功，已投资
+      .row
+        img(src="")
+        .col.flex
+          p.name 张大千502
+          p.grey-font 2017-11-21
+        .col
+          p.red-font +100
+          p.grey-font 邀请成功，已投资
+      .row
+        img(src="")
+        .col.flex
+          p.name 张大千502
+          p.grey-font 2017-11-21
+        .col
+          p.red-font +100
+          p.grey-font 邀请成功，已投资
+
+  script.
+    $(function () {
+      var htmlList = function () {
+        var loading = true;
+        var showLoadingTxt = function (txt) {
+          var listWrap = $("#temp-list");
+          listWrap.find('.load-more').remove();
+          var temp = '<p class="load-more">' + txt + '</p>';
+          listWrap.append(temp);
+        }
+        var showList = function () {
+          var listWrap = $("#temp-list");
+          listWrap.html("");
+          $.ajax({
+            type: "POST",
+            url: "",
+            data: {
+              //type: listType
+            },
+            beforeSend: function () {
+              showLoadingTxt('正在努力加载中,请耐心等待片刻……');
+            },
+            success: function (result) {
+              // var dataNum = data.tatol;
+              var dataNum = 12;
+              var perPageNum = $("#temp-list .row").length;
+              listWrap.find('.loading').remove();
+              var html = '';
+              if (dataNum > perPageNum) {
+                for (var i = 0; i < 6; i++) {
+                  html += '<div class="row"><img src="">' +
+                    '<div class="col flex"> <p class="name">张大千502</p>' +
+                    '<p class="grey-font">2017-11-21</p></div><div class="col">' +
+                    '<p class="red-font">+1000</p><p class="grey-font">邀请成功，已投资</p></div></div>';
+                }
+                listWrap.append(html);
+                showLoadingTxt('加载更多');
+              }
+              else if (dataNum <= perPageNum) {
+                showLoadingTxt('没有更多了');
+              }
+              loading = true;
+            },
+            error: function () {
+              showLoadingTxt('系统繁忙，请稍后再试');
+            }
+          });
+        }
+
+        var initList = function () {
+          $("#temp-list").html("");
+          showList();
+        }
+        //加载更多
+        var loadMore = function () {
+          $(window).scroll(function () {
+            var docHei = $(document).height();
+            var scrollT = $(window).scrollTop();
+            if (scrollT + $(window).height() > docHei - 20) {
+              if (loading) {
+                loading = false;
+                showList();
+              }
+            }
+          });
+        };
+        return {
+          initalList: function () {
+            $("#temp-list").html("");
+            initList();
+          },
+          scrollList: function () {
+            loadMore();
+          }
+        }
+
+      }();
+
+      // htmlList.initalList();//初始化页面
+      htmlList.scrollList();
+    })
+
+
+
+
+
+
+
+
+
+
+
+

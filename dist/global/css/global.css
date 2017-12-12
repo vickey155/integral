@@ -160,7 +160,7 @@ h1 {
   padding-left: 0.32rem;
   padding-right: 0.32rem; }
 
-.flexStyle, .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn, .histogram-wrap .histogram-cont .column, .sign .card, .mall .sec-list .sec-row .col .ticket, .addressEdit .el-switch, .luck-wrap .shanDeng .row, .luckDraw .banner .sec-top, .luckDraw .drawed-user .cont .swiper-container li, .luckDrawRecord .record-list .row, .invitation .sec-my .row {
+.flexStyle, .dialog-alert-pop .dialog-cont, .dia-pic .dialog-cont, .dialog-alert-pop .dialog-btn, .dia-pic .dialog-btn, .histogram-wrap .histogram-cont .column, .sign .card, .mall .sec-list .sec-row .col .ticket, .addressEdit .el-switch, .luck-wrap .shanDeng .row, .luckDraw .banner .sec-top, .luckDraw .drawed-user .cont .swiper-container li, .luckDrawRecord .record-list .row, .invitation .sec-my .row, .invitation-record .sec-list .row {
   display: flex;
   display: -webkit-flex; }
 
@@ -4058,3 +4058,121 @@ a.arrow-r-white {
       @media screen and (min-width: 640px) {
         .invitation .sec-my a.a-btn-bg-red {
           font-size: 0.34rem; } }
+
+.invitation-record .sec-top {
+  padding: 0.35rem 0.32rem;
+  background-color: #fff;
+  overflow: hidden;
+  border-bottom: 0.01rem solid #dddddd;
+  margin-bottom: 0.25rem; }
+  .invitation-record .sec-top .col {
+    float: left;
+    width: 50%;
+    border-right: 0.01rem solid #dddddd; }
+    .invitation-record .sec-top .col:last-child {
+      border-right: 0; }
+    .invitation-record .sec-top .col p {
+      color: #666;
+      text-align: center;
+      line-height: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .invitation-record .sec-top .col p {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation-record .sec-top .col p {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation-record .sec-top .col p {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation-record .sec-top .col p {
+          font-size: 0.3rem; } }
+      .invitation-record .sec-top .col p:first-child {
+        color: #333;
+        text-align: center;
+        line-height: 0.5rem; }
+        @media screen and (max-width: 321px) {
+          .invitation-record .sec-top .col p:first-child {
+            font-size: 0.35rem; } }
+        @media screen and (min-width: 321px) and (max-width: 400px) {
+          .invitation-record .sec-top .col p:first-child {
+            font-size: 0.36rem; } }
+        @media screen and (min-width: 400px) and (max-width: 640px) {
+          .invitation-record .sec-top .col p:first-child {
+            font-size: 0.37rem; } }
+        @media screen and (min-width: 640px) {
+          .invitation-record .sec-top .col p:first-child {
+            font-size: 0.38rem; } }
+      .invitation-record .sec-top .col p.red-font {
+        color: #f7655e; }
+
+.invitation-record .sec-list {
+  border-top: 0.01rem solid #dddddd; }
+  .invitation-record .sec-list .row {
+    justify-content: space-between;
+    align-items: center; }
+    .invitation-record .sec-list .row:last-child .col {
+      border-bottom: 0; }
+    .invitation-record .sec-list .row img {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 0.3rem; }
+    .invitation-record .sec-list .row .flex {
+      flex: 1; }
+    .invitation-record .sec-list .row .col {
+      border-bottom: 0.01rem solid #dddddd;
+      padding: 0.26rem 0; }
+      .invitation-record .sec-list .row .col:last-child {
+        padding-right: 0.32rem; }
+        .invitation-record .sec-list .row .col:last-child p {
+          text-align: right; }
+    .invitation-record .sec-list .row p.name {
+      color: #333;
+      text-align: left;
+      line-height: 0.6rem; }
+      @media screen and (max-width: 321px) {
+        .invitation-record .sec-list .row p.name {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation-record .sec-list .row p.name {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation-record .sec-list .row p.name {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation-record .sec-list .row p.name {
+          font-size: 0.34rem; } }
+    .invitation-record .sec-list .row p.red-font {
+      color: #f7655e;
+      text-align: left;
+      line-height: 0.6rem; }
+      @media screen and (max-width: 321px) {
+        .invitation-record .sec-list .row p.red-font {
+          font-size: 0.31rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation-record .sec-list .row p.red-font {
+          font-size: 0.32rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation-record .sec-list .row p.red-font {
+          font-size: 0.33rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation-record .sec-list .row p.red-font {
+          font-size: 0.34rem; } }
+    .invitation-record .sec-list .row p.grey-font {
+      color: #999;
+      text-align: left;
+      line-height: 0.4rem; }
+      @media screen and (max-width: 321px) {
+        .invitation-record .sec-list .row p.grey-font {
+          font-size: 0.27rem; } }
+      @media screen and (min-width: 321px) and (max-width: 400px) {
+        .invitation-record .sec-list .row p.grey-font {
+          font-size: 0.28rem; } }
+      @media screen and (min-width: 400px) and (max-width: 640px) {
+        .invitation-record .sec-list .row p.grey-font {
+          font-size: 0.29rem; } }
+      @media screen and (min-width: 640px) {
+        .invitation-record .sec-list .row p.grey-font {
+          font-size: 0.3rem; } }

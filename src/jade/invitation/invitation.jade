@@ -16,7 +16,7 @@ block content
             span.red-font <i>100</i>积分
             |。
           .btn-wrap
-            a.btn-yellow(href="javascript:void(0);") 邀请好友 立即赚钱
+            a.btn-yellow(href="javascript:void(0);")#invit-btn 邀请好友 立即赚钱
 
       .sec-my
         h2 我的邀请
@@ -34,6 +34,13 @@ block content
           a.a-btn-bg-red(href="") 查看详情
 
 
+  script.
+    $(function () {
+      $(".btn-wrap").onClick('click','#invit-btn',function(){
+        var tip="邀请成功";
+        commonEvent.alertDialog(tip);
+      });
+    });
 
 
 

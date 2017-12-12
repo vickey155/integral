@@ -2366,3 +2366,77 @@
     }
   }
 }
+.invitation-record{
+  .sec-top{
+    padding: 0.35rem 0.32rem;
+    background-color: $white;
+    overflow: hidden;
+    border-bottom: 0.01rem solid $dd;
+    margin-bottom: 0.25rem;
+    .col{
+      float: left;
+      width: 50%;
+      border-right: 0.01rem solid $dd;
+      &:last-child{
+        border-right: 0;
+      }
+      p{
+        @include fontFormat($fz:0.28rem,$fc:$c6,$ta:center);
+        line-height: 0.4rem;
+        &:first-child{
+          @include fontFormat($fz:0.36rem,$fc:$c3,$ta:center);
+          line-height: 0.5rem;
+        }
+        &.red-font{
+          color:$red;
+        }
+
+      }
+    }
+  }
+  .sec-list{
+    border-top:0.01rem solid $dd;
+    .row{
+      @extend .flexStyle;
+      justify-content: space-between;
+      align-items: center;
+      &:last-child{
+        .col{
+          border-bottom: 0;
+        }
+      }
+      img{
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 0.3rem;
+      }
+      .flex{
+        flex: 1;
+      }
+      .col{
+        border-bottom: 0.01rem solid $dd;
+        padding: 0.26rem 0;
+        &:last-child{
+          padding-right: 0.32rem;
+          p{
+            text-align: right;
+          }
+        }
+      }
+      p.name{
+        @include fontFormat($fz:0.32rem,$fc:$c3);
+        line-height: 0.6rem;
+      }
+      p.red-font{
+        @include fontFormat($fz:0.32rem,$fc:$red);
+        line-height: 0.6rem;
+      }
+      p.grey-font{
+        @include fontFormat($fz:0.28rem,$fc:$c9);
+        line-height: 0.4rem;
+      }
+    }
+  }
+}
